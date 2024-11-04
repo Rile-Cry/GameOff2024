@@ -39,6 +39,14 @@ window/size/viewport_height=720
 window/size/window_width_override=1280
 window/size/window_height_override=720
 
+[dotnet]
+
+project/assembly_name="IndieBlueprint"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
@@ -235,3 +243,7 @@ locale/translations=PackedStringArray("res://localization/translations/de.po", "
 [physics]
 
 common/physics_ticks_per_second=120
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
