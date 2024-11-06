@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bewi7gvan2wwq" path="res://ui/content_warning/content_warning_displayer.tscn" id="2_747re"]
 [ext_resource type="Script" path="res://ui/content_warning/advisors/content_warning.gd" id="3_bn3e4"]
 [ext_resource type="Resource" uid="uid://bgr4ccqwj3qj7" path="res://ui/content_warning/advisors/content_warning_resemblance.tres" id="4_oftts"]
-[ext_resource type="PackedScene" uid="uid://dfas7t6y7l64h" path="res://scenes/programs/command_prompt.tscn" id="5_cd6a8"]
+[ext_resource type="PackedScene" uid="uid://cw4evfsxys7db" path="res://scenes/programs/MSN.tscn" id="5_2bg3h"]
 
 [node name="GameEntryPoint" type="Node"]
 script = ExtResource("1_8s3f3")
@@ -12,4 +12,4 @@ script = ExtResource("1_8s3f3")
 [node name="ContentWarnings" parent="." instance=ExtResource("2_747re")]
 content_warnings_to_display = Array[ExtResource("3_bn3e4")]([ExtResource("4_oftts")])
 
-[node name="CommandPrompt" parent="." instance=ExtResource("5_cd6a8")]
+[node name="Window" parent="." instance=ExtResource("5_2bg3h")]

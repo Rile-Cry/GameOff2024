@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="IndieBlueprint"
-config/description="is a comprehensive Godot project template designed to streamline your development process. It includes essential features, optimized settings, and best practices to help you create amazing indie game"
-config/version="1.1.1"
+config/name="CrimesAndMysteries"
+config/description="Game Off 2024 game"
+config/version="0.1.0"
 run/main_scene="res://scenes/entry_point/game-entry_point.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
