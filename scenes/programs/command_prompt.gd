@@ -2,10 +2,10 @@ extends Window
 
 var current_line : String = ""
 var lines : Array[String] = [
-	"Microsoft Windows XP [Version 5.1.2600]",
-	"(C) Copyright 1985-2001 Microsoft Corp.",
+	"Mystery Operating System [Version 2.5.430]",
+	"(C) Copyright 1989-2006 Mystery Inc.",
 	"",
-	"C:> ",
+	"M:> ",
 ]
 
 # TODO Change up the console to be more like MNS
@@ -17,6 +17,8 @@ func _ready() -> void:
 	_text_box.connect("caret_changed", caret_changed)
 	_text_box.connect("text_changed", text_changed)
 	_text_box.caret_blink = true
+	connect("close_requested", _close_window)
+	update_console()
 
 
 func _input(event: InputEvent) -> void:
@@ -27,7 +29,7 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	update_console()
+	pass
 
 
 func update_console() -> void:
@@ -49,3 +51,8 @@ func caret_changed() -> void:
 func text_changed() -> void:
 	current_line = _text_box.get_line(lines.size() - 1)
 	lines[lines.size() - 1] = current_line
+	update_console()
+
+
+func _close_window() -> void:
+	queue_free()

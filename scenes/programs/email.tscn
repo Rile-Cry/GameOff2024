@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1g8bn1rpkgkh"]
+
+[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_8o0re"]
+[ext_resource type="Script" path="res://scenes/programs/email.gd" id="2_wqvhh"]
+
+[node name="Email" type="Window"]
+title = "Investigation Office Mail System"
+initial_position = 2
+size = Vector2i(500, 300)
+theme = ExtResource("1_8o0re")
+theme_override_colors/title_color = Color(1, 1, 1, 1)
+script = ExtResource("2_wqvhh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FilesButton" type="MenuButton" parent="PanelContainer/VBoxContainer/Toolbar"]
+layout_mode = 2
+text = "Files"
+
+[node name="Mailbar" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextEdit" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MailItems" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Mailbar/TextEdit"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Mailbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
+layout_mode = 2
+
+[node name="Send" type="Button" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Send"

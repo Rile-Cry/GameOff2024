@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://2acv85adqle2"]
 
-[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/theme.tres" id="1_ybvio"]
+[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_ybvio"]
 [ext_resource type="Script" path="res://scenes/programs/im.gd" id="2_5shah"]
 
 [node name="IM" type="Window"]

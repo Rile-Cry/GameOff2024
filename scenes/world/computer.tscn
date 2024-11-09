@@ -1,3 +1,74 @@
-[gd_scene format=3 uid="uid://duqwgodvr8nt"]
+[gd_scene load_steps=3 format=3 uid="uid://duqwgodvr8nt"]
 
-[node name="Computer" type="Node2D"]
+[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_hv0nd"]
+[ext_resource type="Script" path="res://scenes/world/computer.gd" id="2_adyik"]
+
+[node name="Computer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hv0nd")
+script = ExtResource("2_adyik")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Programs" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Email" type="Button" parent="Programs"]
+layout_mode = 2
+text = "EMail"
+
+[node name="Messenger" type="Button" parent="Programs"]
+layout_mode = 2
+text = "Messenger"
+
+[node name="Notepad" type="Button" parent="Programs"]
+layout_mode = 2
+text = "Notepad
+"
+
+[node name="Console" type="Button" parent="Programs"]
+layout_mode = 2
+text = "Console"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MysOSButton" type="MenuButton" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "MysOS"
+item_count = 5
+popup/item_0/text = "About MysOs"
+popup/item_1/text = "Settings"
+popup/item_1/id = 1
+popup/item_2/text = "Help"
+popup/item_2/id = 2
+popup/item_3/id = 3
+popup/item_3/disabled = true
+popup/item_3/separator = true
+popup/item_4/text = "Exit"
+popup/item_4/id = 4
+
+[node name="Programs" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
