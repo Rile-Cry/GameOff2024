@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Photo" load_steps=2 format=3 uid="uid://cbdaa585pfdbs"]
+
+[ext_resource type="Script" path="res://Case/Photos/Photo.gd" id="1_5rai4"]
+
+[resource]
+script = ExtResource("1_5rai4")
+name = "Evelyn’s Art Studio"
+time = "The Day of Her Death"
+glitched = false
