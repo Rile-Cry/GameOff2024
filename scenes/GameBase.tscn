@@ -223,7 +223,7 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Suspects" type="TabBar" parent="UI/MissionBook/MarginContainer/TabContainer"]
+[node name="Notes" type="TabBar" parent="UI/MissionBook/MarginContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
