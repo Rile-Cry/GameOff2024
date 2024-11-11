@@ -1,61 +1,17 @@
 [gd_scene load_steps=14 format=3 uid="uid://djsuqxnb7g8dy"]
 
 [ext_resource type="Script" path="res://ui/MissionBook.gd" id="1_2tm6g"]
+[ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://ui/Book_Icon.png" id="1_7e6fh"]
+[ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://ui/Book_Icon_open.png" id="1_ii0pf"]
 [ext_resource type="Texture2D" uid="uid://bd24x8kb6xgbv" path="res://ui/Bookmark.png" id="2_hqili"]
 [ext_resource type="Texture2D" uid="uid://d1tw67trpmra3" path="res://ui/Book.png" id="2_tvnvi"]
 [ext_resource type="Texture2D" uid="uid://brnwtmm3tywje" path="res://ui/Bookmark_Unselect.png" id="3_4q70c"]
 
-[sub_resource type="Animation" id="Animation_uc7dr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 1280)]
-}
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1yqh"]
+texture = ExtResource("1_ii0pf")
 
-[sub_resource type="Animation" id="Animation_gkjew"]
-resource_name = "close"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(6, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 1280)]
-}
-
-[sub_resource type="Animation" id="Animation_lqj1r"]
-resource_name = "open"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.2, 1),
-"update": 0,
-"values": [Vector2(0, 1280), Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pldeq"]
-_data = {
-"RESET": SubResource("Animation_uc7dr"),
-"close": SubResource("Animation_gkjew"),
-"open": SubResource("Animation_lqj1r")
-}
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwx7i"]
+texture = ExtResource("1_7e6fh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbv6i"]
 texture = ExtResource("2_tvnvi")
@@ -64,20 +20,18 @@ expand_margin_top = 6.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir2h2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a8gg"]
-content_margin_left = 52.0
-content_margin_top = 32.0
-content_margin_right = 52.0
-content_margin_bottom = 5.0
+content_margin_left = 48.0
+content_margin_top = 100.0
+content_margin_right = 48.0
 texture = ExtResource("2_hqili")
-expand_margin_bottom = 45.0
+expand_margin_bottom = 50.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fes2o"]
-content_margin_left = 52.0
-content_margin_top = 32.0
-content_margin_right = 52.0
-content_margin_bottom = 5.0
+content_margin_left = 48.0
+content_margin_top = 100.0
+content_margin_right = 48.0
 texture = ExtResource("3_4q70c")
-expand_margin_bottom = 45.0
+expand_margin_bottom = 50.0
 
 [sub_resource type="Theme" id="Theme_uk0r2"]
 MarginContainer/constants/margin_bottom = 24
@@ -88,7 +42,7 @@ RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_hovered_color = Color(0.205116, 0.205118, 0.205118, 1)
 TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
-TabContainer/constants/side_margin = 86
+TabContainer/constants/side_margin = 150
 TabContainer/styles/panel = SubResource("StyleBoxTexture_mbv6i")
 TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_ir2h2")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
@@ -99,74 +53,76 @@ TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Button" type="Button" parent="UI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -8.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Mission Book"
-
-[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("open_b", "anim")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1280.0
-offset_bottom = 1280.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_2tm6g")
-open_b = NodePath("../Button")
-anim = NodePath("AnimationPlayer")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/MissionBook"]
-libraries = {
-"": SubResource("AnimationLibrary_pldeq")
-}
-autoplay = "RESET"
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook"]
-layout_mode = 1
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 48
+theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
 
-[node name="TabContainer" type="TabContainer" parent="UI/MissionBook/MarginContainer"]
+[node name="MissionBookButton" type="Button" parent="UI/MarginContainer"]
+custom_minimum_size = Vector2(145, 145)
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/hover = SubResource("StyleBoxTexture_k1yqh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
+
+[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("open_b", "close_b", "tab_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2tm6g")
+open_b = NodePath("../MarginContainer/MissionBookButton")
+close_b = NodePath("Close")
+tab_container = NodePath("TabContainer")
+
+[node name="TabContainer" type="TabContainer" parent="UI/MissionBook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = SubResource("Theme_uk0r2")
 tab_alignment = 2
 current_tab = 0
 
-[node name="Photos" type="TabBar" parent="UI/MissionBook/MarginContainer/TabContainer"]
+[node name="Photos" type="TabBar" parent="UI/MissionBook/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MissionBook/MarginContainer/TabContainer/Photos"]
-layout_mode = 2
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 1208.0
-offset_bottom = 599.0
+[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -174,56 +130,64 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 3
 
-[node name="ColorRect" type="ColorRect" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 148)
+[node name="ColorRect" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.576382, 0.21104, 0.340404, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 148)
+[node name="ColorRect2" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.576382, 0.21104, 0.340404, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 148)
+[node name="ColorRect3" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.576382, 0.21104, 0.340404, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 148)
+[node name="ColorRect4" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.576382, 0.21104, 0.340404, 1)
 
-[node name="ColorRect5" type="ColorRect" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 148)
+[node name="ColorRect5" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.576382, 0.21104, 0.340404, 1)
 
-[node name="ColorRect6" type="ColorRect" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 148)
+[node name="ColorRect6" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.576382, 0.21104, 0.340404, 1)
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/MarginContainer/TabContainer/Photos/HBoxContainer/MarginContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer2"]
 layout_mode = 2
 text = "Insert Instructions Here"
 
-[node name="Inventory" type="TabBar" parent="UI/MissionBook/MarginContainer/TabContainer"]
+[node name="Inventory" type="TabBar" parent="UI/MissionBook/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Notes" type="TabBar" parent="UI/MissionBook/MarginContainer/TabContainer"]
+[node name="Notes" type="TabBar" parent="UI/MissionBook/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="Close" type="Button" parent="UI/MissionBook"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 116.0
+offset_bottom = 63.0
+text = "Close"
