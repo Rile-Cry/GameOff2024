@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djsuqxnb7g8dy"]
+[gd_scene load_steps=14 format=3 uid="uid://by475nnxcha2f"]
 
 [ext_resource type="Script" path="res://ui/MissionBook.gd" id="1_2tm6g"]
 [ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://ui/Book_Icon.png" id="1_7e6fh"]

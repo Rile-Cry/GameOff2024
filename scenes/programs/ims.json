@@ -1,0 +1,24 @@
+{
+	"users": {
+		"Lina": {
+			"status": "online",
+			"address": "linalee@mysinc.org",
+			"messages": [
+				{
+					"date": "10:34 p.m.",
+					"message": "Something something, whut?"
+				}
+			]
+		},
+		"Paul": {
+			"status": "offline",
+			"address": "paul_d_destroyer@mysinc.org",
+			"messages": [
+				{
+					"date": "1000 years ago",
+					"message": "umm . . . did you forget about me?"
+				}
+			]
+		}
+	}
+}

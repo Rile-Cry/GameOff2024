@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfas7t6y7l64h"]
 
-[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/theme.tres" id="1_ttend"]
+[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_ttend"]
 [ext_resource type="Script" path="res://scenes/programs/command_prompt.gd" id="2_677b6"]
 
 [node name="CommandPrompt" type="Window"]
