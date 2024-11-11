@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Photo" load_steps=2 format=3 uid="uid://dcnjga3gdrjtd"]
+
+[ext_resource type="Script" path="res://Case/Photos/Photo.gd" id="1_m18i0"]
+
+[resource]
+script = ExtResource("1_m18i0")
+name = "Marina’s Apartment"
+time = "One Week Before Evelyn’s Death"
+glitched = false
+is_location = true
