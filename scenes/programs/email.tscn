@@ -28,6 +28,7 @@ layout_mode = 2
 
 [node name="FilesButton" type="MenuButton" parent="PanelContainer/VBoxContainer/Toolbar"]
 layout_mode = 2
+disabled = true
 text = "Files"
 
 [node name="Mailbar" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
@@ -50,6 +51,7 @@ size_flags_horizontal = 3
 [node name="TextEdit" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+wrap_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2

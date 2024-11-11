@@ -9,6 +9,7 @@ var lines : Array[String] = [
 ]
 
 # TODO Change up the console to be more like MNS
+# FIXME Gotta fix the issue with being able to delete . . . the entire thing
 
 @onready var _text_box := $"PanelContainer/MarginContainer/VBoxContainer/TextEdit"
 
@@ -51,7 +52,7 @@ func caret_changed() -> void:
 func text_changed() -> void:
 	current_line = _text_box.get_line(lines.size() - 1)
 	lines[lines.size() - 1] = current_line
-	update_console()
+	update_console
 
 
 func _close_window() -> void:

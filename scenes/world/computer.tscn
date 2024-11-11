@@ -12,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_hv0nd")
 script = ExtResource("2_adyik")
+desk_scene = "res://scenes/game.tscn"
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
