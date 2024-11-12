@@ -4,7 +4,8 @@
 			"title": "Need Help",
 			"user": "customer@mysinc.org",
 			"date": "sometime",
-			"message": "This is an example message with my pretty much just typing whatever I want. You don't have to mind this as it is just purely for having something that I can use while building the email system."
+			"message": "This is an example message with my pretty much just typing whatever I want. You don't have to mind this as it is just purely for having something that I can use while building the email system.",
+			"attach": []
 		}
 	]
 }

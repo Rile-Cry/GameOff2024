@@ -5,7 +5,9 @@ var mails = []
 # TODO Add in checkpoints for when certain emails are sent to the player.
 
 @onready var inbox := $PanelContainer/VBoxContainer/Mailbar/TextEdit/MailItems
-@onready var mail_content := $PanelContainer/VBoxContainer/Mailbar/VBoxContainer/TextEdit
+@onready var mail_address := $PanelContainer/VBoxContainer/Mailbar/VBoxContainer/Address
+@onready var mail_content := $PanelContainer/VBoxContainer/Mailbar/VBoxContainer/Content
+@onready var mail_subject := $PanelContainer/VBoxContainer/Mailbar/VBoxContainer/Subject
 @onready var mail_vbox := $PanelContainer/VBoxContainer/Mailbar/TextEdit/MailItems
 
 # Called when the node enters the scene tree for the first time.
@@ -44,4 +46,6 @@ func set_inbox() -> void:
 func _update_textbox(mail_title: String) -> void:
 	for mail in mails:
 		if mail["title"] == mail_title:
+			mail_address.text = mail["user"]
+			mail_subject.text = mail["title"]
 			mail_content.text = mail["message"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://blyw6cksaupds"]
+
+[ext_resource type="Texture2D" uid="uid://857jk6lt68lu" path="res://addons/inkgd-godot4/examples/images/buttons/back_button_disabled.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d0vcr1ct0ypxe" path="res://addons/inkgd-godot4/examples/images/buttons/back_button_normal.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d04u53w2b6o5i" path="res://addons/inkgd-godot4/examples/images/buttons/back_button_pressed.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ced84obim0816" path="res://addons/inkgd-godot4/examples/images/buttons/back_button_hover.png" id="4"]
+[ext_resource type="Script" path="res://addons/inkgd-godot4/examples/scenes/common/back_button_margin_container.gd" id="5"]
+
+[node name="BackButtonMarginContainer" type="MarginContainer"]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+script = ExtResource("5")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("2")
+texture_pressed = ExtResource("3")
+texture_hover = ExtResource("4")
+texture_disabled = ExtResource("1")
+texture_focused = ExtResource("2")
+
+[connection signal="pressed" from="TextureButton" to="." method="_switch_to_main"]

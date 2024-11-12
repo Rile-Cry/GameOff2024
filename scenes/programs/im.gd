@@ -19,7 +19,7 @@ func setup() -> void:
 	
 	var long_string = ""
 	for message in user_data["messages"]:
-		long_string += (message["message"] + "\n")
+		long_string += (title + ": " + message["message"] + "\n")
 	
 	address.text = user_data["address"]
 	label.text = user_data["messages"][user_data["messages"].size() - 1]["date"]

@@ -51,3 +51,6 @@ size_flags_horizontal = 3
 [node name="Text" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/Dialogue"]
 layout_mode = 2
 text = "Some piece of text"
+
+[node name="ChoiceContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/Dialogue"]
+layout_mode = 2

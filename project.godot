@@ -46,7 +46,7 @@ project/assembly_name="IndieBlueprint"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/inkgd/plugin.cfg")
 
 [file_customization]
 
@@ -60,6 +60,10 @@ folder_colors={
 "res://ui/": "green",
 "res://utilities/": "gray"
 }
+
+[inkgd]
+
+register_templates=true
 
 [input]
 

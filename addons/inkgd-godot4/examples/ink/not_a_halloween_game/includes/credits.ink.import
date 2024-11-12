@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://bg0ndqljcosu"
+path="res://.godot/imported/credits.ink-25c3c1891574322e192c45fa7acb0793.res"
+
+[deps]
+
+source_file="res://addons/inkgd-godot4/examples/ink/not_a_halloween_game/includes/credits.ink"
+dest_files=["res://.godot/imported/credits.ink-25c3c1891574322e192c45fa7acb0793.res"]
+
+[params]
+

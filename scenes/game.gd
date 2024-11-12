@@ -10,9 +10,17 @@ func _ready() -> void:
 	computer_button.connect("pressed", _open_computer)
 	exit_button.connect("pressed", _exit_game)
 
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
 func _open_computer() -> void:
 	if not computer_scene.is_empty():
-		SceneTransitionManager.transition_to_scene(computer_scene)
+		var transition := SceneTransitionManager.Transitions.NoTransition
+		SceneTransitionManager.transition_to_scene(computer_scene, false, transition, transition)
+
 
 func _exit_game() -> void:
 	get_tree().quit()

@@ -35,7 +35,8 @@ func _mysos_pressed(num: int) -> void:
 
 func _transition() -> void:
 	if not desk_scene.is_empty():
-		SceneTransitionManager.transition_to_scene(desk_scene)
+		var transition = SceneTransitionManager.Transitions.NoTransition
+		SceneTransitionManager.transition_to_scene(desk_scene, false, transition, transition)
 
 
 func _open_messenger() -> void:

@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1g8bn1rpkgkh"]
 
-[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_8o0re"]
+[ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_mkwfe"]
 [ext_resource type="Script" path="res://scenes/programs/email.gd" id="2_wqvhh"]
 
 [node name="Email" type="Window"]
 title = "Investigation Office Mail System"
 initial_position = 2
 size = Vector2i(500, 300)
-theme = ExtResource("1_8o0re")
+theme = ExtResource("1_mkwfe")
 theme_override_colors/title_color = Color(1, 1, 1, 1)
 script = ExtResource("2_wqvhh")
 
@@ -48,10 +48,16 @@ offset_bottom = 40.0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextEdit" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
+[node name="Address" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
+layout_mode = 2
+wrap_mode = 1
+
+[node name="Subject" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
+layout_mode = 2
+
+[node name="Content" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-wrap_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2

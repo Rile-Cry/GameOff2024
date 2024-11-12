@@ -31,7 +31,7 @@ func refresh():
 	# Photos
 	for node in photo_container.get_children():
 		node.queue_free()
-	
+
 	if GameManager.current_case:
 		photo_list = GameManager.current_case.photos
 		for photo in photo_list:

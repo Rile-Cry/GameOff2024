@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7teh6bu4hlf0"]
+
+[ext_resource type="Shader" path="res://shaders/environment/gradient_pivot_frag.gdshader" id="1_ericb"]
+
+[resource]
+shader = ExtResource("1_ericb")
+shader_parameter/u_pivot = Vector2(0.5, 0.33)
+shader_parameter/u_color_pivot = Vector3(1, 1, 1)
+shader_parameter/u_color_edge = Vector3(0.82, 0.82, 1)
+shader_parameter/u_max_dist = 0.6

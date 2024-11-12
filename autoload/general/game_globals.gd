@@ -1,5 +1,9 @@
 extends Node
 
+#region Tracked variables
+var current_case : Case
+#endregion
+
 
 #region Physics layers
 const world_collision_layer: int = 1

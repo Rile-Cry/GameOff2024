@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://by475nnxcha2f"]
+[gd_scene load_steps=16 format=3 uid="uid://by475nnxcha2f"]
 
 [ext_resource type="Script" path="res://ui/MissionBook.gd" id="1_2tm6g"]
 [ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://ui/Book_Icon.png" id="1_7e6fh"]
@@ -14,9 +14,10 @@ texture = ExtResource("1_ii0pf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwx7i"]
 texture = ExtResource("1_7e6fh")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbv6i"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xe0p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2i5k3"]
 texture = ExtResource("2_tvnvi")
-expand_margin_top = 6.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir2h2"]
 
@@ -39,12 +40,13 @@ MarginContainer/constants/margin_bottom = 24
 MarginContainer/constants/margin_left = 24
 MarginContainer/constants/margin_right = 24
 MarginContainer/constants/margin_top = 24
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_8xe0p")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_hovered_color = Color(0.205116, 0.205118, 0.205118, 1)
 TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
 TabContainer/constants/side_margin = 150
-TabContainer/styles/panel = SubResource("StyleBoxTexture_mbv6i")
+TabContainer/styles/panel = SubResource("StyleBoxTexture_2i5k3")
 TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_ir2h2")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
