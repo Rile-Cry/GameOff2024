@@ -19,7 +19,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2k3nh"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2es1a"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72exf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tq0ok"]
 
@@ -89,7 +89,7 @@ scale = Vector2(7.94996, 8.39685)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yov16")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_mefvk")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2k3nh")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_2es1a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_72exf")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tq0ok")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1wgci")
 

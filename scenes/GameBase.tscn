@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://by475nnxcha2f"]
+[gd_scene load_steps=15 format=3 uid="uid://by475nnxcha2f"]
 
 [ext_resource type="Script" path="res://ui/MissionBook.gd" id="1_2tm6g"]
 [ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://ui/Book_Icon.png" id="1_7e6fh"]
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://ui/Book_Icon_open.png" id="1_ii0pf"]
+[ext_resource type="Script" path="res://scenes/game_base.gd" id="1_xd711"]
 [ext_resource type="Texture2D" uid="uid://bd24x8kb6xgbv" path="res://ui/Bookmark.png" id="2_hqili"]
 [ext_resource type="Texture2D" uid="uid://d1tw67trpmra3" path="res://ui/Book.png" id="2_tvnvi"]
 [ext_resource type="Texture2D" uid="uid://brnwtmm3tywje" path="res://ui/Bookmark_Unselect.png" id="3_4q70c"]
@@ -50,6 +51,9 @@ TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
 [node name="GameBase" type="Node"]
+script = ExtResource("1_xd711")
+
+[node name="LevelBase" type="Node" parent="."]
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -59,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
@@ -72,17 +77,20 @@ size_flags_vertical = 8
 theme_override_styles/hover = SubResource("StyleBoxTexture_k1yqh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 
-[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("open_b", "close_b", "tab_container")]
+[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("tab_container", "open_b", "close_b", "photo_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
 script = ExtResource("1_2tm6g")
+tab_container = NodePath("TabContainer")
 open_b = NodePath("../MarginContainer/MissionBookButton")
 close_b = NodePath("Close")
-tab_container = NodePath("TabContainer")
+photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/PhotoContainer")
 
 [node name="TabContainer" type="TabContainer" parent="UI/MissionBook"]
 layout_mode = 1
@@ -122,49 +130,13 @@ size_flags_horizontal = 3
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer"]
+[node name="PhotoContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 3
-
-[node name="ColorRect" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.576382, 0.21104, 0.340404, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.576382, 0.21104, 0.340404, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.576382, 0.21104, 0.340404, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.576382, 0.21104, 0.340404, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.576382, 0.21104, 0.340404, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/GridContainer"]
-custom_minimum_size = Vector2(0, 128)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.576382, 0.21104, 0.340404, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
 layout_mode = 2
