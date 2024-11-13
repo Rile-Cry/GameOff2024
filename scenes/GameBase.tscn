@@ -77,7 +77,7 @@ size_flags_vertical = 8
 theme_override_styles/hover = SubResource("StyleBoxTexture_k1yqh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 
-[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("tab_container", "open_b", "close_b", "photo_container")]
+[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("tab_container", "open_b", "close_b", "photo_container", "clues_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,7 +90,8 @@ script = ExtResource("1_2tm6g")
 tab_container = NodePath("TabContainer")
 open_b = NodePath("../MarginContainer/MissionBookButton")
 close_b = NodePath("Close")
-photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/PhotoContainer")
+photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
+clues_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
 
 [node name="TabContainer" type="TabContainer" parent="UI/MissionBook"]
 layout_mode = 1
@@ -122,15 +123,25 @@ theme_override_constants/margin_bottom = 48
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
+[node name="Photos" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Photos"]
 layout_mode = 2
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
-[node name="PhotoContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="PhotoContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -138,18 +149,248 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 3
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
+[node name="Info" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/MarginContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Info"]
 layout_mode = 2
-text = "Insert Instructions Here"
+text = "Insert [] Here"
 
-[node name="Inventory" type="TabBar" parent="UI/MissionBook/TabContainer"]
+[node name="Clues" type="TabBar" parent="UI/MissionBook/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer"]
+layout_mode = 2
+
+[node name="Clues" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="CluesContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="ColorRect" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect14" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect15" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect16" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect17" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect18" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect19" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect20" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect21" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect22" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect23" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect24" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect25" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect26" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect27" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect28" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect29" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="ColorRect30" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 67)
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.341176, 1, 1, 1)
+
+[node name="Info" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Info"]
+layout_mode = 2
+text = "Insert Clue Information Here"
 
 [node name="Notes" type="TabBar" parent="UI/MissionBook/TabContainer"]
 visible = false
