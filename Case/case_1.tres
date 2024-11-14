@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Case" load_steps=7 format=3 uid="uid://dyhuoj7bswwiw"]
 
-[ext_resource type="Script" path="res://Case/case.gd" id="1_dnddx"]
-[ext_resource type="Script" path="res://Case/Photos/Photo.gd" id="1_lwqtv"]
+[ext_resource type="Script" path="res://Case/CaseResource.gd" id="1_dnddx"]
+[ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_lwqtv"]
 [ext_resource type="Resource" uid="uid://cbdaa585pfdbs" path="res://Case/Photos/Evelyn’s Art Studio.tres" id="2_fqlc0"]
 [ext_resource type="Resource" uid="uid://dcnjga3gdrjtd" path="res://Case/Photos/Marina’s Apartment.tres" id="3_f2k6g"]
 [ext_resource type="Resource" uid="uid://bim8fkdbty6jj" path="res://Case/Photos/Victor’s Office.tres" id="4_k8f5q"]

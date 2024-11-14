@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bd24x8kb6xgbv" path="res://ui/Bookmark.png" id="2_hqili"]
 [ext_resource type="Texture2D" uid="uid://d1tw67trpmra3" path="res://ui/Book.png" id="2_tvnvi"]
 [ext_resource type="Texture2D" uid="uid://brnwtmm3tywje" path="res://ui/Bookmark_Unselect.png" id="3_4q70c"]
+[ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://ui/menus/layouts/settings/tabs/settings_menu.tscn" id="8_ofceo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1yqh"]
 texture = ExtResource("1_ii0pf")
@@ -80,6 +81,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_k1yqh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 
 [node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("tab_container", "open_b", "close_b", "photo_container", "clues_container")]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,186 +208,6 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 6
 
-[node name="ColorRect" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect5" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect6" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect7" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect8" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect9" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect10" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect11" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect12" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect13" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect14" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect15" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect16" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect17" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect18" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect19" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect20" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect21" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect22" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect23" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect24" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect25" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect26" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect27" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect28" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect29" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
-[node name="ColorRect30" type="ColorRect" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
-custom_minimum_size = Vector2(0, 67)
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.341176, 1, 1, 1)
-
 [node name="Info" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -406,3 +228,7 @@ offset_top = 24.0
 offset_right = 116.0
 offset_bottom = 63.0
 text = "Close"
+
+[node name="OptionMenu" parent="UI" instance=ExtResource("8_ofceo")]
+unique_name_in_owner = true
+visible = false
