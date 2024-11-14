@@ -12,6 +12,7 @@ class_name MissionBook
 
 @export_category("Tabs")
 @export var photo_container : GridContainer
+@export var clues_container : GridContainer
 
 var is_open = false
 var photo_list : Array[Photo]
@@ -32,12 +33,23 @@ func refresh():
 	for node in photo_container.get_children():
 		node.queue_free()
 
+	# Clues
+	for node in clues_container.get_children():
+		node.queue_free()
+
+
 	if GameManager.current_case:
+		# Photos
 		photo_list = GameManager.current_case.photos
 		for photo in photo_list:
 			var photo_node : PhotoNode = PhotoNode.new()
 			photo_node.photo_res = photo
 			photo_container.add_child(photo_node)
+
+		for photo in photo_list:
+			var photo_node : PhotoNode = PhotoNode.new()
+			photo_node.photo_res = photo
+			clues_container.add_child(photo_node)
 
 func open_close():
 	is_open = not is_open
