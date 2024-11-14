@@ -24,7 +24,7 @@ func _ready():
 	GameManager.set_mission_book(self)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel") and is_open:
 		tab_container.current_tab = 0
 		open_close()
 

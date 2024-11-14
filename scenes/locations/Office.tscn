@@ -66,7 +66,7 @@ offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_wjgac")
 
-[node name="SettingsButton" type="Button" parent="."]
+[node name="OptionsButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 711.0
 offset_top = 196.0

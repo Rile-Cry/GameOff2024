@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c3duwqu80okrh"]
 
-[ext_resource type="Script" path="res://ui/menus/layouts/settings/tabs/settings_menu.gd" id="1_vcisf"]
+[ext_resource type="Script" path="res://ui/menus/layouts/settings/tabs/settings_menu_original.gd" id="1_vcisf"]
 [ext_resource type="Script" path="res://ui/menus/components/slider/audio_slider.gd" id="2_cycub"]
 [ext_resource type="Script" path="res://ui/menus/components/option_button/screen_mode_option_button.gd" id="3_e8y2d"]
 [ext_resource type="Script" path="res://ui/menus/components/checkbox/screen_borderless_checkbox.gd" id="4_50se2"]
@@ -47,7 +47,7 @@ theme_override_constants/margin_bottom = 150
 
 [node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
-current_tab = 1
+current_tab = 2
 
 [node name="Audio" type="TabBar" parent="MarginContainer/TabContainer"]
 unique_name_in_owner = true
@@ -179,6 +179,7 @@ text = "MUTE_ACTION"
 
 [node name="Screen" type="TabBar" parent="MarginContainer/TabContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -264,7 +265,6 @@ script = ExtResource("8_0qup0")
 
 [node name="Graphics" type="TabBar" parent="MarginContainer/TabContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
