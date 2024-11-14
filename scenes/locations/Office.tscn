@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://dj1s12fwy32rr"]
 
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_hgose"]
-[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/Office1440.png" id="2_bxdsx"]
+[ext_resource type="Script" path="res://scenes/locations/Office.gd" id="1_lm2ok"]
+[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/Office1440.png" id="2_wjgac"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5d0pp"]
 
@@ -56,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hgose")
+script = ExtResource("1_lm2ok")
 computer_scene = "res://scenes/world/computer.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -64,7 +64,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_bxdsx")
+texture = ExtResource("2_wjgac")
 
 [node name="SettingsButton" type="Button" parent="."]
 layout_mode = 0
