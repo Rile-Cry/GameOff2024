@@ -28,28 +28,24 @@ func _unhandled_input(event: InputEvent) -> void:
 		tab_container.current_tab = 0
 		open_close()
 
-func refresh():
-	# Photos
+func refresh_photos():
 	for node in photo_container.get_children():
 		node.queue_free()
 	
-	# Clues
-	for node in clues_container.get_children():
-		node.queue_free()
-	
-	
 	if GameManager.current_case:
-		# Photos
 		photo_list = GameManager.current_case.photos
 		for photo in photo_list:
 			var photo_node : PhotoNode = PhotoNode.new()
 			photo_node.photo_res = photo
 			photo_container.add_child(photo_node)
-		
-		for photo in photo_list:
-			var photo_node : PhotoNode = PhotoNode.new()
-			photo_node.photo_res = photo
-			clues_container.add_child(photo_node)
+
+func refresh_clues():
+	for node in clues_container.get_children():
+		node.queue_free()
+	
+	if GameManager.clues:
+		for clue in GameManager.clues:
+			pass
 
 func open_close():
 	is_open = not is_open
