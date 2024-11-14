@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Photo" load_steps=2 format=3 uid="uid://bim8fkdbty6jj"]
 
-[ext_resource type="Script" path="res://Case/Photos/Photo.gd" id="1_kd7bm"]
+[ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_kd7bm"]
 
 [resource]
 script = ExtResource("1_kd7bm")
