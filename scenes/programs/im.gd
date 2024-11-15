@@ -29,8 +29,7 @@ func setup() -> void:
 func grab_user() -> void:
 	var file = FileAccess.open("res://scenes/programs/ims.json", FileAccess.READ)
 	var file_content = file.get_as_text()
-	var json = JSON.new()
-	var json_string = json.parse_string(file_content)
+	var json_string = JSON.parse_string(file_content)
 	
 	user_data = json_string["users"][title]
 

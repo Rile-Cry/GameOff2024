@@ -29,7 +29,7 @@ func _input(event: InputEvent) -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -52,7 +52,7 @@ func caret_changed() -> void:
 func text_changed() -> void:
 	current_line = _text_box.get_line(lines.size() - 1)
 	lines[lines.size() - 1] = current_line
-	update_console
+	update_console()
 
 
 func _close_window() -> void:

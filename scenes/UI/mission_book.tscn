@@ -1,0 +1,191 @@
+[gd_scene load_steps=10 format=3 uid="uid://cphjlxsh6ojbf"]
+
+[ext_resource type="Script" path="res://scenes/UI/mission_book.gd" id="1_1d7qm"]
+[ext_resource type="Texture2D" uid="uid://d1tw67trpmra3" path="res://ui/Book.png" id="2_pq4g1"]
+[ext_resource type="Texture2D" uid="uid://bd24x8kb6xgbv" path="res://ui/Bookmark.png" id="3_aot0p"]
+[ext_resource type="Texture2D" uid="uid://brnwtmm3tywje" path="res://ui/Bookmark_Unselect.png" id="4_v5qdq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbv6i"]
+texture = ExtResource("2_pq4g1")
+expand_margin_top = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir2h2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a8gg"]
+content_margin_left = 48.0
+content_margin_top = 100.0
+content_margin_right = 48.0
+texture = ExtResource("3_aot0p")
+expand_margin_bottom = 50.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fes2o"]
+content_margin_left = 48.0
+content_margin_top = 100.0
+content_margin_right = 48.0
+texture = ExtResource("4_v5qdq")
+expand_margin_bottom = 50.0
+
+[sub_resource type="Theme" id="Theme_uk0r2"]
+MarginContainer/constants/margin_bottom = 24
+MarginContainer/constants/margin_left = 24
+MarginContainer/constants/margin_right = 24
+MarginContainer/constants/margin_top = 24
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_hovered_color = Color(0.205116, 0.205118, 0.205118, 1)
+TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
+TabContainer/constants/side_margin = 150
+TabContainer/styles/panel = SubResource("StyleBoxTexture_mbv6i")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_ir2h2")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
+
+[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_container", "clues_container")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+script = ExtResource("1_1d7qm")
+tab_container = NodePath("TabContainer")
+close_b = NodePath("Close")
+photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
+clues_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uk0r2")
+tab_alignment = 2
+current_tab = 0
+
+[node name="Photos" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Photos/MarginContainer"]
+layout_mode = 2
+
+[node name="Photos" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Photos"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="PhotoContainer" type="GridContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="Info" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info"]
+layout_mode = 2
+text = "Insert [] Here"
+
+[node name="Clues" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Clues"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Clues/MarginContainer"]
+layout_mode = 2
+
+[node name="Clues" type="MarginContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Clues"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="CluesContainer" type="GridContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="Info" type="MarginContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Info"]
+layout_mode = 2
+text = "Insert Clue Information Here"
+
+[node name="Notes" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 116.0
+offset_bottom = 63.0
+mouse_default_cursor_shape = 2
+text = "Close"
