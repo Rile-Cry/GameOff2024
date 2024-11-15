@@ -1,7 +1,5 @@
 extends Control
 
-@export_file(".tscn") var computer_scene := ""
-
 @onready var computer_button := $ComputerButton
 @onready var options_button := $OptionsButton
 @onready var exit_button := $ExitButton
@@ -13,8 +11,8 @@ func _ready() -> void:
 	options_button.connect("pressed", _open_options)
 
 func _open_computer() -> void:
-	if not computer_scene.is_empty():
-		SceneTransitionManager.transition_to_scene(computer_scene)
+	if GameManager.game_base:
+		GameManager.game_base.open_close_computer()
 
 func _open_options() -> void:
 	if GameManager.game_base:

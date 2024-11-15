@@ -1,55 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://by475nnxcha2f"]
+[gd_scene load_steps=9 format=3 uid="uid://by475nnxcha2f"]
 
-[ext_resource type="Script" path="res://ui/MissionBook.gd" id="1_2tm6g"]
 [ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://ui/Book_Icon.png" id="1_7e6fh"]
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://ui/Book_Icon_open.png" id="1_ii0pf"]
 [ext_resource type="Script" path="res://scenes/game_base.gd" id="1_xd711"]
-[ext_resource type="Texture2D" uid="uid://bd24x8kb6xgbv" path="res://ui/Bookmark.png" id="2_hqili"]
-[ext_resource type="Texture2D" uid="uid://d1tw67trpmra3" path="res://ui/Book.png" id="2_tvnvi"]
-[ext_resource type="Texture2D" uid="uid://brnwtmm3tywje" path="res://ui/Bookmark_Unselect.png" id="3_4q70c"]
-[ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://ui/menus/layouts/settings/tabs/settings_menu.tscn" id="8_ofceo"]
+[ext_resource type="PackedScene" uid="uid://cphjlxsh6ojbf" path="res://scenes/UI/mission_book.tscn" id="4_g5u80"]
+[ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://scenes/UI/settings_menu.tscn" id="8_ofceo"]
+[ext_resource type="PackedScene" uid="uid://duqwgodvr8nt" path="res://scenes/UI/computer.tscn" id="9_yic41"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1yqh"]
 texture = ExtResource("1_ii0pf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwx7i"]
 texture = ExtResource("1_7e6fh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbv6i"]
-texture = ExtResource("2_tvnvi")
-expand_margin_top = 6.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir2h2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a8gg"]
-content_margin_left = 48.0
-content_margin_top = 100.0
-content_margin_right = 48.0
-texture = ExtResource("2_hqili")
-expand_margin_bottom = 50.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fes2o"]
-content_margin_left = 48.0
-content_margin_top = 100.0
-content_margin_right = 48.0
-texture = ExtResource("3_4q70c")
-expand_margin_bottom = 50.0
-
-[sub_resource type="Theme" id="Theme_uk0r2"]
-MarginContainer/constants/margin_bottom = 24
-MarginContainer/constants/margin_left = 24
-MarginContainer/constants/margin_right = 24
-MarginContainer/constants/margin_top = 24
-RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
-TabContainer/colors/font_hovered_color = Color(0.205116, 0.205118, 0.205118, 1)
-TabContainer/colors/font_selected_color = Color(0, 0, 0, 1)
-TabContainer/colors/font_unselected_color = Color(0, 0, 0, 1)
-TabContainer/constants/side_margin = 150
-TabContainer/styles/panel = SubResource("StyleBoxTexture_mbv6i")
-TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_ir2h2")
-TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
-TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
-TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
 [node name="GameBase" type="Node"]
 script = ExtResource("1_xd711")
@@ -75,158 +37,18 @@ custom_minimum_size = Vector2(145, 145)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+mouse_default_cursor_shape = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_k1yqh")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 
-[node name="MissionBook" type="Control" parent="UI" node_paths=PackedStringArray("tab_container", "open_b", "close_b", "photo_container", "clues_container")]
+[node name="MissionBook" parent="UI" node_paths=PackedStringArray("open_b") instance=ExtResource("4_g5u80")]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-mouse_force_pass_scroll_events = false
-script = ExtResource("1_2tm6g")
-tab_container = NodePath("TabContainer")
 open_b = NodePath("../MarginContainer/MissionBookButton")
-close_b = NodePath("Close")
-photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
-clues_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
-
-[node name="TabContainer" type="TabContainer" parent="UI/MissionBook"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_uk0r2")
-tab_alignment = 2
-current_tab = 0
-
-[node name="Photos" type="TabBar" parent="UI/MissionBook/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 48
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer"]
-layout_mode = 2
-
-[node name="Photos" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Photos"]
-layout_mode = 2
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 0
-
-[node name="PhotoContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 8
-columns = 3
-
-[node name="Info" type="MarginContainer" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/TabContainer/Photos/MarginContainer/HBoxContainer/Info"]
-layout_mode = 2
-text = "Insert [] Here"
-
-[node name="Clues" type="TabBar" parent="UI/MissionBook/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 48
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer"]
-layout_mode = 2
-
-[node name="Clues" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues"]
-layout_mode = 2
-follow_focus = true
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 0
-
-[node name="CluesContainer" type="GridContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 6
-
-[node name="Info" type="MarginContainer" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="RichTextLabel" type="RichTextLabel" parent="UI/MissionBook/TabContainer/Clues/MarginContainer/HBoxContainer/Info"]
-layout_mode = 2
-text = "Insert Clue Information Here"
-
-[node name="Notes" type="TabBar" parent="UI/MissionBook/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
-
-[node name="Close" type="Button" parent="UI/MissionBook"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 116.0
-offset_bottom = 63.0
-text = "Close"
 
 [node name="OptionMenu" parent="UI" instance=ExtResource("8_ofceo")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Computer" parent="UI" instance=ExtResource("9_yic41")]
 unique_name_in_owner = true
 visible = false
