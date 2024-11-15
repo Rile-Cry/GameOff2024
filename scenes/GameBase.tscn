@@ -13,13 +13,6 @@ texture = ExtResource("1_ii0pf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwx7i"]
 texture = ExtResource("1_7e6fh")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8xe0p"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2i5k3"]
-texture = ExtResource("2_tvnvi")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir2h2"]
-
 [node name="GameBase" type="Node"]
 script = ExtResource("1_xd711")
 

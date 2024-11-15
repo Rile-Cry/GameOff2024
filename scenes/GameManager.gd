@@ -10,7 +10,7 @@ var game_base : GameBase:
 		change_scene(office)
 		
 var clues : Array[Clue]
-var office : PackedScene = preload("res://scenes/locations/Office.tscn")
+var office : PackedScene = preload("res://scenes/locations/office.tscn")
 
 func _init() -> void:
 	current_case = load("res://Case/case_1.tres")

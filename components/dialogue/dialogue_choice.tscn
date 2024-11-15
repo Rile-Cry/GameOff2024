@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crb32e1nxey81"]
+
+[ext_resource type="Script" path="res://components/dialogue/dialogue_choice.gd" id="1_tqs5t"]
+
+[node name="DialogueChoice" type="Button"]
+script = ExtResource("1_tqs5t")
