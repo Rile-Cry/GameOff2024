@@ -12,16 +12,10 @@ func _ready() -> void:
 	init_online()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func init_online() -> void:
 	var ims_file = FileAccess.open("res://scenes/programs/ims.json", FileAccess.READ)
 	var ims_content = ims_file.get_as_text()
-	var json = JSON.new()
-	var ims_string = json.parse_string(ims_content)
+	var ims_string = JSON.parse_string(ims_content)
 	var users = ims_string["users"]
 	for user in users:
 		var user_button = EmailButton.new()

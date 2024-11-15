@@ -14,7 +14,6 @@ class_name MissionBook
 @export var photo_container : GridContainer
 @export var clues_container : GridContainer
 
-var is_open = false
 var photo_list : Array[Photo]
 
 func _ready():
@@ -24,7 +23,7 @@ func _ready():
 	GameManager.set_mission_book(self)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and is_open:
+	if event.is_action_pressed("ui_cancel") and self.visible:
 		tab_container.current_tab = 0
 		open_close()
 
@@ -48,6 +47,5 @@ func refresh_clues():
 			pass
 
 func open_close():
-	is_open = not is_open
-	self.visible = is_open
-	open_b.visible = not is_open
+	open_b.visible = self.visible
+	self.visible = not self.visible

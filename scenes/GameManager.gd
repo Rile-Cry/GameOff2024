@@ -21,7 +21,7 @@ func set_mission_book(node : MissionBook):
 	mission_book.refresh_clues()
 
 func change_scene(scene : PackedScene):
-	if mission_book and mission_book.is_open: mission_book.open_close()
+	if mission_book and mission_book.visible: mission_book.open_close()
 	
 	if game_base: game_base.change_level(scene)
 

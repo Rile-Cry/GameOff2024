@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://duqwgodvr8nt"]
 
-[ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_0rp8r"]
-[ext_resource type="Script" path="res://scenes/world/computer.gd" id="2_adyik"]
+[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_hv0nd"]
+[ext_resource type="Script" path="res://scenes/UI/computer.gd" id="2_adyik"]
 
 [node name="Computer" type="Control"]
 layout_mode = 3
@@ -10,17 +10,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_0rp8r")
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+theme = ExtResource("1_hv0nd")
 script = ExtResource("2_adyik")
-desk_scene = "res://scenes/game.tscn"
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.298039, 0.298039, 0.298039, 1)
 
 [node name="Programs" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -29,14 +31,23 @@ offset_bottom = 40.0
 
 [node name="Email" type="Button" parent="Programs"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "EMail"
 
 [node name="Messenger" type="Button" parent="Programs"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "Messenger"
+
+[node name="Notepad" type="Button" parent="Programs"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "Notepad
+"
 
 [node name="Console" type="Button" parent="Programs"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "Console"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -53,6 +64,7 @@ layout_mode = 2
 
 [node name="MysOSButton" type="MenuButton" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 text = "MysOS"
 item_count = 5
 popup/item_0/text = "About MysOs"

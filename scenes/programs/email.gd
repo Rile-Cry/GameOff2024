@@ -17,11 +17,6 @@ func _ready() -> void:
 	set_inbox()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
 func _close_window() -> void:
 	queue_free()
 
@@ -29,8 +24,7 @@ func _close_window() -> void:
 func read_mails() -> void:
 	var file = FileAccess.open("res://scenes/programs/emails.json", FileAccess.READ)
 	var content = file.get_as_text()
-	var json = JSON.new()
-	var result = json.parse_string(content)
+	var result = JSON.parse_string(content)
 	for mail in result["mail"]:
 		mails.append(mail)
 

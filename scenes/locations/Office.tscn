@@ -49,7 +49,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dou6c"]
 
-[node name="Game" type="Control"]
+[node name="Office" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,9 +57,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lm2ok")
-computer_scene = "res://scenes/world/computer.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -72,6 +71,7 @@ offset_left = 711.0
 offset_top = 196.0
 offset_right = 783.0
 offset_bottom = 267.0
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5d0pp")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xue2n")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_q0xjk")
@@ -86,6 +86,7 @@ offset_right = 837.0
 offset_bottom = 168.0
 rotation = -0.327592
 scale = Vector2(7.94996, 8.39685)
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yov16")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_mefvk")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2k3nh")
@@ -101,6 +102,7 @@ offset_right = 777.0
 offset_bottom = 83.0
 rotation = 0.363136
 scale = Vector2(7.76023, 7.14077)
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jeagk")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ybo25")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j4xsk")
@@ -115,6 +117,7 @@ offset_top = 271.0
 offset_right = 385.0
 offset_bottom = 279.0
 scale = Vector2(41.0232, 45.9107)
+mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_i7mv4")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_y0d8o")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w7v5b")
