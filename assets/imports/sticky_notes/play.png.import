@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd24x8kb6xgbv"
-path="res://.godot/imported/Bookmark.png-4d62a6ae04b7479ed33120c54d405fce.ctex"
+uid="uid://hrivlhjj23gp"
+path="res://.godot/imported/play.png-2c8af3bc185fe9cf28f897b1c4d24363.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/Bookmark.png"
-dest_files=["res://.godot/imported/Bookmark.png-4d62a6ae04b7479ed33120c54d405fce.ctex"]
+source_file="res://assets/imports/sticky_notes/play.png"
+dest_files=["res://.godot/imported/play.png-2c8af3bc185fe9cf28f897b1c4d24363.ctex"]
 
 [params]
 

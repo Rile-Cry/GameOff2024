@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_5rai4"]
 [ext_resource type="PackedScene" uid="uid://dj1s12fwy32rr" path="res://scenes/locations/Office.tscn" id="1_y6mx2"]
-[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/Office.png" id="2_5hsgi"]
+[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/backgrounds/Office.png" id="2_5hsgi"]
 
 [resource]
 script = ExtResource("1_5rai4")

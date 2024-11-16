@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo7hcs3q5hnh8"
-path="res://.godot/imported/Office.png-b4ca81221db463ad39fbd646125c0308.ctex"
+uid="uid://ci1n8rj1rj5r0"
+path="res://.godot/imported/Title_shadow.png-80a9ac3a8f738aa35ff5238e1dda28c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/Office.png"
-dest_files=["res://.godot/imported/Office.png-b4ca81221db463ad39fbd646125c0308.ctex"]
+source_file="res://assets/imports/backgrounds/Title_shadow.png"
+dest_files=["res://.godot/imported/Title_shadow.png-80a9ac3a8f738aa35ff5238e1dda28c3.ctex"]
 
 [params]
 

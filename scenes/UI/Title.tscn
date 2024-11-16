@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://ecmesmnusvu4"]
 
-[ext_resource type="Texture2D" uid="uid://ci1n8rj1rj5r0" path="res://ui/main/Title_shadow.png" id="1_ci3xf"]
+[ext_resource type="Texture2D" uid="uid://ci1n8rj1rj5r0" path="res://assets/imports/backgrounds/Title_shadow.png" id="1_ci3xf"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_ta2pg"]
-[ext_resource type="Texture2D" uid="uid://hrivlhjj23gp" path="res://ui/sticky_notes/play.png" id="3_63sex"]
-[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://ui/sticky_notes/options.png" id="4_jhgew"]
-[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://ui/sticky_notes/exit.png" id="5_rghg2"]
+[ext_resource type="Texture2D" uid="uid://hrivlhjj23gp" path="res://assets/imports/sticky_notes/play.png" id="3_63sex"]
+[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/sticky_notes/options.png" id="4_jhgew"]
+[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/sticky_notes/exit.png" id="5_rghg2"]
 
 [sub_resource type="Animation" id="Animation_utc3m"]
 length = 0.001
@@ -163,6 +163,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.996078, 0.976471, 0.952941, 1)
 
 [node name="Shadow" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)

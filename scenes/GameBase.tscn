@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://by475nnxcha2f"]
 
-[ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://ui/Book_Icon.png" id="1_7e6fh"]
-[ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://ui/Book_Icon_open.png" id="1_ii0pf"]
+[ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://assets/imports/icons/Book_Icon.png" id="1_7e6fh"]
+[ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/icons/Book_Icon_open.png" id="1_ii0pf"]
 [ext_resource type="Script" path="res://scenes/game_base.gd" id="1_xd711"]
 [ext_resource type="PackedScene" uid="uid://cphjlxsh6ojbf" path="res://scenes/UI/mission_book.tscn" id="4_g5u80"]
 [ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://scenes/UI/settings_menu.tscn" id="8_ofceo"]
