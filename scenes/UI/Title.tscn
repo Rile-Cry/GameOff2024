@@ -1,0 +1,203 @@
+[gd_scene load_steps=12 format=3 uid="uid://ecmesmnusvu4"]
+
+[ext_resource type="Texture2D" uid="uid://ci1n8rj1rj5r0" path="res://ui/main/Title_shadow.png" id="1_ci3xf"]
+[ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_ta2pg"]
+[ext_resource type="Texture2D" uid="uid://hrivlhjj23gp" path="res://ui/sticky_notes/play.png" id="3_63sex"]
+[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://ui/sticky_notes/options.png" id="4_jhgew"]
+[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://ui/sticky_notes/exit.png" id="5_rghg2"]
+
+[sub_resource type="Animation" id="Animation_utc3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(622, -1000)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Exit Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(520, -607)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OptionsButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(606, -494)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qobwm"]
+resource_name = "auto_start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayButton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(622, -720), Vector2(622, 280)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Exit Button:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.4, 1),
+"update": 0,
+"values": [Vector2(520, -607), Vector2(520, 393)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OptionsButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(606, -494), Vector2(606, 506)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g3g31"]
+_data = {
+"RESET": SubResource("Animation_utc3m"),
+"auto_start": SubResource("Animation_qobwm")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udsxg"]
+texture = ExtResource("3_63sex")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnckd"]
+texture = ExtResource("4_jhgew")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lofhy"]
+texture = ExtResource("5_rghg2")
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shadow" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ci3xf")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TitleMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 128
+
+[node name="TitleLabel" type="RichTextLabel" parent="TitleMargin"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("2_ta2pg")
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[center][b]Turnabout Case"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g3g31")
+}
+autoplay = "auto_start"
+
+[node name="PlayButton" type="Button" parent="."]
+custom_minimum_size = Vector2(93, 87)
+layout_mode = 0
+offset_left = 622.0
+offset_top = -1000.0
+offset_right = 715.0
+offset_bottom = -913.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_udsxg")
+
+[node name="OptionsButton" type="Button" parent="."]
+custom_minimum_size = Vector2(73, 72)
+layout_mode = 0
+offset_left = 606.0
+offset_top = -494.0
+offset_right = 679.0
+offset_bottom = -422.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vnckd")
+
+[node name="Exit Button" type="Button" parent="."]
+custom_minimum_size = Vector2(83, 72)
+layout_mode = 0
+offset_left = 520.0
+offset_top = -607.0
+offset_right = 603.0
+offset_bottom = -535.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_lofhy")
