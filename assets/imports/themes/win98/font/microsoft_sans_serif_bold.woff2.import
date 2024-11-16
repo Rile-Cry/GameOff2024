@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://do73u5kbvgdev"
-path="res://.godot/imported/microsoft_sans_serif_bold.ttf-16c00494d223e55632c5bc154e7d636c.fontdata"
+uid="uid://dyshroask6mox"
+path="res://.godot/imported/microsoft_sans_serif_bold.woff2-39bde7544ff7212595fde3f0b0c6c021.fontdata"
 
 [deps]
 
-source_file="res://assets/imports/themes/win98/font/microsoft_sans_serif_bold.ttf"
-dest_files=["res://.godot/imported/microsoft_sans_serif_bold.ttf-16c00494d223e55632c5bc154e7d636c.fontdata"]
+source_file="res://assets/imports/themes/win98/font/microsoft_sans_serif_bold.woff2"
+dest_files=["res://.godot/imported/microsoft_sans_serif_bold.woff2-39bde7544ff7212595fde3f0b0c6c021.fontdata"]
 
 [params]
 

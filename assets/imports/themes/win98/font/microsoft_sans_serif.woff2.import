@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dhtp6kpcjyfj7"
-path="res://.godot/imported/microsoft_sans_serif.ttf-ce90419bf373facfa614a18a3a3cb955.fontdata"
+uid="uid://dutn7mp5vrurl"
+path="res://.godot/imported/microsoft_sans_serif.woff2-0df4987d162af596e432ed9c26947d7c.fontdata"
 
 [deps]
 
-source_file="res://assets/imports/themes/win98/font/microsoft_sans_serif.ttf"
-dest_files=["res://.godot/imported/microsoft_sans_serif.ttf-ce90419bf373facfa614a18a3a3cb955.fontdata"]
+source_file="res://assets/imports/themes/win98/font/microsoft_sans_serif.woff2"
+dest_files=["res://.godot/imported/microsoft_sans_serif.woff2-0df4987d162af596e432ed9c26947d7c.fontdata"]
 
 [params]
 
