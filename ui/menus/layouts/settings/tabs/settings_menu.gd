@@ -1,6 +1,5 @@
-@icon("res://assets/node_icons/settings.svg")
+#@icon("res://assets/node_icons/settings.svg")
 extends Control
-
 
 @onready var audio_tab_bar: TabBar = %Audio
 @onready var screen_tab_bar: TabBar = %Screen
