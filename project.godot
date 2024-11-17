@@ -35,6 +35,7 @@ GlobalEffects="*res://autoload/effects/global_effects.tscn"
 SaveManager="*res://autoload/persistence/save/save_manager.gd"
 SettingsManager="*res://autoload/persistence/settings/settings_manager.gd"
 UIManager="*res://scenes/UI/UIManager.tscn"
+SfxAudio="*res://scenes/sfx_audio.tscn"
 
 [display]
 
@@ -67,6 +68,7 @@ folder_colors={
 
 [gui]
 
+theme/custom="res://ui/default_theme.tres"
 theme/custom_font="res://ui/fonts/XTypewriter-Regular.woff2"
 
 [input]
