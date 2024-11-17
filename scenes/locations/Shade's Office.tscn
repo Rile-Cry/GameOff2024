@@ -1,42 +1,44 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj1s12fwy32rr"]
+[gd_scene load_steps=16 format=3 uid="uid://dj1s12fwy32rr"]
 
-[ext_resource type="Script" path="res://scenes/locations/Office.gd" id="1_lm2ok"]
-[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/office.png" id="2_wjgac"]
-[ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="3_4jlkm"]
-[ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="4_qtgmw"]
-[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_1wgwq"]
-[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/graphics/objects/sticky_notes/options.png" id="5_t32p6"]
-[ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_pvh7b"]
-[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_s7886"]
-[ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_vhjki"]
+[ext_resource type="Script" path="res://scenes/locations/Office.gd" id="1_4t6ht"]
+[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/office.png" id="2_8igll"]
+[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/graphics/objects/sticky_notes/options.png" id="3_j2hj0"]
+[ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="4_xkdys"]
+[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_s314g"]
+[ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="6_e7ndo"]
+[ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
+[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
+[ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
+[ext_resource type="Script" path="res://Case/Clues/ClueObject.gd" id="10_og0pe"]
+[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/shredded_paper.tres" id="11_xkghs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nulqq"]
-texture = ExtResource("5_t32p6")
+texture = ExtResource("3_j2hj0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jlq8"]
-texture = ExtResource("5_1wgwq")
+texture = ExtResource("5_s314g")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tswg3"]
-texture = ExtResource("7_pvh7b")
+texture = ExtResource("7_letej")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
-texture = ExtResource("9_vhjki")
+texture = ExtResource("9_x077g")
 
-[node name="Office" type="Control"]
+[node name="Shade\'s Office" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lm2ok")
+script = ExtResource("1_4t6ht")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_wjgac")
+texture = ExtResource("2_8igll")
 
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(77, 75)
@@ -52,7 +54,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/hover = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_nulqq")
-script = ExtResource("3_4jlkm")
+script = ExtResource("4_xkdys")
 
 [node name="ExitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(86, 75)
@@ -68,13 +70,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7jlq8")
-script = ExtResource("4_qtgmw")
-theme_override_styles/focus = SubResource("StyleBoxTexture_7jlq8")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_7jlq8")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7jlq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_7jlq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7jlq8")
-theme_override_styles/normal = SubResource("StyleBoxTexture_7jlq8")
+script = ExtResource("6_e7ndo")
 
 [node name="SaveButton" type="Button" parent="."]
 custom_minimum_size = Vector2(88, 87)
@@ -90,7 +86,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tswg3")
-script = ExtResource("8_s7886")
+script = ExtResource("8_gsv3f")
 
 [node name="ComputerButton" type="Button" parent="."]
 custom_minimum_size = Vector2(447, 454)
@@ -106,4 +102,14 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jypko")
 theme_override_styles/hover = SubResource("StyleBoxTexture_jypko")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jypko")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jypko")
-script = ExtResource("8_s7886")
+script = ExtResource("8_gsv3f")
+
+[node name="ClueObject" type="Button" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 93.0
+offset_right = 206.0
+offset_bottom = 222.0
+text = "CLUE!"
+script = ExtResource("10_og0pe")
+clue_object = ExtResource("11_xkghs")

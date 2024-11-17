@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Photo" load_steps=5 format=3 uid="uid://cbdaa585pfdbs"]
 
 [ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_5rai4"]
-[ext_resource type="PackedScene" uid="uid://dj1s12fwy32rr" path="res://scenes/locations/Office.tscn" id="1_y6mx2"]
+[ext_resource type="PackedScene" uid="uid://dj1s12fwy32rr" path="res://scenes/locations/Shade's Office.tscn" id="1_y6mx2"]
 [ext_resource type="Texture2D" uid="uid://b5af5b15dtun5" path="res://assets/imports/graphics/backgrounds/photo/evelyn_art_studio.png" id="2_nev4f"]
 [ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="3_7sjur"]
 

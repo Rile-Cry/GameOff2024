@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_pmdbv")
-name = &"Shredded Paper"
+name = "Shredded Document"
 description = "Add description here"
 location = "Victor's Office"
 icon = ExtResource("1_6hx3a")

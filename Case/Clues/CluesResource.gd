@@ -1,7 +1,7 @@
 extends Resource
 class_name Clue
 
-@export var name : StringName
+@export var name : String
 @export var description : String
 @export var location : String
 @export var icon : Texture2D
