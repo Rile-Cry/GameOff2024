@@ -55,9 +55,9 @@ tab_container = NodePath("TabContainer")
 close_b = NodePath("Close")
 photo_lock_container = NodePath("TabContainer/Photos/LockedMargin")
 photo_unlock_container = NodePath("TabContainer/Photos/UnLockedMargin")
-photo_container = NodePath("TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
-photo_texture = NodePath("TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox/InfoTexture")
-photo_label = NodePath("TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox/InfoLabel")
+photo_container = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Photos/ScrollContainer/MarginContainer/PhotoContainer")
+photo_texture = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox/InfoTexture")
+photo_label = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox/InfoLabel")
 clue_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
 clue_texture = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox/InfoTexture")
 clue_label = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox/InfoLabel")
@@ -71,7 +71,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_uk0r2")
 tab_alignment = 2
-current_tab = 2
+current_tab = 1
 
 [node name="Locations" type="TabBar" parent="TabContainer"]
 visible = false
@@ -79,7 +79,6 @@ layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="Photos" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -96,6 +95,33 @@ theme_override_constants/margin_top = 36
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 48
 
+[node name="PhotoLockedHBox" type="HBoxContainer" parent="TabContainer/Photos/LockedMargin"]
+layout_mode = 2
+
+[node name="Left" type="MarginContainer" parent="TabContainer/Photos/LockedMargin/PhotoLockedHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 128
+
+[node name="LeftText" type="RichTextLabel" parent="TabContainer/Photos/LockedMargin/PhotoLockedHBox/Left"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]You cannot Photo Jump while you're already inside a photo.
+
+Please exit the current photo before photo jumping again"
+
+[node name="Right" type="MarginContainer" parent="TabContainer/Photos/LockedMargin/PhotoLockedHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="TabContainer/Photos/LockedMargin/PhotoLockedHBox/Right"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 48
+text = "Exit Photo"
+
 [node name="UnLockedMargin" type="MarginContainer" parent="TabContainer/Photos"]
 layout_mode = 1
 anchors_preset = 15
@@ -108,19 +134,19 @@ theme_override_constants/margin_top = 36
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 48
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Photos/UnLockedMargin"]
+[node name="PhotoUnlockedHBox" type="HBoxContainer" parent="TabContainer/Photos/UnLockedMargin"]
 layout_mode = 2
 
-[node name="Photos" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer"]
+[node name="Photos" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Photos"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Photos/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -129,32 +155,33 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 0
 
-[node name="PhotoContainer" type="GridContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos/ScrollContainer/MarginContainer"]
+[node name="PhotoContainer" type="GridContainer" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Photos/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="Info" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer"]
+[node name="Info" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoVBox" type="VBoxContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Info"]
+[node name="InfoVBox" type="VBoxContainer" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="InfoTexture" type="TextureRect" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox"]
+[node name="InfoTexture" type="TextureRect" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 2
 stretch_mode = 6
 
-[node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox"]
+[node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 
 [node name="Clues" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
