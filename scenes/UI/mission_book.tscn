@@ -12,16 +12,16 @@ expand_margin_top = 6.0
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir2h2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0a8gg"]
-content_margin_left = 48.0
+content_margin_left = 24.0
 content_margin_top = 100.0
-content_margin_right = 48.0
+content_margin_right = 24.0
 texture = ExtResource("3_aot0p")
 expand_margin_bottom = 50.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fes2o"]
-content_margin_left = 48.0
+content_margin_left = 24.0
 content_margin_top = 100.0
-content_margin_right = 48.0
+content_margin_right = 24.0
 texture = ExtResource("4_v5qdq")
 expand_margin_bottom = 50.0
 
@@ -41,7 +41,7 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
-[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_container", "photo_texture", "photo_label", "clues_container")]
+[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_lock_container", "photo_unlock_container", "photo_container", "photo_texture", "photo_label", "clue_container", "clue_texture", "clue_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,10 +53,14 @@ mouse_force_pass_scroll_events = false
 script = ExtResource("1_1d7qm")
 tab_container = NodePath("TabContainer")
 close_b = NodePath("Close")
-photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
-photo_texture = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox/InfoTexture")
-photo_label = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox/InfoLabel")
-clues_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
+photo_lock_container = NodePath("TabContainer/Photos/LockedMargin")
+photo_unlock_container = NodePath("TabContainer/Photos/UnLockedMargin")
+photo_container = NodePath("TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
+photo_texture = NodePath("TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox/InfoTexture")
+photo_label = NodePath("TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox/InfoLabel")
+clue_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
+clue_texture = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox/InfoTexture")
+clue_label = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox/InfoLabel")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
@@ -67,13 +71,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_uk0r2")
 tab_alignment = 2
-current_tab = 0
+current_tab = 2
 
-[node name="Photos" type="TabBar" parent="TabContainer"]
+[node name="Locations" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos"]
+[node name="Photos" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="LockedMargin" type="MarginContainer" parent="TabContainer/Photos"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,19 +96,31 @@ theme_override_constants/margin_top = 36
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 48
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Photos/MarginContainer"]
+[node name="UnLockedMargin" type="MarginContainer" parent="TabContainer/Photos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Photos/UnLockedMargin"]
 layout_mode = 2
 
-[node name="Photos" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer"]
+[node name="Photos" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Photos"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos"]
 layout_mode = 2
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -106,35 +129,34 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 0
 
-[node name="PhotoContainer" type="GridContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer"]
+[node name="PhotoContainer" type="GridContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Photos/ScrollContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 columns = 3
 
-[node name="Info" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer"]
+[node name="Info" type="MarginContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="InfoVBox" type="VBoxContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info"]
+[node name="InfoVBox" type="VBoxContainer" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Info"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="InfoTexture" type="TextureRect" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox"]
+[node name="InfoTexture" type="TextureRect" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 2
 stretch_mode = 6
 
-[node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox"]
+[node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Photos/UnLockedMargin/HBoxContainer/Info/InfoVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 bbcode_enabled = true
 
 [node name="Clues" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Clues"]
 layout_mode = 1
@@ -178,18 +200,34 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 6
 
+[node name="ColorRect" type="ColorRect" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer"]
+custom_minimum_size = Vector2(0, 76)
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="Info" type="MarginContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Info"]
+[node name="InfoVBox" type="VBoxContainer" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Info"]
 layout_mode = 2
-text = "Insert Clue Information Here"
+theme_override_constants/separation = 4
+
+[node name="InfoTexture" type="TextureRect" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 6
+
+[node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
 
 [node name="Notes" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
 [node name="Close" type="Button" parent="."]
 layout_mode = 0
