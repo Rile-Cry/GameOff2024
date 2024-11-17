@@ -1,8 +1,8 @@
 extends Control
 
-var console_scene := preload("res://scenes/computer/command_prompt.tscn")
-var email_scene := preload("res://scenes/computer/email.tscn")
-var messenger_scene := preload("res://scenes/computer/msn.tscn")
+var console_scene := preload("res://scenes/UI/computer/apps/command_prompt.tscn")
+var email_scene := preload("res://scenes/UI/computer/apps/email.tscn")
+var messenger_scene := preload("res://scenes/UI/computer/apps/MSN.tscn")
 
 var exit_button_popup : PopupMenu
 

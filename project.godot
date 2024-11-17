@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scenes/GameManager.gd"
+GameManager="*res://scenes/GameManager/GameManager.gd"
 GamepadControllerManager="*res://autoload/gamepad/gamepad_controller_manager.gd"
 WindowManager="*res://autoload/viewport/window_manager.gd"
 GameGlobals="*res://autoload/general/game_globals.gd"
@@ -34,8 +34,8 @@ SceneTransitionManager="*res://autoload/scenes/scene_transition_manager.tscn"
 GlobalEffects="*res://autoload/effects/global_effects.tscn"
 SaveManager="*res://autoload/persistence/save/save_manager.gd"
 SettingsManager="*res://autoload/persistence/settings/settings_manager.gd"
-UIManager="*res://scenes/UI/UIManager.tscn"
-SfxAudio="*res://scenes/sfx_audio.tscn"
+UIManager="*res://scenes/GameManager/UIManager.tscn"
+SfxAudio="*res://scenes/GameManager/sfx_audio.tscn"
 
 [display]
 

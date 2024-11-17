@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_1wgwq"]
 [ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/graphics/objects/sticky_notes/options.png" id="5_t32p6"]
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_pvh7b"]
-[ext_resource type="Script" path="res://scenes/object_button.gd" id="8_s7886"]
+[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_s7886"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_vhjki"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nulqq"]

@@ -1,6 +1,6 @@
 extends Control
 
-var game_base : PackedScene  = preload("res://scenes/GameBase.tscn")
+var game_base : PackedScene  = preload("res://scenes/UI/main/GameBase.tscn")
 
 func _ready():
 	$PlayButton.pressed.connect(play)

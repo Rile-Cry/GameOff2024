@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/graphics/objects/sticky_notes/options.png" id="4_jhgew"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="5_ejvs5"]
 [ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_rghg2"]
-[ext_resource type="Script" path="res://scenes/object_button.gd" id="5_vrakp"]
+[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="5_vrakp"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="8_3r4qy"]
 
 [sub_resource type="Animation" id="Animation_utc3m"]
@@ -75,7 +75,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_qobwm"]
 resource_name = "auto_start"
-length = 1.3
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -143,7 +143,7 @@ tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(1.3),
+"times": PackedFloat32Array(1.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -160,7 +160,7 @@ tracks/0/path = NodePath("PlayButton:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0.1, 0.8),
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
 "values": [Vector2(623, 280), Vector2(623, 1280)]
@@ -172,7 +172,7 @@ tracks/1/path = NodePath("Exit Button:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0.1, 0.8),
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
 "values": [Vector2(519, 393), Vector2(519, 1393)]
@@ -184,7 +184,7 @@ tracks/2/path = NodePath("OptionsButton:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0.1, 0.8),
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
 "values": [Vector2(605, 506), Vector2(605, 1506)]
@@ -238,6 +238,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7xg8j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_g3g31")
+}
+autoplay = "auto_start"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -300,19 +306,13 @@ theme_override_font_sizes/font_size = 16
 disabled = true
 text = "Credits"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_g3g31")
-}
-autoplay = "auto_start"
-
 [node name="PlayButton" type="Button" parent="."]
 custom_minimum_size = Vector2(93, 87)
 layout_mode = 0
 offset_left = 623.0
-offset_top = 280.0
+offset_top = 1280.0
 offset_right = 716.0
-offset_bottom = 367.0
+offset_bottom = 1367.0
 focus_next = NodePath("../Exit Button")
 theme_override_styles/focus = SubResource("StyleBoxTexture_udsxg")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_udsxg")
@@ -326,9 +326,9 @@ script = ExtResource("5_vrakp")
 custom_minimum_size = Vector2(86, 75)
 layout_mode = 0
 offset_left = 519.0
-offset_top = 393.0
+offset_top = 1393.0
 offset_right = 605.0
-offset_bottom = 468.0
+offset_bottom = 1468.0
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../PlayButton")
 theme_override_styles/focus = SubResource("StyleBoxTexture_lofhy")
@@ -343,9 +343,9 @@ script = ExtResource("8_3r4qy")
 custom_minimum_size = Vector2(77, 75)
 layout_mode = 0
 offset_left = 605.0
-offset_top = 506.0
+offset_top = 1506.0
 offset_right = 682.0
-offset_bottom = 582.0
+offset_bottom = 1582.0
 focus_previous = NodePath("../Exit Button")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vnckd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_vnckd")

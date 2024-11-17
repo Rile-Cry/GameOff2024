@@ -1,6 +1,6 @@
 extends Window
 
-var im_scene = preload("res://scenes/computer/im.tscn")
+var im_scene = preload("res://scenes/UI/computer/apps/im.tscn")
 
 @onready var offline_label := $PanelContainer/VBoxContainer/UserBox/MarginContainer/VBoxContainer/ScrollContainer/UserContainer/OfflineLabel
 @onready var user_list := $PanelContainer/VBoxContainer/UserBox/MarginContainer/VBoxContainer/ScrollContainer/UserContainer
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func init_online() -> void:
-	var ims_file = FileAccess.open("res://scenes/computer/ims.json", FileAccess.READ)
+	var ims_file = FileAccess.open("res://scenes/UI/computer/data/ims.json", FileAccess.READ)
 	var ims_content = ims_file.get_as_text()
 	var ims_string = JSON.parse_string(ims_content)
 	var users = ims_string["users"]

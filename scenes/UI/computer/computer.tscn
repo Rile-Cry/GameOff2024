@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://duqwgodvr8nt"]
 
 [ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/graphics/themes/win98/win98.tres" id="1_hv0nd"]
-[ext_resource type="Script" path="res://scenes/UI/computer.gd" id="2_adyik"]
+[ext_resource type="Script" path="res://scenes/UI/computer/computer.gd" id="2_adyik"]
 
 [node name="Computer" type="Control"]
 layout_mode = 3

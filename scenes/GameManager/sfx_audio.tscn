@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cmolxdf4h0eow" path="res://assets/imports/sfx/Book Turn.wav" id="3_mpcom"]
 [ext_resource type="AudioStream" uid="uid://cwmsyos26bj73" path="res://assets/imports/sfx/Book Hover.wav" id="4_fykjl"]
 [ext_resource type="AudioStream" uid="uid://c8f24fy613tx3" path="res://assets/imports/sfx/UI Open Close.wav" id="5_fcnkp"]
-[ext_resource type="Script" path="res://scenes/sfx_audio.gd" id="6_n1klc"]
+[ext_resource type="Script" path="res://scenes/GameManager/sfx_audio.gd" id="6_n1klc"]
 [ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/sfx/Mouse Click.wav" id="6_vkyde"]
 [ext_resource type="AudioStream" uid="uid://chljaaunxpe1h" path="res://assets/imports/sfx/Mouse Click Fail.wav" id="7_gsui1"]
 
