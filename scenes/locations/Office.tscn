@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dj1s12fwy32rr"]
 
 [ext_resource type="Script" path="res://scenes/locations/Office.gd" id="1_lm2ok"]
-[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/Office.png" id="2_wjgac"]
+[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/office.png" id="2_wjgac"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="3_4jlkm"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="4_qtgmw"]
 [ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_1wgwq"]

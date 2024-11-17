@@ -41,8 +41,7 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
-[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_container", "clues_container")]
-visible = false
+[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_container", "photo_texture", "photo_label", "clues_container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +54,8 @@ script = ExtResource("1_1d7qm")
 tab_container = NodePath("TabContainer")
 close_b = NodePath("Close")
 photo_container = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Photos/ScrollContainer/MarginContainer/PhotoContainer")
+photo_texture = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox/InfoTexture")
+photo_label = NodePath("TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox/InfoLabel")
 clues_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
 
 [node name="TabContainer" type="TabContainer" parent="."]
@@ -109,17 +110,26 @@ theme_override_constants/margin_bottom = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 8
-theme_override_constants/v_separation = 8
 columns = 3
 
 [node name="Info" type="MarginContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info"]
+[node name="InfoVBox" type="VBoxContainer" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info"]
 layout_mode = 2
-text = "Insert [] Here"
+theme_override_constants/separation = 4
+
+[node name="InfoTexture" type="TextureRect" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 6
+
+[node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Photos/MarginContainer/HBoxContainer/Info/InfoVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
 
 [node name="Clues" type="TabBar" parent="TabContainer"]
 visible = false

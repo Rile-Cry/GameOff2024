@@ -1,14 +1,17 @@
-[gd_resource type="Resource" script_class="Photo" load_steps=4 format=3 uid="uid://cbdaa585pfdbs"]
+[gd_resource type="Resource" script_class="Photo" load_steps=5 format=3 uid="uid://cbdaa585pfdbs"]
 
 [ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_5rai4"]
 [ext_resource type="PackedScene" uid="uid://dj1s12fwy32rr" path="res://scenes/locations/Office.tscn" id="1_y6mx2"]
-[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/Office.png" id="2_5hsgi"]
+[ext_resource type="Texture2D" uid="uid://b5af5b15dtun5" path="res://assets/imports/graphics/backgrounds/photo/evelyn_art_studio.png" id="2_nev4f"]
+[ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="3_7sjur"]
 
 [resource]
 script = ExtResource("1_5rai4")
 name = "Evelyn’s Art Studio"
-time = "The Day of Her Death"
-texture = ExtResource("2_5hsgi")
+time = "29th september 2016"
+description = "A photo of Evelyn's Studio during the day of her death. "
+photo_texture = ExtResource("2_nev4f")
+location_texture = ExtResource("3_7sjur")
 glitched = false
 is_location = true
 scene = ExtResource("1_y6mx2")
