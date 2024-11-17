@@ -174,7 +174,9 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Valenspire
-GGBotNet"
+GGBotNet
+Violin Iliev
+Osaki Tsukiko"
 fit_content = true
 
 [node name="AssetLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/AssetHbox"]
@@ -184,5 +186,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Book & Paper Sounds Pack
-X Typewriter Font"
+X Typewriter Font
+Godot Desktop Themes"
 fit_content = true
