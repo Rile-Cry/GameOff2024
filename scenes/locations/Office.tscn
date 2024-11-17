@@ -1,53 +1,26 @@
-[gd_scene load_steps=26 format=3 uid="uid://dj1s12fwy32rr"]
+[gd_scene load_steps=14 format=3 uid="uid://dj1s12fwy32rr"]
 
 [ext_resource type="Script" path="res://scenes/locations/Office.gd" id="1_lm2ok"]
 [ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/backgrounds/Office.png" id="2_wjgac"]
+[ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="3_4jlkm"]
+[ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="4_qtgmw"]
+[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/objects/sticky_notes/exit.png" id="5_1wgwq"]
+[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/objects/sticky_notes/options.png" id="5_t32p6"]
+[ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/objects/sticky_notes/save.png" id="7_pvh7b"]
+[ext_resource type="Script" path="res://scenes/object_button.gd" id="8_s7886"]
+[ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/objects/office/computer.png" id="9_vhjki"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5d0pp"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nulqq"]
+texture = ExtResource("5_t32p6")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xue2n"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7jlq8"]
+texture = ExtResource("5_1wgwq")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0xjk"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tswg3"]
+texture = ExtResource("7_pvh7b")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_isf5m"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2oxa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yov16"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mefvk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2k3nh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72exf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tq0ok"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wgci"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jeagk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ybo25"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4xsk"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43du4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hdr8i"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmnlf"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7mv4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0d8o"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7v5b"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxi4g"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgs4n"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dou6c"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
+texture = ExtResource("9_vhjki")
 
 [node name="Office" type="Control"]
 layout_mode = 3
@@ -66,61 +39,71 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_wjgac")
 
 [node name="OptionsButton" type="Button" parent="."]
+custom_minimum_size = Vector2(77, 75)
 layout_mode = 0
-offset_left = 711.0
-offset_top = 196.0
-offset_right = 783.0
-offset_bottom = 267.0
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5d0pp")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_xue2n")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_q0xjk")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_isf5m")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_q2oxa")
-
-[node name="SaveButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 829.0
-offset_top = 160.0
-offset_right = 837.0
-offset_bottom = 168.0
-rotation = -0.327592
-scale = Vector2(7.94996, 8.39685)
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yov16")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_mefvk")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_2k3nh")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_72exf")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_tq0ok")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_1wgci")
+offset_left = 709.0
+offset_top = 194.0
+offset_right = 786.0
+offset_bottom = 270.0
+focus_previous = NodePath("../ExitButton")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nulqq")
+script = ExtResource("3_4jlkm")
 
 [node name="ExitButton" type="Button" parent="."]
+custom_minimum_size = Vector2(86, 75)
 layout_mode = 0
-offset_left = 769.0
-offset_top = 75.0
-offset_right = 777.0
-offset_bottom = 83.0
-rotation = 0.363136
-scale = Vector2(7.76023, 7.14077)
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_jeagk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ybo25")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_j4xsk")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_43du4")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_hdr8i")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_pmnlf")
+offset_left = 744.0
+offset_top = 74.0
+offset_right = 830.0
+offset_bottom = 149.0
+focus_previous = NodePath("../PlayButton")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7jlq8")
+script = ExtResource("4_qtgmw")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7jlq8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7jlq8")
+
+[node name="SaveButton" type="Button" parent="."]
+custom_minimum_size = Vector2(88, 87)
+layout_mode = 0
+offset_left = 826.0
+offset_top = 138.0
+offset_right = 914.0
+offset_bottom = 225.0
+focus_previous = NodePath("../PlayButton")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tswg3")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_tswg3")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tswg3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tswg3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tswg3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tswg3")
+script = ExtResource("8_s7886")
 
 [node name="ComputerButton" type="Button" parent="."]
+custom_minimum_size = Vector2(447, 454)
 layout_mode = 0
-offset_left = 377.0
-offset_top = 271.0
-offset_right = 385.0
-offset_bottom = 279.0
-scale = Vector2(41.0232, 45.9107)
+offset_left = 331.0
+offset_top = 241.0
+offset_right = 778.0
+offset_bottom = 695.0
 mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i7mv4")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_y0d8o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_w7v5b")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_jxi4g")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mgs4n")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_dou6c")
+theme_override_styles/focus = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jypko")
+script = ExtResource("8_s7886")

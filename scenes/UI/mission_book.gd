@@ -7,7 +7,6 @@ class_name MissionBook
 
 @export_category("Buttons")
 
-@export var open_b : Button
 @export var close_b : Button
 
 @export_category("Tabs")
@@ -17,15 +16,8 @@ class_name MissionBook
 var photo_list : Array[Photo]
 
 func _ready():
-	open_b.button_down.connect(open_close)
-	close_b.button_down.connect(open_close)
+	close_b.button_down.connect(close)
 	self.visible = false
-	GameManager.set_mission_book(self)
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and self.visible:
-		tab_container.current_tab = 0
-		open_close()
 
 func refresh_photos():
 	for node in photo_container.get_children():
@@ -46,6 +38,11 @@ func refresh_clues():
 		for clue in GameManager.clues:
 			pass
 
-func open_close():
-	open_b.visible = self.visible
-	self.visible = not self.visible
+func close():
+	if UIManager:
+		UIManager.open_close_mission_book()
+
+func photo_jump(scene : PackedScene):
+	if self.visible: UIManager.open_close_mission_book()
+	
+	GameManager.change_scene(scene)

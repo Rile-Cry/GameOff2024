@@ -7,10 +7,6 @@ var MouseOver : bool = false
 var style_texture : StyleBoxTexture
 var style_texture_hover : StyleBoxTexture
 
-func _input(event):
-	if event is InputEventMouseButton and MouseOver:
-		GameManager.change_scene(photo_res.scene)
-
 func _ready() -> void:
 	style_texture = StyleBoxTexture.new()
 	style_texture.texture = photo_res.texture
@@ -28,8 +24,8 @@ func _ready() -> void:
 	pressed.connect(interact)
 
 func interact():
-	if photo_res.is_location:
-		GameManager.change_scene(photo_res.scene)
+	if photo_res.is_location and UIManager:
+		UIManager.get_mission_book().photo_jump(photo_res.scene)
 
 func hover() -> void:
 	MouseOver = true

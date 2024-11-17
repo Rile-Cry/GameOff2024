@@ -1,8 +1,8 @@
 extends Control
 
-var console_scene := preload("res://scenes/programs/command_prompt.tscn")
-var email_scene := preload("res://scenes/programs/email.tscn")
-var messenger_scene := preload("res://scenes/programs/msn.tscn")
+var console_scene := preload("res://scenes/computer/command_prompt.tscn")
+var email_scene := preload("res://scenes/computer/email.tscn")
+var messenger_scene := preload("res://scenes/computer/msn.tscn")
 
 var exit_button_popup : PopupMenu
 
@@ -23,8 +23,8 @@ func _ready() -> void:
 
 
 func _mysos_pressed(num: int) -> void:
-	if num == 4 and GameManager.game_base:
-		GameManager.game_base.open_close_computer()
+	if num == 4 and UIManager:
+		UIManager.open_close_computer()
 
 
 func _open_messenger() -> void:
