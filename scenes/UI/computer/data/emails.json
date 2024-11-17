@@ -1,10 +1,20 @@
 {
 	"mail": [
 		{
-			"title": "Need Help",
-			"user": "customer@mysinc.org",
+			"title": "Evelyn Blake Case",
+			"user": "j.shoebill@mysinc.org",
 			"date": "sometime",
-			"message": "This is an example message with my pretty much just typing whatever I want. You don't have to mind this as it is just purely for having something that I can use while building the email system."
+			"message": "Dear Shade,
+
+I hope you’re well. I’m writing to you regarding the Evelyn Blake case that’s currently under investigation. I’ve been reviewing the evidence and, frankly, things aren’t adding up. We are currently holding onto Lucas in the ward, as he is the prime suspect because the majority of the case points towards him, but frankly I don’t think that it’s him, case is still on-going trial, I hope you can find the culprit ASAP. This might be your chance to make it big in this world.
+Evelyn’s death has raised more questions than answers. There’s the odd timing of her estate change from charity to her brother Victor, which doesn’t sit right. Victor claims to have wanted to help his sister, but there’s something about the timing of this and his sudden financial interest in her art that doesn’t feel entirely genuine.
+Then there’s Lucas Rivers. His behavior seems erratic, especially considering his history with Evelyn. Witnesses say he was tailing her before her death, but no one’s been able to pinpoint exactly when he last saw her. It’s almost like he’s hiding something.
+Marina Thorne, her business partner, has her own agenda. While Evelyn’s art was clearly important to her, Marina was pushing her to go further, to exhibit her work at major events. It’s almost like she had a stake in her success, but was that interest purely professional?
+I’m sure you’ll uncover something we’ve missed. I’ve attached some initial evidence—photos of the studio and Evelyn’s last known movements. Given your...unique abilities, I trust you’ll find things that haven’t been noticed yet.
+The court is eager to get some answers, and I have no doubt that you’re the right person for the job. If you need anything else, don’t hesitate to reach out. I can offer further assistance if needed.
+
+Best,
+Detective Shoebill"
 		}
 	]
 }
