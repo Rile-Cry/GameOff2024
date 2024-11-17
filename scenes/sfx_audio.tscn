@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://cflt6uuauq6x2"]
+
+[ext_resource type="AudioStream" uid="uid://dq2q0hk214cm6" path="res://assets/imports/sfx/Book Open.wav" id="1_bdccc"]
+[ext_resource type="AudioStream" uid="uid://bvqabvdbvdicc" path="res://assets/imports/sfx/Book Close.wav" id="2_yxf05"]
+[ext_resource type="AudioStream" uid="uid://cmolxdf4h0eow" path="res://assets/imports/sfx/Book Turn.wav" id="3_mpcom"]
+[ext_resource type="AudioStream" uid="uid://cwmsyos26bj73" path="res://assets/imports/sfx/Book Hover.wav" id="4_fykjl"]
+[ext_resource type="AudioStream" uid="uid://c8f24fy613tx3" path="res://assets/imports/sfx/UI Open Close.wav" id="5_fcnkp"]
+[ext_resource type="Script" path="res://scenes/sfx_audio.gd" id="6_n1klc"]
+[ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/sfx/Mouse Click.wav" id="6_vkyde"]
+[ext_resource type="AudioStream" uid="uid://chljaaunxpe1h" path="res://assets/imports/sfx/Mouse Click Fail.wav" id="7_gsui1"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_8bya0"]
+clip_count = 7
+clip_0/name = &"Book Close"
+clip_0/stream = ExtResource("2_yxf05")
+clip_0/auto_advance = 0
+clip_1/name = &"Book Hover"
+clip_1/stream = ExtResource("4_fykjl")
+clip_1/auto_advance = 0
+clip_2/name = &"Book Open"
+clip_2/stream = ExtResource("1_bdccc")
+clip_2/auto_advance = 0
+clip_3/name = &"Book Turn"
+clip_3/stream = ExtResource("3_mpcom")
+clip_3/auto_advance = 0
+clip_4/name = &"UI Open Close"
+clip_4/stream = ExtResource("5_fcnkp")
+clip_4/auto_advance = 0
+clip_5/name = &"Mouse Click"
+clip_5/stream = ExtResource("6_vkyde")
+clip_5/auto_advance = 0
+clip_6/name = &"Mouse Click Fail"
+clip_6/stream = ExtResource("7_gsui1")
+clip_6/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 1
+}
+}
+
+[node name="SFXAudio" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamInteractive_8bya0")
+bus = &"SFX"
+script = ExtResource("6_n1klc")

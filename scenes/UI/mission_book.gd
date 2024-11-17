@@ -17,7 +17,11 @@ var photo_list : Array[Photo]
 
 func _ready():
 	close_b.button_down.connect(close)
+	tab_container.tab_selected.connect(page_change)
 	self.visible = false
+	
+func page_change(_tab : int):
+	SfxAudio.play_sfx("Book Turn")
 
 func refresh_photos():
 	for node in photo_container.get_children():
