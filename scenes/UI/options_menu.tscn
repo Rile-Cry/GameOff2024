@@ -12,7 +12,7 @@
 [sub_resource type="Theme" id="Theme_hpix6"]
 RichTextLabel/font_sizes/bold_font_size = 24
 
-[node name="GameSettingsUI" type="Control"]
+[node name="OptionsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,7 +132,7 @@ layout_mode = 2
 text = "SETTINGS_BRIGHTNESS"
 
 [node name="ScreenBrightnessSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/BrightnessHBox"]
-custom_minimum_size = Vector2(0, 23)
+custom_minimum_size = Vector2(0, 19)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -184,9 +184,9 @@ text = "BUS_MUSIC"
 layout_mode = 2
 text = "BUS_SFX"
 
-[node name="UIBusLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioLabelVBox"]
+[node name="AmbientBusLabel" type="Label" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioLabelVBox"]
 layout_mode = 2
-text = "BUS_UI"
+text = "BUS_AMBIENT"
 
 [node name="AudioSliderVBox" type="VBoxContainer" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -194,7 +194,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
 [node name="MasterAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
-custom_minimum_size = Vector2(150, 26)
+custom_minimum_size = Vector2(150, 19)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -203,7 +203,7 @@ script = ExtResource("1_hou6f")
 target_bus = "Master"
 
 [node name="MusicAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
-custom_minimum_size = Vector2(150, 26)
+custom_minimum_size = Vector2(150, 19)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -211,7 +211,7 @@ mouse_default_cursor_shape = 2
 script = ExtResource("1_hou6f")
 
 [node name="SFXAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
-custom_minimum_size = Vector2(150, 26)
+custom_minimum_size = Vector2(150, 19)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -219,14 +219,14 @@ mouse_default_cursor_shape = 2
 script = ExtResource("1_hou6f")
 target_bus = "SFX"
 
-[node name="UIAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
-custom_minimum_size = Vector2(150, 26)
+[node name="AmbientAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
+custom_minimum_size = Vector2(150, 19)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 script = ExtResource("1_hou6f")
-target_bus = "UI"
+target_bus = "Ambient"
 
 [node name="BackButtonMarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
