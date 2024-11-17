@@ -11,18 +11,13 @@ var game_base : GameBase:
 		
 var clues : Array[Clue]
 var office : PackedScene = preload("res://scenes/locations/Office.tscn")
+var enable_input : bool = false
+var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 
 func _init() -> void:
 	current_case = load("res://Case/case_1.tres")
 
-func set_mission_book(node : MissionBook):
-	mission_book = node
-	mission_book.refresh_photos()
-	mission_book.refresh_clues()
-
 func change_scene(scene : PackedScene):
-	if mission_book and mission_book.visible: mission_book.open_close()
-	
 	if game_base: game_base.change_level(scene)
 
 func obtain_clue(clue : Clue):
