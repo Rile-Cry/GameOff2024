@@ -13,12 +13,15 @@ config_version=5
 config/name="CrimesAndMysteries"
 config/description="Game Off 2024 game"
 config/version="0.1.0"
-run/main_scene="res://scenes/entry_point/game-entry_point.tscn"
+run/main_scene="res://scenes/UI/main/splash_text.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
 
+GameManager="*res://scenes/GameManager/GameManager.gd"
 GamepadControllerManager="*res://autoload/gamepad/gamepad_controller_manager.gd"
 WindowManager="*res://autoload/viewport/window_manager.gd"
 GameGlobals="*res://autoload/general/game_globals.gd"
@@ -33,6 +36,9 @@ SaveManager="*res://autoload/persistence/save/save_manager.gd"
 SettingsManager="*res://autoload/persistence/settings/settings_manager.gd"
 GameManager="*res://scenes/GameManager.gd"
 __InkRuntime="*res://addons/inkgd/ink_runtime.gd"
+UIManager="*res://scenes/GameManager/UIManager.tscn"
+SfxAudio="*res://scenes/GameManager/sfx_audio.tscn"
+
 
 [display]
 
@@ -63,9 +69,16 @@ folder_colors={
 "res://utilities/": "gray"
 }
 
+
 [inkgd]
 
 register_templates=true
+
+[gui]
+
+theme/custom="res://ui/default_theme.tres"
+theme/custom_font="res://ui/fonts/XTypewriter-Regular.woff2"
+
 
 [input]
 
@@ -184,4 +197,6 @@ common/physics_ticks_per_second=120
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 2d/snap/snap_2d_vertices_to_pixel=true

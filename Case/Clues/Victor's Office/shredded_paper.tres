@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://bysj8l5ek0d15"]
+
+[ext_resource type="Texture2D" uid="uid://cuwjtw3btct0m" path="res://assets/imports/graphics/objects/icon/shredded_paper.png" id="1_6hx3a"]
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_pmdbv"]
+[ext_resource type="Texture2D" uid="uid://de4kplxq4tof0" path="res://assets/imports/graphics/objects/icon/small/shredded_paper.png" id="1_xq6xr"]
+
+[resource]
+script = ExtResource("1_pmdbv")
+name = "Shredded Document"
+description = "Add description here"
+location = "Victor's Office"
+icon = ExtResource("1_6hx3a")
+icon_small = ExtResource("1_xq6xr")

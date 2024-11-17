@@ -1,0 +1,191 @@
+[gd_scene load_steps=11 format=3 uid="uid://c6hm1h1elh3mm"]
+
+[ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/graphics/icons/Book_Icon_open.png" id="1_e0dwy"]
+[ext_resource type="Script" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
+[ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://assets/imports/graphics/icons/Book_Icon.png" id="2_o5jjq"]
+[ext_resource type="PackedScene" uid="uid://cphjlxsh6ojbf" path="res://scenes/UI/mission_book.tscn" id="3_7udp3"]
+[ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://scenes/UI/options_menu.tscn" id="4_lbubx"]
+[ext_resource type="PackedScene" uid="uid://duqwgodvr8nt" path="res://scenes/UI/computer/computer.tscn" id="5_cf373"]
+[ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="7_5vq04"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1yqh"]
+texture = ExtResource("1_e0dwy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kwx7i"]
+texture = ExtResource("2_o5jjq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybpfp"]
+bg_color = Color(0.996078, 0.976471, 0.952941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[node name="UIManager" type="CanvasLayer"]
+script = ExtResource("1_ijh3a")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MissionBookButton" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(145, 145)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_k1yqh")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_kwx7i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_k1yqh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k1yqh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k1yqh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
+
+[node name="MissionBook" parent="." instance=ExtResource("3_7udp3")]
+unique_name_in_owner = true
+
+[node name="OptionMenu" parent="." instance=ExtResource("4_lbubx")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Computer" parent="." instance=ExtResource("5_cf373")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Credits" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="Panel" type="Panel" parent="Credits/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ybpfp")
+
+[node name="MarginContainer" type="MarginContainer" parent="Credits/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Credits/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("7_5vq04")
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[center][b]Credits"
+fit_content = true
+
+[node name="CreditsHbox" type="HBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Nehal
+DarrylBD99
+Lunel
+Jules
+Rey
+The Cool Treecko
+Ménure
+Eduardo Arantes
+"
+fit_content = true
+
+[node name="RoleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Story Writter and Lead Dev
+Programmer
+Programmer
+2D Artist
+2D Artist
+UI/UX
+Music
+SFX"
+fit_content = true
+
+[node name="AssetTitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("7_5vq04")
+theme_override_font_sizes/bold_font_size = 48
+bbcode_enabled = true
+text = "[center][b]Assets"
+fit_content = true
+
+[node name="AssetHbox" type="HBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/AssetHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Valenspire
+GGBotNet
+Violin Iliev
+Osaki Tsukiko"
+fit_content = true
+
+[node name="AssetLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/AssetHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Book & Paper Sounds Pack
+X Typewriter Font
+Godot Desktop Themes"
+fit_content = true

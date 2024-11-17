@@ -1,14 +1,9 @@
 extends Control
 
-@onready var computer_button := $ComputerButton
-@onready var options_button := $OptionsButton
-@onready var exit_button := $ExitButton
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	computer_button.connect("pressed", _open_computer)
-	exit_button.connect("pressed", _exit_game)
-	options_button.connect("pressed", _open_options)
+	$ComputerButton.connect("pressed", _open_computer)
+	$SaveButton.connect("pressed", _save_game)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,12 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _open_computer() -> void:
-	if GameManager.game_base:
-		GameManager.game_base.open_close_computer()
+	if UIManager:
+		UIManager.open_close_computer()
 
-func _open_options() -> void:
-	if GameManager.game_base:
-		GameManager.game_base.open_close_options()
-
-func _exit_game() -> void:
-	get_tree().quit()
+func _save_game() -> void:
+	pass

@@ -10,5 +10,5 @@ func _ready() -> void:
 
 func on_all_content_warnings_displayed() -> void:
 	if not next_scene.is_empty():
-		var transition = SceneTransitionManager.Transitions.NoTransition
-		SceneTransitionManager.transition_to_scene(next_scene, false, transition, transition)
+		get_tree().change_scene_to_file(next_scene)
+		#SceneTransitionManager.transition_to_scene(next_scene)
