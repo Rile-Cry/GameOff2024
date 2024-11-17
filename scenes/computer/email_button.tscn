@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ctkpy6jrmq7om"]
 
 [ext_resource type="FontFile" uid="uid://dutn7mp5vrurl" path="res://assets/imports/themes/win98/font/microsoft_sans_serif.woff2" id="1_r0afl"]
-[ext_resource type="Script" path="res://scenes/programs/email_button.gd" id="2_0jkdc"]
+[ext_resource type="Script" path="res://scenes/computer/email_button.gd" id="2_0jkdc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8pb7w"]
 

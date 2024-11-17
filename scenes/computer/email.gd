@@ -20,7 +20,7 @@ func _close_window() -> void:
 
 
 func read_mails() -> void:
-	var file = FileAccess.open("res://scenes/programs/emails.json", FileAccess.READ)
+	var file = FileAccess.open("res://scenes/computer/emails.json", FileAccess.READ)
 	var content = file.get_as_text()
 	var result = JSON.parse_string(content)
 	for mail in result["mail"]:

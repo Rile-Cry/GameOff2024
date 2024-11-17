@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cs1auqp2g4yn4"]
 
 [ext_resource type="Script" path="res://ui/menus/components/slider/audio_slider.gd" id="1_hou6f"]
-[ext_resource type="Script" path="res://scenes/UI/settings_menu.gd" id="1_oc6ia"]
+[ext_resource type="Script" path="res://scenes/UI/options_menu.gd" id="1_oc6ia"]
 [ext_resource type="Script" path="res://ui/menus/components/option_button/screen_mode_option_button.gd" id="2_42cln"]
 [ext_resource type="Script" path="res://ui/menus/components/checkbox/screen_borderless_checkbox.gd" id="3_ifc12"]
 [ext_resource type="Script" path="res://ui/menus/components/option_button/screen_resolutions_option_button.gd" id="4_ar00i"]

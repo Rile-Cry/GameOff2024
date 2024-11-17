@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw4evfsxys7db"]
 
 [ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_whfr8"]
-[ext_resource type="Script" path="res://scenes/programs/msn.gd" id="2_gv73p"]
+[ext_resource type="Script" path="res://scenes/computer/msn.gd" id="2_gv73p"]
 
 [node name="MSN" type="Window"]
 title = "MSN Messenger Service"

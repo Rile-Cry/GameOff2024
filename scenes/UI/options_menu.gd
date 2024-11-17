@@ -6,5 +6,5 @@ func _ready():
 	back_button.pressed.connect(close)
 
 func close():
-	if GameManager.game_base:
-		GameManager.game_base.open_close_options()
+	if UIManager:
+		UIManager.open_close_options()
