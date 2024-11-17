@@ -34,7 +34,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(519, 393)]
+"values": [Vector2(600, 497)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(605, 506)]
+"values": [Vector2(525, 384)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -96,9 +96,9 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(0.2, 1),
 "update": 0,
-"values": [Vector2(519, -607), Vector2(519, 393)]
+"values": [Vector2(600, -503), Vector2(600, 497)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -108,9 +108,9 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(0.4, 1),
 "update": 0,
-"values": [Vector2(605, -494), Vector2(605, 506)]
+"values": [Vector2(525, -616), Vector2(525, 384)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -175,7 +175,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.1, 0.8),
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
-"values": [Vector2(519, 393), Vector2(519, 1393)]
+"values": [Vector2(600, 497), Vector2(600, 1497)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -187,7 +187,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0.1, 0.8),
 "transitions": PackedFloat32Array(3, 1),
 "update": 0,
-"values": [Vector2(605, 506), Vector2(605, 1506)]
+"values": [Vector2(525, 384), Vector2(525, 1384)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -325,10 +325,10 @@ script = ExtResource("5_vrakp")
 [node name="Exit Button" type="Button" parent="."]
 custom_minimum_size = Vector2(86, 75)
 layout_mode = 0
-offset_left = 519.0
-offset_top = 393.0
-offset_right = 605.0
-offset_bottom = 468.0
+offset_left = 600.0
+offset_top = 497.0
+offset_right = 686.0
+offset_bottom = 572.0
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../PlayButton")
 theme_override_styles/focus = SubResource("StyleBoxTexture_lofhy")
@@ -342,10 +342,10 @@ script = ExtResource("8_3r4qy")
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(77, 75)
 layout_mode = 0
-offset_left = 605.0
-offset_top = 506.0
-offset_right = 682.0
-offset_bottom = 582.0
+offset_left = 525.0
+offset_top = 384.0
+offset_right = 602.0
+offset_bottom = 460.0
 focus_previous = NodePath("../Exit Button")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vnckd")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_vnckd")
