@@ -10,6 +10,7 @@ signal is_hovering(photo : Photo)
 signal is_not_hovering(photo : Photo)
 
 func _ready() -> void:
+	focus_mode = FOCUS_NONE
 	style_texture = StyleBoxTexture.new()
 	style_texture.texture = photo_res.photo_texture
 	style_texture.set_texture_margin_all(2)
