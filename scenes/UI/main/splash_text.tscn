@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3c8ve7mx8fgm"]
 
 [ext_resource type="Script" path="res://scenes/UI/main/splash_text.gd" id="1_1c2eq"]
-[ext_resource type="Texture2D" uid="uid://b1lwbbuevdy4b" path="res://assets/imports/UI/splash_screen/LE_anim.tres" id="2_ervgq"]
+[ext_resource type="Texture2D" uid="uid://b1lwbbuevdy4b" path="res://assets/imports/graphics/UI/splash_screen/LE_anim.tres" id="2_ervgq"]
 
 [sub_resource type="Animation" id="Animation_e5205"]
 length = 0.001

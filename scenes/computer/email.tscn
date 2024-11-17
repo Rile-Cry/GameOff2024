@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1g8bn1rpkgkh"]
 
-[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/themes/win98/win98.tres" id="1_8o0re"]
+[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/graphics/themes/win98/win98.tres" id="1_8o0re"]
 [ext_resource type="Script" path="res://scenes/computer/email.gd" id="2_wqvhh"]
 
 [node name="Email" type="Window"]

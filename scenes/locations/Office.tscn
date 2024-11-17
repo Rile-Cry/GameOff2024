@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://dj1s12fwy32rr"]
 
 [ext_resource type="Script" path="res://scenes/locations/Office.gd" id="1_lm2ok"]
-[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/backgrounds/Office.png" id="2_wjgac"]
+[ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/Office.png" id="2_wjgac"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="3_4jlkm"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="4_qtgmw"]
-[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/objects/sticky_notes/exit.png" id="5_1wgwq"]
-[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/objects/sticky_notes/options.png" id="5_t32p6"]
-[ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/objects/sticky_notes/save.png" id="7_pvh7b"]
+[ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_1wgwq"]
+[ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/graphics/objects/sticky_notes/options.png" id="5_t32p6"]
+[ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_pvh7b"]
 [ext_resource type="Script" path="res://scenes/object_button.gd" id="8_s7886"]
-[ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/objects/office/computer.png" id="9_vhjki"]
+[ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_vhjki"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nulqq"]
 texture = ExtResource("5_t32p6")
