@@ -15,6 +15,8 @@ var enable_input : bool = false
 
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
+var is_inside_photo : bool = false
+var current_location_path : String
 
 func _init() -> void:
 	current_case = load("res://Case/case_1.tres")

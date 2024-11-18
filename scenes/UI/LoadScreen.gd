@@ -23,5 +23,9 @@ func _process(_delta: float) -> void:
 
 func load_scene(path_: String):
 	path = path_
+	
+	if GameManager and not GameManager.is_inside_photo:
+		GameManager.current_location_path = path
+	
 	ResourceLoader.load_threaded_request(path)
 	is_loading = true

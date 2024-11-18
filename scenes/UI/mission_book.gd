@@ -10,13 +10,21 @@ class_name MissionBook
 @export var close_b : Button
 
 @export_category("Photos")
-@export var photo_locked : bool = false
+@export var photo_locked : bool = false :
+	set(val):
+		photo_locked = val
+		photo_lock_container.visible = photo_locked
+		photo_unlock_container.visible = not photo_locked
+
 @export var photo_lock_container : MarginContainer
 @export var photo_unlock_container : MarginContainer
 
 @export var photo_container : GridContainer
 @export var photo_texture : TextureRect
 @export var photo_label : RichTextLabel
+
+@export var photo_locked_button : Button
+
 const photo_label_text : String = "[b]<photo_name>[/b]
 
 Time Taken: [i]<photo_time>[/i]
@@ -42,6 +50,7 @@ func _ready():
 	
 	photo_lock_container.visible = photo_locked
 	photo_unlock_container.visible = not photo_locked
+	photo_locked_button.pressed.connect(exit_photo)
 	
 func page_change(_tab : int):
 	SfxAudio.play_audio("Book Turn")
@@ -108,7 +117,21 @@ func close():
 		UIManager.open_close_mission_book()
 
 func photo_jump():
-	var path : String = current_photo.scene_path
+	if GameManager and not GameManager.is_inside_photo:
+		var path : String = current_photo.scene_path
+		enter_exit_photo(path)
+
+func exit_photo():
+	if GameManager and GameManager.is_inside_photo:
+		var path : String = GameManager.current_location_path
+		enter_exit_photo(path)
+
+func enter_exit_photo(path : String):
 	if self.visible: UIManager.open_close_mission_book()
+	if GameManager:
+		GameManager.is_inside_photo = not GameManager.is_inside_photo
+		photo_locked = GameManager.is_inside_photo
 	
-	LoadScreen.load_scene(path)
+	if LoadScreen:
+		LoadScreen.load_scene(path)
+	

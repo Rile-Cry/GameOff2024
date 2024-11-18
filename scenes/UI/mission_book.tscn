@@ -41,7 +41,7 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_0a8gg")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
-[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_lock_container", "photo_unlock_container", "photo_container", "photo_texture", "photo_label", "clue_container", "clue_texture", "clue_label")]
+[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "photo_lock_container", "photo_unlock_container", "photo_container", "photo_texture", "photo_label", "photo_locked_button", "clue_container", "clue_texture", "clue_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,6 +58,7 @@ photo_unlock_container = NodePath("TabContainer/Photos/UnLockedMargin")
 photo_container = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Photos/ScrollContainer/MarginContainer/PhotoContainer")
 photo_texture = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox/InfoTexture")
 photo_label = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox/InfoLabel")
+photo_locked_button = NodePath("TabContainer/Photos/LockedMargin/PhotoLockedHBox/Right/Button")
 clue_container = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Clues/ScrollContainer/MarginContainer/CluesContainer")
 clue_texture = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox/InfoTexture")
 clue_label = NodePath("TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox/InfoLabel")
