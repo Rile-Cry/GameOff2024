@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5af5b15dtun5"
-path="res://.godot/imported/evelyn_art_studio.png-754fd7d976c920c86c6184d890aedc43.ctex"
+uid="uid://bkdopuukb5xga"
+path="res://.godot/imported/base_photo.png-cb9b4c59a7ee6322d4d1eb017da497aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/backgrounds/photo/evelyn_art_studio.png"
-dest_files=["res://.godot/imported/evelyn_art_studio.png-754fd7d976c920c86c6184d890aedc43.ctex"]
+source_file="res://assets/imports/graphics/photo/base_photo.png"
+dest_files=["res://.godot/imported/base_photo.png-cb9b4c59a7ee6322d4d1eb017da497aa.ctex"]
 
 [params]
 
