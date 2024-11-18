@@ -29,7 +29,7 @@ func _ready() -> void:
 func hover() -> void:
 	MouseOver = true
 	is_hovering.emit(resource)
-	SfxAudio.play_sfx("Book Hover")
+	SfxAudio.play_audio("Book Hover")
 
 func un_hover() -> void:
 	MouseOver = false

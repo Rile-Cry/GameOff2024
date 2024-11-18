@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qqf6insqta3g"
+path="res://.godot/imported/Shade's Office Intro.wav-d03d7da09dc64f44e0ea810b5b027d1e.sample"
+
+[deps]
+
+source_file="res://assets/imports/bgm/Shade's Office Intro.wav"
+dest_files=["res://.godot/imported/Shade's Office Intro.wav-d03d7da09dc64f44e0ea810b5b027d1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
