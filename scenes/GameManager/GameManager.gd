@@ -17,9 +17,9 @@ var current_location : Location:
 		LoadScreen.load_scene(current_location.scene_path)
 
 enum resource_type {
-	CLUE = 0,
-	PHOTO = 1,
-	LOCATION = 2
+	CLUE,
+	PHOTO,
+	LOCATION
 }
 
 func _init() -> void:
@@ -40,6 +40,7 @@ func obtain_clue(clue : Clue, popup : bool = true):
 			popup_node.obj_name = clue.name
 			popup_node.obj_desc = clue.description
 			popup_node.obj_icon = clue.texture
+			popup_node.title = resource_type.CLUE
 			UIManager.add_child(popup_node)
 		
 		if UIManager:
@@ -56,6 +57,7 @@ func unlock_location(location : Location, popup : bool = true):
 			popup_node.obj_name = location.name
 			popup_node.obj_desc = location.description
 			popup_node.obj_icon = location.texture_location
+			popup_node.title = resource_type.LOCATION
 			UIManager.add_child(popup_node)
 		
 		if UIManager:

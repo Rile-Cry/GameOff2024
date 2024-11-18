@@ -25,6 +25,7 @@ const bold : String = "[b]"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(title)
 	title_label.text = center + bold + title_text[title]
 	name_label.text = center + obj_name
 	description_label.text = obj_desc
