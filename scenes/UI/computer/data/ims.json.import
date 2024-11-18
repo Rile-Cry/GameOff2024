@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://c32m6smixl5ni"
+valid=false
+
+[deps]
+
+source_file="res://scenes/UI/computer/data/ims.json"
+
+[params]
+
+compress=true

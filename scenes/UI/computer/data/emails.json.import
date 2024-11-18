@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://c8jdp5wcuegav"
+valid=false
+
+[deps]
+
+source_file="res://scenes/UI/computer/data/emails.json"
+
+[params]
+
+compress=true
