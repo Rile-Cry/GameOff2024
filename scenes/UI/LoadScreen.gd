@@ -18,14 +18,14 @@ func _process(_delta: float) -> void:
 		if status == ResourceLoader.THREAD_LOAD_LOADED:
 			var scene : PackedScene = ResourceLoader.load_threaded_get(path)
 			is_loading = false
+			if GameManager:
+				GameManager.enable_input = true
 			scene_loading_finish.emit(scene)
 			hide()
 
 func load_scene(path_: String):
 	path = path_
-	
-	if GameManager and not GameManager.is_inside_photo:
-		GameManager.current_location_path = path
-	
 	ResourceLoader.load_threaded_request(path)
 	is_loading = true
+	if GameManager:
+		GameManager.enable_input = false

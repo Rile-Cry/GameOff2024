@@ -13,6 +13,7 @@ func _ready() -> void:
 func refresh_mission_book():
 	%MissionBook.refresh_photos()
 	%MissionBook.refresh_clues()
+	%MissionBook.refresh_locations()
 
 func _process(_delta: float) -> void:
 	if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:

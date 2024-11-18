@@ -2,21 +2,25 @@ extends Node
 
 var current_case : Case
 var mission_book : MissionBook
-var game_base : GameBase:
-	get:
-		return game_base
-	set(value):
-		game_base = value
-		LoadScreen.load_scene(start_scene_path)
+var game_base : GameBase
 
 var clues : Array[Clue]
-var start_scene_path : String = "res://scenes/locations/Shade's Office.tscn"
+var unlocked_locations : Array[Location]
 var enable_input : bool = false
 
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 var is_inside_photo : bool = false
-var current_location_path : String
+var current_location : Location:
+	set(value):
+		current_location = value
+		LoadScreen.load_scene(current_location.scene_path)
+
+enum resource_type {
+	CLUE = 0,
+	PHOTO = 1,
+	LOCATION = 2
+}
 
 func _init() -> void:
 	current_case = load("res://Case/case_1.tres")
@@ -42,3 +46,20 @@ func obtain_clue(clue : Clue, popup : bool = true):
 			UIManager.refresh_mission_book()
 	else:
 		push_warning("Clue already found!")
+
+func unlock_location(location : Location, popup : bool = true):
+	if not unlocked_locations.has(location):
+		unlocked_locations.append(location)
+	
+		if popup and found_popup:
+			var popup_node : FoundPopup = found_popup.instantiate()
+			popup_node.obj_name = location.name
+			popup_node.obj_desc = location.description
+			popup_node.obj_icon = location.texture_location
+			UIManager.add_child(popup_node)
+		
+		if UIManager:
+			UIManager.refresh_mission_book()
+	else:
+		push_warning("Clue already found!")
+	
