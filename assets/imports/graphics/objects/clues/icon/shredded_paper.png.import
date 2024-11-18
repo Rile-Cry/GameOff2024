@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuwjtw3btct0m"
-path="res://.godot/imported/shredded_paper.png-e9046a921c72b135cec4315485a0c2bc.ctex"
+uid="uid://de4kplxq4tof0"
+path="res://.godot/imported/shredded_paper.png-ab4388e900f6c8c84aef27817e7f800f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/icon/shredded_paper.png"
-dest_files=["res://.godot/imported/shredded_paper.png-e9046a921c72b135cec4315485a0c2bc.ctex"]
+source_file="res://assets/imports/graphics/objects/clues/icon/shredded_paper.png"
+dest_files=["res://.godot/imported/shredded_paper.png-ab4388e900f6c8c84aef27817e7f800f.ctex"]
 
 [params]
 
