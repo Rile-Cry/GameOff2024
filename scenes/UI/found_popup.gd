@@ -9,16 +9,10 @@ class_name FoundPopup
 @export var close_b : Button
 
 @export_category("Object Variables")
-@export var title : title_type
+@export var title : GameManager.resource_type
 @export var obj_name : String = "name"
 @export var obj_desc : String = "description"
 @export var obj_icon : Texture2D
-
-enum title_type {
-	CLUE,
-	PHOTO,
-	LOCATION
-}
 
 const title_text : Array[String] = [
 	"Clue Found",
