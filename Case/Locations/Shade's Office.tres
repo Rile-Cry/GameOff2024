@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://b8l6oyyk06s46"]
+
+[ext_resource type="Script" path="res://Case/Locations/LocationResource.gd" id="1_qha2o"]
+[ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_doc1i"]
+
+[resource]
+script = ExtResource("1_qha2o")
+name = "Shade's Office"
+characters = Array[String]([])
+description = "Add Description Here"
+texture_icon = ExtResource("2_doc1i")
+texture_location = ExtResource("2_doc1i")
+scene_path = "res://scenes/locations/Shade's Office.tscn"

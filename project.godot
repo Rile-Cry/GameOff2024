@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://scenes/GameManager/GameManager.gd"
+SfxAudio="*res://scenes/GameManager/sfx_audio.tscn"
+BgmAudio="*res://scenes/GameManager/bgm_audio.tscn"
 GamepadControllerManager="*res://autoload/gamepad/gamepad_controller_manager.gd"
 WindowManager="*res://autoload/viewport/window_manager.gd"
 GameGlobals="*res://autoload/general/game_globals.gd"
@@ -37,15 +39,13 @@ SettingsManager="*res://autoload/persistence/settings/settings_manager.gd"
 GameManager="*res://scenes/GameManager.gd"
 __InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 UIManager="*res://scenes/GameManager/UIManager.tscn"
-SfxAudio="*res://scenes/GameManager/sfx_audio.tscn"
+LoadScreen="*res://scenes/UI/LoadScreen.tscn"
 
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/window_width_override=1280
-window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [dotnet]

@@ -24,14 +24,14 @@ func _ready() -> void:
 	exit_button_popup.connect("id_pressed", _mysos_pressed)
 
 func mouse_click_sfx():
-	SfxAudio.play_sfx("Mouse Click")
+	SfxAudio.play_audio("Mouse Click")
 
 func _mysos_pressed(num: int) -> void:
 	if num == 4 and UIManager:
 		mouse_click_sfx()
 		UIManager.open_close_computer()
 	else:
-		SfxAudio.play_sfx("Mouse Click Fail")
+		SfxAudio.play_audio("Mouse Click Fail")
 
 func _open_messenger() -> void:
 	var messenger = messenger_scene.instantiate()

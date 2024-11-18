@@ -3,10 +3,13 @@ class_name GameBase
 
 @onready var level_base : Node = $LevelBase
 
+const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
+
 func _ready() -> void:
 	if GameManager:
 		GameManager.game_base = self
-		GameManager.enable_input = true
+		GameManager.current_location = load(start_location_path)
+		GameManager.unlock_location(GameManager.current_location, false)
 	
 	if UIManager:
 		UIManager.refresh_mission_book()
