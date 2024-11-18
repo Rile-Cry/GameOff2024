@@ -4,6 +4,7 @@ extends Control
 func _ready() -> void:
 	$ComputerButton.connect("pressed", _open_computer)
 	$SaveButton.connect("pressed", _save_game)
+	BgmAudio.play_audio("Shade's Office")
 
 func _open_computer() -> void:
 	if UIManager:
