@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cnye2u685fxrx"
+path="res://.godot/imported/LucasFirst.ink.json-bdad0c3fc7a188f105f2c52463912556.res"
+
+[deps]
+
+source_file="res://components/dialogue/LucasFirst.ink.json"
+dest_files=["res://.godot/imported/LucasFirst.ink.json-bdad0c3fc7a188f105f2c52463912556.res"]
+
+[params]
+
+compress=true

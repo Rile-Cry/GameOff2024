@@ -4,13 +4,13 @@ const USE_SIGNALS = false
 
 @export var ink_file : Resource
 @export var title: String
-@export var bind_externals: bool = false
+@export var bind_externals: Dictionary = {}
 
 var ink_player = InkPlayerFactory.create()
+var choice_container : VBoxContainer
 
-@onready var choice_container := $PanelContainer/MarginContainer/HBoxContainer/Dialogue/ChoiceContainer
-@onready var dialogue := $PanelContainer/MarginContainer/HBoxContainer/Dialogue/Text
-@onready var name_box := $PanelContainer/MarginContainer/HBoxContainer/Profile/Label
+@onready var dialogue := $PanelContainer/MarginContainer/VBoxContainer/Text
+@onready var name_box := $PanelContainer/MarginContainer/VBoxContainer/Name
 @onready var panel := $PanelContainer
 
 # Called when the node enters the scene tree for the first time.
@@ -55,6 +55,7 @@ func _loaded(successfully: bool):
 	if !successfully:
 		return
 	
+	_bind_externals()
 	_continue_story()
 
 
@@ -66,14 +67,17 @@ func _change_label(text):
 
 func _prompt_choices(choices):
 	var i = 0
+	choice_container = VBoxContainer.new()
 	for choice in choices:
 		var button := ChoiceButton.new()
-		button.text = choice.text
-		button.id = i
+		button.text = _grab_speaker(choice.text)
+		button.set_meta("id", i)
 		choice_container.add_child(button)
 		button.connect("_choice_selected", _choice_selected)
 		i += 1
-
+	choice_container.set_anchors_preset(Control.PRESET_CENTER)
+	choice_container.grow_horizontal = BoxContainer.GROW_DIRECTION_BOTH
+	get_tree().root.add_child(choice_container)
 
 func _ended():
 	# End of story
@@ -81,8 +85,8 @@ func _ended():
 
 
 func _choice_selected(index):
-	for child in choice_container.get_children():
-		choice_container.remove_child(child)
+	choice_container.queue_free()
+	choice_container = null
 	
 	ink_player.choose_choice_index(index)
 	_continue_story()
@@ -93,8 +97,17 @@ func _override_story():
 		ink_player.ink_file = ink_file
 
 
+func _observe_variables(variable_name, new_value) -> void:
+	bind_externals[variable_name] = new_value
+
+
 func _bind_externals():
 	## This is where external variables that are within the ink_story should be
 	## referenced.
-	if !bind_externals:
+	var externals := []
+	for variable in bind_externals.keys():
+		externals.append(variable)
+	if externals.is_empty():
 		return
+	
+	ink_player.observe_variables(externals, self, "_observe_variables")

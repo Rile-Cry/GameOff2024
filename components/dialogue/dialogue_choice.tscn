@@ -3,4 +3,7 @@
 [ext_resource type="Script" path="res://components/dialogue/dialogue_choice.gd" id="1_tqs5t"]
 
 [node name="DialogueChoice" type="Button"]
+offset_right = 300.0
+offset_bottom = 8.0
+autowrap_mode = 2
 script = ExtResource("1_tqs5t")
