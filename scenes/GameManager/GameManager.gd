@@ -7,20 +7,20 @@ var game_base : GameBase:
 		return game_base
 	set(value):
 		game_base = value
-		change_scene(office)
-		
+		LoadScreen.load_scene(start_scene_path)
+
 var clues : Array[Clue]
-var scenes_to_preload : Array[String] = [
-	"res://scenes/locations/Shade's Office.tscn",
-	"res://scenes/UI/found_popup.tscn"
-]
+var start_scene_path : String = "res://scenes/locations/Shade's Office.tscn"
 var enable_input : bool = false
-var office : PackedScene = preload("res://scenes/locations/Shade's Office.tscn")
+
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 
 func _init() -> void:
 	current_case = load("res://Case/case_1.tres")
+
+func _ready():
+	LoadScreen.scene_loading_finish.connect(change_scene)
 
 func change_scene(scene : PackedScene):
 	if game_base: game_base.change_level(scene)

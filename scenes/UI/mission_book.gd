@@ -38,13 +38,13 @@ Found in <clue_location>
 func _ready():
 	close_b.button_down.connect(close)
 	tab_container.tab_selected.connect(page_change)
-	self.visible = false
+	self.hide()
 	
 	photo_lock_container.visible = photo_locked
 	photo_unlock_container.visible = not photo_locked
 	
 func page_change(_tab : int):
-	SfxAudio.play_sfx("Book Turn")
+	SfxAudio.play_audio("Book Turn")
 
 func refresh_photos():
 	for node in photo_container.get_children():
@@ -55,6 +55,7 @@ func refresh_photos():
 			var photo_node : MissionBookNode = MissionBookNode.new()
 			photo_node.is_hovering.connect(update_photo_info)
 			photo_node.is_not_hovering.connect(refresh_photo_info)
+			photo_node.pressed.connect(photo_jump)
 			photo_node.resource = photo
 			photo_container.add_child(photo_node)
 
@@ -106,7 +107,8 @@ func close():
 	if UIManager:
 		UIManager.open_close_mission_book()
 
-func photo_jump(scene : PackedScene):
+func photo_jump():
+	var path : String = current_photo.scene_path
 	if self.visible: UIManager.open_close_mission_book()
 	
-	GameManager.change_scene(scene)
+	LoadScreen.load_scene(path)

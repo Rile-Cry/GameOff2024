@@ -9,4 +9,4 @@ class_name Photo
 @export var texture_location : Texture2D
 @export var glitched : bool = false
 @export var is_location : bool = true
-@export var scene : PackedScene
+@export_file("*.tscn") var scene_path : String
