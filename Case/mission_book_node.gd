@@ -1,18 +1,18 @@
 extends Button
-class_name PhotoNode
+class_name MissionBookNode
 
-@export var photo_res : Photo
+@export var resource : Resource
 
 var MouseOver : bool = false
 var style_texture : StyleBoxTexture
 var style_texture_hover : StyleBoxTexture
-signal is_hovering(photo : Photo)
-signal is_not_hovering(photo : Photo)
+signal is_hovering(res : Resource)
+signal is_not_hovering(res : Resource)
 
 func _ready() -> void:
 	focus_mode = FOCUS_NONE
 	style_texture = StyleBoxTexture.new()
-	style_texture.texture = photo_res.photo_texture
+	style_texture.texture = resource.texture_icon
 	style_texture.set_texture_margin_all(2)
 	add_theme_stylebox_override("normal", style_texture)
 	
@@ -21,20 +21,16 @@ func _ready() -> void:
 	add_theme_stylebox_override("hover", style_texture_hover)
 	
 	size_flags_horizontal = SizeFlags.SIZE_EXPAND_FILL
-	custom_minimum_size.y = 120
+	custom_minimum_size.y = 76
 	
 	mouse_entered.connect(hover)
 	mouse_exited.connect(un_hover)
-	pressed.connect(interact)
-
-func interact():
-	if photo_res.is_location and UIManager:
-		UIManager.get_mission_book().photo_jump(photo_res.scene)
 
 func hover() -> void:
 	MouseOver = true
-	is_hovering.emit(photo_res)
+	is_hovering.emit(resource)
+	SfxAudio.play_sfx("Book Hover")
 
 func un_hover() -> void:
 	MouseOver = false
-	is_not_hovering.emit(photo_res)
+	is_not_hovering.emit(resource)

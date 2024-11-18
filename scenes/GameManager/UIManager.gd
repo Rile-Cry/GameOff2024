@@ -23,7 +23,6 @@ func _process(_delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if GameManager.enable_input and event.is_action_pressed("ui_cancel"):
 		if %MissionBook.visible:
-			%MissionBook.tab_container.current_tab = 0
 			open_close_mission_book()
 		elif %Credits.visible:
 			open_close_credits()

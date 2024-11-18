@@ -5,8 +5,8 @@ class_name Photo
 @export var time : String
 @export var description : String
 
-@export var photo_texture : Texture2D
-@export var location_texture : Texture2D
+@export var texture_icon : Texture2D
+@export var texture_location : Texture2D
 @export var glitched : bool = false
 @export var is_location : bool = true
 @export var scene : PackedScene

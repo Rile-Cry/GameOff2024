@@ -33,7 +33,7 @@ func obtain_clue(clue : Clue, popup : bool = true):
 			var popup_node : FoundPopup = found_popup.instantiate()
 			popup_node.obj_name = clue.name
 			popup_node.obj_desc = clue.description
-			popup_node.obj_icon = clue.icon
+			popup_node.obj_icon = clue.texture
 			UIManager.add_child(popup_node)
 		
 		if UIManager:

@@ -52,10 +52,10 @@ func refresh_photos():
 	
 	if GameManager.current_case:
 		for photo in GameManager.current_case.photos:
-			var photo_node : PhotoNode = PhotoNode.new()
+			var photo_node : MissionBookNode = MissionBookNode.new()
 			photo_node.is_hovering.connect(update_photo_info)
 			photo_node.is_not_hovering.connect(refresh_photo_info)
-			photo_node.photo_res = photo
+			photo_node.resource = photo
 			photo_container.add_child(photo_node)
 
 func update_photo_info(photo : Photo):
@@ -66,7 +66,7 @@ func update_photo_info(photo : Photo):
 	text = text.replace("<photo_desc>", current_photo.description)
 
 	photo_label.text = text
-	photo_texture.texture = current_photo.location_texture
+	photo_texture.texture = current_photo.texture_location
 
 func refresh_photo_info(photo : Photo):
 	if current_photo == photo:
@@ -80,10 +80,10 @@ func refresh_clues():
 	
 	if GameManager.clues:
 		for clue in GameManager.clues:
-			var clue_node : ClueNode = ClueNode.new()
+			var clue_node : MissionBookNode = MissionBookNode.new()
 			clue_node.is_hovering.connect(update_clue_info)
 			clue_node.is_not_hovering.connect(refresh_clue_info)
-			clue_node.clue_res = clue
+			clue_node.resource = clue
 			clue_container.add_child(clue_node)
 
 func update_clue_info(clue : Clue):
@@ -94,7 +94,7 @@ func update_clue_info(clue : Clue):
 	text = text.replace("<clue_desc>", current_clue.description)
 	
 	clue_label.text = text
-	clue_texture.texture = current_clue.icon
+	clue_texture.texture = current_clue.texture
 
 func refresh_clue_info(clue : Clue):
 	if current_clue == clue:
