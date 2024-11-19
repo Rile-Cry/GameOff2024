@@ -71,7 +71,7 @@ func _prompt_choices(choices):
 	for choice in choices:
 		var button := ChoiceButton.new()
 		button.text = _grab_speaker(choice.text)
-		button.set_meta("id", i)
+		button.id = i
 		choice_container.add_child(button)
 		button.connect("_choice_selected", _choice_selected)
 		i += 1
