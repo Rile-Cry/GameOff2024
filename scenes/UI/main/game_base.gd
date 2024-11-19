@@ -6,6 +6,9 @@ class_name GameBase
 const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
 
 func _ready() -> void:
+	if LoadScreen:
+		LoadScreen.show()
+	
 	if GameManager:
 		GameManager.game_base = self
 		if not GameManager.load_game():

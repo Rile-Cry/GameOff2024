@@ -11,6 +11,7 @@ var global_variables : Dictionary
 
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
+var save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
 var is_inside_photo : bool = false
 var current_location_index : int:
 	set(val):
@@ -40,15 +41,15 @@ func obtain_clue(clue : Clue, popup : bool = true):
 	if not clues.has(clue):
 		clues.append(clue)
 	
-		if popup and found_popup:
-			var popup_node : FoundPopup = found_popup.instantiate()
-			popup_node.obj_name = clue.name
-			popup_node.obj_desc = clue.description
-			popup_node.obj_icon = clue.texture
-			popup_node.title = resource_type.CLUE
-			UIManager.add_child(popup_node)
-		
 		if UIManager:
+			if popup and found_popup:
+				var popup_node : FoundPopup = found_popup.instantiate()
+				popup_node.obj_name = clue.name
+				popup_node.obj_desc = clue.description
+				popup_node.obj_icon = clue.texture
+				popup_node.title = resource_type.CLUE
+				UIManager.add_child(popup_node)
+			
 			UIManager.refresh_mission_book()
 	else:
 		push_warning("Clue already found!")
@@ -63,7 +64,9 @@ func unlock_location(location : Location, popup : bool = true):
 			popup_node.obj_desc = location.description
 			popup_node.obj_icon = location.texture_location
 			popup_node.title = resource_type.LOCATION
-			UIManager.add_child(popup_node)
+			
+			if UIManager:
+				UIManager.add_child(popup_node)
 		
 		if UIManager:
 			UIManager.refresh_mission_book()
@@ -90,6 +93,10 @@ func save_game() -> void:
 	}
 	var json_string : String = JSON.stringify(save_dict)
 	save_file.store_line(json_string)
+	
+	if UIManager and save_popup:
+		var popup_node : SavePopup = save_popup.instantiate()
+		UIManager.add_child(popup_node)
 
 func load_game() -> bool:
 	if not FileAccess.file_exists("user://savegame.save"): return false

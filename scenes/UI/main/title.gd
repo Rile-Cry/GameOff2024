@@ -27,7 +27,6 @@ func play():
 	$AnimationPlayer.play("play_game")
 	
 	await $AnimationPlayer.animation_finished
-	LoadScreen.show()
 	var game_base : PackedScene = load("res://scenes/UI/main/GameBase.tscn")
 	get_tree().change_scene_to_packed(game_base)
 
