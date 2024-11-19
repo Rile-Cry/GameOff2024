@@ -78,6 +78,9 @@ func _ready():
 	location_locked_button.pressed.connect(exit_photo)
 	photo_locked_button.pressed.connect(exit_photo)
 	
+	if LoadScreen:
+		LoadScreen.scene_loading_finish.connect(close)
+	
 func page_change(_tab : int):
 	SfxAudio.play_audio("Book Turn")
 
@@ -181,10 +184,6 @@ func refresh_clue_info(clue : Clue):
 		clue_texture.texture = null
 		current_clue = null
 
-func close():
-	if UIManager:
-		UIManager.open_close_mission_book()
-
 func photo_jump():
 	if GameManager and not GameManager.is_inside_photo:
 		var path : String = current_photo.scene_path
@@ -196,7 +195,6 @@ func exit_photo():
 		enter_exit_photo(path)
 
 func enter_exit_photo(path : String):
-	if visible: close()
 	if GameManager:
 		GameManager.is_inside_photo = not GameManager.is_inside_photo
 		location_locked = GameManager.is_inside_photo
@@ -208,5 +206,7 @@ func enter_exit_photo(path : String):
 func enter_location():
 	if GameManager:
 		GameManager.current_location = hovered_location
-	
-	if visible: close()
+
+func close():
+	if UIManager and visible:
+		UIManager.open_close_mission_book()
