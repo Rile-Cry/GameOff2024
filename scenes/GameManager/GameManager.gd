@@ -1,29 +1,34 @@
 extends Node
 
-var current_case : Case
 var mission_book : MissionBook
 var game_base : GameBase
 
 var clues : Array[Clue]
 var unlocked_locations : Array[Location]
 var enable_input : bool = false
+var photos : Array[Photo]
+var global_variables : Dictionary
 
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 var is_inside_photo : bool = false
+var current_location_index : int:
+	set(val):
+		if val < 0 or val > unlocked_locations.size():
+			push_warning("Location Index is out of bounds")
+			return
+		LoadScreen.load_scene(unlocked_locations[val].scene_path)
+		current_location_index = val
+
 var current_location : Location:
-	set(value):
-		current_location = value
-		LoadScreen.load_scene(current_location.scene_path)
+	get():
+		return unlocked_locations[current_location_index]
 
 enum resource_type {
 	CLUE,
 	PHOTO,
 	LOCATION
 }
-
-func _init() -> void:
-	current_case = load("res://Case/case_1.tres")
 
 func _ready():
 	LoadScreen.scene_loading_finish.connect(change_scene)
@@ -64,4 +69,53 @@ func unlock_location(location : Location, popup : bool = true):
 			UIManager.refresh_mission_book()
 	else:
 		push_warning("Clue already found!")
+
+func save_game() -> void:
+	var save_file : FileAccess = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	
+	var location_path : Array[String]
+	var photo_path : Array[String]
+	var clue_path : Array[String]
+	
+	for location : Location in unlocked_locations: location_path.append(location.resource_path)
+	for photo : Photo in photos: photo_path.append(photo.resource_path)
+	for clue : Clue in clues: clue_path.append(clue.resource_path)
+	
+	var save_dict : Dictionary = {
+		"CurrentLocation" : current_location_index,
+		"UnlockedLocations" : location_path,
+		"Photos" : photo_path,
+		"Clues" : clue_path,
+		"GlobalVariables" : global_variables
+	}
+	var json_string : String = JSON.stringify(save_dict)
+	save_file.store_line(json_string)
+
+func load_game() -> bool:
+	if not FileAccess.file_exists("user://savegame.save"): return false
+	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var json_string = save_file.get_line()
+	
+	var json := JSON.new()
+	var parse_result := json.parse(json_string)
+	if not parse_result == OK:
+		push_warning("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return false
+	
+	var save_data : Dictionary = json.data
+	
+	print(save_data["Photos"])
+	
+	var location_path : Array = save_data["UnlockedLocations"]
+	var photo_path : Array = save_data["Photos"]
+	var clue_path : Array = save_data["Clues"]
+	
+	for location : String in location_path: unlocked_locations.append(load(location))
+	for photo : String in photo_path: photos.append(load(photo))
+	for clue : String in clue_path: clues.append(load(clue))
+	
+	global_variables = save_data["GlobalVariables"]
+	current_location_index = save_data["CurrentLocation"]
+	print("loaded_game")
+	return true
 	

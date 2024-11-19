@@ -79,7 +79,7 @@ func _ready():
 	photo_locked_button.pressed.connect(exit_photo)
 	
 	if LoadScreen:
-		LoadScreen.scene_loading_finish.connect(close)
+		LoadScreen.loading_finish.connect(close)
 	
 func page_change(_tab : int):
 	SfxAudio.play_audio("Book Turn")
@@ -131,8 +131,8 @@ func refresh_photos():
 	for node in photo_container.get_children():
 		node.queue_free()
 	
-	if GameManager and GameManager.current_case:
-		for photo in GameManager.current_case.photos:
+	if GameManager and GameManager.photos:
+		for photo in GameManager.photos:
 			var photo_node : MissionBookNode = MissionBookNode.new()
 			photo_node.is_hovering.connect(update_photo_info)
 			photo_node.is_not_hovering.connect(refresh_photo_info)

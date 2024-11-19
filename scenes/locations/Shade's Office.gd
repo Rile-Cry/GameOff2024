@@ -17,4 +17,5 @@ func _open_computer() -> void:
 		UIManager.open_close_computer()
 
 func _save_game() -> void:
-	pass
+	if GameManager:
+		GameManager.save_game()

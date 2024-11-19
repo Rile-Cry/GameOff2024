@@ -8,8 +8,10 @@ const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
 func _ready() -> void:
 	if GameManager:
 		GameManager.game_base = self
-		GameManager.current_location = load(start_location_path)
-		GameManager.unlock_location(GameManager.current_location, false)
+		if not GameManager.load_game():
+			GameManager.unlock_location(load(start_location_path), false)
+			GameManager.photos.append(load("res://Case/Photos/Evelyn’s Art Studio.tres"))
+			GameManager.current_location_index = 0
 	
 	if UIManager:
 		UIManager.refresh_mission_book()

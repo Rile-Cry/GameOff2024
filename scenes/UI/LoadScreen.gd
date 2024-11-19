@@ -4,6 +4,7 @@ var is_loading : bool = false
 var path : String
 
 signal scene_loading_finish(scene : PackedScene)
+signal loading_finish()
 
 func _ready() -> void:
 	hide()
@@ -21,6 +22,7 @@ func _process(_delta: float) -> void:
 			if GameManager:
 				GameManager.enable_input = true
 			scene_loading_finish.emit(scene)
+			loading_finish.emit()
 			hide()
 
 func load_scene(path_: String):
