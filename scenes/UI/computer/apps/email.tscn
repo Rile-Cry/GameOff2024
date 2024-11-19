@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1g8bn1rpkgkh"]
 
 [ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_mkwfe"]
-[ext_resource type="Script" path="res://scenes/programs/email.gd" id="2_wqvhh"]
+[ext_resource type="Script" path="res://scenes/UI/computer/apps/email.gd" id="2_wqvhh"]
 
 [node name="Email" type="Window"]
 title = "Investigation Office Mail System"

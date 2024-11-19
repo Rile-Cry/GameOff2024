@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2acv85adqle2"]
 
 [ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_hn2hy"]
-[ext_resource type="Script" path="res://scenes/programs/im.gd" id="2_5shah"]
+[ext_resource type="Script" path="res://scenes/UI/computer/apps/im.gd" id="2_5shah"]
 
 [node name="IM" type="Window"]
 title = "Instant Message"

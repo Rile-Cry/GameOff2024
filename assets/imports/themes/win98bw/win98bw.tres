@@ -1,33 +1,23 @@
-[gd_resource type="Theme" load_steps=105 format=3 uid="uid://c8omtkve3g12h"]
+[gd_resource type="Theme" load_steps=95 format=3 uid="uid://c8omtkve3g12h"]
 
-[ext_resource type="FontFile" uid="uid://dhtp6kpcjyfj7" path="res://assets/imports/themes/win98/font/microsoft_sans_serif.ttf" id="1_r764r"]
 [ext_resource type="Texture2D" uid="uid://dvsqav8ix3tx" path="res://assets/imports/themes/win98bw/button_normal.png" id="2_7g3jm"]
 [ext_resource type="Texture2D" uid="uid://csr0gnb5ro0hj" path="res://assets/imports/themes/win98bw/button_focus.png" id="3_4w6jw"]
 [ext_resource type="Texture2D" uid="uid://20r7kxoijwat" path="res://assets/imports/themes/win98bw/button_hover.png" id="4_8a66c"]
-[ext_resource type="Texture2D" uid="uid://bo3o6gt0b2d1a" path="res://assets/imports/themes/win98/textures/checkbox_checked.png" id="5_bos2d"]
 [ext_resource type="Texture2D" uid="uid://cdwc7w4bju5le" path="res://assets/imports/themes/win98bw/checkbox_checked.png" id="5_k0nyn"]
 [ext_resource type="Texture2D" uid="uid://cc36qnqqmhnmh" path="res://assets/imports/themes/win98bw/checkbox_checked_disabled.png" id="6_owmqc"]
-[ext_resource type="Texture2D" uid="uid://7hjs0v8w1fwe" path="res://assets/imports/themes/win98/textures/checkbox_checked_disabled.png" id="6_tenwx"]
-[ext_resource type="Texture2D" uid="uid://bjr7dpk0mrvrn" path="res://assets/imports/themes/win98/textures/checkbox_unchecked.png" id="7_5utql"]
 [ext_resource type="Texture2D" uid="uid://biu8yug6km2ly" path="res://assets/imports/themes/win98bw/radio_checked.png" id="7_27v1n"]
-[ext_resource type="Texture2D" uid="uid://pwqqooq7h8ff" path="res://assets/imports/themes/win98/textures/checkbox_unchecked_disabled.png" id="8_n4q67"]
 [ext_resource type="Texture2D" uid="uid://3fx35nvatnwi" path="res://assets/imports/themes/win98bw/radio_unchecked.png" id="8_sphks"]
 [ext_resource type="Texture2D" uid="uid://bx5tb763uanqi" path="res://assets/imports/themes/win98bw/checkbox_unchecked.png" id="9_0rmmh"]
 [ext_resource type="Texture2D" uid="uid://bag7erh25cq00" path="res://assets/imports/themes/win98bw/checkbox_unchecked_disabled.png" id="10_5ncx8"]
 [ext_resource type="Texture2D" uid="uid://h6iuvsqiua74" path="res://assets/imports/themes/win98bw/hscroll_decrement.png" id="11_f17hu"]
 [ext_resource type="Texture2D" uid="uid://lgob5d3a8a1i" path="res://assets/imports/themes/win98bw/hscroll_increment.png" id="12_2r16i"]
-[ext_resource type="Texture2D" uid="uid://cesicbcul83or" path="res://assets/imports/themes/win98/textures/hscroll_slider.png" id="12_gys1j"]
 [ext_resource type="Texture2D" uid="uid://b2adkooffk8qn" path="res://assets/imports/themes/win98bw/hscroll_grabber.png" id="13_jd1ii"]
 [ext_resource type="Texture2D" uid="uid://drsbvwjn1w2x0" path="res://assets/imports/themes/win98bw/hscroll_slider.png" id="14_a7jcl"]
 [ext_resource type="Texture2D" uid="uid://hvp4fhtr0wo" path="res://assets/imports/themes/win98bw/hslider_grabber.png" id="16_ywv8w"]
-[ext_resource type="Texture2D" uid="uid://c7dy25fqmdlg4" path="res://assets/imports/themes/win98/textures/option_button_arrow.png" id="17_gs43o"]
 [ext_resource type="Texture2D" uid="uid://da2o37ixbd0un" path="res://assets/imports/themes/win98bw/hslider_tick.png" id="17_oymh2"]
 [ext_resource type="Texture2D" uid="uid://tn6uee3odt41" path="res://assets/imports/themes/win98bw/hslider_slider.png" id="18_wvnan"]
 [ext_resource type="Texture2D" uid="uid://csoexbtvvjy7k" path="res://assets/imports/themes/win98bw/line_edit.png" id="19_cak46"]
-[ext_resource type="Texture2D" uid="uid://dfgwsa0f57flc" path="res://assets/imports/themes/win98/textures/radio_checked.png" id="20_poo6s"]
-[ext_resource type="Texture2D" uid="uid://7scb3iihdt1v" path="res://assets/imports/themes/win98/textures/radio_unchecked.png" id="21_hrp8t"]
 [ext_resource type="Texture2D" uid="uid://cm0sec3s3f1jc" path="res://assets/imports/themes/win98bw/panel_container.png" id="21_ht18r"]
-[ext_resource type="Texture2D" uid="uid://blrkx1rfwv608" path="res://assets/imports/themes/win98/textures/tree_arrow.png" id="27_amvw5"]
 [ext_resource type="Texture2D" uid="uid://2272ikogw7kq" path="res://assets/imports/themes/win98bw/popup_menu_panel.png" id="28_ujcmk"]
 [ext_resource type="Texture2D" uid="uid://bk8kpyqoj0wem" path="res://assets/imports/themes/win98bw/progress_background.png" id="29_lrdyn"]
 [ext_resource type="Texture2D" uid="uid://c5pme5acna1hx" path="res://assets/imports/themes/win98bw/progress_fill.png" id="30_xhp5f"]
@@ -174,7 +164,6 @@ axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 2, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqv8h"]
-texture = ExtResource("12_gys1j")
 texture_margin_left = 3.0
 texture_margin_top = 3.0
 texture_margin_right = 3.0
@@ -539,7 +528,6 @@ axis_stretch_vertical = 1
 region_rect = Rect2(0, 0, 480, 48)
 
 [resource]
-default_font = ExtResource("1_r764r")
 default_font_size = 11
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.501961, 0.501961, 0.501961, 1)
@@ -557,7 +545,7 @@ Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/constants/h_separation = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 11
-Button/fonts/font = ExtResource("1_r764r")
+Button/fonts/font = null
 Button/styles/disabled = SubResource("StyleBoxTexture_6akc0")
 Button/styles/focus = SubResource("StyleBoxTexture_diei6")
 Button/styles/hover = SubResource("StyleBoxTexture_6m8wx")
@@ -574,7 +562,7 @@ CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 0
 CheckBox/constants/outline_size = 0
 CheckBox/font_sizes/font_size = 11
-CheckBox/fonts/font = ExtResource("1_r764r")
+CheckBox/fonts/font = null
 CheckBox/icons/checked = ExtResource("5_k0nyn")
 CheckBox/icons/checked_disabled = ExtResource("6_owmqc")
 CheckBox/icons/radio_checked = ExtResource("7_27v1n")
@@ -600,7 +588,7 @@ CheckButton/constants/check_v_offset = 0
 CheckButton/constants/h_separation = 0
 CheckButton/constants/outline_size = 0
 CheckButton/font_sizes/font_size = 11
-CheckButton/fonts/font = ExtResource("1_r764r")
+CheckButton/fonts/font = null
 CheckButton/icons/checked = null
 CheckButton/icons/checked_disabled = null
 CheckButton/icons/checked_disabled_mirrored = null
@@ -643,7 +631,7 @@ Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 11
-Label/fonts/font = ExtResource("1_r764r")
+Label/fonts/font = null
 Label/styles/normal = null
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
@@ -658,7 +646,7 @@ LineEdit/constants/caret_width = 0
 LineEdit/constants/minimum_character_width = 0
 LineEdit/constants/outline_size = 0
 LineEdit/font_sizes/font_size = 11
-LineEdit/fonts/font = ExtResource("1_r764r")
+LineEdit/fonts/font = null
 LineEdit/icons/clear = null
 LineEdit/styles/focus = SubResource("StyleBoxTexture_15vrp")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_2j3fx")
@@ -675,8 +663,8 @@ OptionButton/constants/h_separation = 0
 OptionButton/constants/modulate_arrow = 0
 OptionButton/constants/outline_size = 0
 OptionButton/font_sizes/font_size = 11
-OptionButton/fonts/font = ExtResource("1_r764r")
-OptionButton/icons/arrow = ExtResource("17_gs43o")
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = null
 OptionButton/styles/disabled = SubResource("StyleBoxTexture_qyqha")
 OptionButton/styles/disabled_mirrored = null
 OptionButton/styles/focus = SubResource("StyleBoxTexture_4yvlc")
@@ -704,18 +692,18 @@ PopupMenu/constants/separator_outline_size = 0
 PopupMenu/constants/v_separation = 4
 PopupMenu/font_sizes/font_separator_size = 11
 PopupMenu/font_sizes/font_size = 11
-PopupMenu/fonts/font = ExtResource("1_r764r")
-PopupMenu/fonts/font_separator = ExtResource("1_r764r")
-PopupMenu/icons/checked = ExtResource("5_bos2d")
-PopupMenu/icons/checked_disabled = ExtResource("6_tenwx")
-PopupMenu/icons/radio_checked = ExtResource("20_poo6s")
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+PopupMenu/icons/checked = null
+PopupMenu/icons/checked_disabled = null
+PopupMenu/icons/radio_checked = null
 PopupMenu/icons/radio_checked_disabled = null
-PopupMenu/icons/radio_unchecked = ExtResource("21_hrp8t")
+PopupMenu/icons/radio_unchecked = null
 PopupMenu/icons/radio_unchecked_disabled = null
 PopupMenu/icons/submenu = null
 PopupMenu/icons/submenu_mirrored = null
-PopupMenu/icons/unchecked = ExtResource("7_5utql")
-PopupMenu/icons/unchecked_disabled = ExtResource("8_n4q67")
+PopupMenu/icons/unchecked = null
+PopupMenu/icons/unchecked_disabled = null
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_x6vw7")
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
@@ -728,7 +716,7 @@ ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
 ProgressBar/colors/font_shadow_color = Color(0, 0, 0, 1)
 ProgressBar/constants/outline_size = 1
 ProgressBar/font_sizes/font_size = 11
-ProgressBar/fonts/font = ExtResource("1_r764r")
+ProgressBar/fonts/font = null
 ProgressBar/styles/background = SubResource("StyleBoxTexture_wapvm")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_fusbp")
 SpinBox/icons/updown = ExtResource("31_53syp")
@@ -741,7 +729,7 @@ TabContainer/constants/icon_separation = 0
 TabContainer/constants/outline_size = 0
 TabContainer/constants/side_margin = 0
 TabContainer/font_sizes/font_size = 11
-TabContainer/fonts/font = ExtResource("1_r764r")
+TabContainer/fonts/font = null
 TabContainer/icons/decrement = null
 TabContainer/icons/decrement_highlight = null
 TabContainer/icons/drop_mark = null
@@ -771,7 +759,7 @@ TextEdit/constants/caret_width = 1
 TextEdit/constants/line_spacing = 0
 TextEdit/constants/outline_size = 0
 TextEdit/font_sizes/font_size = 11
-TextEdit/fonts/font = ExtResource("1_r764r")
+TextEdit/fonts/font = null
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
 TextEdit/styles/focus = SubResource("StyleBoxTexture_rwd0c")
@@ -801,14 +789,14 @@ Tree/constants/scroll_border = 1
 Tree/constants/scroll_speed = 0
 Tree/constants/v_separation = 2
 Tree/font_sizes/font_size = 11
-Tree/fonts/font = ExtResource("1_r764r")
-Tree/fonts/title_button_font = ExtResource("1_r764r")
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
 Tree/icons/arrow = ExtResource("33_xswxe")
 Tree/icons/arrow_collapsed = ExtResource("34_6hctt")
 Tree/icons/arrow_collapsed_mirrored = null
 Tree/icons/checked = ExtResource("5_k0nyn")
 Tree/icons/indeterminate = null
-Tree/icons/select_arrow = ExtResource("27_amvw5")
+Tree/icons/select_arrow = null
 Tree/icons/unchecked = ExtResource("9_0rmmh")
 Tree/icons/updown = ExtResource("31_53syp")
 Tree/styles/button_pressed = null
@@ -851,7 +839,7 @@ Window/constants/resize_margin = 4
 Window/constants/title_height = 28
 Window/constants/title_outline_size = 0
 Window/font_sizes/title_font_size = 11
-Window/fonts/title_font = ExtResource("1_r764r")
+Window/fonts/title_font = null
 Window/icons/close = ExtResource("44_y0042")
 Window/icons/close_pressed = ExtResource("45_8o28d")
 Window/styles/embedded_border = SubResource("StyleBoxTexture_ovoc8")
