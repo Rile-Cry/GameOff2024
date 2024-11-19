@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Location" load_steps=2 format=3 uid="uid://6erl27br8x00"]
+
+[ext_resource type="Script" path="res://Case/Locations/LocationResource.gd" id="1_njkdp"]
+
+[resource]
+script = ExtResource("1_njkdp")
+name = "Victor's Office"
+characters = Array[String]([])
+description = ""
+scene_path = ""
