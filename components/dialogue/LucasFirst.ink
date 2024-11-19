@@ -12,18 +12,18 @@ Lucas: I wanted to meet her that night, but as I got to the door a text from Eve
 
 === choices ===
 *   You said you called the police when you found her. How long did it take you to contact them after finding her body?
-    -> option_1
+	-> option_1
 *   Did you check her phone or anything around the studio when you found her? Any signs of a struggle or someone else being there?
-    -> option_2
+	-> option_2
 *   You mentioned Evelyn asked you to meet her at the usual spot the next day. Can you tell me more about that spot?
-    -> option_3
+	-> option_3
 *   {option_2} Did you see Victor at all around the time of Evelyn's death?
-    -> option_4
+	-> option_4
 *   How was your relationship with Marina? You mentioned her coming over to the studio the night Evelyn died.
-    -> option_5
+	-> option_5
 *   I guess that covers it...
-    -> END
-    
+	-> END
+	
 
 === option_1 ===
 Lucas: It took me around 10 minutes after finding the body to contact the police.
@@ -32,13 +32,13 @@ Lucas: I was overwhelmed at the sight of the love of my life's cold body. It too
 Shade: Love of your life?
 ~   mood = true
 *   [don't show diary]
-    -> choices
+	-> choices
 *   [show diary]
-    Lucas: What man, is that how she thought of me??! If that's the case, why did she even bother trying to date me again now?
-    Shade: Maybe she feels differently about you now, you've changed right? If she didn't like you why would she even consider dating you?
-    (this outta calm him down)
-    Lucas: Yeah, man... we were starting fresh. I swear, what we had... it was real. It was always real.
-    -> choices
+	Lucas: What man, is that how she thought of me??! If that's the case, why did she even bother trying to date me again now?
+	Shade: Maybe she feels differently about you now, you've changed right? If she didn't like you why would she even consider dating you?
+	(this outta calm him down)
+	Lucas: Yeah, man... we were starting fresh. I swear, what we had... it was real. It was always real.
+	-> choices
 
 === option_2 ===
 Lucas: No, man... everything seemed like it always was. The studio was clean, no signs of a struggle. It felt... normal, y'know? Evelyn was probably working late considering Marina was gonna come, so nothing about that felt off. As for the phone, I didn't check it.
