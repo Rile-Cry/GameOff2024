@@ -13,15 +13,22 @@ var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tr
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 var save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
 var is_inside_photo : bool = false
-var current_location_index : int:
+var current_location_index : int = -1:
 	set(val):
+		if current_location_index == val:
+			push_warning("Player already in location")
+			return
+		
 		if val < 0 or val > unlocked_locations.size():
 			push_warning("Location Index is out of bounds")
 			return
+		
 		LoadScreen.load_scene(unlocked_locations[val].scene_path)
 		current_location_index = val
 
 var current_location : Location:
+	set(val):
+		current_location_index = unlocked_locations.find(val)
 	get():
 		return unlocked_locations[current_location_index]
 
