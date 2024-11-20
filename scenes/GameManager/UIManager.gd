@@ -1,5 +1,6 @@
 extends CanvasLayer
 var is_hovering_mission_book : bool = false
+@onready var anim_player : AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,7 @@ func _ready() -> void:
 	%Credits.hide()
 	
 	%MissionBookButton.pressed.connect(open_close_mission_book)
+	%CreditCloseButton.pressed.connect(open_close_credits)
 
 func refresh_mission_book():
 	%MissionBook.refresh_photos()

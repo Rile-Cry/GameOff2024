@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6hm1h1elh3mm"]
+[gd_scene load_steps=14 format=3 uid="uid://c6hm1h1elh3mm"]
 
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/graphics/icons/Book_Icon_open.png" id="1_e0dwy"]
 [ext_resource type="Script" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
@@ -7,6 +7,67 @@
 [ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://scenes/UI/options_menu.tscn" id="4_lbubx"]
 [ext_resource type="PackedScene" uid="uid://duqwgodvr8nt" path="res://scenes/UI/computer/computer.tscn" id="5_cf373"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="7_5vq04"]
+
+[sub_resource type="Animation" id="Animation_dgnyb"]
+resource_name = "close_anim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.982, 0.96, 0), Color(1, 0.982, 0.96, 0.741176)]
+}
+
+[sub_resource type="Animation" id="Animation_ljjq7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.982, 0.96, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dvjtw"]
+_data = {
+"RESET": SubResource("Animation_ljjq7"),
+"close_anim": SubResource("Animation_dgnyb")
+}
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1yqh"]
 texture = ExtResource("1_e0dwy")
@@ -24,6 +85,11 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="UIManager" type="CanvasLayer"]
 script = ExtResource("1_ijh3a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dvjtw")
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -55,6 +121,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 
 [node name="MissionBook" parent="." instance=ExtResource("3_7udp3")]
 unique_name_in_owner = true
+visible = false
 
 [node name="OptionMenu" parent="." instance=ExtResource("4_lbubx")]
 unique_name_in_owner = true
@@ -66,7 +133,6 @@ visible = false
 
 [node name="Credits" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,8 +239,7 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "Valenspire
-GGBotNet
+text = "GGBotNet
 Violin Iliev
 Osaki Tsukiko"
 fit_content = true
@@ -185,7 +250,24 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "Book & Paper Sounds Pack
-X Typewriter Font
+text = "X Typewriter Font
 Godot Desktop Themes"
 fit_content = true
+
+[node name="CreditCloseButton" type="Button" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Close"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+color = Color(1, 0.982, 0.96, 0)
