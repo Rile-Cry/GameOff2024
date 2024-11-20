@@ -27,11 +27,9 @@ func mouse_click_sfx():
 	SfxAudio.play_audio("Mouse Click")
 
 func _mysos_pressed(num: int) -> void:
+	mouse_click_sfx()
 	if num == 4 and UIManager:
-		mouse_click_sfx()
 		UIManager.open_close_computer()
-	else:
-		SfxAudio.play_audio("Mouse Click Fail")
 
 func _open_messenger() -> void:
 	var messenger = messenger_scene.instantiate()

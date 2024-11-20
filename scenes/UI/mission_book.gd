@@ -90,7 +90,7 @@ func refresh_locations():
 	
 	if GameManager and GameManager.unlocked_locations:
 		for location in GameManager.unlocked_locations:
-			var location_node : MissionBookNode = MissionBookNode.new()
+			var location_node : LocationNode = LocationNode.new()
 			location_node.is_hovering.connect(update_location_info)
 			location_node.is_not_hovering.connect(refresh_location_info)
 			location_node.pressed.connect(enter_location)

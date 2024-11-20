@@ -1,37 +1,55 @@
-[gd_scene load_steps=10 format=3 uid="uid://cflt6uuauq6x2"]
+[gd_scene load_steps=16 format=3 uid="uid://cflt6uuauq6x2"]
 
 [ext_resource type="AudioStream" uid="uid://dq2q0hk214cm6" path="res://assets/imports/sfx/Book Open.wav" id="1_bdccc"]
 [ext_resource type="AudioStream" uid="uid://bvqabvdbvdicc" path="res://assets/imports/sfx/Book Close.wav" id="2_yxf05"]
 [ext_resource type="AudioStream" uid="uid://cmolxdf4h0eow" path="res://assets/imports/sfx/Book Turn.wav" id="3_mpcom"]
-[ext_resource type="AudioStream" uid="uid://cwmsyos26bj73" path="res://assets/imports/sfx/Book Hover.wav" id="4_fykjl"]
 [ext_resource type="AudioStream" uid="uid://c8f24fy613tx3" path="res://assets/imports/sfx/UI Open Close.wav" id="5_fcnkp"]
 [ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="6_n1klc"]
-[ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/sfx/Mouse Click.wav" id="6_vkyde"]
-[ext_resource type="AudioStream" uid="uid://chljaaunxpe1h" path="res://assets/imports/sfx/Mouse Click Fail.wav" id="7_gsui1"]
+[ext_resource type="AudioStream" uid="uid://cuv44u671c1v0" path="res://assets/imports/sfx/Mouse Click.wav" id="6_vkyde"]
+[ext_resource type="AudioStream" uid="uid://8go2mhfgmea4" path="res://assets/imports/sfx/Popup.wav" id="8_j3m61"]
+[ext_resource type="AudioStream" uid="uid://crjrbwo8gotu7" path="res://assets/imports/sfx/Object Hover 1.wav" id="9_cwpop"]
+[ext_resource type="AudioStream" uid="uid://bahmn476dpu44" path="res://assets/imports/sfx/Object Hover 2.wav" id="10_kpvnq"]
+[ext_resource type="AudioStream" uid="uid://dolp4ssxi2fe4" path="res://assets/imports/sfx/Object Hover 3.wav" id="11_3pfsy"]
+[ext_resource type="AudioStream" uid="uid://v3sri2tse1m" path="res://assets/imports/sfx/Object Select.wav" id="12_as16v"]
+[ext_resource type="AudioStream" uid="uid://i5nwbh8ef1oq" path="res://assets/imports/sfx/Object Hover 4.wav" id="12_upcs0"]
+[ext_resource type="AudioStream" uid="uid://cvb5goxp4endi" path="res://assets/imports/sfx/Sticky Note Hover.wav" id="13_1w8cy"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_peqkr"]
+streams_count = 4
+stream_0/stream = ExtResource("9_cwpop")
+stream_1/stream = ExtResource("10_kpvnq")
+stream_2/stream = ExtResource("11_3pfsy")
+stream_3/stream = ExtResource("12_upcs0")
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_8bya0"]
-clip_count = 7
+clip_count = 9
 clip_0/name = &"Book Close"
 clip_0/stream = ExtResource("2_yxf05")
 clip_0/auto_advance = 0
-clip_1/name = &"Book Hover"
-clip_1/stream = ExtResource("4_fykjl")
+clip_1/name = &"Book Open"
+clip_1/stream = ExtResource("1_bdccc")
 clip_1/auto_advance = 0
-clip_2/name = &"Book Open"
-clip_2/stream = ExtResource("1_bdccc")
+clip_2/name = &"Book Turn"
+clip_2/stream = ExtResource("3_mpcom")
 clip_2/auto_advance = 0
-clip_3/name = &"Book Turn"
-clip_3/stream = ExtResource("3_mpcom")
+clip_3/name = &"UI Open Close"
+clip_3/stream = ExtResource("5_fcnkp")
 clip_3/auto_advance = 0
-clip_4/name = &"UI Open Close"
-clip_4/stream = ExtResource("5_fcnkp")
+clip_4/name = &"Mouse Click"
+clip_4/stream = ExtResource("6_vkyde")
 clip_4/auto_advance = 0
-clip_5/name = &"Mouse Click"
-clip_5/stream = ExtResource("6_vkyde")
+clip_5/name = &"Popup"
+clip_5/stream = ExtResource("8_j3m61")
 clip_5/auto_advance = 0
-clip_6/name = &"Mouse Click Fail"
-clip_6/stream = ExtResource("7_gsui1")
+clip_6/name = &"Object Hover"
+clip_6/stream = SubResource("AudioStreamRandomizer_peqkr")
 clip_6/auto_advance = 0
+clip_7/name = &"Sticky Note Hover"
+clip_7/stream = ExtResource("13_1w8cy")
+clip_7/auto_advance = 0
+clip_8/name = &"Object Select"
+clip_8/stream = ExtResource("12_as16v")
+clip_8/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
@@ -43,5 +61,6 @@ Vector2i(-1, -1): {
 
 [node name="SFXAudio" type="AudioStreamPlayer"]
 stream = SubResource("AudioStreamInteractive_8bya0")
+volume_db = -10.0
 bus = &"SFX"
 script = ExtResource("6_n1klc")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cul1uodi8om8o"]
+
+[ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/sfx/OS Boot.wav" id="7_q555b"]
+[ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="14_nm7qv"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_evwqa"]
+clip_count = 1
+clip_0/name = &"OS Boot"
+clip_0/stream = ExtResource("7_q555b")
+clip_0/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 1
+}
+}
+
+[node name="AmbientAudio" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamInteractive_evwqa")
+bus = &"Ambient"
+script = ExtResource("14_nm7qv")

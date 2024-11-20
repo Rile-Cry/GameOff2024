@@ -39,6 +39,7 @@ UIManager="*res://scenes/GameManager/UIManager.tscn"
 SfxAudio="*res://scenes/GameManager/sfx_audio.tscn"
 BgmAudio="*res://scenes/GameManager/bgm_audio.tscn"
 LoadScreen="*res://scenes/UI/LoadScreen.tscn"
+AmbientAudio="*res://scenes/GameManager/ambient_audio.tscn"
 
 [display]
 

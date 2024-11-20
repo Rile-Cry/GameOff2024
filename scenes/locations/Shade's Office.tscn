@@ -13,6 +13,9 @@
 [ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/shredded_paper.tres" id="11_xkghs"]
 [ext_resource type="Resource" uid="uid://dpybbgsp0npf5" path="res://Case/Locations/Evelyn's Art Studio.tres" id="12_meb8l"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
+texture = ExtResource("9_x077g")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nulqq"]
 texture = ExtResource("3_j2hj0")
 
@@ -21,9 +24,6 @@ texture = ExtResource("5_s314g")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tswg3"]
 texture = ExtResource("7_letej")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
-texture = ExtResource("9_x077g")
 
 [node name="Shade\'s Office" type="Control"]
 layout_mode = 3
@@ -41,6 +41,22 @@ offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_8igll")
 
+[node name="ComputerButton" type="Button" parent="."]
+custom_minimum_size = Vector2(447, 454)
+layout_mode = 0
+offset_left = 331.0
+offset_top = 241.0
+offset_right = 778.0
+offset_bottom = 695.0
+mouse_default_cursor_shape = 2
+theme_override_styles/focus = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jypko")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jypko")
+script = ExtResource("8_gsv3f")
+
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(77, 75)
 layout_mode = 0
@@ -56,6 +72,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_nulqq")
 script = ExtResource("4_xkdys")
+hover_sfx = "Sticky Note Hover"
+click_sfx = ""
 
 [node name="ExitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(86, 75)
@@ -72,6 +90,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7jlq8")
 script = ExtResource("6_e7ndo")
+hover_sfx = "Sticky Note Hover"
 
 [node name="SaveButton" type="Button" parent="."]
 custom_minimum_size = Vector2(88, 87)
@@ -88,22 +107,8 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tswg3")
 script = ExtResource("8_gsv3f")
-
-[node name="ComputerButton" type="Button" parent="."]
-custom_minimum_size = Vector2(447, 454)
-layout_mode = 0
-offset_left = 331.0
-offset_top = 241.0
-offset_right = 778.0
-offset_bottom = 695.0
-mouse_default_cursor_shape = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_jypko")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_jypko")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_jypko")
-theme_override_styles/hover = SubResource("StyleBoxTexture_jypko")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_jypko")
-theme_override_styles/normal = SubResource("StyleBoxTexture_jypko")
-script = ExtResource("8_gsv3f")
+hover_sfx = "Sticky Note Hover"
+click_sfx = ""
 
 [node name="ShreddedDoc" type="Button" parent="."]
 layout_mode = 0

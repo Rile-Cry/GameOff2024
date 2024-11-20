@@ -17,7 +17,7 @@ func refresh_mission_book():
 
 func _process(_delta: float) -> void:
 	if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:
-		SfxAudio.play_audio("Book Hover")
+		SfxAudio.play_audio("Object Hover")
 	
 	is_hovering_mission_book = %MissionBookButton.is_hovered()
 
@@ -43,6 +43,8 @@ func open_close_credits() -> void:
 
 func open_close_computer() -> void:
 	%Computer.visible = not %Computer.visible
+	if %Computer.visible:
+		AmbientAudio.play_audio("OS Boot")
 
 func open_close_mission_book():
 	enable_disable_mission_book_button()
