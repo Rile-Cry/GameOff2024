@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	BgmAudio.play_audio("Title Screen")
 	$PlayButton.pressed.connect(play)
 	$MainMargin/Credits.pressed.connect(open_credits)
 	$MainMargin/Credits.disabled = true
