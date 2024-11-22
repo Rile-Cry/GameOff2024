@@ -65,6 +65,8 @@ Found in <clue_location>
 
 <clue_desc>"
 
+signal clue_selected(clue : Clue)
+
 func _ready():
 	close_b.button_down.connect(close)
 	tab_container.tab_selected.connect(page_change)
@@ -80,6 +82,9 @@ func _ready():
 	
 	if LoadScreen:
 		LoadScreen.loading_finish.connect(close)
+	
+	if GameManager:
+		GameManager.mission_book = self
 	
 func page_change(_tab : int):
 	SfxAudio.play_audio("Book Turn")
@@ -166,6 +171,7 @@ func refresh_clues():
 			clue_node.is_hovering.connect(update_clue_info)
 			clue_node.is_not_hovering.connect(refresh_clue_info)
 			clue_node.resource = clue
+			clue_node.pressed.connect(func(): clue_selected.emit(clue))
 			clue_container.add_child(clue_node)
 
 func update_clue_info(clue : Clue):
