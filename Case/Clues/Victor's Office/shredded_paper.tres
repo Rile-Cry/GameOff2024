@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource("1_pmdbv")
+id = "SHREDDED_PAPER"
 name = "Shredded Document"
 description = "Add description here"
 location = "Victor's Office"
