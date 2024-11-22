@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://ccbgckfe5ebj4"
+path="res://.godot/imported/Turnabout.ink-cb9224e248ddc3cdbdfcd4d3b30e0d00.res"
+
+[deps]
+
+source_file="res://components/dialogue/Turnabout.ink"
+dest_files=["res://.godot/imported/Turnabout.ink-cb9224e248ddc3cdbdfcd4d3b30e0d00.res"]
+
+[params]
+

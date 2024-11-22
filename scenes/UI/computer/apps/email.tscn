@@ -51,13 +51,16 @@ size_flags_horizontal = 3
 [node name="Address" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2
 wrap_mode = 1
+scroll_fit_content_height = true
 
 [node name="Subject" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2
+scroll_fit_content_height = true
 
 [node name="Content" type="TextEdit" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+wrap_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Mailbar/VBoxContainer"]
 layout_mode = 2

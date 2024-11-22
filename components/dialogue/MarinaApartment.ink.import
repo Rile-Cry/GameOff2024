@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://5dd82urvucsw"
+path="res://.godot/imported/MarinaApartment.ink-e32ba7c6f4c0354f9e4974c665ccbb8a.res"
+
+[deps]
+
+source_file="res://components/dialogue/MarinaApartment.ink"
+dest_files=["res://.godot/imported/MarinaApartment.ink-e32ba7c6f4c0354f9e4974c665ccbb8a.res"]
+
+[params]
+

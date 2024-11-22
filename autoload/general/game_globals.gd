@@ -2,6 +2,7 @@ extends Node
 
 #region Tracked variables
 var current_case : Case
+var typing_speed : int = 20
 #endregion
 
 
@@ -16,8 +17,6 @@ const interactables_collision_layer: int = 32
 
 
 #region General helpers
-## Example with lambda -> Utilities.delay_func(func(): print("test"), 1.5)
-## Example with arguments -> Utilities.delay_func(print_text.bind("test"), 2.0)
 func delay_func(callable: Callable, time: float, deferred: bool = true):
 	if callable.is_valid():
 		await get_tree().create_timer(time).timeout
@@ -27,7 +26,6 @@ func delay_func(callable: Callable, time: float, deferred: bool = true):
 		else:
 			callable.call()
 
-## Example of use: await GameGlobals.wait(1.5)
 func wait(seconds:float = 1.0):
 	return get_tree().create_timer(seconds).timeout
 	

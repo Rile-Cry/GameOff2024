@@ -8,9 +8,11 @@ const USE_SIGNALS = false
 
 var ink_player = InkPlayerFactory.create()
 var choice_container : VBoxContainer
+var tick := 0
+var typing := false
 
 @onready var dialogue := $PanelContainer/MarginContainer/VBoxContainer/Text
-@onready var name_box := $PanelContainer/MarginContainer/VBoxContainer/Name
+@onready var name_box := $PanelContainer2/MarginContainer/Name
 @onready var panel := $PanelContainer
 
 # Called when the node enters the scene tree for the first time.
@@ -27,7 +29,10 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		_continue_story()
+		if typing:
+			typing = false
+		else:
+			_continue_story()
 
 
 func _continue_story():
@@ -37,8 +42,7 @@ func _continue_story():
 		if ink_player.can_continue:
 			var text = ink_player.continue_story()
 			_change_label(text)
-
-		if ink_player.has_choices:
+		elif ink_player.has_choices:
 			_prompt_choices(ink_player.current_choices)
 		else:
 			_ended()
@@ -62,6 +66,18 @@ func _loaded(successfully: bool):
 func _change_label(text):
 	text = _grab_speaker(text)
 	
+	_type_out_text(text)
+
+
+func _type_out_text(text: String) -> void:
+	var temp_string = ""
+	typing = true
+	for letter in text:
+		if not typing:
+			break
+		await GameGlobals.wait(1. / GameGlobals.typing_speed)
+		temp_string += letter
+		dialogue.text = temp_string
 	dialogue.text = text
 
 
@@ -81,7 +97,7 @@ func _prompt_choices(choices):
 
 func _ended():
 	# End of story
-	pass
+	queue_free()
 
 
 func _choice_selected(index):

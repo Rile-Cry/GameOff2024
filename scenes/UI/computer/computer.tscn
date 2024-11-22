@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://duqwgodvr8nt"]
 
-[ext_resource type="Theme" uid="uid://dq36vara0cacl" path="res://assets/imports/graphics/themes/win98/win98.tres" id="1_hv0nd"]
+[ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_hme2y"]
 [ext_resource type="Script" path="res://scenes/UI/computer/computer.gd" id="2_adyik"]
 
 [node name="Computer" type="Control"]
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 mouse_force_pass_scroll_events = false
-theme = ExtResource("1_hv0nd")
+theme = ExtResource("1_hme2y")
 script = ExtResource("2_adyik")
 
 [node name="ColorRect" type="ColorRect" parent="."]
