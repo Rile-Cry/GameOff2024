@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
 [ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://assets/imports/graphics/icons/Book_Icon.png" id="2_o5jjq"]
 [ext_resource type="PackedScene" uid="uid://cphjlxsh6ojbf" path="res://scenes/UI/mission_book.tscn" id="3_7udp3"]
-[ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://scenes/UI/options_menu.tscn" id="4_lbubx"]
+[ext_resource type="PackedScene" path="res://scenes/UI/options_menu.tscn" id="4_lbubx"]
 [ext_resource type="PackedScene" uid="uid://duqwgodvr8nt" path="res://scenes/UI/computer/computer.tscn" id="5_cf373"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="7_5vq04"]
 
