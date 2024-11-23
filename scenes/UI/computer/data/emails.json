@@ -5,7 +5,7 @@
 			"user": "j.shoebill@mysinc.org",
 			"date": "sometime",
 			"message": "Dear Shade,\n\nI need your help with the Evelyn Blake case. Lucas Rivers, Evelyn’s ex, is the prime suspect and is being held in custody. But things don’t add up, and I don’t believe he’s guilty.\n\nVictor Blake, her brother, had much to gain from her estate change. While he claims to have wanted to support her, the timing of the change and his financial struggles are suspicious. Marina Thorne also stands out—her relentless push for Evelyn’s success feels more like self-interest than friendship.\n\nI’m sending you initial evidence, including photos of Evelyn’s studio and her gallery. Given your unique skills, I trust you’ll uncover details we’ve missed.\n\nBest,\nDetective Shoebill",
-			"attachments" {
+			"attachments": {
 				"PHOTO": "Evelyn’s Art Studio",
 				"CLUE": "FINANCIAL_TRANSACTIONS_REPORT",
 				"CLUE": "TOXICOLOGY_REPORT"
