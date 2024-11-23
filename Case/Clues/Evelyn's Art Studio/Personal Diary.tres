@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://h07mes3y7353"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://h07mes3y7353"]
 
 [ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_kx8wd"]
+[ext_resource type="Texture2D" uid="uid://rmyisqfo63ng" path="res://assets/imports/graphics/objects/clues/PERSONAL_DIARY.png" id="2_wbyf1"]
+[ext_resource type="Texture2D" uid="uid://bqne5skjls22o" path="res://assets/imports/graphics/objects/clues/icon/PERSONAL_DIARY.png" id="3_7l3gi"]
 
 [resource]
 script = ExtResource("1_kx8wd")
@@ -8,3 +10,5 @@ id = "PERSONAL_DIARY"
 name = "Personal Diary"
 description = "Evelyn’s diary with several pages torn out. Remaining entries hint at her frustration with feeling trapped, particularly mentioning Victor and Marina."
 location = "Evelyn's Art Studio"
+texture = ExtResource("2_wbyf1")
+texture_icon = ExtResource("3_7l3gi")

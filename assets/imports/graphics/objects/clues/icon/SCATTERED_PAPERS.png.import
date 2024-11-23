@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmsq21adygd1g"
-path="res://.godot/imported/image.jpg-2266f2412a074148035211b56f1c23f6.ctex"
+uid="uid://bopl7ayim8jms"
+path="res://.godot/imported/SCATTERED_PAPERS.png-299d55dc3a6a7b73859acd6d7cb7901c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/icon/image.jpg"
-dest_files=["res://.godot/imported/image.jpg-2266f2412a074148035211b56f1c23f6.ctex"]
+source_file="res://assets/imports/graphics/objects/clues/icon/SCATTERED_PAPERS.png"
+dest_files=["res://.godot/imported/SCATTERED_PAPERS.png-299d55dc3a6a7b73859acd6d7cb7901c.ctex"]
 
 [params]
 

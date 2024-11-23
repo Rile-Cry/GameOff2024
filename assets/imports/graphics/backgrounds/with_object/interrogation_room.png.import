@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4kplxq4tof0"
-path="res://.godot/imported/SHREDDED_PAPER.png-ca190f39104b17d61b7a5116341b0584.ctex"
+uid="uid://bhqpkof1r037q"
+path="res://.godot/imported/interrogation_room.png-3115276ed338af81c88be205eaa57e41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/clues/icon/SHREDDED_PAPER.png"
-dest_files=["res://.godot/imported/SHREDDED_PAPER.png-ca190f39104b17d61b7a5116341b0584.ctex"]
+source_file="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png"
+dest_files=["res://.godot/imported/interrogation_room.png-3115276ed338af81c88be205eaa57e41.ctex"]
 
 [params]
 
