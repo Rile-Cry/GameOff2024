@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://btpndxraxxqt8"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_qes6t"]
+
+[resource]
+script = ExtResource("1_qes6t")
+id = "FAMILY_PICTURE"
+name = "Family Picture"
+description = "A family photo notably missing Evelyn, suggesting tension."
+location = "Victor's Office"

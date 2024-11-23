@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://dxabnidnnovy5"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_rrt7y"]
+
+[resource]
+script = ExtResource("1_rrt7y")
+id = "SLEEPING_PILLS"
+name = "Sleeping Pills"
+description = ""
+location = "Marina’s Apartment"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://lg4n6lrddfow"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_147rc"]
+
+[resource]
+script = ExtResource("1_147rc")
+id = "SCATTERED_PAPERS"
+name = "Scattered Papers"
+description = "Torn documents discussing Evelyn’s initial decision to leave her estate to charity."
+location = "Evelyn's Art Studio"

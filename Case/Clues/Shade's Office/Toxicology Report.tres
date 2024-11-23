@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://0ufd61ch5j4s"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_y0vkd"]
+
+[resource]
+script = ExtResource("1_y0vkd")
+id = "FINANCIAL_TRANSACTIONS_REPORT"
+name = "Financial Transactions Report: Victor Blake"
+description = "This report shows that Victor's company was barely staying afloat, before the estate was given to him."
+location = "Shade's Office"

@@ -8,7 +8,7 @@
 script = ExtResource("1_pmdbv")
 id = "SHREDDED_PAPER"
 name = "Shredded Document"
-description = "Add description here"
+description = "Shredded pages of recent documents mentioning “Marina” and “estate.”"
 location = "Victor's Office"
 texture = ExtResource("2_lqikv")
 texture_icon = ExtResource("3_8ibjs")

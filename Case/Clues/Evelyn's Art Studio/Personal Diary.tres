@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://h07mes3y7353"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_kx8wd"]
+
+[resource]
+script = ExtResource("1_kx8wd")
+id = "PERSONAL_DIARY"
+name = "Personal Diary"
+description = "Evelyn’s diary with several pages torn out. Remaining entries hint at her frustration with feeling trapped, particularly mentioning Victor and Marina."
+location = "Evelyn's Art Studio"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://capgnhpfqqbk4"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_ymb08"]
+
+[resource]
+script = ExtResource("1_ymb08")
+id = "GALLERY_INVITATION"
+name = "Gallery Invitation"
+description = "An invitation to Marina’s upcoming art showcase, to showcase her art."
+location = "Evelyn's Art Studio"

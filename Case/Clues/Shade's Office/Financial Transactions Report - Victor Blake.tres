@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://cwfvteaaw8xvv"]
+
+[ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_20hko"]
+
+[resource]
+script = ExtResource("1_20hko")
+id = "AUTOPSY_REPORT"
+name = "Autopsy Report"
+description = "Report talks about drugs such such as sleeping pills found in Evelyn's body, taken around the time of her death"
+location = "Shade's Office"
