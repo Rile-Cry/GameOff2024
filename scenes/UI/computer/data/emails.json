@@ -14,7 +14,12 @@
 					"name": "evelyn_studio.png",
 					"address": "Photos/Evelyn's Art Studio.tres"
 				}
-			]
+			],
+			"darryl_attachments": {
+				"PHOTO": "Evelyn’s Art Studio",
+				"CLUE": "FINANCIAL_TRANSACTIONS_REPORT",
+				"CLUE": "TOXICOLOGY_REPORT"
+			}
 		}
 	]
 }

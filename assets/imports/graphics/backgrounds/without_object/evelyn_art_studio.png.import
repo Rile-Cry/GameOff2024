@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4kplxq4tof0"
-path="res://.godot/imported/SHREDDED_PAPER.png-ca190f39104b17d61b7a5116341b0584.ctex"
+uid="uid://8swums6k3ico"
+path="res://.godot/imported/evelyn_art_studio.png-eaa0621e72a31cb9d71b7120b66b0011.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/clues/icon/SHREDDED_PAPER.png"
-dest_files=["res://.godot/imported/SHREDDED_PAPER.png-ca190f39104b17d61b7a5116341b0584.ctex"]
+source_file="res://assets/imports/graphics/backgrounds/without_object/evelyn_art_studio.png"
+dest_files=["res://.godot/imported/evelyn_art_studio.png-eaa0621e72a31cb9d71b7120b66b0011.ctex"]
 
 [params]
 

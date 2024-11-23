@@ -132,7 +132,6 @@ visible = false
 
 [node name="Credits" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,7 +240,9 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "GGBotNet
 Violin Iliev
-Osaki Tsukiko"
+Osaki Tsukiko
+stocksnap.io
+pexels.com"
 fit_content = true
 
 [node name="AssetLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/AssetHbox"]
@@ -251,7 +252,9 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "X Typewriter Font
-Godot Desktop Themes"
+Godot Desktop Themes
+
+Stock Images"
 fit_content = true
 
 [node name="CreditCloseButton" type="Button" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]

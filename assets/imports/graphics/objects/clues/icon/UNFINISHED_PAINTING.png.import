@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4kplxq4tof0"
-path="res://.godot/imported/SHREDDED_PAPER.png-ca190f39104b17d61b7a5116341b0584.ctex"
+uid="uid://bs8x5hupc8if4"
+path="res://.godot/imported/UNFINISHED_PAINTING.png-fe10a0ef70a7ed58eef6672906b2be99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/clues/icon/SHREDDED_PAPER.png"
-dest_files=["res://.godot/imported/SHREDDED_PAPER.png-ca190f39104b17d61b7a5116341b0584.ctex"]
+source_file="res://assets/imports/graphics/objects/clues/icon/UNFINISHED_PAINTING.png"
+dest_files=["res://.godot/imported/UNFINISHED_PAINTING.png-fe10a0ef70a7ed58eef6672906b2be99.ctex"]
 
 [params]
 

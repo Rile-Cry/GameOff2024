@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_eykuy")
 name = "Evelyn's Art Studio"
-characters = Array[String]([])
+characters = Array[String](["Lucas Rivers"])
 description = "Add Description Here"
 texture_icon = ExtResource("2_l003o")
 texture_location = ExtResource("2_l003o")
