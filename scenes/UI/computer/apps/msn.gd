@@ -28,9 +28,9 @@ func init_online() -> void:
 			user_list.add_child(user_button)
 		user_button.connect("mail_selected", _create_im)
 
-func _create_im(text: String) -> void:
+func _create_im(button: EmailButton) -> void:
 	var im = im_scene.instantiate()
-	im.title = text
+	im.title = button.text
 	get_tree().root.add_child(im)
 
 func check_online() -> void:

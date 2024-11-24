@@ -45,10 +45,10 @@ mouse_default_cursor_shape = 2
 text = "Notepad
 "
 
-[node name="Console" type="Button" parent="Programs"]
+[node name="Vault" type="Button" parent="Programs"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
-text = "Console"
+text = "Vault"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

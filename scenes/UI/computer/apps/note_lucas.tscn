@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c71tq0tk0kqsc"]
+
+[ext_resource type="PackedScene" uid="uid://tji8l8isxw5j" path="res://scenes/UI/computer/apps/note.tscn" id="1_e6e4i"]
+[ext_resource type="Resource" uid="uid://73e7r5np10wa" path="res://components/dialogue/LucasInterrogation.ink.json" id="2_aunv2"]
+
+[node name="Note" instance=ExtResource("1_e6e4i")]
+title = "LucasInterrogation"
+ink_file = ExtResource("2_aunv2")
+
+[node name="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer" index="0"]
+size_flags_horizontal = 3
+size_flags_vertical = 3

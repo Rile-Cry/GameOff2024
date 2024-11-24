@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dedgrf4f8uslw"]
 
 [ext_resource type="Script" path="res://components/dialogue/dialogue_box.gd" id="1_q2gi7"]
-[ext_resource type="Resource" uid="uid://bdbveti5fedv2" path="res://components/dialogue/Turnabout.ink.json" id="2_lrnm1"]
+[ext_resource type="Resource" uid="uid://73e7r5np10wa" path="res://components/dialogue/LucasInterrogation.ink.json" id="2_kwasm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptcf7"]
 
@@ -15,7 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_q2gi7")
-ink_file = ExtResource("2_lrnm1")
+ink_file = ExtResource("2_kwasm")
+title = "LucasInterrogation"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
