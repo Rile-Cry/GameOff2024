@@ -224,6 +224,5 @@ func load_game() -> bool:
 	
 	global_variables = save_data["GlobalVariables"]
 	current_location_index = save_data["CurrentLocation"]
-	print("loaded_game")
 	return true
 	
