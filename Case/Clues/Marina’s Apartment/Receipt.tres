@@ -8,7 +8,7 @@
 script = ExtResource("1_rrt7y")
 id = "RECEIPT"
 name = "Receipt"
-description = ""
+description = "Purchase of Wine, dated 26th september./n/nReciept for purchase of sleeping pills, dated 25th sepetember. Seems barely used."
 location = "Marina’s Apartment"
 texture = ExtResource("2_vw71y")
 texture_icon = ExtResource("3_akq4y")
