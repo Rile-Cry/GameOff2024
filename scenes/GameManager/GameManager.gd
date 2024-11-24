@@ -12,6 +12,8 @@ var global_variables : Dictionary
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 var save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
+var interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
+
 var is_inside_photo : bool = false
 var current_location_index : int = -1:
 	set(val):
