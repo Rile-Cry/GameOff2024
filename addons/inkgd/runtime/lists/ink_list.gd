@@ -519,4 +519,3 @@ func is_ink_class(type: String) -> bool:
 
 func get_ink_class() -> String:
 	return "InkList"
-

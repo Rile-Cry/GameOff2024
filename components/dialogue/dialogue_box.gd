@@ -32,10 +32,11 @@ func _input(event: InputEvent) -> void:
 		if typing:
 			typing = false
 		else:
-			_continue_story()
+			if choice_container == null:
+				_continue_story()
 
 
-func _continue_story():
+func _continue_story() -> void:
 	if USE_SIGNALS:
 		ink_player.continue_story()
 	else:
@@ -96,7 +97,7 @@ func _prompt_choices(choices):
 	get_tree().root.add_child(choice_container)
 
 func _ended():
-	# End of story
+	print(GameGlobals.dialogue_choices[title])
 	queue_free()
 
 
@@ -105,6 +106,7 @@ func _choice_selected(index):
 	choice_container = null
 	
 	ink_player.choose_choice_index(index)
+	GameGlobals.dialogue_choices[title].append(index)
 	_continue_story()
 
 

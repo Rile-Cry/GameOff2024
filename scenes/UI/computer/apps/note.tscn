@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://tji8l8isxw5j"]
+
+[ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_4i174"]
+[ext_resource type="Script" path="res://scenes/UI/computer/apps/note.gd" id="2_w2so7"]
+
+[node name="Note" type="Window"]
+initial_position = 2
+size = Vector2i(600, 600)
+theme = ExtResource("1_4i174")
+script = ExtResource("2_w2so7")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, -3)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2

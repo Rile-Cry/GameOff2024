@@ -2,6 +2,9 @@ extends Node
 
 #region Tracked variables
 var current_case : Case
+var dialogue_choices := {
+	"LucasInterrogation": [],
+}
 var typing_speed : int = 20
 #endregion
 
