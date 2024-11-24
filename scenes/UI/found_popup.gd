@@ -30,6 +30,7 @@ func _ready() -> void:
 	SfxAudio.play_audio("Popup")
 	title_label.text = center + bold + title_text[title]
 	name_label.text = center + obj_name
+	print(obj_desc.replace("/n", '\n'))
 	description_label.text = obj_desc
 	icon_texture.texture = obj_icon
 	

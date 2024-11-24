@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://npbpi7y32wqg"
+path="res://.godot/imported/Evelyn Photo Intro.wav-fc5710b11e6ba9c4f67c36a830685e82.sample"
+
+[deps]
+
+source_file="res://assets/imports/bgm/Evelyn Photo Intro.wav"
+dest_files=["res://.godot/imported/Evelyn Photo Intro.wav-fc5710b11e6ba9c4f67c36a830685e82.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
