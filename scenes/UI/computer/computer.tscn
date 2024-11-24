@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://duqwgodvr8nt"]
+[gd_scene load_steps=4 format=3 uid="uid://duqwgodvr8nt"]
 
 [ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_hme2y"]
 [ext_resource type="Script" path="res://scenes/UI/computer/computer.gd" id="2_adyik"]
+[ext_resource type="Texture2D" uid="uid://cg8vh0w6bv7os" path="res://assets/imports/themes/background.png" id="3_iva2i"]
 
 [node name="Computer" type="Control"]
 layout_mode = 3
@@ -15,14 +16,15 @@ mouse_force_pass_scroll_events = false
 theme = ExtResource("1_hme2y")
 script = ExtResource("2_adyik")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.298039, 0.298039, 0.298039, 1)
+texture = ExtResource("3_iva2i")
+expand_mode = 2
 
 [node name="Programs" type="VBoxContainer" parent="."]
 layout_mode = 1
