@@ -72,3 +72,11 @@ theme_override_constants/margin_bottom = 3
 layout_mode = 2
 text = "Someone"
 horizontal_alignment = 1
+
+[node name="ActorContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 595)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -595.0
+grow_horizontal = 2

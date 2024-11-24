@@ -11,6 +11,11 @@ var global_variables : Dictionary = {
 	"received" = [],
 	"read_emails" = []
 }
+var actor_address := {
+	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",
+	"Victor": "res://assets/imports/graphics/characters/Victor Thorne/victor_",
+	"Marina": "res://assets/imports/graphics/characters/Maria Thorne/maria_",
+}
 
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")

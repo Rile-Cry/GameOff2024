@@ -4,13 +4,22 @@ const USE_SIGNALS = false
 
 @export var ink_file : Resource
 @export var title: String
-@export var bind_externals: Dictionary = {}
+@export var bind_externals: Dictionary = {
+	"mood": "normal"
+}
 
+var actors = {
+	"Lucas": false,
+	"Victor": false,
+	"Marina": false,
+}
+var actor_ref = {}
 var ink_player = InkPlayerFactory.create()
 var choice_container : VBoxContainer
 var tick := 0
 var typing := false
 
+@onready var actor_box := $ActorContainer
 @onready var dialogue := $PanelContainer/MarginContainer/VBoxContainer/Text
 @onready var name_box := $PanelContainer2/MarginContainer/Name
 @onready var panel := $PanelContainer
@@ -51,7 +60,15 @@ func _continue_story() -> void:
 
 func _grab_speaker(text: String) -> String:
 	if text.contains(":"):
-		name_box.text = text.get_slice(":", 0)
+		var actor_name := text.get_slice(":", 0)
+		name_box.text = actor_name
+		if actors.has(actor_name):
+			if not actors[actor_name]:
+				_generate_actor(actor_name)
+				actors[actor_name] = true
+			else:
+				_update_actor(actor_name)
+		
 		return text.get_slice(":", 1)
 	return text
 
@@ -129,3 +146,17 @@ func _bind_externals():
 		return
 	
 	ink_player.observe_variables(externals, self, "_observe_variables")
+
+
+func _generate_actor(actor_name: String) -> void:
+	var texture := TextureRect.new()
+	actor_box.add_child(texture)
+	texture.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+	texture.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	texture.texture = ResourceLoader.load(GameManager.actor_address[actor_name] + bind_externals["mood"] + ".png", "Texture2D")
+	actor_ref[actor_name] = texture
+
+
+func _update_actor(actor_name: String) -> void:
+	actor_ref[actor_name].texture = ResourceLoader.load(GameManager.actor_address[actor_name] + bind_externals["mood"] + ".png", "Texture2D")
