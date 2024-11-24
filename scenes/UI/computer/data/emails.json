@@ -8,20 +8,20 @@
 			"attachments": [
 				{
 					"type": "clue",
-					"name": "victor_financial.png",
-					"address": "Clues/Victor's Office/shredded_paper.tres"
+					"name": "victor_finance.png",
+					"address": "Clues/Shade's Office/Financial Transactions Report  Victor Blake.tres"
+				},
+				{
+					"type": "clue",
+					"name": "toxicology.png",
+					"address": "Clues/Shade's Office/Toxicology Report.tres"
 				},
 				{
 					"type": "photo",
 					"name": "evelyn_studio.png",
 					"address": "Photos/Evelyn’s Art Studio.tres"
 				}
-			],
-			"darryl_attachments": {
-				"PHOTO": "Evelyn’s Art Studio",
-				"CLUE": "FINANCIAL_TRANSACTIONS_REPORT",
-				"CLUE": "TOXICOLOGY_REPORT"
-			}
+			]
 		}
 	]
 }
