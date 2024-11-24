@@ -6,13 +6,14 @@
 [node name="IM" type="Window"]
 title = "Instant Message"
 initial_position = 2
-size = Vector2i(230, 300)
+size = Vector2i(246, 300)
 min_size = Vector2i(230, 300)
 theme = ExtResource("1_hn2hy")
 theme_override_colors/title_color = Color(1, 1, 1, 1)
 script = ExtResource("2_5shah")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

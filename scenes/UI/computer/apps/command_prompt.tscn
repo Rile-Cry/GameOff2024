@@ -1,7 +1,92 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfas7t6y7l64h"]
+[gd_scene load_steps=3 format=3 uid="uid://bo6gegv467vs4"]
 
 [ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_ocf42"]
-[ext_resource type="Script" path="res://scenes/UI/computer/apps/command_prompt.gd" id="2_677b6"]
+
+[sub_resource type="GDScript" id="GDScript_0hkrk"]
+script/source = "extends Window
+
+var current_line : String = \"\"
+var lines : Array[String] = [
+	\"Mystery Operating System [Version 2.5.430]\",
+	\"(C) Copyright 1989-2006 Mystery Inc.\",
+	\"\",
+]
+
+
+@onready var _text_box := $\"PanelContainer/MarginContainer/TextEdit/MarginContainer/VBoxContainer\"
+
+
+func _ready() -> void:
+	connect(\"close_requested\", _close_window)
+	_generate_console()
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"return\"):
+		_create_line()
+
+
+func _generate_console() -> void:
+	for line in lines:
+		var new_box = TextEdit.new()
+		new_box.text = line
+		new_box = _set_line_prop(new_box)
+		new_box.editable = false
+		_text_box.add_child(new_box)
+	
+	var hbox = HBoxContainer.new()
+	var starter = TextEdit.new()
+	var line = TextEdit.new()
+	starter.text = \"M:> \"
+	starter = _set_line_prop(starter)
+	starter.editable = false
+	starter.custom_minimum_size = Vector2(40, 0)
+	starter.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	line = _set_line_prop(line)
+	
+	_text_box.add_child(hbox)
+	hbox.add_child(starter)
+	hbox.add_child(line)
+
+
+func _create_line() -> void:
+	var box = HBoxContainer.new()
+	var starter = TextEdit.new()
+	var line = TextEdit.new()
+	var child = _text_box.get_child(_text_box.get_child_count() - 1)
+	var last_line : TextEdit = child.get_child(1)
+	
+	_text_box.add_child(box)
+	box.add_child(starter)
+	box.add_child(line)
+	
+	starter.text = \"M:> \"
+	starter.editable = false
+	last_line.editable = false
+	starter = _set_line_prop(starter)
+	starter.custom_minimum_size = Vector2(40, 0)
+	starter.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	line = _set_line_prop(line)
+	line.grab_focus()
+
+
+func _set_line_prop(line: TextEdit) -> TextEdit:
+	line.autowrap_mode = TextServer.AUTOWRAP_WORD
+	line.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	line.scroll_fit_content_height = true
+	line.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	line.size_flags_vertical = Control.SIZE_FILL
+	var style = StyleBoxEmpty.new()
+	for type in [\"focus\", \"normal\", \"read_only\"]:
+		line.add_theme_stylebox_override(type, style)
+	line.add_theme_color_override(\"font_color\", Color.WHITE)
+	line.add_theme_color_override(\"font_readonly_color\", Color.WHITE)
+	return line
+
+
+func _close_window() -> void:
+	queue_free()
+"
 
 [node name="CommandPrompt" type="Window"]
 title = "C:\\WINDOWS\\System32\\cmd.exe"
@@ -9,7 +94,7 @@ initial_position = 1
 size = Vector2i(400, 400)
 theme = ExtResource("1_ocf42")
 theme_override_colors/title_color = Color(1, 1, 1, 1)
-script = ExtResource("2_677b6")
+script = SubResource("GDScript_0hkrk")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -23,18 +108,22 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextEdit" type="TextEdit" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TextEdit" type="ColorRect" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/background_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-context_menu_enabled = false
-shortcut_keys_enabled = false
-drag_and_drop_selection_enabled = false
-wrap_mode = 1
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/TextEdit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/TextEdit/MarginContainer"]
+layout_mode = 2
