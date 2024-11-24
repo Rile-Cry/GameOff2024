@@ -72,6 +72,7 @@ _data = {
 }
 
 [node name="Found" type="Control" node_paths=PackedStringArray("title_label", "icon_texture", "name_label", "description_label", "close_b")]
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

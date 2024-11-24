@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://belhwspki2ry5"]
+[gd_scene load_steps=14 format=3 uid="uid://belhwspki2ry5"]
 
+[ext_resource type="Script" path="res://scenes/photos/evelyn's_art_studio_photo.gd" id="1_0fnci"]
 [ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="1_drrgl"]
 [ext_resource type="Script" path="res://Case/object_resource_button.gd" id="2_ng73i"]
 [ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="3_58wdh"]
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0fnci")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0

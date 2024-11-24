@@ -277,25 +277,15 @@ theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="TitleVBox" type="VBoxContainer" parent="MainMargin"]
-layout_mode = 2
-
-[node name="TitleLabel" type="RichTextLabel" parent="MainMargin/TitleVBox"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/bold_font = ExtResource("2_ta2pg")
-theme_override_font_sizes/bold_font_size = 64
-bbcode_enabled = true
-text = "[center][b]Detective Shade"
-fit_content = true
-
-[node name="SubtitleLabel" type="RichTextLabel" parent="MainMargin/TitleVBox"]
+[node name="TitleLabel" type="RichTextLabel" parent="MainMargin"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("2_ta2pg")
 theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 64
 bbcode_enabled = true
-text = "[center]The Turnabout Case"
+text = "[center][b]Detective Shade[/b]
+The Turnabout Case"
 fit_content = true
 
 [node name="Credits" type="Button" parent="MainMargin"]

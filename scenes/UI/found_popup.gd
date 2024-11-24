@@ -1,6 +1,8 @@
 extends Control
 class_name FoundPopup
 
+signal found_popup_closed
+
 @export_category("Control Nodes")
 @export var title_label : RichTextLabel
 @export var icon_texture : TextureRect
@@ -41,4 +43,5 @@ func close():
 	close_b.disabled = true
 	$AnimationPlayer.play_backwards("open")
 	await $AnimationPlayer.animation_finished
+	found_popup_closed.emit()
 	queue_free()

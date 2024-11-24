@@ -8,6 +8,7 @@ func _ready() -> void:
 	%OptionMenu.hide()
 	%Computer.hide()
 	%Credits.hide()
+	%MissionBookButton.hide()
 	
 	%MissionBookButton.pressed.connect(open_close_mission_book)
 	%CreditCloseButton.pressed.connect(open_close_credits)
