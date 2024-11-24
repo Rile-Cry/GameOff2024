@@ -1,6 +1,7 @@
 extends Window
 
 var data := {
+	"type": "",
 	"name": "",
 	"address": ""
 }
@@ -14,10 +15,21 @@ func _ready() -> void:
 
 func update() -> void:
 	title = data["name"]
-	var res : Clue = load("res://Case/" + data["address"]) as Clue
+	var res
+	var texture_value : Texture2D
+	match data["type"]:
+		"clue":
+			res = ResourceLoader.load("res://Case/" + data["address"], "Clue")
+			texture_value = res.texture
+		"photo":
+			res = ResourceLoader.load("res://Case/" + data["address"], "Photo")
+			texture_value = res.texture_location
+		_:
+			print("not valid")
+	
 	if texture != null:
-		texture.texture = res.texture
-		size = res.texture.get_size() / 4
+		texture.texture = texture_value
+		size = texture_value.get_size() / 4
 
 
 func _close() -> void:

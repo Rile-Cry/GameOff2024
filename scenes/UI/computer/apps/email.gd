@@ -56,6 +56,9 @@ func _update_textbox(button: EmailButton) -> void:
 					attachment_bar.remove_child(child)
 			var attachments = mail["attachments"]
 			for attachment in attachments:
+				if attachment["type"] == "clue":
+					var res : Clue = load("res://Case/" + attachment["address"]) as Clue
+					GameManager.clues.append(res)
 				var attach_button = EmailButton.new()
 				attach_button.text = attachment["name"]
 				attachment_bar.add_child(attach_button)
