@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmaiwqa5xravd"
-path="res://.godot/imported/TOXICOLOGY_REPORT.png-17e92f57aac81857e01f05a03becaaf6.ctex"
+uid="uid://bnlogqtjjkq2c"
+path="res://.godot/imported/Arrow.png-d1dccf79da40544d74232f11e9d14585.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/clues/icon/TOXICOLOGY_REPORT.png"
-dest_files=["res://.godot/imported/TOXICOLOGY_REPORT.png-17e92f57aac81857e01f05a03becaaf6.ctex"]
+source_file="res://assets/imports/graphics/UI/Arrow.png"
+dest_files=["res://.godot/imported/Arrow.png-d1dccf79da40544d74232f11e9d14585.ctex"]
 
 [params]
 

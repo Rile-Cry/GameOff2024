@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnrh6nbb05sv2"
-path="res://.godot/imported/TOXICOLOGY_REPORT.png-8e86100c516c45b2ae9043e2e45595c1.ctex"
+uid="uid://bmaiwqa5xravd"
+path="res://.godot/imported/AUTOPSY_REPORT.png-3679d2ee3be5461a779801d6ca7bdf0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/objects/clues/TOXICOLOGY_REPORT.png"
-dest_files=["res://.godot/imported/TOXICOLOGY_REPORT.png-8e86100c516c45b2ae9043e2e45595c1.ctex"]
+source_file="res://assets/imports/graphics/objects/clues/icon/AUTOPSY_REPORT.png"
+dest_files=["res://.godot/imported/AUTOPSY_REPORT.png-3679d2ee3be5461a779801d6ca7bdf0a.ctex"]
 
 [params]
 
