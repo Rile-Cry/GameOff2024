@@ -37,7 +37,7 @@ func set_inbox() -> void:
 		mail_item.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		inbox.add_child(mail_item)
 		mail_item.text = mail["title"]
-		mail_item.size.x = 100
+		mail_item.clip_text = true
 		mail_item.id = i
 		mail_item.connect("mail_selected", _update_textbox)
 		i += 1
@@ -73,6 +73,7 @@ func _update_textbox(button: EmailButton) -> void:
 				
 				attachment_bar.add_child(attach_button)
 				attach_button.id = i
+				attach_button.clip_text = true
 				i += 1
 			break
 
