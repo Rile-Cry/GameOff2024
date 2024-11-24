@@ -13,4 +13,4 @@ texture_icon = ExtResource("2_nev4f")
 texture_location = ExtResource("3_7sjur")
 glitched = false
 is_location = true
-scene_path = "res://scenes/locations/Evelyn's Art Studio.tscn"
+scene_path = "res://scenes/photos/Evelyn's Art Studio.tscn"

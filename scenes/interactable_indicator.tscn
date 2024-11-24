@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cllklstuuqrta"]
+
+[sub_resource type="Gradient" id="Gradient_mn7by"]
+offsets = PackedFloat32Array(0.185682, 0.52349, 0.847875, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ebpeh"]
+gradient = SubResource("Gradient_mn7by")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sdhnb"]
+resource_local_to_scene = true
+lifetime_randomness = 0.8
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(20, 10, 1)
+radial_velocity_min = -10.0
+radial_velocity_max = 9.99998
+gravity = Vector3(0, -30, 0)
+scale_min = 2.0
+scale_max = 6.0
+color = Color(0.83, 0.80012, 0.7636, 1)
+color_ramp = SubResource("GradientTexture1D_ebpeh")
+
+[node name="Interactable Indicator" type="GPUParticles2D"]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_sdhnb")
+lifetime = 2.0
+speed_scale = 0.5

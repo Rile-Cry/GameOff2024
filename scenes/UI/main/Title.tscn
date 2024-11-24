@@ -322,6 +322,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_udsxg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_udsxg")
 script = ExtResource("5_vrakp")
 hover_sfx = "Sticky Note Hover"
+is_hidden = false
 
 [node name="Exit Button" type="Button" parent="."]
 custom_minimum_size = Vector2(86, 75)
@@ -340,6 +341,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_lofhy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_lofhy")
 script = ExtResource("8_3r4qy")
 hover_sfx = "Sticky Note Hover"
+is_hidden = false
 
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(77, 75)
@@ -358,3 +360,4 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_vnckd")
 script = ExtResource("5_ejvs5")
 hover_sfx = "Sticky Note Hover"
 click_sfx = ""
+is_hidden = false

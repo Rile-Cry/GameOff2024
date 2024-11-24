@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://belhwspki2ry5"]
+[gd_scene load_steps=2 format=3 uid="uid://datxvpfhuwdtf"]
 
-[ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="1_drrgl"]
+[ext_resource type="Texture2D" uid="uid://8swums6k3ico" path="res://assets/imports/graphics/backgrounds/without_object/evelyn_art_studio.png" id="1_4kjbv"]
 
 [node name="Evelyn\'sArtStudio" type="Control"]
 layout_mode = 3
@@ -11,7 +11,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_drrgl")
+texture = ExtResource("1_4kjbv")
