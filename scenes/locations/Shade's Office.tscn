@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dj1s12fwy32rr"]
+[gd_scene load_steps=15 format=3 uid="uid://dj1s12fwy32rr"]
 
 [ext_resource type="Script" path="res://scenes/locations/Shade's Office.gd" id="1_4t6ht"]
 [ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/without_object/shades_office.png" id="2_8igll"]
@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
-[ext_resource type="Script" path="res://Case/object_resource_button.gd" id="10_mkocb"]
-[ext_resource type="Resource" uid="uid://dpybbgsp0npf5" path="res://Case/Locations/Evelyn's Art Studio.tres" id="12_meb8l"]
+[ext_resource type="PackedScene" uid="uid://cwvcth4tpcs35" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
 texture = ExtResource("9_x077g")
@@ -113,16 +112,10 @@ hover_sfx = "Sticky Note Hover"
 click_sfx = ""
 is_hidden = false
 
-[node name="Evelyn" type="Button" parent="."]
+[node name="ArrowPC" parent="." instance=ExtResource("10_i75gh")]
 layout_mode = 0
-offset_left = 58.0
-offset_top = 243.0
-offset_right = 134.0
-offset_bottom = 322.0
-text = "Evelyn"
-script = ExtResource("10_mkocb")
-resource = ExtResource("12_meb8l")
-type = 2
-hover_sfx = ""
-is_hidden = false
-hover_outline_thickness = 0
+offset_left = 510.0
+offset_top = 132.0
+offset_right = 766.0
+offset_bottom = 388.0
+scale = Vector2(0.5, 0.5)

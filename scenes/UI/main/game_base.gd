@@ -2,6 +2,7 @@ extends Node
 class_name GameBase
 
 @onready var level_base : Node = $LevelBase
+const tutorial_popup_path : String = "res://scenes/UI/tutorial_popup.tscn"
 
 const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
 
@@ -12,9 +13,15 @@ func _ready() -> void:
 	if GameManager:
 		GameManager.game_base = self
 		if not GameManager.load_game():
+			
+			GameManager.set_global_variable("tutorial_pc", true)
+
 			GameManager.unlock_location(load(start_location_path), false)
-			GameManager.photos.append(load("res://Case/Photos/Evelyn’s Art Studio.tres"))
 			GameManager.current_location_index = 0
+			await LoadScreen.loading_finish
+			if UIManager:
+				var tutorial_popup : PackedScene = load(tutorial_popup_path)
+				UIManager.add_child(tutorial_popup.instantiate())
 	
 	if UIManager:
 		UIManager.refresh_mission_book()

@@ -5,16 +5,19 @@ func _ready() -> void:
 	$ComputerButton.connect("pressed", _open_computer)
 	$SaveButton.connect("pressed", _save_game)
 	BgmAudio.play_audio("Shade's Office")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
+	
+	if GameManager.get_global_variable("tutorial_pc"):
+		pass
+	else:
+		$ArrowPC.queue_free()
 
 func _open_computer() -> void:
 	if UIManager:
 		UIManager.open_close_computer()
+	
+	if GameManager.get_global_variable("tutorial_pc"):
+		GameManager.set_global_variable("tutorial_pc", false)
+		$ArrowPC.queue_free()
 
 func _save_game() -> void:
 	if GameManager:
