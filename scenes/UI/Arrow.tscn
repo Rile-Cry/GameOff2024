@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwvcth4tpcs35"]
+
+[ext_resource type="Texture2D" uid="uid://bnlogqtjjkq2c" path="res://assets/imports/graphics/UI/Arrow.png" id="1_m3gyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5agol"]
+atlas = ExtResource("1_m3gyr")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="Animation" id="Animation_fm2if"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 256, 256)]
+}
+
+[sub_resource type="Animation" id="Animation_ie3lf"]
+resource_name = "arrow"
+length = 0.2
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 256, 256), Rect2(256, 0, 256, 256), Rect2(512, 0, 256, 256), Rect2(768, 0, 256, 256), Rect2(1024, 0, 256, 256)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atboe"]
+_data = {
+"RESET": SubResource("Animation_fm2if"),
+"arrow": SubResource("Animation_ie3lf")
+}
+
+[node name="Arrow" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_5agol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_atboe")
+}
+autoplay = "arrow"

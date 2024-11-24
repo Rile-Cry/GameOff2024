@@ -68,6 +68,7 @@ Found in <clue_location>
 signal clue_selected(clue : Clue)
 
 func _ready():
+	tab_container.set_current_tab(0)
 	close_b.button_down.connect(close)
 	tab_container.tab_selected.connect(page_change)
 	hide()
@@ -124,7 +125,7 @@ func update_location_info(location : Location):
 	text = text.replace("<location_desc>", hovered_location.description)
 
 	location_label.text = text
-	location_texture.texture = hovered_location.texture_location
+	location_texture.texture = hovered_location.texture
 
 func refresh_location_info(location : Location):
 	if hovered_location == location:
@@ -153,7 +154,7 @@ func update_photo_info(photo : Photo):
 	text = text.replace("<photo_desc>", current_photo.description)
 
 	photo_label.text = text
-	photo_texture.texture = current_photo.texture_location
+	photo_texture.texture = current_photo.texture
 
 func refresh_photo_info(photo : Photo):
 	if current_photo == photo:

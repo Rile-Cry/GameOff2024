@@ -34,10 +34,24 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "EMail"
 
+[node name="Notification" type="Panel" parent="Programs/Email"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 15.0
+offset_right = 77.0
+offset_bottom = 28.0
+
 [node name="Messenger" type="Button" parent="Programs"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Messenger"
+
+[node name="Notification" type="Panel" parent="Programs/Messenger"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = -15.0
+offset_right = 77.0
+offset_bottom = -2.0
 
 [node name="Notepad" type="Button" parent="Programs"]
 layout_mode = 2

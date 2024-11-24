@@ -8,17 +8,22 @@
 			"attachments": [
 				{
 					"type": "clue",
-					"name": "victor_finance.png",
-					"address": "Clues/Shade's Office/Financial Transactions Report  Victor Blake.tres"
+					"name": "evelyn_autopsy",
+					"filetype": "pdf",
+					"content" : "[center][b]Autopsy Report[/b][/center]\n[b]Name[/b]: Evelyn Blake\n[b]Time of Death[/b]: 29th September 2016 12:15:00\n[b]Cause[/b]: Severe Internal Bleeding caused by blunt force trauma to the head.\n\n[b]Additional Note[/b]: A dose of [b]Antihistamines[/b] was identified in the body. Most likely, the victim has taken sleeping pills during her time of death.",
+					"address": "Clues/Shade's Office/Autopsy Report.tres"
 				},
 				{
 					"type": "clue",
-					"name": "toxicology.png",
-					"address": "Clues/Shade's Office/Toxicology Report.tres"
+					"name": "victor_financial",
+					"filetype": "pdf",
+					"content" : "[center][b]Financial Transactions Report[/b][/center]",
+					"address": "Clues/Shade's Office/Financial Transactions Report - Victor Blake.tres"
 				},
 				{
 					"type": "photo",
-					"name": "evelyn_studio.png",
+					"name": "evelyn_studio",
+					"filetype": "image",
 					"address": "Photos/Evelyn’s Art Studio.tres"
 				}
 			]

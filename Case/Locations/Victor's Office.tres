@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_njkdp")
 name = "Victor's Office"
-characters = Array[String]([])
+characters = Array[String](["Victor Blake"])
 description = ""
 scene_path = ""

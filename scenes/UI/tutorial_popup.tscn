@@ -1,0 +1,566 @@
+[gd_scene load_steps=11 format=3 uid="uid://l4t25mjewvwv"]
+
+[ext_resource type="Script" path="res://scenes/UI/tutorial_popup.gd" id="1_4oj3e"]
+[ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_fn0bc"]
+[ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_kecus"]
+[ext_resource type="Texture2D" uid="uid://cty6hjaiaeunt" path="res://assets/imports/graphics/screenshots/Mission Book.png" id="4_3r4va"]
+[ext_resource type="Texture2D" uid="uid://6sgdwuek8dd" path="res://assets/imports/graphics/screenshots/Photo Jumping.png" id="5_hbhk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpns4"]
+bg_color = Color(0.996078, 0.976471, 0.952941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ppu5"]
+
+[sub_resource type="Animation" id="Animation_jeuj5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h500q"]
+resource_name = "open"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wvdx2"]
+_data = {
+"RESET": SubResource("Animation_jeuj5"),
+"open": SubResource("Animation_h500q")
+}
+
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("tab_container", "prev_b", "next_b", "close_b")]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 360)
+script = ExtResource("1_4oj3e")
+tab_container = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/Pages")
+prev_b = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Previous")
+next_b = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Next")
+close_b = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Close")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 192
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 192
+theme_override_constants/margin_bottom = 64
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mpns4")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]Hello Detective!"
+fit_content = true
+
+[node name="Pages" type="TabContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5ppu5")
+current_tab = 6
+tabs_visible = false
+
+[node name="Welcome" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.996078, 0.976471, 0.952941, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("2_fn0bc")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "
+
+[center][b]Detective Shade[/b]
+The Turnabout Case"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "In this game, you will be solving a case by:
+[ul]Visiting multiple locations[/ul]
+[ul]Collecting Clues[/ul]
+[ul]Comfronting suspects[/ul]
+
+The goal is to identify the individual who committed the crime."
+fit_content = true
+
+[node name="Office" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Shade's Office"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_kecus")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Over here is your office space, where you would be able to do the following
+[ul]View your PC
+[ul]Access Emails[/ul]
+[/ul]
+[ul]Save your Progress[/ul]
+[ul]Change settings[/ul]"
+fit_content = true
+
+[node name="Mission Book" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Mission Book"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_3r4va")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "On the bottom right corner of your screen, you can see a mission book icon. In the mission book, you will be able to:
+[ul]Go to different locations[/ul]
+[ul]Look through the clues you have gathered[/ul]
+[ul]View photos that you obtained throughout the case[/ul]
+[ul]Review dialogue that you highlighted"
+fit_content = true
+
+[node name="Glitch Photo" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Glitched Photo
+"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_kecus")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Before a case starts, you would be given a glitched portrait photo that would only reveal itself once you've solved a case successfully. However, be warned that if in any circumstance your guess was wrong, the photo would corrupt even further."
+fit_content = true
+
+[node name="Photo Jumping" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Photo Jumping"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_hbhk4")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Unlike most detectives, you will be able to interact with the objects in certain photos. You will be using this to help with gathering clues to help discover the perpetrator."
+fit_content = true
+
+[node name="Note Taking" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Note Taking
+"
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_kecus")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Whenever you interact with a suspect, you will be given an option to highlight dialogue if you believe that something they said is suspicious. 
+
+[i][b]Developer Note[/b]: This does not directly affect gameplay, its more so a way for players to easily remember certain dialogue."
+fit_content = true
+
+[node name="End" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.996078, 0.976471, 0.952941, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("2_fn0bc")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "
+
+[center][b]GOOD LUCK[/b]
+:)"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "That's about all you'll need to know, now go and solve some cases Detective!"
+fit_content = true
+
+[node name="Thanks" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+bbcode_enabled = true
+text = "[i][b]Message from DarrylBD99[/b]: I don't know what else to put here, so I would just like to say, thanks for playing! This is probably one of the very few projects that I am proud to be apart of. "
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Previous" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+text = "Previous"
+
+[node name="Next" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+text = "Next"
+
+[node name="Close" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_default_cursor_shape = 2
+text = "Close"
+
+[node name="TabBar" type="TabBar" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wvdx2")
+}

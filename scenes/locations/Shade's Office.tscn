@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj1s12fwy32rr"]
+[gd_scene load_steps=15 format=3 uid="uid://dj1s12fwy32rr"]
 
 [ext_resource type="Script" path="res://scenes/locations/Shade's Office.gd" id="1_4t6ht"]
 [ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/without_object/shades_office.png" id="2_8igll"]
@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
-[ext_resource type="Script" path="res://Case/object_resource_button.gd" id="10_mkocb"]
-[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/shredded_paper.tres" id="11_xkghs"]
-[ext_resource type="Resource" uid="uid://dpybbgsp0npf5" path="res://Case/Locations/Evelyn's Art Studio.tres" id="12_meb8l"]
+[ext_resource type="PackedScene" uid="uid://cwvcth4tpcs35" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
 texture = ExtResource("9_x077g")
@@ -56,6 +54,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_jypko")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_jypko")
 theme_override_styles/normal = SubResource("StyleBoxTexture_jypko")
 script = ExtResource("8_gsv3f")
+is_hidden = false
 
 [node name="OptionsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(77, 75)
@@ -74,6 +73,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nulqq")
 script = ExtResource("4_xkdys")
 hover_sfx = "Sticky Note Hover"
 click_sfx = ""
+is_hidden = false
 
 [node name="ExitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(86, 75)
@@ -91,6 +91,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_7jlq8")
 script = ExtResource("6_e7ndo")
 hover_sfx = "Sticky Note Hover"
+is_hidden = false
 
 [node name="SaveButton" type="Button" parent="."]
 custom_minimum_size = Vector2(88, 87)
@@ -109,24 +110,12 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_tswg3")
 script = ExtResource("8_gsv3f")
 hover_sfx = "Sticky Note Hover"
 click_sfx = ""
+is_hidden = false
 
-[node name="ShreddedDoc" type="Button" parent="."]
+[node name="ArrowPC" parent="." instance=ExtResource("10_i75gh")]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 255.0
-offset_right = 168.0
-offset_bottom = 334.0
-text = "ShreddedDoc"
-script = ExtResource("10_mkocb")
-resource = ExtResource("11_xkghs")
-
-[node name="Evelyn" type="Button" parent="."]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 363.0
-offset_right = 131.0
-offset_bottom = 442.0
-text = "Evelyn"
-script = ExtResource("10_mkocb")
-resource = ExtResource("12_meb8l")
-type = 2
+offset_left = 510.0
+offset_top = 132.0
+offset_right = 766.0
+offset_bottom = 388.0
+scale = Vector2(0.5, 0.5)

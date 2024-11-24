@@ -55,7 +55,7 @@ project/assembly_name="IndieBlueprint"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/inkgd/plugin.cfg")
+enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
 
 [file_customization]
 

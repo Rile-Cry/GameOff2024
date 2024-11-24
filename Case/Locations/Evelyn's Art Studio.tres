@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://dpybbgsp0npf5"]
+[gd_resource type="Resource" script_class="Location" load_steps=4 format=3 uid="uid://dpybbgsp0npf5"]
 
 [ext_resource type="Script" path="res://Case/Locations/LocationResource.gd" id="1_eykuy"]
-[ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="2_l003o"]
+[ext_resource type="Texture2D" uid="uid://8swums6k3ico" path="res://assets/imports/graphics/backgrounds/without_object/evelyn_art_studio.png" id="2_1glos"]
+[ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_k62m2"]
 
 [resource]
 script = ExtResource("1_eykuy")
 name = "Evelyn's Art Studio"
 characters = Array[String](["Lucas Rivers"])
 description = "Add Description Here"
-texture_icon = ExtResource("2_l003o")
-texture_location = ExtResource("2_l003o")
+texture = ExtResource("2_k62m2")
+texture_icon = ExtResource("2_1glos")
 scene_path = "res://scenes/locations/Evelyn's Art Studio.tscn"

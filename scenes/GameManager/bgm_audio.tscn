@@ -45,13 +45,15 @@ Vector2i(-1, 1): {
 }
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ikhae"]
-clip_count = 2
+clip_count = 3
 clip_0/name = &"Title Screen"
 clip_0/stream = SubResource("AudioStreamInteractive_d5k14")
 clip_0/auto_advance = 0
 clip_1/name = &"Shade\'s Office"
 clip_1/stream = SubResource("AudioStreamInteractive_rivyw")
 clip_1/auto_advance = 0
+clip_2/name = &"Photo Jump"
+clip_2/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,

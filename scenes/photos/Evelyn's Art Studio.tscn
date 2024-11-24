@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://belhwspki2ry5"]
+
+[ext_resource type="Script" path="res://scenes/photos/evelyn's_art_studio_photo.gd" id="1_0fnci"]
+[ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="1_drrgl"]
+[ext_resource type="Script" path="res://Case/object_resource_button.gd" id="2_ng73i"]
+[ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="3_58wdh"]
+[ext_resource type="Resource" uid="uid://capgnhpfqqbk4" path="res://Case/Clues/Evelyn's Art Studio/Gallery Invitation.tres" id="4_18gxu"]
+[ext_resource type="Resource" uid="uid://lg4n6lrddfow" path="res://Case/Clues/Evelyn's Art Studio/Scattered Papers.tres" id="5_v1bru"]
+[ext_resource type="Resource" uid="uid://bg4synv4bwejh" path="res://Case/Clues/Evelyn's Art Studio/Unfinished Painting.tres" id="6_nct72"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w7q3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3rhf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8wtp0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_257ir"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ppnct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_flla2"]
+
+[node name="Evelyn\'sArtStudio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fnci")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_drrgl")
+
+[node name="Personal Diary" type="Button" parent="."]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 499.0
+offset_right = 188.0
+offset_bottom = 537.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2w7q3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s3rhf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8wtp0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_257ir")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ppnct")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flla2")
+script = ExtResource("2_ng73i")
+resource = ExtResource("3_58wdh")
+
+[node name="Gallery Invitation" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 524.0
+offset_right = 76.0
+offset_bottom = 552.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2w7q3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s3rhf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8wtp0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_257ir")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ppnct")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flla2")
+script = ExtResource("2_ng73i")
+resource = ExtResource("4_18gxu")
+
+[node name="Scattered Papers" type="Button" parent="."]
+layout_mode = 0
+offset_left = 953.0
+offset_top = 524.0
+offset_right = 1180.0
+offset_bottom = 569.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2w7q3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s3rhf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8wtp0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_257ir")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ppnct")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flla2")
+script = ExtResource("2_ng73i")
+resource = ExtResource("5_v1bru")
+
+[node name="Unfinished Painting" type="Button" parent="."]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 279.0
+offset_right = 863.0
+offset_bottom = 521.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2w7q3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_s3rhf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8wtp0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_257ir")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ppnct")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_flla2")
+script = ExtResource("2_ng73i")
+resource = ExtResource("6_nct72")

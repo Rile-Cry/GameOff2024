@@ -3,7 +3,8 @@ extends Window
 var data := {
 	"type": "",
 	"name": "",
-	"address": ""
+	"filetype": "",
+	"address": "",
 }
 
 @onready var texture := $PanelContainer/ColorRect/MarginContainer/TextureRect
@@ -17,15 +18,9 @@ func update() -> void:
 	title = data["name"]
 	var res
 	var texture_value : Texture2D
-	match data["type"]:
-		"clue":
-			res = ResourceLoader.load("res://Case/" + data["address"], "Clue")
-			texture_value = res.texture
-		"photo":
-			res = ResourceLoader.load("res://Case/" + data["address"], "Photo")
-			texture_value = res.texture_location
-		_:
-			print("not valid")
+	res = ResourceLoader.load("res://Case/" + data["address"], "Photo")
+	texture_value = res.texture
+	print("not valid")
 	
 	if texture != null:
 		texture.texture = texture_value
