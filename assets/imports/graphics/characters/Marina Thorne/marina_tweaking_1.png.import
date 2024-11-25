@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ly4bumnxi4e"
-path="res://.godot/imported/maria_tweaking_1.png-ad756809d8d1c46cbdb9c7a84b3cef48.ctex"
+uid="uid://5grmoho7vgoq"
+path="res://.godot/imported/marina_tweaking_1.png-500cd6da3e3f6c6480c8dc4080f99fe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/characters/Maria Thorne/maria_tweaking_1.png"
-dest_files=["res://.godot/imported/maria_tweaking_1.png-ad756809d8d1c46cbdb9c7a84b3cef48.ctex"]
+source_file="res://assets/imports/graphics/characters/Marina Thorne/marina_tweaking_1.png"
+dest_files=["res://.godot/imported/marina_tweaking_1.png-500cd6da3e3f6c6480c8dc4080f99fe9.ctex"]
 
 [params]
 

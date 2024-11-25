@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cste0y0q3fyu4"
-path="res://.godot/imported/Maria Photo Loop.wav-6077cd13fbae1a8332e13ce65a999585.sample"
+path="res://.godot/imported/Marina Photo Loop.wav-2e0730b31b451b1b860d4f04a6ed9cdc.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Maria Photo Loop.wav"
-dest_files=["res://.godot/imported/Maria Photo Loop.wav-6077cd13fbae1a8332e13ce65a999585.sample"]
+source_file="res://assets/imports/bgm/Marina Photo Loop.wav"
+dest_files=["res://.godot/imported/Marina Photo Loop.wav-2e0730b31b451b1b860d4f04a6ed9cdc.sample"]
 
 [params]
 

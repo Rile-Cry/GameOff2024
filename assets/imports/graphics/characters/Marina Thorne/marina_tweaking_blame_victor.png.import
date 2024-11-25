@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://olit3frkgnmv"
-path="res://.godot/imported/maria_sassy.png-53f31c78506c8a23c6e04e131de0d57a.ctex"
+uid="uid://bq37n5yarwmj1"
+path="res://.godot/imported/marina_tweaking_blame_victor.png-8aa240057093f130921c82af0e31e8dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/characters/Maria Thorne/maria_sassy.png"
-dest_files=["res://.godot/imported/maria_sassy.png-53f31c78506c8a23c6e04e131de0d57a.ctex"]
+source_file="res://assets/imports/graphics/characters/Marina Thorne/marina_tweaking_blame_victor.png"
+dest_files=["res://.godot/imported/marina_tweaking_blame_victor.png-8aa240057093f130921c82af0e31e8dc.ctex"]
 
 [params]
 

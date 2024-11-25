@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch8qesmho2hjc"
-path="res://.godot/imported/maria_defensive_1.png-abbadd62293b031fcd347bbb986f49df.ctex"
+uid="uid://dkgj63dmg3k8k"
+path="res://.godot/imported/marina_arrest.png-117188b710e54d7362d4dc5fc74873ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/characters/Maria Thorne/maria_defensive_1.png"
-dest_files=["res://.godot/imported/maria_defensive_1.png-abbadd62293b031fcd347bbb986f49df.ctex"]
+source_file="res://assets/imports/graphics/characters/Marina Thorne/marina_arrest.png"
+dest_files=["res://.godot/imported/marina_arrest.png-117188b710e54d7362d4dc5fc74873ac.ctex"]
 
 [params]
 

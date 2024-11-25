@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byx2p1okdh71g"
-path="res://.godot/imported/victor_blame_maria.png-59e2d3b952ce92fb97b12536abec6ca7.ctex"
+uid="uid://b00c0r1db0rlw"
+path="res://.godot/imported/marina_defensive_1.png-65d614a4853c6985519e15c6dc903316.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/characters/Victor Thorne/victor_blame_maria.png"
-dest_files=["res://.godot/imported/victor_blame_maria.png-59e2d3b952ce92fb97b12536abec6ca7.ctex"]
+source_file="res://assets/imports/graphics/characters/Marina Thorne/marina_defensive_1.png"
+dest_files=["res://.godot/imported/marina_defensive_1.png-65d614a4853c6985519e15c6dc903316.ctex"]
 
 [params]
 

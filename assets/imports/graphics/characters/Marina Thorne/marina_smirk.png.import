@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5my2bruikwu6"
-path="res://.godot/imported/maria_sigh.png-bcc24818a5c8e113b936dd27c52b5d31.ctex"
+uid="uid://bhredf5wt3omk"
+path="res://.godot/imported/marina_smirk.png-bcc7fd9588f874d7a051066d3a1ad501.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/characters/Maria Thorne/maria_sigh.png"
-dest_files=["res://.godot/imported/maria_sigh.png-bcc24818a5c8e113b936dd27c52b5d31.ctex"]
+source_file="res://assets/imports/graphics/characters/Marina Thorne/marina_smirk.png"
+dest_files=["res://.godot/imported/marina_smirk.png-bcc7fd9588f874d7a051066d3a1ad501.ctex"]
 
 [params]
 

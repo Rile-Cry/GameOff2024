@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq7t7ty23jwc6"
-path="res://.godot/imported/maria_normal_guided.png-da1391f68a8abe5472b0012eb2ba82fd.ctex"
+uid="uid://co4ustwcabp0t"
+path="res://.godot/imported/marina_guarded.png-dc199cc12d2533cda0fa31c607218598.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/characters/Maria Thorne/maria_normal_guided.png"
-dest_files=["res://.godot/imported/maria_normal_guided.png-da1391f68a8abe5472b0012eb2ba82fd.ctex"]
+source_file="res://assets/imports/graphics/characters/Marina Thorne/marina_guarded.png"
+dest_files=["res://.godot/imported/marina_guarded.png-dc199cc12d2533cda0fa31c607218598.ctex"]
 
 [params]
 
