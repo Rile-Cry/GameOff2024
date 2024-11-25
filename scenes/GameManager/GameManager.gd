@@ -14,13 +14,14 @@ var global_variables : Dictionary = {
 var actor_address := {
 	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",
 	"Victor": "res://assets/imports/graphics/characters/Victor Thorne/victor_",
-	"Marina": "res://assets/imports/graphics/characters/Maria Thorne/maria_",
+	"Marina": "res://assets/imports/graphics/characters/Marina Thorne/marina_",
 }
 
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 var save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
 var interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
+var _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
 
 var is_inside_photo : bool = false
 var current_location_index : int = -1:
@@ -55,6 +56,11 @@ func _ready():
 
 func change_scene(scene : PackedScene):
 	if game_base: game_base.change_level(scene)
+
+func create_dialogue(file_name: String, args: Dictionary = {}) -> DialogueBox:
+	var dialogue_box : DialogueBox = _dialogue_scene.instantiate() as DialogueBox
+	dialogue_box.setup(file_name, args)
+	return dialogue_box
 
 func stack_resources(res : Resource, type : resource_type):
 	var stack_res : Dictionary = {

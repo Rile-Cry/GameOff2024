@@ -1,7 +1,7 @@
+-> start
 VAR speaker = "Narrator"
 VAR spoken_to_first = false
-
--> start
+VAR mood = "normal"
 
 === start ===
 Shade: Let's not waste time. Evelyn Blake didn't die by accident. This was a carefully planned crime, and one of you orchestrated it. By the end of this, I'll expose who.

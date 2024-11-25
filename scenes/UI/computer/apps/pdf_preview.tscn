@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b081n34ixnadh"]
+[gd_scene load_steps=3 format=3 uid="uid://ba4cxm2jsr76w"]
 
 [ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_qvwkc"]
 [ext_resource type="Script" path="res://scenes/UI/computer/apps/pdf_preview.gd" id="2_bmnqs"]
