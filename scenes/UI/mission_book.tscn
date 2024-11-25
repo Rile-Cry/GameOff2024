@@ -346,7 +346,7 @@ theme_override_constants/separation = 4
 layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 2
-stretch_mode = 6
+stretch_mode = 5
 
 [node name="InfoLabel" type="RichTextLabel" parent="TabContainer/Clues/MarginContainer/HBoxContainer/Info/InfoVBox"]
 layout_mode = 2
