@@ -132,7 +132,7 @@ fit_content = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5ppu5")
-current_tab = 6
+current_tab = 3
 tabs_visible = false
 
 [node name="Welcome" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
@@ -311,24 +311,22 @@ text = "On the bottom right corner of your screen, you can see a mission book ic
 [ul]Review dialogue that you highlighted"
 fit_content = true
 
-[node name="Glitch Photo" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
-visible = false
+[node name="Suspect Interaction" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo"]
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]Glitched Photo
-"
+text = "[center]Interact with Suspects"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -340,24 +338,26 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo/ColorRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_kecus")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Glitch Photo/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "Before a case starts, you would be given a glitched portrait photo that would only reveal itself once you've solved a case successfully. However, be warned that if in any circumstance your guess was wrong, the photo would corrupt even further."
+text = "When you visit a location, you may meet one of the suspects there. 
+[ul]You can innitiate dialogue and will be given the option to ask specific questions[/ul]
+[ul]Certain dialogue can only be unlocked by presenting clues[/ul]"
 fit_content = true
 
 [node name="Photo Jumping" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
@@ -460,6 +460,7 @@ text = "Whenever you interact with a suspect, you will be given an option to hig
 fit_content = true
 
 [node name="End" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
