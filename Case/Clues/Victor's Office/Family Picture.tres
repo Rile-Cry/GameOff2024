@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Clue" load_steps=2 format=3 uid="uid://btpndxraxxqt8"]
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://btpndxraxxqt8"]
 
 [ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_qes6t"]
+[ext_resource type="Texture2D" uid="uid://yr7lk757lqq6" path="res://assets/imports/graphics/objects/clues/FAMILY_PICTURE.png" id="2_f6ryc"]
+[ext_resource type="Texture2D" uid="uid://cdggcobpgd8ot" path="res://assets/imports/graphics/objects/clues/icon/FAMILY_PICTURE.png" id="3_46lxh"]
 
 [resource]
 script = ExtResource("1_qes6t")
@@ -8,3 +10,5 @@ id = "FAMILY_PICTURE"
 name = "Family Picture"
 description = "A family photo notably missing Evelyn, suggesting tension."
 location = "Victor's Office"
+texture = ExtResource("2_f6ryc")
+texture_icon = ExtResource("3_46lxh")
