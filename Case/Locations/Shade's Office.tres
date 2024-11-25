@@ -8,5 +8,6 @@ script = ExtResource("1_qha2o")
 name = "Shade's Office"
 characters = Array[String]([])
 description = "Add Description Here"
+texture = ExtResource("2_doc1i")
 texture_icon = ExtResource("2_doc1i")
 scene_path = "res://scenes/locations/Shade's Office.tscn"

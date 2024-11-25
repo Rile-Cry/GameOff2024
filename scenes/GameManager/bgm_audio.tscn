@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://co6kbt8rocnj6"]
+[gd_scene load_steps=15 format=3 uid="uid://co6kbt8rocnj6"]
 
 [ext_resource type="AudioStream" uid="uid://qqf6insqta3g" path="res://assets/imports/bgm/Shade's Office Intro.wav" id="1_vpf2b"]
 [ext_resource type="AudioStream" uid="uid://s7yhrbr58crc" path="res://assets/imports/bgm/Title Screen Intro.wav" id="1_yh87y"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="3_p8n0k"]
 [ext_resource type="AudioStream" uid="uid://npbpi7y32wqg" path="res://assets/imports/bgm/Evelyn Photo Intro.wav" id="5_pm04x"]
 [ext_resource type="AudioStream" uid="uid://cjgrprk7jm2ji" path="res://assets/imports/bgm/Evelyn Photo Loop.wav" id="6_bvw7s"]
+[ext_resource type="AudioStream" uid="uid://dqlnyp72tpsme" path="res://assets/imports/bgm/Marina Photo Intro.wav" id="7_mqm4l"]
+[ext_resource type="AudioStream" uid="uid://cste0y0q3fyu4" path="res://assets/imports/bgm/Marina Photo Loop.wav" id="8_gd555"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_d5k14"]
 clip_count = 2
@@ -65,8 +67,27 @@ Vector2i(-1, 1): {
 }
 }
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_l4ap5"]
+clip_count = 2
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("7_mqm4l")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Loop"
+clip_1/stream = ExtResource("8_gd555")
+clip_1/auto_advance = 1
+clip_1/next_clip = 1
+_transitions = {
+Vector2i(-1, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+}
+}
+
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ikhae"]
-clip_count = 3
+clip_count = 4
 clip_0/name = &"Title Screen"
 clip_0/stream = SubResource("AudioStreamInteractive_d5k14")
 clip_0/auto_advance = 0
@@ -76,6 +97,9 @@ clip_1/auto_advance = 0
 clip_2/name = &"Evelyn Photo"
 clip_2/stream = SubResource("AudioStreamInteractive_dl8jn")
 clip_2/auto_advance = 0
+clip_3/name = &"Marina Photo"
+clip_3/stream = SubResource("AudioStreamInteractive_l4ap5")
+clip_3/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
@@ -96,6 +120,12 @@ Vector2i(1, 1): {
 "to_time": 0
 },
 Vector2i(2, 2): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(3, 3): {
 "fade_beats": 1,
 "fade_mode": 0,
 "from_time": 0,
