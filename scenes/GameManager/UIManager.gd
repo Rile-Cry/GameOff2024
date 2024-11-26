@@ -1,5 +1,7 @@
 extends CanvasLayer
 var is_hovering_mission_book : bool = false
+var can_open_option : bool = true
+
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -30,7 +32,7 @@ func _input(event: InputEvent) -> void:
 			open_close_mission_book()
 		elif %Credits.visible:
 			open_close_credits()
-		elif not %Computer.visible:
+		elif not %Computer.visible and can_open_option:
 			open_close_options()
 
 func enable_disable_mission_book_button():
