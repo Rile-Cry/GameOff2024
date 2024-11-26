@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4cjim7qymlxa"]
+[gd_scene load_steps=3 format=3 uid="uid://b4cjim7qymlxa"]
 
+[ext_resource type="Script" path="res://scenes/locations/marina's_apartment.gd" id="1_k3lwv"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_vkt8m"]
 
 [node name="Marina\'sApartment" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k3lwv")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
