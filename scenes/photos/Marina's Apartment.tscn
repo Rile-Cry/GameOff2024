@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwubh61lkc4rb"]
+
+[ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
+[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hxia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0tol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm6s4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3jtm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc610"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n0fo"]
+
+[node name="Marina\'sApartment" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ks872")
+
+[node name="Desk" type="Button" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 211.0
+offset_right = 1188.0
+offset_bottom = 355.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
+script = ExtResource("2_oxx8a")
+hover_sfx = ""
+
+[node name="Lock" type="Button" parent="."]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 377.0
+offset_right = 993.0
+offset_bottom = 421.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
+script = ExtResource("2_oxx8a")
+hover_sfx = ""
+
+[node name="UIPopupMargin" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UIPopupMargin"]
+layout_mode = 2
+color = Color(0.203922, 0.203922, 0.203922, 0.470588)
