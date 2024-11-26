@@ -168,15 +168,19 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Credits/MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="TitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("7_5vq04")
@@ -185,10 +189,10 @@ bbcode_enabled = true
 text = "[center][b]Credits"
 fit_content = true
 
-[node name="CreditsHbox" type="HBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="CreditsHbox" type="HBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="NameLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
+[node name="NameLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -198,14 +202,14 @@ text = "Nehal
 DarrylBD99
 Lunel
 Jules
+K916EKHO
 Rey
-The Cool Treecko
 Ménure
 Eduardo Arantes
 "
 fit_content = true
 
-[node name="RoleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
+[node name="RoleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -214,14 +218,14 @@ bbcode_enabled = true
 text = "Story Writter and Lead Dev
 Programmer
 Programmer
-2D Artist
-2D Artist
-UI/UX
+Background Artist
+Background Artist
+Character Artist
 Music
 SFX"
 fit_content = true
 
-[node name="AssetTitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="AssetTitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("7_5vq04")
@@ -230,10 +234,10 @@ bbcode_enabled = true
 text = "[center][b]Assets"
 fit_content = true
 
-[node name="AssetHbox" type="HBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="AssetHbox" type="HBoxContainer" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="NameLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/AssetHbox"]
+[node name="NameLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/AssetHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -243,10 +247,11 @@ text = "GGBotNet
 Violin Iliev
 Osaki Tsukiko
 stocksnap.io
-pexels.com"
+pexels.com
+Timbre"
 fit_content = true
 
-[node name="AssetLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer/AssetHbox"]
+[node name="AssetLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/AssetHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -255,10 +260,12 @@ bbcode_enabled = true
 text = "X Typewriter Font
 Godot Desktop Themes
 
-Stock Images"
+Stock Images
+
+Ambiance"
 fit_content = true
 
-[node name="CreditCloseButton" type="Button" parent="Credits/MarginContainer/Panel/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="CreditCloseButton" type="Button" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4

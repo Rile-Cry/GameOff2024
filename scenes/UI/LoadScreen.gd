@@ -10,6 +10,9 @@ func _ready() -> void:
 	hide()
 
 func _process(_delta: float) -> void:
+	if visible and AmbientAudio.playing:
+		AmbientAudio.stop()
+	
 	if is_loading:
 		show()
 		var progress : Array = []
