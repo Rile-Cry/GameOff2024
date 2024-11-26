@@ -51,6 +51,8 @@ func open_close_computer() -> void:
 	if %Computer.visible:
 		%Computer.update_notes()
 		AmbientAudio.play_audio("OS Boot")
+	else:
+		AmbientAudio.play_audio(GameManager.current_location.name)
 
 func open_close_mission_book():
 	enable_disable_mission_book_button()

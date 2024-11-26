@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dwubh61lkc4rb"]
 
-[ext_resource type="Script" path="res://scenes/photos/marinas_apartment.gd" id="1_66fnc"]
+[ext_resource type="Script" path="res://scenes/photos/marinas_apartment_photo.gd" id="1_66fnc"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
 [ext_resource type="Texture2D" uid="uid://bwnojgvly6816" path="res://assets/imports/graphics/popups/marinas_apartment/Desk.png" id="4_8boxa"]

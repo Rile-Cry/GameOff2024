@@ -7,7 +7,7 @@ func _ready() -> void:
 	$ComputerButton.connect("pressed", _open_computer)
 	$SaveButton.connect("pressed", _save_game)
 	BgmAudio.play_audio("Shade's Office")
-	GameManager.unlock_location(ResourceLoader.load("res://Case/Locations/Evelyn's Art Studio.tres", "Location"))
+	AmbientAudio.play_audio("Shade's Office")
 
 func _process(_delta: float) -> void:
 	if not GameManager.get_global_variable("tutorial_pc") and is_instance_valid(arrow):
