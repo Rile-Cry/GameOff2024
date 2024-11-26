@@ -12,4 +12,4 @@ texture = ExtResource("2_x0sox")
 texture_icon = ExtResource("2_x0sox")
 glitched = false
 is_location = true
-scene_path = ""
+scene_path = "res://scenes/photos/Marina's Apartment.tscn"
