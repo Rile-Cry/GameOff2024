@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwubh61lkc4rb"]
+[gd_scene load_steps=16 format=3 uid="uid://dwubh61lkc4rb"]
 
 [ext_resource type="Script" path="res://scenes/photos/marinas_apartment.gd" id="1_66fnc"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
 [ext_resource type="Texture2D" uid="uid://bwnojgvly6816" path="res://assets/imports/graphics/popups/marinas_apartment/Desk.png" id="4_8boxa"]
 [ext_resource type="Texture2D" uid="uid://dp26d3g5qdyo8" path="res://assets/imports/graphics/popups/marinas_apartment/Calender.png" id="5_aqwfo"]
+[ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="6_rcnxu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hxia"]
 
@@ -23,6 +24,13 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2sq4y"]
 texture = ExtResource("5_aqwfo")
 region_rect = Rect2(0, 0, 611, 858)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdpqh"]
+shader = ExtResource("6_rcnxu")
+shader_parameter/tape_wave_amount = 0.0
+shader_parameter/tape_crease_amount = 1.0
+shader_parameter/color_displacement = 0.1
+shader_parameter/lines_velocity = 0.01
 
 [node name="Marina\'sApartment" type="Control" node_paths=PackedStringArray("popup_container", "desk", "desk_popup", "calender", "lock", "lock_popup")]
 layout_mode = 3
@@ -158,3 +166,14 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 4
 stretch_mode = 5
+
+[node name="VHS" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wdpqh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
