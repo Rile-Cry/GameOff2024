@@ -47,6 +47,12 @@ calender = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk/Calend
 lock = NodePath("Lock")
 lock_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock")
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ks872")
+
 [node name="Desk" type="Button" parent="."]
 offset_left = 859.0
 offset_top = 211.0
@@ -167,11 +173,3 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
-offset_right = 2560.0
-offset_bottom = 1440.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ks872")
