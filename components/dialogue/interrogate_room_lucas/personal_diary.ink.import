@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://c4lv03rftmv7j"
+path="res://.godot/imported/personal_diary.ink-8772e319ae69069008ce74dd6deb8711.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/personal_diary.ink"
+dest_files=["res://.godot/imported/personal_diary.ink-8772e319ae69069008ce74dd6deb8711.res"]
+
+[params]
+

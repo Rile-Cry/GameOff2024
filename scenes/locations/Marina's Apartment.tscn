@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4cjim7qymlxa"]
+[gd_scene load_steps=3 format=3 uid="uid://bnlpdqmemgycf"]
 
 [ext_resource type="Script" path="res://scenes/locations/marina's_apartment.gd" id="1_k3lwv"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_vkt8m"]

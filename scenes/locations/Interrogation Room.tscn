@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7rnhi4ikni85"]
+[gd_scene load_steps=6 format=3 uid="uid://ph4q1v8rh7fy"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
+[ext_resource type="Script" path="res://scenes/locations/interrogation_room.gd" id="1_ikiiq"]
 [ext_resource type="Shader" path="res://shaders/vignette/nightmare_vignette.gdshader" id="2_pnuwp"]
+[ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="4_h138y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iusep"]
 shader = ExtResource("2_pnuwp")
@@ -17,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ikiiq")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -26,6 +29,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_bqaup")
 
 [node name="Vignette" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_iusep")
 layout_mode = 1
 anchors_preset = 15
@@ -33,3 +37,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Actor" parent="." instance=ExtResource("4_h138y")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -595.0
+offset_bottom = 0.0
+grow_vertical = 0
+actor_name = "Lucas"
+dialogue = Array[String](["LucasInterrogation", "interrogate_room_lucas/LucasEND"])

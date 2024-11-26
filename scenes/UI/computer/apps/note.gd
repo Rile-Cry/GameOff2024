@@ -14,6 +14,8 @@ func _ready() -> void:
 	ink_player.ink_file = ink_file
 	ink_player.connect("loaded", Callable(self, "update"))
 	ink_player.create_story()
+	
+	connect("close_requested", _close)
 
 func update(successfully: bool) -> void:
 	var i = 0
@@ -37,8 +39,14 @@ func _add_button(text: String) -> void:
 	button.text_overrun_behavior = TextServer.OVERRUN_NO_TRIMMING
 	button.text = text
 	button.connect("mail_selected", _add_note)
+	if GameManager.global_variables["t_notes"].has(text):
+		button.disabled = true
 
 
 func _add_note(button: EmailButton) -> void:
 	GameManager.global_variables["t_notes"].append(button.text)
-	button.disabled
+	button.disabled = true
+
+
+func _close() -> void:
+	queue_free()

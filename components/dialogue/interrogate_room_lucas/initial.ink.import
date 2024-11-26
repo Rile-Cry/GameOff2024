@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://b03hmmp62w5d4"
+path="res://.godot/imported/initial.ink-a9e07abfb48c4e784425c2d78ed1f6d9.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/initial.ink"
+dest_files=["res://.godot/imported/initial.ink-a9e07abfb48c4e784425c2d78ed1f6d9.res"]
+
+[params]
+

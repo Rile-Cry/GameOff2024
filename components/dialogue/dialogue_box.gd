@@ -19,7 +19,6 @@ var _typing := false # If the dialogue is still typing or not
 #endregion
 
 # Node References
-@onready var _actor_box := $ActorContainer
 @onready var _dialogue := $PanelContainer/MarginContainer/VBoxContainer/Text
 @onready var _name_box := $PanelContainer2/MarginContainer/Name
 
@@ -87,27 +86,14 @@ func _grab_speaker(text: String) -> String:
 		var actor_name := text.get_slice(":", 0)
 		_name_box.text = actor_name
 		if _actors.has(actor_name):
-			if not _actors[actor_name]:
-				_generate_actor(actor_name)
-				_actors[actor_name] = true
-			else:
-				_update_actor(actor_name)
+			_update_actor(actor_name)
 		
 		return text.get_slice(":", 1)
 	return text
 
-## Types out the text letter by letter to the dialogue box
-func _generate_actor(actor_name: String) -> void:
-	var texture := TextureRect.new()
-	_actor_box.add_child(texture)
-	texture.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-	texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
-	texture.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-	texture.texture = ResourceLoader.load(GameManager.actor_address[actor_name] + _externals["mood"] + ".png", "Texture2D")
-	_actor_ref[actor_name] = texture
-
 func _update_actor(actor_name: String) -> void:
-	_actor_ref[actor_name].texture = ResourceLoader.load(GameManager.actor_address[actor_name] + _externals["mood"] + ".png", "Texture2D")
+	var texture : Texture2D = ResourceLoader.load(GameManager.actor_address[actor_name] + _externals["mood"] + ".png", "Texture2D")
+	_actor_ref[actor_name].update_actor(texture)
 	
 func _type_out_text(text: String) -> void:
 	var temp_string := ""
@@ -164,6 +150,8 @@ func _ready() -> void:
 		
 		_ink_player.create_story()
 		GlobalGameEvents.dialogue_started.emit()
+		for actor in get_tree().get_nodes_in_group("actors"):
+			_actor_ref[actor.actor_name] = actor
 	else:
 		print("deferring call...")
 		call_deferred("_ready")

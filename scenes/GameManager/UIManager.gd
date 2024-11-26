@@ -14,6 +14,8 @@ func _ready() -> void:
 	
 	%MissionBookButton.pressed.connect(open_close_mission_book)
 	%CreditCloseButton.pressed.connect(open_close_credits)
+	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
+	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
 
 func refresh_mission_book():
 	%MissionBook.refresh_photos()
@@ -77,3 +79,10 @@ func get_computer() -> Control:
 
 func get_mission_book() -> MissionBook:
 	return %MissionBook
+
+func _dialogue_started() -> void:
+	%MissionBookButton.visible = false
+	%MissionBook.visible = false
+
+func _dialogue_ended() -> void:
+	%MissionBookButton.visible = true

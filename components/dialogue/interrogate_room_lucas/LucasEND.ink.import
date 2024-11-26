@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://bmrrwsflqawsc"
+path="res://.godot/imported/LucasEND.ink-4a4de87522ff43cef0d6f25b5ed5ef23.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/LucasEND.ink"
+dest_files=["res://.godot/imported/LucasEND.ink-4a4de87522ff43cef0d6f25b5ed5ef23.res"]
+
+[params]
+

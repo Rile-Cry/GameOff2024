@@ -12,8 +12,9 @@ func _ready() -> void:
 
 func _check_code() -> void:
 	match text.text:
-		"allcodes":
-			print("Sorry, that code hasn't been implemented yet.")
+		"unlock_interrogation":
+			var location : Location = ResourceLoader.load("res://Case/Locations/Interrogation Room.tres", "Location")
+			GameManager.unlock_location(location)
 		"secretcode":
 			print("Oh no, you found our secret . . . shame on you -_-")
 		_:
