@@ -67,6 +67,9 @@ Found in <clue_location>
 
 signal clue_selected(clue : Clue)
 
+@onready var p_note_box := $TabContainer/Notes/MarginContainer/HBoxContainer/PersonalNotes/TextEdit
+@onready var t_note_box := $TabContainer/Notes/MarginContainer/HBoxContainer/TranscriptNotes/ScrollContainer/VBoxContainer
+
 func _ready():
 	tab_container.set_current_tab(0)
 	close_b.button_down.connect(close)
@@ -214,6 +217,15 @@ func enter_location():
 	if GameManager:
 		GameManager.current_location = hovered_location
 
+func update_notes() -> void:
+	for note in GameManager.global_variables["t_notes"]:
+		var label := Label.new()
+		t_note_box.add_child(label)
+		label.text = note
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		label.size_flags_vertical = Control.SIZE_FILL
+
 func close():
 	if UIManager and visible:
 		UIManager.open_close_mission_book()
+		GameManager.global_variables["p_notes"] = p_note_box.text

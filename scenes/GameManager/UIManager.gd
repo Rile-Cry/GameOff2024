@@ -47,6 +47,7 @@ func open_close_credits() -> void:
 func open_close_computer() -> void:
 	%Computer.visible = not %Computer.visible
 	if %Computer.visible:
+		%Computer.update_notes()
 		AmbientAudio.play_audio("OS Boot")
 
 func open_close_mission_book():
@@ -54,6 +55,7 @@ func open_close_mission_book():
 	%MissionBook.visible = not %MissionBook.visible
 	if %MissionBook.visible:
 		SfxAudio.play_audio("Book Open")
+		%MissionBook.update_notes()
 	else:
 		SfxAudio.play_audio("Book Close")
 

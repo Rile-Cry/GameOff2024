@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnxij6tv64lpl"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/actor.gd" id="1_216li"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8tje"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ecxj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvcj3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p73ig"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46i4x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aavfc"]
+
+[node name="Actor" type="Control"]
+custom_minimum_size = Vector2(470, 595)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 470.0
+offset_bottom = 595.0
+script = ExtResource("1_216li")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p8tje")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1ecxj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dvcj3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p73ig")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_46i4x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_aavfc")

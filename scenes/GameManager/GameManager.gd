@@ -9,7 +9,9 @@ var enable_input : bool = false
 var photos : Array[Photo]
 var global_variables : Dictionary = {
 	"received" = [],
-	"read_emails" = []
+	"read_emails" = [],
+	"t_notes" = [],
+	"p_notes" = ""
 }
 var actor_address := {
 	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",

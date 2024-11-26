@@ -2,16 +2,17 @@ extends Control
 
 var email_scene := preload("res://scenes/UI/computer/apps/email.tscn")
 var messenger_scene := preload("res://scenes/UI/computer/apps/MSN.tscn")
+var note_scene := preload("res://scenes/UI/computer/apps/note.tscn")
 var vault_scene := preload("res://scenes/UI/computer/apps/vault.tscn")
 
 var exit_button_popup : PopupMenu
 
 @onready var hotbar := $PanelContainer
 @onready var vault_button := $Programs/Vault
-@onready var notepad_button := $Programs/Notepad
 @onready var email_button := $Programs/Email
 @onready var messenger_button := $Programs/Messenger
 @onready var mysos_menu := $PanelContainer/HBoxContainer/MysOSButton
+@onready var programs := $Programs
 
 signal close_computer
 
@@ -53,9 +54,22 @@ func _open_email() -> void:
 	
 	if GameManager.get_global_variable("tutorial_pc"):
 		GameManager.set_global_variable("tutorial_pc", false)
-		$Programs/Email/Notification.queue_free()
+		if $Programs/Email/Notification:
+			$Programs/Email/Notification.queue_free()
 
 func _open_vault() -> void:
 	var vault = vault_scene.instantiate()
 	mouse_click_sfx()
 	add_child(vault)
+
+func update_notes() -> void:
+	for note in GameGlobals.dialogue_choices.keys():
+		var button := EmailButton.new()
+		programs.add_child(button)
+		button.text = note
+		button.connect("mail_selected", _open_note)
+
+func _open_note(button: EmailButton) -> void:
+	var note : NoteWindow = note_scene.instantiate()
+	note.file_name = button.text
+	add_child(note)

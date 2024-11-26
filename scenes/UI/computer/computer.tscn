@@ -51,12 +51,6 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Messenger"
 
-[node name="Notepad" type="Button" parent="Programs"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-text = "Notepad
-"
-
 [node name="Vault" type="Button" parent="Programs"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
