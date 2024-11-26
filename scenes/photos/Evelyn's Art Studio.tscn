@@ -9,12 +9,12 @@
 [ext_resource type="Resource" uid="uid://bg4synv4bwejh" path="res://Case/Clues/Evelyn's Art Studio/Unfinished Painting.tres" id="6_nct72"]
 [ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="8_v28e6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypfe2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ov4gu"]
 shader = ExtResource("8_v28e6")
 shader_parameter/tape_wave_amount = 0.0
-shader_parameter/tape_crease_amount = 1.0
-shader_parameter/color_displacement = 0.1
-shader_parameter/lines_velocity = 0.01
+shader_parameter/tape_crease_amount = 0.0
+shader_parameter/color_displacement = 0.0
+shader_parameter/lines_velocity = 0.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w7q3"]
 
@@ -45,7 +45,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_drrgl")
 
 [node name="VHS" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ypfe2")
+material = SubResource("ShaderMaterial_ov4gu")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

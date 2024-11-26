@@ -28,9 +28,9 @@ region_rect = Rect2(0, 0, 611, 858)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wdpqh"]
 shader = ExtResource("6_rcnxu")
 shader_parameter/tape_wave_amount = 0.0
-shader_parameter/tape_crease_amount = 1.0
-shader_parameter/color_displacement = 0.1
-shader_parameter/lines_velocity = 0.01
+shader_parameter/tape_crease_amount = 0.0
+shader_parameter/color_displacement = 0.0
+shader_parameter/lines_velocity = 0.0
 
 [node name="Marina\'sApartment" type="Control" node_paths=PackedStringArray("popup_container", "desk", "desk_popup", "calender", "lock", "lock_popup")]
 layout_mode = 3
@@ -47,15 +47,7 @@ calender = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk/Calend
 lock = NodePath("Lock")
 lock_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ks872")
-
 [node name="Desk" type="Button" parent="."]
-layout_mode = 0
 offset_left = 859.0
 offset_top = 211.0
 offset_right = 1188.0
@@ -71,7 +63,6 @@ hover_sfx = ""
 click_sfx = "UI Open Close"
 
 [node name="Lock" type="Button" parent="."]
-layout_mode = 0
 offset_left = 821.0
 offset_top = 377.0
 offset_right = 993.0
@@ -87,7 +78,6 @@ hover_sfx = ""
 click_sfx = "UI Open Close"
 
 [node name="UIPopupBG" type="ColorRect" parent="."]
-layout_mode = 2
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.203922, 0.203922, 0.203922, 0.470588)
@@ -177,3 +167,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ks872")
