@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://co6kbt8rocnj6"]
+[gd_scene load_steps=18 format=3 uid="uid://co6kbt8rocnj6"]
 
 [ext_resource type="AudioStream" uid="uid://qqf6insqta3g" path="res://assets/imports/bgm/Shade's Office Intro.wav" id="1_vpf2b"]
 [ext_resource type="AudioStream" uid="uid://s7yhrbr58crc" path="res://assets/imports/bgm/Title Screen Intro.wav" id="1_yh87y"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://cjgrprk7jm2ji" path="res://assets/imports/bgm/Evelyn Photo Loop.wav" id="6_bvw7s"]
 [ext_resource type="AudioStream" uid="uid://dqlnyp72tpsme" path="res://assets/imports/bgm/Marina Photo Intro.wav" id="7_mqm4l"]
 [ext_resource type="AudioStream" uid="uid://cste0y0q3fyu4" path="res://assets/imports/bgm/Marina Photo Loop.wav" id="8_gd555"]
+[ext_resource type="AudioStream" uid="uid://b61w6vcp8uc2b" path="res://assets/imports/bgm/Marina's Apartment Intro.wav" id="9_7f570"]
+[ext_resource type="AudioStream" uid="uid://c2pfsy2i6klhe" path="res://assets/imports/bgm/Marina's Apartment Loop.wav" id="10_6n87q"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_d5k14"]
 clip_count = 2
@@ -86,8 +88,27 @@ Vector2i(-1, 1): {
 }
 }
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_beo5h"]
+clip_count = 2
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("9_7f570")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Loop"
+clip_1/stream = ExtResource("10_6n87q")
+clip_1/auto_advance = 1
+clip_1/next_clip = 1
+_transitions = {
+Vector2i(-1, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+}
+}
+
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ikhae"]
-clip_count = 4
+clip_count = 5
 clip_0/name = &"Title Screen"
 clip_0/stream = SubResource("AudioStreamInteractive_d5k14")
 clip_0/auto_advance = 0
@@ -100,6 +121,9 @@ clip_2/auto_advance = 0
 clip_3/name = &"Marina Photo"
 clip_3/stream = SubResource("AudioStreamInteractive_l4ap5")
 clip_3/auto_advance = 0
+clip_4/name = &"Marina\'s Apartment"
+clip_4/stream = SubResource("AudioStreamInteractive_beo5h")
+clip_4/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
@@ -126,6 +150,12 @@ Vector2i(2, 2): {
 "to_time": 0
 },
 Vector2i(3, 3): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(4, 4): {
 "fade_beats": 1,
 "fade_mode": 0,
 "from_time": 0,

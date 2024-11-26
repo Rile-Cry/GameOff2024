@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://b6lab7tpdtrfn"]
+
+[ext_resource type="Script" path="res://Case/Locations/LocationResource.gd" id="1_gxkje"]
+[ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="2_xo67l"]
+
+[resource]
+script = ExtResource("1_gxkje")
+name = "Interrogation Room"
+characters = Array[String](["Lucas Rivers"])
+description = "Add Description Here"
+texture = ExtResource("2_xo67l")
+texture_icon = ExtResource("2_xo67l")
+scene_path = "res://scenes/locations/Interrogation Room.tscn"

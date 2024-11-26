@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://belhwspki2ry5"]
+[gd_scene load_steps=16 format=3 uid="uid://belhwspki2ry5"]
 
 [ext_resource type="Script" path="res://scenes/photos/evelyn's_art_studio_photo.gd" id="1_0fnci"]
 [ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="1_drrgl"]
@@ -7,6 +7,14 @@
 [ext_resource type="Resource" uid="uid://capgnhpfqqbk4" path="res://Case/Clues/Evelyn's Art Studio/Gallery Invitation.tres" id="4_18gxu"]
 [ext_resource type="Resource" uid="uid://lg4n6lrddfow" path="res://Case/Clues/Evelyn's Art Studio/Scattered Papers.tres" id="5_v1bru"]
 [ext_resource type="Resource" uid="uid://bg4synv4bwejh" path="res://Case/Clues/Evelyn's Art Studio/Unfinished Painting.tres" id="6_nct72"]
+[ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="8_v28e6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ov4gu"]
+shader = ExtResource("8_v28e6")
+shader_parameter/tape_wave_amount = 0.0
+shader_parameter/tape_crease_amount = 0.0
+shader_parameter/color_displacement = 0.0
+shader_parameter/lines_velocity = 0.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2w7q3"]
 
@@ -35,6 +43,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_drrgl")
+
+[node name="VHS" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ov4gu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 
 [node name="Personal Diary" type="Button" parent="."]
 layout_mode = 0
@@ -83,9 +102,9 @@ resource = ExtResource("5_v1bru")
 
 [node name="Unfinished Painting" type="Button" parent="."]
 layout_mode = 0
-offset_left = 645.0
+offset_left = 687.0
 offset_top = 279.0
-offset_right = 863.0
+offset_right = 853.0
 offset_bottom = 521.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_2w7q3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_s3rhf")

@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="Location" load_steps=2 format=3 uid="uid://ckestkuy4llcj"]
+[gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://ckestkuy4llcj"]
 
 [ext_resource type="Script" path="res://Case/Locations/LocationResource.gd" id="1_a3xoa"]
+[ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="2_ji5tf"]
 
 [resource]
 script = ExtResource("1_a3xoa")
 name = "Marina's Apartment"
 characters = Array[String](["Marina Thorne"])
 description = ""
-scene_path = ""
+texture = ExtResource("2_ji5tf")
+texture_icon = ExtResource("2_ji5tf")
+scene_path = "res://scenes/locations/Marina's Apartment.tscn"

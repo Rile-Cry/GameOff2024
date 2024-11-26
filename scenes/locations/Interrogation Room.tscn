@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7rnhi4ikni85"]
+
+[ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
+[ext_resource type="Shader" path="res://shaders/vignette/nightmare_vignette.gdshader" id="2_pnuwp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iusep"]
+shader = ExtResource("2_pnuwp")
+shader_parameter/UPDATE_INTERVAL = 0.163
+shader_parameter/STATIC_GRANULARITY = 0.005
+shader_parameter/EDGE_BLUR = 0.5
+shader_parameter/BORDER_SIZE = 0.3
+
+[node name="InterrogationRoom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_bqaup")
+
+[node name="Vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_iusep")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

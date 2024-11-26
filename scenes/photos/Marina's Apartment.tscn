@@ -1,0 +1,179 @@
+[gd_scene load_steps=16 format=3 uid="uid://dwubh61lkc4rb"]
+
+[ext_resource type="Script" path="res://scenes/photos/marinas_apartment.gd" id="1_66fnc"]
+[ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
+[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
+[ext_resource type="Texture2D" uid="uid://bwnojgvly6816" path="res://assets/imports/graphics/popups/marinas_apartment/Desk.png" id="4_8boxa"]
+[ext_resource type="Texture2D" uid="uid://dp26d3g5qdyo8" path="res://assets/imports/graphics/popups/marinas_apartment/Calender.png" id="5_aqwfo"]
+[ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="6_rcnxu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hxia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0tol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm6s4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3jtm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc610"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n0fo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hlq0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2sq4y"]
+texture = ExtResource("5_aqwfo")
+region_rect = Rect2(0, 0, 611, 858)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdpqh"]
+shader = ExtResource("6_rcnxu")
+shader_parameter/tape_wave_amount = 0.0
+shader_parameter/tape_crease_amount = 0.0
+shader_parameter/color_displacement = 0.0
+shader_parameter/lines_velocity = 0.0
+
+[node name="Marina\'sApartment" type="Control" node_paths=PackedStringArray("popup_container", "desk", "desk_popup", "calender", "lock", "lock_popup")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_66fnc")
+popup_container = NodePath("UIPopupBG")
+desk = NodePath("Desk")
+desk_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk")
+calender = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk/Calender")
+lock = NodePath("Lock")
+lock_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ks872")
+
+[node name="Desk" type="Button" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 211.0
+offset_right = 1188.0
+offset_bottom = 355.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
+script = ExtResource("2_oxx8a")
+hover_sfx = ""
+click_sfx = "UI Open Close"
+
+[node name="Lock" type="Button" parent="."]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 377.0
+offset_right = 993.0
+offset_bottom = 421.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
+script = ExtResource("2_oxx8a")
+hover_sfx = ""
+click_sfx = "UI Open Close"
+
+[node name="UIPopupBG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.203922, 0.203922, 0.203922, 0.470588)
+
+[node name="UIPopupMargin" type="MarginContainer" parent="UIPopupBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="UIPanel" type="Panel" parent="UIPopupBG/UIPopupMargin"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UIPopupBG/UIPopupMargin/UIPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Desk" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
+
+[node name="Background" type="TextureRect" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_8boxa")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Calender" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 102.0
+offset_right = 441.0
+offset_bottom = 510.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_2sq4y")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_2sq4y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2sq4y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2sq4y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2sq4y")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2sq4y")
+script = ExtResource("2_oxx8a")
+click_sfx = "UI Open Close"
+is_hidden = false
+
+[node name="Lock" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
+visible = false
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
+
+[node name="Background" type="TextureRect" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="VHS" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wdpqh")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false

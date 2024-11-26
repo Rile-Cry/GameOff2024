@@ -42,7 +42,7 @@ func outline_enable():
 		was_hovering = true
 	
 	if GameManager and GameManager.enable_input and material:
-		material.set_shader_parameter("line_thickness", hover_outline_thickness)
+		material.set_shader_parameter("outline_width", hover_outline_thickness)
 
 func disable():
 	disabled = true
@@ -55,7 +55,7 @@ func outline_disable():
 		was_hovering = false
 	
 	if GameManager and GameManager.enable_input and material:
-		material.set_shader_parameter("line_thickness", 0)
+		material.set_shader_parameter("outline_width", 0)
 
 func _pressed() -> void:
 	if not click_sfx.is_empty():

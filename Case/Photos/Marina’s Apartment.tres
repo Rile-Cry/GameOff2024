@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="Photo" load_steps=2 format=3 uid="uid://dcnjga3gdrjtd"]
+[gd_resource type="Resource" script_class="Photo" load_steps=3 format=3 uid="uid://dcnjga3gdrjtd"]
 
 [ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_m18i0"]
+[ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="2_x0sox"]
 
 [resource]
 script = ExtResource("1_m18i0")
 name = "Marina’s Apartment"
-time = "One Week Before Evelyn’s Death"
+time = ""
+description = ""
+texture = ExtResource("2_x0sox")
+texture_icon = ExtResource("2_x0sox")
 glitched = false
 is_location = true
+scene_path = "res://scenes/photos/Marina's Apartment.tscn"
