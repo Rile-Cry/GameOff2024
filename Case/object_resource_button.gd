@@ -21,5 +21,7 @@ func _pressed() -> void:
 	match type:
 		GameManager.resource_type.CLUE:
 			GameManager.obtain_clue(resource)
+		GameManager.resource_type.PHOTO:
+			GameManager.obtain_photo(resource)
 		GameManager.resource_type.LOCATION:
 			GameManager.unlock_location(resource)
