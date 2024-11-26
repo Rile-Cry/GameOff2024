@@ -47,4 +47,6 @@ offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
 actor_name = "Lucas"
-dialogue = Array[String](["LucasInterrogation", "interrogate_room_lucas/LucasEND"])
+location_name = "interrogate_room_lucas"
+dialogue = Array[String](["LucasInterrogation", "LucasEND"])
+initial_mood = "arrest"

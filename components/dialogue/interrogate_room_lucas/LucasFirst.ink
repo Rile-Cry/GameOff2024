@@ -18,19 +18,19 @@ Lucas: I called the cops... and they just threw me in here.
 === choices ===
 ~   speaker = "Shade"
 *   This must be hard. Can you tell me what Evelyn was like?
-	-> option_1
+    -> option_1
 *   {option_1} You said you called the police when you found her. How long did it take?
-	-> option_2
+    -> option_2
 *   {option_1} Did you check her phone or notice anything odd in the studio?
-	-> option_3
+    -> option_3
 *   {option_1} You mentioned meeting at your usual spot. Can you tell me about it?
-	-> option_4
+    -> option_4
 *   {option_2} Did you see Victor around the time of Evelyn's death?
-	-> option_5
+    -> option_5
 *   {option_1} How was your relationship with Marina? You mentioned her being at the studio.
-	-> option_6
+    -> option_6
 *   I guess that covers it...
-	-> END
+    -> END
 
 === option_1 ===
 ~   mood = "ponder"
@@ -50,12 +50,12 @@ Shade: The love of your life?
 *   [don't show diary]
 	-> choices
 *   [show diary]
-	~   mood = "panic"
-	Lucas: What... what is this? Is that how she really felt? If that's true, why did she even bother getting back with me?!
-	Shade: Maybe she changed her mind, Lucas. People grow, and maybe she saw something in you. You have changed, haven't you?
-	~   mood = "tries_to_calm"
-	Lucas: Yeah... yeah, maybe. We were starting fresh. What we had... it was real. I swear it was real.
-	-> choices
+    ~   mood = "panic"
+    Lucas: What... what is this? Is that how she really felt? If that's true, why did she even bother getting back with me?!
+    Shade: Maybe she changed her mind, Lucas. People grow, and maybe she saw something in you. You have changed, haven't you?
+    ~   mood = "tries_to_calm"
+    Lucas: Yeah... yeah, maybe. We were starting fresh. What we had... it was real. I swear it was real.
+    -> choices
 
 === option_3 ===
 ~   mood = "calm"
@@ -101,7 +101,7 @@ Lucas: I did... but not really. She cared about Evelyn's career, sure. But Evely
 Shade: Do you know where Marina lives?
 Lucas: No idea. We weren't exactly close after Evelyn and I broke up. And no one knew we got back together either.
 *   [present toxicology report]
-	Lucas: No that's strange. Evelyn had sleep problems but she never took any medication, infact she was against it.
-	-> choices
+    Lucas: No that's strange. Evelyn had sleep problems but she never took any medication, infact she was against it.
+    -> choices
 *   [keep it to yourself]
 -> choices

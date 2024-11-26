@@ -1,6 +1,7 @@
 class_name Actor extends Control
 
 @export var actor_name : String
+@export var location_name : String
 @export var dialogue : Array[String]
 @export var initial_mood : String = "normal"
 
@@ -23,11 +24,12 @@ func _start_dialogue() -> void:
 	var dialogue_next := ""
 	_button.release_focus()
 	for title in dialogue:
-		if not GameGlobals.dialogue_choices.has(title):
-			dialogue_next = title
+		var title_tweak := location_name + "/" + title
+		if not GameGlobals.dialogue_choices.has(title_tweak):
+			dialogue_next = title_tweak
 			break
 		elif title.contains("END"):
-			dialogue_next = title
+			dialogue_next = title_tweak
 			break
 		
 	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next)

@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://ccbgckfe5ebj4"
+path="res://.godot/imported/Turnabout.ink-4eba2021af3a4bd25367984de3d78e3e.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/Turnabout.ink"
+dest_files=["res://.godot/imported/Turnabout.ink-4eba2021af3a4bd25367984de3d78e3e.res"]
+
+[params]
+
