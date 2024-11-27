@@ -37,6 +37,10 @@ func _ready() -> void:
 	if BgmAudio:
 		BgmAudio.play_audio("Marina Photo")
 
+func _process(_delta: float) -> void:
+	desk.visible = not popup_container.visible
+	drawer.visible = not popup_container.visible
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not (UIManager and UIManager.get_mission_book().visible):
 		if GameManager and GameManager.enable_input:

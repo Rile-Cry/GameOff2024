@@ -20,18 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://cjwsq6ti2cjfy" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Number.png" id="17_0q54h"]
 [ext_resource type="Script" path="res://scenes/photos/LockNumber.gd" id="18_7b8v4"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hxia"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0tol"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm6s4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3jtm"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc610"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n0fo"]
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hlq0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2sq4y"]
@@ -96,6 +84,18 @@ shader_parameter/tape_crease_amount = 0.0
 shader_parameter/color_displacement = 0.0
 shader_parameter/lines_velocity = 0.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hxia"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q0tol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mm6s4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3jtm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fc610"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3n0fo"]
+
 [node name="Marina\'sApartment" type="Control" node_paths=PackedStringArray("popup_container", "desk", "desk_popup", "calender", "drawer", "drawer_closed_popup", "drawer_opened_popup", "lock", "lock_popup", "lock_button", "lock_numbers")]
 layout_mode = 3
 anchors_preset = 15
@@ -122,38 +122,6 @@ offset_right = 2560.0
 offset_bottom = 1440.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ks872")
-
-[node name="Desk" type="Button" parent="."]
-layout_mode = 0
-offset_left = 859.0
-offset_top = 211.0
-offset_right = 1188.0
-offset_bottom = 355.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
-script = ExtResource("2_oxx8a")
-hover_sfx = ""
-click_sfx = "UI Open Close"
-
-[node name="Drawer" type="Button" parent="."]
-layout_mode = 0
-offset_left = 821.0
-offset_top = 377.0
-offset_right = 993.0
-offset_bottom = 421.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
-script = ExtResource("2_oxx8a")
-hover_sfx = ""
-click_sfx = "UI Open Close"
 
 [node name="UIPopupBG" type="ColorRect" parent="."]
 layout_mode = 0
@@ -256,6 +224,7 @@ stretch_mode = 5
 
 [node name="Lock" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerClosed"]
 custom_minimum_size = Vector2(213, 78)
+layout_mode = 0
 offset_left = 497.0
 offset_top = 185.0
 offset_right = 710.0
@@ -466,11 +435,39 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 328.0
-offset_top = 73.0
-offset_right = 328.0
-offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
+
+[node name="Desk" type="Button" parent="."]
+layout_mode = 0
+offset_left = 859.0
+offset_top = 211.0
+offset_right = 1188.0
+offset_bottom = 355.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
+script = ExtResource("2_oxx8a")
+hover_sfx = ""
+click_sfx = "UI Open Close"
+
+[node name="Drawer" type="Button" parent="."]
+layout_mode = 0
+offset_left = 821.0
+offset_top = 377.0
+offset_right = 993.0
+offset_bottom = 421.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6hxia")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q0tol")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mm6s4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3jtm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fc610")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3n0fo")
+script = ExtResource("2_oxx8a")
+hover_sfx = ""
+click_sfx = "UI Open Close"
