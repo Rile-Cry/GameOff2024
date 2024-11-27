@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	connect("close_requested", _close)
 
-func update(successfully: bool) -> void:
+func update(_successfully: bool) -> void:
 	var i = 0
 	while running:
 		if ink_player.can_continue:

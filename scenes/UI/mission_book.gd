@@ -218,12 +218,13 @@ func enter_location():
 		GameManager.current_location = hovered_location
 
 func update_notes() -> void:
-	for note in GameManager.global_variables["t_notes"]:
-		var label := Label.new()
-		t_note_box.add_child(label)
-		label.text = note
-		label.autowrap_mode = TextServer.AUTOWRAP_WORD
-		label.size_flags_vertical = Control.SIZE_FILL
+	if GameManager and GameManager.get_global_variable("t_notes"):
+		for note in GameManager.global_variables["t_notes"]:
+			var label := Label.new()
+			t_note_box.add_child(label)
+			label.text = note
+			label.autowrap_mode = TextServer.AUTOWRAP_WORD
+			label.size_flags_vertical = Control.SIZE_FILL
 
 func close():
 	if UIManager and visible:
