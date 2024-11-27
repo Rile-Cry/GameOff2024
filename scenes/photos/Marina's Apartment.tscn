@@ -1,11 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwubh61lkc4rb"]
+[gd_scene load_steps=46 format=3 uid="uid://dwubh61lkc4rb"]
 
 [ext_resource type="Script" path="res://scenes/photos/marinas_apartment_photo.gd" id="1_66fnc"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
 [ext_resource type="Texture2D" uid="uid://bwnojgvly6816" path="res://assets/imports/graphics/popups/marinas_apartment/Desk.png" id="4_8boxa"]
 [ext_resource type="Texture2D" uid="uid://dp26d3g5qdyo8" path="res://assets/imports/graphics/popups/marinas_apartment/Calender.png" id="5_aqwfo"]
+[ext_resource type="Texture2D" uid="uid://di8tm7b1687va" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_closed.png" id="6_3o41n"]
+[ext_resource type="Texture2D" uid="uid://b4pjh253ffy0u" path="res://assets/imports/graphics/popups/marinas_apartment/Sticky Notes.png" id="6_8ldu5"]
 [ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="6_rcnxu"]
+[ext_resource type="Texture2D" uid="uid://cgulxn77kjrag" path="res://assets/imports/graphics/popups/marinas_apartment/lock.png" id="7_qg8ks"]
+[ext_resource type="Texture2D" uid="uid://by5jeo48d2jf3" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_open.png" id="8_kr6kn"]
+[ext_resource type="Script" path="res://Case/object_resource_button.gd" id="9_50fti"]
+[ext_resource type="Texture2D" uid="uid://m6j781gkdukg" path="res://assets/imports/graphics/popups/marinas_apartment/evelyns_phone.png" id="9_dx0km"]
+[ext_resource type="Resource" uid="uid://bdnbii0c61gqx" path="res://Case/Clues/Marina’s Apartment/Evelyns phone.tres" id="10_qfx0v"]
+[ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="12_kpacf"]
+[ext_resource type="Texture2D" uid="uid://litf3eslvfuw" path="res://assets/imports/graphics/popups/marinas_apartment/Receipt.png" id="12_lxtey"]
+[ext_resource type="Texture2D" uid="uid://cprht4ykras4e" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_BG.png" id="15_awvdr"]
+[ext_resource type="Texture2D" uid="uid://cw6vi5wdnr5vn" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Button.png" id="16_pnhhx"]
+[ext_resource type="Texture2D" uid="uid://cjwsq6ti2cjfy" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Number.png" id="17_0q54h"]
+[ext_resource type="Script" path="res://scenes/photos/LockNumber.gd" id="18_7b8v4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hxia"]
 
@@ -25,6 +38,57 @@
 texture = ExtResource("5_aqwfo")
 region_rect = Rect2(0, 0, 611, 858)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_864da"]
+texture = ExtResource("6_8ldu5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y432r"]
+texture = ExtResource("6_8ldu5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cdtfh"]
+texture = ExtResource("6_8ldu5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b6lau"]
+texture = ExtResource("6_8ldu5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5x1n"]
+texture = ExtResource("6_8ldu5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3ncy"]
+texture = ExtResource("6_8ldu5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ly5se"]
+texture = ExtResource("7_qg8ks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p72pb"]
+texture = ExtResource("7_qg8ks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kt7sk"]
+texture = ExtResource("7_qg8ks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v3tc7"]
+texture = ExtResource("7_qg8ks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x52pt"]
+texture = ExtResource("7_qg8ks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8f7rf"]
+texture = ExtResource("7_qg8ks")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihcli"]
+texture = ExtResource("9_dx0km")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muf57"]
+texture = ExtResource("12_lxtey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thqyu"]
+texture = ExtResource("12_lxtey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwl1g"]
+texture = ExtResource("16_pnhhx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6siht"]
+texture = ExtResource("17_0q54h")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wdpqh"]
 shader = ExtResource("6_rcnxu")
 shader_parameter/tape_wave_amount = 0.0
@@ -32,7 +96,7 @@ shader_parameter/tape_crease_amount = 0.0
 shader_parameter/color_displacement = 0.0
 shader_parameter/lines_velocity = 0.0
 
-[node name="Marina\'sApartment" type="Control" node_paths=PackedStringArray("popup_container", "desk", "desk_popup", "calender", "lock", "lock_popup")]
+[node name="Marina\'sApartment" type="Control" node_paths=PackedStringArray("popup_container", "desk", "desk_popup", "calender", "drawer", "drawer_closed_popup", "drawer_opened_popup", "lock", "lock_popup", "lock_button", "lock_numbers")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,8 +108,13 @@ popup_container = NodePath("UIPopupBG")
 desk = NodePath("Desk")
 desk_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk")
 calender = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk/Calender")
-lock = NodePath("Lock")
+drawer = NodePath("Drawer")
+drawer_closed_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerClosed")
+drawer_opened_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerOpened")
+lock = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerClosed/Lock")
 lock_popup = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock")
+lock_button = NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Button")
+lock_numbers = [NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number1"), NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number2"), NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number3"), NodePath("UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number4")]
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -70,7 +139,7 @@ script = ExtResource("2_oxx8a")
 hover_sfx = ""
 click_sfx = "UI Open Close"
 
-[node name="Lock" type="Button" parent="."]
+[node name="Drawer" type="Button" parent="."]
 layout_mode = 0
 offset_left = 821.0
 offset_top = 377.0
@@ -120,6 +189,7 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Desk" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
+visible = false
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
@@ -151,8 +221,104 @@ script = ExtResource("2_oxx8a")
 click_sfx = "UI Open Close"
 is_hidden = false
 
-[node name="Lock" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
+[node name="Notes" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Desk"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 166.0
+offset_right = 792.0
+offset_bottom = 401.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_864da")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y432r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_cdtfh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b6lau")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r5x1n")
+theme_override_styles/normal = SubResource("StyleBoxTexture_s3ncy")
+script = ExtResource("2_oxx8a")
+click_sfx = "UI Open Close"
+is_hidden = false
+
+[node name="DrawerClosed" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
 visible = false
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
+
+[node name="Background" type="TextureRect" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerClosed"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_3o41n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Lock" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerClosed"]
+custom_minimum_size = Vector2(213, 78)
+offset_left = 497.0
+offset_top = 185.0
+offset_right = 710.0
+offset_bottom = 263.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_ly5se")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_p72pb")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kt7sk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v3tc7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_x52pt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8f7rf")
+script = ExtResource("2_oxx8a")
+is_hidden = false
+
+[node name="DrawerOpened" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
+visible = false
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
+
+[node name="Background" type="TextureRect" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerOpened"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_kr6kn")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Evelyn\'s Phone" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerOpened"]
+layout_mode = 0
+offset_left = 669.0
+offset_top = 231.0
+offset_right = 742.0
+offset_bottom = 343.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_ihcli")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ihcli")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ihcli")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ihcli")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ihcli")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ihcli")
+script = ExtResource("9_50fti")
+resource = ExtResource("10_qfx0v")
+is_hidden = false
+
+[node name="Receipt" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/DrawerOpened"]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 143.0
+offset_right = 547.0
+offset_bottom = 353.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/hover = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_thqyu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_muf57")
+script = ExtResource("9_50fti")
+resource = ExtResource("12_kpacf")
+is_hidden = false
+
+[node name="Lock" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer"]
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
@@ -164,15 +330,147 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("15_awvdr")
 expand_mode = 4
 stretch_mode = 5
 
+[node name="Button" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock"]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 238.0
+offset_right = 514.0
+offset_bottom = 410.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_fwl1g")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fwl1g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_fwl1g")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fwl1g")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fwl1g")
+theme_override_styles/normal = SubResource("StyleBoxTexture_fwl1g")
+script = ExtResource("2_oxx8a")
+is_hidden = false
+
+[node name="Number1" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock"]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 249.0
+offset_right = 593.0
+offset_bottom = 400.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6siht")
+action_mode = 0
+script = ExtResource("18_7b8v4")
+correct_value = 2
+
+[node name="NumberLabel" type="Label" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number2" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock"]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 249.0
+offset_right = 671.0
+offset_bottom = 400.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6siht")
+action_mode = 0
+script = ExtResource("18_7b8v4")
+correct_value = 6
+
+[node name="NumberLabel" type="Label" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number3" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock"]
+layout_mode = 0
+offset_left = 673.0
+offset_top = 249.0
+offset_right = 749.0
+offset_bottom = 400.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6siht")
+action_mode = 0
+script = ExtResource("18_7b8v4")
+
+[node name="NumberLabel" type="Label" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Number4" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 249.0
+offset_right = 827.0
+offset_bottom = 400.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6siht")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6siht")
+action_mode = 0
+script = ExtResource("18_7b8v4")
+correct_value = 4
+
+[node name="NumberLabel" type="Label" parent="UIPopupBG/UIPopupMargin/UIPanel/MarginContainer/Lock/Number4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="VHS" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_wdpqh")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 328.0
+offset_top = 73.0
+offset_right = 328.0
+offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
