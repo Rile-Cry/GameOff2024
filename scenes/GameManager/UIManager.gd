@@ -24,7 +24,7 @@ func refresh_mission_book():
 
 func _process(_delta: float) -> void:
 	if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:
-		SfxAudio.play_audio("Object Hover")
+		SfxAudio.play_audio("Book Hover")
 	
 	is_hovering_mission_book = %MissionBookButton.is_hovered()
 
