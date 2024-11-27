@@ -1,9 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://ph4q1v8rh7fy"]
+[gd_scene load_steps=11 format=3 uid="uid://ph4q1v8rh7fy"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
-[ext_resource type="Script" path="res://scenes/locations/interrogation_room.gd" id="1_ikiiq"]
+[ext_resource type="Script" path="res://scenes/locations/LocationScene.gd" id="1_ikiiq"]
+[ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="2_obhhf"]
 [ext_resource type="Shader" path="res://shaders/vignette/nightmare_vignette.gdshader" id="2_pnuwp"]
+[ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="3_exugn"]
+[ext_resource type="Resource" uid="uid://dqk61o3iackxh" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Personal Diary.tres" id="4_0ks53"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="4_h138y"]
+[ext_resource type="Resource" uid="uid://32t12rtt6x21" path="res://Case/Dialogue/Interrogation Room/Lucas Only/Interact.tres" id="6_idyo4"]
+
+[sub_resource type="Resource" id="Resource_hyr51"]
+script = ExtResource("2_obhhf")
+clue = ExtResource("3_exugn")
+dialogue_res = ExtResource("4_0ks53")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iusep"]
 shader = ExtResource("2_pnuwp")
@@ -20,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ikiiq")
+clue_interact = Array[ExtResource("2_obhhf")]([SubResource("Resource_hyr51")])
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -29,7 +39,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_bqaup")
 
 [node name="Vignette" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_iusep")
 layout_mode = 1
 anchors_preset = 15
@@ -46,7 +55,4 @@ anchor_bottom = 1.0
 offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
-actor_name = "Lucas"
-location_name = "interrogate_room_lucas"
-dialogue = Array[String](["LucasInterrogation", "LucasEND"])
-initial_mood = "arrest"
+dialogue_res = ExtResource("6_idyo4")

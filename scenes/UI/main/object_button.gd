@@ -49,7 +49,7 @@ func disable():
 		remove_child(child)
 
 func outline_disable():
-	if was_hovering and not disabled:
+	if was_hovering:
 		was_hovering = false
 	
 		if GameManager and GameManager.enable_input and material:
