@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dj1s12fwy32rr"]
+[gd_scene load_steps=17 format=3 uid="uid://dj1s12fwy32rr"]
 
 [ext_resource type="Script" path="res://scenes/locations/Shade's Office.gd" id="1_4t6ht"]
 [ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/without_object/shades_office.png" id="2_8igll"]
@@ -6,10 +6,12 @@
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="4_xkdys"]
 [ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_s314g"]
 [ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="6_e7ndo"]
+[ext_resource type="Script" path="res://Case/object_resource_button.gd" id="7_1j6tu"]
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
+[ext_resource type="Resource" uid="uid://dcnjga3gdrjtd" path="res://Case/Photos/Marina’s Apartment.tres" id="8_q1kws"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
-[ext_resource type="PackedScene" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
+[ext_resource type="PackedScene" uid="uid://cwvcth4tpcs35" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
 texture = ExtResource("9_x077g")
@@ -73,6 +75,25 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_nulqq")
 script = ExtResource("4_xkdys")
 hover_sfx = "Sticky Note Hover"
 click_sfx = ""
+is_hidden = false
+
+[node name="OptionsButton2" type="Button" parent="."]
+custom_minimum_size = Vector2(77, 75)
+layout_mode = 0
+offset_left = 180.0
+offset_top = 139.0
+offset_right = 257.0
+offset_bottom = 215.0
+focus_previous = NodePath("../ExitButton")
+theme_override_styles/focus = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nulqq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nulqq")
+script = ExtResource("7_1j6tu")
+resource = ExtResource("8_q1kws")
+type = 1
 is_hidden = false
 
 [node name="ExitButton" type="Button" parent="."]
