@@ -17,10 +17,8 @@ func _ready():
 			var process_material : ParticleProcessMaterial = particles.process_material
 			var box_size_vec3 : Vector3 = Vector3(size.x, size.y, 1)
 			process_material.set_emission_box_extents(box_size_vec3)
-			print(process_material.get_emission_box_extents())
 			particles.process_material = process_material
-			print(particles.process_material.get_emission_box_extents())
-			
+			particles.position = size / 2
 			add_child(particles)
 	else:
 		focus_entered.connect(outline_enable)
@@ -36,13 +34,13 @@ func _process(_delta: float) -> void:
 			outline_disable()
 
 func outline_enable():
-	if not was_hovering:
+	if not (was_hovering or disabled):
 		if not hover_sfx.is_empty():
 			SfxAudio.play_audio(hover_sfx)
 		was_hovering = true
 	
-	if GameManager and GameManager.enable_input and material:
-		material.set_shader_parameter("outline_width", hover_outline_thickness)
+		if GameManager and GameManager.enable_input and material:
+			material.set_shader_parameter("outline_width", hover_outline_thickness)
 
 func disable():
 	disabled = true
@@ -51,11 +49,11 @@ func disable():
 		remove_child(child)
 
 func outline_disable():
-	if was_hovering:
+	if was_hovering and not disabled:
 		was_hovering = false
 	
-	if GameManager and GameManager.enable_input and material:
-		material.set_shader_parameter("outline_width", 0)
+		if GameManager and GameManager.enable_input and material:
+			material.set_shader_parameter("outline_width", 0)
 
 func _pressed() -> void:
 	if not click_sfx.is_empty():
