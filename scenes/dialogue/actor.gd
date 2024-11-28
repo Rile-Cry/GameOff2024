@@ -1,6 +1,7 @@
 class_name Actor extends Control
 
 @export var dialogue_res : DialogueRes
+@export var global_variables : Array[String]
 
 @onready var _texture_rect : TextureRect = $TextureRect
 @onready var _button : Button = $TextureRect/Button
@@ -31,8 +32,16 @@ func _start_dialogue() -> void:
 		elif title.contains("END"):
 			dialogue_next = title_tweak
 			break
+	
+	var variables : Dictionary = {}
+	
+	for global_variable : String in global_variables:
+		if GameManager.get_global_variable(global_variable) == null:
+			GameManager.set_global_variable(global_variable, false)
 		
-	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next)
+		variables[global_variable] = GameManager.get_global_variable(global_variable)
+	
+	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, variables)
 	get_parent().add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:

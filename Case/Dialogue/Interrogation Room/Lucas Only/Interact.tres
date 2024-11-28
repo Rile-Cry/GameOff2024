@@ -6,5 +6,5 @@
 script = ExtResource("1_o5nok")
 actor_name = "Lucas"
 location_name = "interrogate_room_lucas"
-dialogue = Array[String](["LucasInterrogation", "LucasEND"])
-initial_mood = "arrest"
+dialogue = Array[String](["LucasStart", "LucasEND"])
+initial_mood = "normal"

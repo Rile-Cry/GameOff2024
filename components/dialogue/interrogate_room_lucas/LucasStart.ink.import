@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://dmvnj1tykkgg0"
+path="res://.godot/imported/LucasStart.ink-e020e9c0a19165624fb514acfe716e99.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/LucasStart.ink"
+dest_files=["res://.godot/imported/LucasStart.ink-e020e9c0a19165624fb514acfe716e99.res"]
+
+[params]
+

@@ -9,8 +9,10 @@ var _actors := { # For holding onto who's currently in the scene
 var _actor_ref := {} # Referencing the actor nodes
 var _choice_container : VBoxContainer # Holds onto the choices for dialogue
 var _externals: Dictionary = { # The variables within the dialogue files
-	"mood": "normal"
+	"mood": "normal",
+	"speaker": "Shade"
 }
+var _variables: Dictionary = {}
 var _initialized := false # Determines if the scene is initialized or not
 var _ink_file : InkResource # The dialogue file to read from
 var _ink_player : InkPlayer = InkPlayerFactory.create() # The ink_player to actually run dialogue
@@ -33,7 +35,7 @@ func setup(file_name: String, args: Dictionary) -> void:
 		"InkResource")
 	_title = file_name
 	for arg in args:
-		_externals[arg] = args[arg]
+		_variables[arg] = args[arg]
 	_initialized = true
 #endregion
 
@@ -47,7 +49,12 @@ func _loaded(successfully: bool):
 	if !successfully:
 		return
 	
+	# Set variables
+	for key in _variables:
+		_ink_player.set_variable(key, _variables[key])
+	
 	_bind_externals()
+	_bind_variables()
 	_continue_story()
 
 func _bind_externals():
@@ -61,8 +68,25 @@ func _bind_externals():
 	
 	_ink_player.observe_variables(externals, self, "_observe_variables")
 
+func _bind_variables():
+	## This is where external variables that are within the ink_story should be
+	## referenced.
+	var variables := []
+	for variable in _variables.keys():
+		variables.append(variable)
+	if variables.is_empty():
+		return
+	
+	_ink_player.observe_variables(variables, self, "_observe_variables")
+
 func _observe_variables(variable_name, new_value) -> void:
-	_externals[variable_name] = new_value
+	if _externals.has(variable_name):
+		_externals[variable_name] = new_value
+	elif _variables.has(variable_name):
+		print(variable_name)
+		_variables[variable_name] = new_value
+		if GameManager.get_global_variable(variable_name) != null:
+			GameManager.set_global_variable(variable_name, new_value)
 
 ## Continues the [member _ink_player] so that it moves to the next line of dialogue
 func _continue_story() -> void:
@@ -77,7 +101,10 @@ func _continue_story() -> void:
 ## Both sends the text to be seperated from speaker and then changes the text
 ## in the actual text box.
 func _change_label(text):
-	text = _grab_speaker(text)
+	_name_box.text = _externals["speaker"]
+	if _actors.has(_name_box.text):
+		_update_actor(_name_box.text)
+	#text = _grab_speaker(text)
 	
 	_type_out_text(text)
 
@@ -145,13 +172,14 @@ func _ready() -> void:
 		add_child(_ink_player)
 		
 		_override_story()
-		
 		_ink_player.connect("loaded", Callable(self, "_loaded"))
 		
 		_ink_player.create_story()
+		
 		GlobalGameEvents.dialogue_started.emit()
+		
 		for actor in get_tree().get_nodes_in_group("actors"):
-			_actor_ref[actor.actor_name] = actor
+			_actor_ref[actor.dialogue_res.actor_name] = actor
 	else:
 		print("deferring call...")
 		call_deferred("_ready")

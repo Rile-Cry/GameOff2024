@@ -1,7 +1,6 @@
--> start
-VAR mood = "normal"
-VAR speaker = "Shade"
+INCLUDE LucasInterrogation.ink
 
-=== start ===
-Lucas: Do you still need something?
--> END
+~   speaker = "Lucas"
+~   mood = "Normal"
+Do you still need something?
+-> choices

@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://ceqckh0ndrrai"
+path="res://.godot/imported/LucasStart.ink.json-42c1c7b4557692a55b224fe0da8c9a85.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/LucasStart.ink.json"
+dest_files=["res://.godot/imported/LucasStart.ink.json-42c1c7b4557692a55b224fe0da8c9a85.res"]
+
+[params]
+
+compress=true

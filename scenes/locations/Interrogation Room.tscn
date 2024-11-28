@@ -56,3 +56,4 @@ offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
 dialogue_res = ExtResource("6_idyo4")
+global_variables = Array[String](["lucas_option_4_available", "lucas_diary", "lucas_autopsy"])
