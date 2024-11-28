@@ -30,6 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ikiiq")
 clue_interact = Array[ExtResource("2_obhhf")]([SubResource("Resource_hyr51")])
+ambiance = "Interrogation Room"
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0

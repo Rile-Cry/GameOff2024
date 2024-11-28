@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cul1uodi8om8o"]
+[gd_scene load_steps=7 format=3 uid="uid://cul1uodi8om8o"]
 
 [ext_resource type="AudioStream" uid="uid://bf4qo5qbddhvq" path="res://assets/imports/ambiance/Photo Jump.wav" id="2_m48tk"]
 [ext_resource type="AudioStream" uid="uid://baaul4sqbfcm4" path="res://assets/imports/ambiance/Shade's Office.wav" id="3_ivycw"]
+[ext_resource type="AudioStream" uid="uid://dpjeuommx1ay3" path="res://assets/imports/ambiance/Interrogation Room.wav" id="4_crpqv"]
 [ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/ambiance/OS Boot.wav" id="7_q555b"]
 [ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="14_nm7qv"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_evwqa"]
-clip_count = 3
+clip_count = 4
 clip_0/name = &"OS Boot"
 clip_0/stream = ExtResource("7_q555b")
 clip_0/auto_advance = 0
@@ -18,11 +19,33 @@ clip_2/name = &"Shade\'s Office"
 clip_2/stream = ExtResource("3_ivycw")
 clip_2/auto_advance = 1
 clip_2/next_clip = 2
+clip_3/name = &"Interrogation Room"
+clip_3/stream = ExtResource("4_crpqv")
+clip_3/auto_advance = 1
+clip_3/next_clip = 3
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
 "fade_mode": 0,
 "from_time": 0,
+"to_time": 1
+},
+Vector2i(1, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(2, 2): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+},
+Vector2i(3, 3): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
 "to_time": 1
 }
 }
