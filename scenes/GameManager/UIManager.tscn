@@ -132,7 +132,6 @@ visible = false
 
 [node name="Credits" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,10 +202,9 @@ DarrylBD99
 Lunel
 Jules
 K916EKHO
-Rey
-Ménure
+Nullify All
 Eduardo Arantes
-"
+Ménure"
 fit_content = true
 
 [node name="RoleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/CreditsHbox"]
@@ -215,14 +213,14 @@ size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "Story Writter and Lead Dev
+text = "Lead Developer
 Programmer
 Programmer
-Background Artist
-Background Artist
-Character Artist
-Music
-SFX"
+2D Artist
+2D Artist
+2D Artist
+Sound Designer
+Music Composer"
 fit_content = true
 
 [node name="AssetTitleLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -245,10 +243,13 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "GGBotNet
 Violin Iliev
-Osaki Tsukiko
+Joshua B.
+N9 (ninetailsrabbit)
+Frederic Maquin
 stocksnap.io
 pexels.com
-Timbre"
+Timbre
+"
 fit_content = true
 
 [node name="AssetLabel" type="RichTextLabel" parent="Credits/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/AssetHbox"]
@@ -260,6 +261,8 @@ bbcode_enabled = true
 text = "X Typewriter Font
 Godot Desktop Themes
 
+Indie Blueprint
+InkGD
 Stock Images
 
 Ambiance"

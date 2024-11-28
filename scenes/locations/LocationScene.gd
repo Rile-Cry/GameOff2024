@@ -2,6 +2,8 @@ extends Control
 class_name LocationScene
 
 @export var clue_interact : Array[LocationClueInteract]
+@export var bgm : String
+@export var ambiance : String
 
 @onready var actor : Actor = $Actor
 @onready var dialogue_interact : DialogueRes = actor.dialogue_res
@@ -33,3 +35,7 @@ func _ready() -> void:
 	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
 	UIManager.get_mission_book().connect("clue_selected", _get_clue_location)
+	if BgmAudio and not bgm.is_empty():
+		BgmAudio.play_audio(bgm)
+	if AmbientAudio and not ambiance.is_empty():
+		AmbientAudio.play_audio(ambiance)

@@ -1,0 +1,393 @@
+[gd_scene load_steps=11 format=3 uid="uid://buqjgowu3x4uw"]
+
+[ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="1_d1p63"]
+[ext_resource type="Script" path="res://scenes/UI/credit_scene.gd" id="2_a7u31"]
+[ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_fubbr"]
+[ext_resource type="Texture2D" uid="uid://igd44d5b2jai" path="res://assets/imports/graphics/UI/splash_screen/lunar_eclipse_logo.png" id="4_2oqew"]
+
+[sub_resource type="Theme" id="Theme_je2rl"]
+HBoxContainer/constants/separation = 12
+Label/colors/font_outline_color = Color(0.996078, 0.976471, 0.952941, 1)
+Label/constants/outline_size = 12
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_d1p63")
+RichTextLabel/colors/font_outline_color = Color(0.996078, 0.976471, 0.952941, 1)
+RichTextLabel/constants/outline_size = 8
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/bold_font = ExtResource("1_d1p63")
+VBoxContainer/constants/separation = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvavn"]
+
+[sub_resource type="Animation" id="Animation_5kjs2"]
+resource_name = "credit_scroll"
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2754]
+}
+
+[sub_resource type="Animation" id="Animation_jpfmb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScrollContainer/VBoxContainer/TitleLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_15hgf"]
+resource_name = "show title"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScrollContainer/VBoxContainer/TitleLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5f8si"]
+_data = {
+"RESET": SubResource("Animation_jpfmb"),
+"credit_scroll": SubResource("Animation_5kjs2"),
+"show title": SubResource("Animation_15hgf")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_je2rl")
+script = ExtResource("2_a7u31")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fubbr")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.239216, 0.239216, 0.392157)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 309
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uvavn")
+
+[node name="TitleLabel" type="RichTextLabel" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("1_d1p63")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 64
+bbcode_enabled = true
+text = "[center][b]Detective Shade[/b]
+The Turnabout Case"
+fit_content = true
+
+[node name="CreditStart" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 309
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uvavn")
+
+[node name="TeamLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Team"
+horizontal_alignment = 1
+
+[node name="TeamHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/TeamHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right]Nehal
+
+
+DarrylBD99
+
+
+
+Lunel
+K916EKHO
+Jules
+Nullify All
+
+
+
+Eduardo Arantes
+Ménure"
+fit_content = true
+
+[node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/TeamHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Team Leader
+Game Designer
+Story Writter
+Co-Leader
+Backup Background Artist
+UI/UX
+Programmer
+Programmer
+Background Artist
+Background Artist
+Character Artist
+Paintings
+Interactable Art
+Poster Art
+Sound Design
+Music Composer"
+fit_content = true
+
+[node name="StockLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Stock Images"
+horizontal_alignment = 1
+
+[node name="StockHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/StockHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right]stocksnap.io
+pexels.com"
+fit_content = true
+
+[node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/StockHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+fit_content = true
+
+[node name="FontsLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fonts"
+horizontal_alignment = 1
+
+[node name="FontsHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/FontsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right]GGBotNet
+kgpaints"
+fit_content = true
+
+[node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/FontsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "X Typewriter Font
+Too Much Ink"
+fit_content = true
+
+[node name="AmbianceLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ambiance (from freesound.com)"
+horizontal_alignment = 1
+
+[node name="AmbianceHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/AmbianceHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right]Timbre
+
+deleted_user_228014
+"
+fit_content = true
+
+[node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/AmbianceHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Photo Jumping
+Shade's Office
+Interrogation Room
+"
+fit_content = true
+
+[node name="AssetLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Other Assets"
+horizontal_alignment = 1
+
+[node name="AssetHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/AssetHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right]Violin Iliev
+Joshua B.
+N9 (ninetailsrabbit)
+kopeek
+Frederic Maquin
+videlanicolas
+Matthias Stöckli
+Piet Bronders
+François de la Taste
+Yuri Pieters
+GreenClovers
+Cesar Izurieta
+Bram Dingelstad
+"
+fit_content = true
+
+[node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/AssetHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Godot Desktop Themes
+
+Indie Blueprint
+
+InkGD
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="PresentedSep" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uvavn")
+
+[node name="PresentedLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Presented by Nehal"
+horizontal_alignment = 1
+
+[node name="AssociateSep" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 80
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uvavn")
+
+[node name="AssociateLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "in association with"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_2oqew")
+stretch_mode = 5
+
+[node name="End" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 720
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uvavn")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5f8si")
+}
+autoplay = "show title"

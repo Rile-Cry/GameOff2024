@@ -45,13 +45,19 @@ AmbientAudio="*res://scenes/GameManager/ambient_audio.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/mode=4
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 
 [dotnet]
 
 project/assembly_name="IndieBlueprint"
+
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="C:/Users/darry/OneDrive/Desktop/HDD TEMP/Projects/GameOff2024/videos/Movie.avi"
 
 [editor_plugins]
 
