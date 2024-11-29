@@ -25,4 +25,5 @@ func close():
 	close_b_bottom.disabled = true
 	$AnimationPlayer.play_backwards("open")
 	await $AnimationPlayer.animation_finished
+	popup_closed.emit()
 	queue_free()

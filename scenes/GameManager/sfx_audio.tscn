@@ -68,3 +68,4 @@ stream = SubResource("AudioStreamInteractive_8bya0")
 volume_db = -10.0
 bus = &"SFX"
 script = ExtResource("6_n1klc")
+overlap = true

@@ -81,10 +81,6 @@ folder_colors={
 theme/custom="res://ui/default_theme.tres"
 theme/custom_font="res://ui/fonts/XTypewriter-Regular.woff2"
 
-[inkgd]
-
-register_templates=true
-
 [input]
 
 ui_left={

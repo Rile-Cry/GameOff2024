@@ -39,7 +39,6 @@ func _ready() -> void:
 	if opening_dialogue:
 		if GameManager and not GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
 			GameManager.set_global_variable("met_" + opening_dialogue.actor_name, true)
-			actor.next_line.connect(print_next)
 			for idx : int in opening_dialogue.dialogue.size():
 				await dialogue_start_action(idx)
 				actor._start_dialogue(opening_dialogue.dialogue[idx])
@@ -48,10 +47,6 @@ func _ready() -> void:
 		BgmAudio.play_audio(bgm)
 	if AmbientAudio and not ambiance.is_empty():
 		AmbientAudio.play_audio(ambiance)
-		
 
-func print_next(text : String, tags : String):
-	pass
-
-func dialogue_start_action(idx : int):
+func dialogue_start_action(_idx : int):
 	return
