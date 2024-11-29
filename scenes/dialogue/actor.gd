@@ -11,7 +11,7 @@ var was_hovering : bool = false
 const hover_sfx : String = "Object Hover"
 const hover_outline_thickness : int = 6
 
-signal next_line(text : String, tags)
+signal next_line(text : String, tags : String)
 
 func update_actor(texture : Texture2D) -> void:
 	_texture_rect.texture = texture
@@ -47,7 +47,7 @@ func _start_dialogue(dialogue_next : String = "") -> void:
 		variables[global_variable] = GameManager.get_global_variable(global_variable)
 	
 	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, variables)
-	dialogue_scene.next_line.connect(func(text : String, tags): next_line.emit(text, tags))
+	dialogue_scene.next_line.connect(func(text : String, tags : String): next_line.emit(text, tags))
 	get_parent().add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:

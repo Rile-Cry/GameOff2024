@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://co6kbt8rocnj6"]
+[gd_scene load_steps=21 format=3 uid="uid://co6kbt8rocnj6"]
 
 [ext_resource type="AudioStream" uid="uid://qqf6insqta3g" path="res://assets/imports/bgm/Shade's Office Intro.wav" id="1_vpf2b"]
 [ext_resource type="AudioStream" uid="uid://s7yhrbr58crc" path="res://assets/imports/bgm/Title Screen Intro.wav" id="1_yh87y"]
@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://cste0y0q3fyu4" path="res://assets/imports/bgm/Marina Photo Loop.wav" id="8_gd555"]
 [ext_resource type="AudioStream" uid="uid://b61w6vcp8uc2b" path="res://assets/imports/bgm/Marina's Apartment Intro.wav" id="9_7f570"]
 [ext_resource type="AudioStream" uid="uid://c2pfsy2i6klhe" path="res://assets/imports/bgm/Marina's Apartment Loop.wav" id="10_6n87q"]
+[ext_resource type="AudioStream" uid="uid://bddorjs1ak22e" path="res://assets/imports/bgm/Interrogation Room Intro.wav" id="11_1l0er"]
+[ext_resource type="AudioStream" uid="uid://duxe1oedjtkon" path="res://assets/imports/bgm/Interrogation Room Loop.wav" id="12_obm5k"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_d5k14"]
 clip_count = 2
@@ -107,8 +109,27 @@ Vector2i(-1, 1): {
 }
 }
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ftjdo"]
+clip_count = 2
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("11_1l0er")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Loop"
+clip_1/stream = ExtResource("12_obm5k")
+clip_1/auto_advance = 1
+clip_1/next_clip = 1
+_transitions = {
+Vector2i(-1, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+}
+}
+
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ikhae"]
-clip_count = 5
+clip_count = 6
 clip_0/name = &"Title Screen"
 clip_0/stream = SubResource("AudioStreamInteractive_d5k14")
 clip_0/auto_advance = 0
@@ -124,10 +145,13 @@ clip_3/auto_advance = 0
 clip_4/name = &"Marina\'s Apartment"
 clip_4/stream = SubResource("AudioStreamInteractive_beo5h")
 clip_4/auto_advance = 0
+clip_5/name = &"Interrogation Room"
+clip_5/stream = SubResource("AudioStreamInteractive_ftjdo")
+clip_5/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
-"fade_mode": 1,
+"fade_mode": 0,
 "from_time": 0,
 "to_time": 1
 },
@@ -156,6 +180,12 @@ Vector2i(3, 3): {
 "to_time": 0
 },
 Vector2i(4, 4): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(5, 5): {
 "fade_beats": 1,
 "fade_mode": 0,
 "from_time": 0,
