@@ -3,7 +3,6 @@ class_name GameBase
 
 @onready var level_base : Node = $LevelBase
 const tutorial_popup_path : String = "res://scenes/UI/tutorial_popup.tscn"
-
 const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
 
 func _ready() -> void:
@@ -22,8 +21,18 @@ func _ready() -> void:
 	
 	if UIManager:
 		UIManager.refresh_mission_book()
-		if not UIManager.get_mission_book_button().visible:
-			UIManager.enable_disable_mission_book_button()
+		UIManager.get_mission_book().clue_selected.connect(clue_selected)
+
+func clue_selected(clue : Clue):
+	for child in level_base.get_children():
+		if child is LocationScene:
+			child = child as LocationScene
+			
+			if child._get_clue_location(clue):
+				return
+	
+	var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.invalid_clue_dialogue_path)
+	get_parent().add_child(dialogue_scene)
 
 func _process(delta: float) -> void:
 	if LoadScreen and LoadScreen.is_loading:

@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://cu8mahjkev4gt"
+path="res://.godot/imported/InvalidClue.ink-bb64d11da83c8e7d6706543255ede95b.res"
+
+[deps]
+
+source_file="res://components/dialogue/base/InvalidClue.ink"
+dest_files=["res://.godot/imported/InvalidClue.ink-bb64d11da83c8e7d6706543255ede95b.res"]
+
+[params]
+

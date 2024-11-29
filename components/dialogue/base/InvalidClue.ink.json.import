@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bj3jkpam3exmd"
+path="res://.godot/imported/InvalidClue.ink.json-d668706e93ca9f1c025d4cbcf8fae884.res"
+
+[deps]
+
+source_file="res://components/dialogue/base/InvalidClue.ink.json"
+dest_files=["res://.godot/imported/InvalidClue.ink.json-d668706e93ca9f1c025d4cbcf8fae884.res"]
+
+[params]
+
+compress=true

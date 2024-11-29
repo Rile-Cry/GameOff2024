@@ -24,11 +24,13 @@ var actor_address := {
 }
 
 var game_time : float = 0.0
-var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
-var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
-var save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
-var interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
-var _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
+
+const outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
+const found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
+const save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
+const interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
+const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
+const invalid_clue_dialogue_path : String = "base/InvalidClue"
 
 var is_inside_photo : bool = false
 var current_location_index : int = -1:
