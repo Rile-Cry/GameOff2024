@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://r10mev5ivc36"
+path="res://.godot/imported/LucasAutopsy.ink.json-56a3964a59f3694206f65cfe692e87f7.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/LucasAutopsy.ink.json"
+dest_files=["res://.godot/imported/LucasAutopsy.ink.json-56a3964a59f3694206f65cfe692e87f7.res"]
+
+[params]
+
+compress=true

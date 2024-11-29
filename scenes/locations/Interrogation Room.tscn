@@ -1,11 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://ph4q1v8rh7fy"]
+[gd_scene load_steps=19 format=3 uid="uid://ph4q1v8rh7fy"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
 [ext_resource type="Script" path="res://scenes/locations/InterrogationRoom.gd" id="1_l5xmw"]
 [ext_resource type="Shader" path="res://shaders/vignette/nightmare_vignette.gdshader" id="2_pnuwp"]
 [ext_resource type="Resource" uid="uid://ia8ihxg72ha0" path="res://Case/Dialogue/Interrogation Room/Lucas Only/Opening.tres" id="2_tsumo"]
+[ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="3_s4c63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="4_h138y"]
+[ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_mpays"]
+[ext_resource type="Resource" uid="uid://dqk61o3iackxh" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Personal Diary.tres" id="5_4jmjo"]
 [ext_resource type="Resource" uid="uid://32t12rtt6x21" path="res://Case/Dialogue/Interrogation Room/Lucas Only/Interact.tres" id="6_idyo4"]
+[ext_resource type="Resource" uid="uid://cwfvteaaw8xvv" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
+[ext_resource type="Resource" uid="uid://bh8fjq1aw6csq" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Autopsy Report.tres" id="7_3hs4r"]
+
+[sub_resource type="Resource" id="Resource_36vqn"]
+script = ExtResource("3_s4c63")
+clue = ExtResource("4_mpays")
+dialogue_res = ExtResource("5_4jmjo")
+
+[sub_resource type="Resource" id="Resource_63b7p"]
+script = ExtResource("3_s4c63")
+clue = ExtResource("6_wh1k0")
+dialogue_res = ExtResource("7_3hs4r")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iusep"]
 shader = ExtResource("2_pnuwp")
@@ -13,21 +28,6 @@ shader_parameter/UPDATE_INTERVAL = 0.163
 shader_parameter/STATIC_GRANULARITY = 0.005
 shader_parameter/EDGE_BLUR = 0.5
 shader_parameter/BORDER_SIZE = 0.3
-
-[sub_resource type="Animation" id="Animation_lo21f"]
-resource_name = "reveal_room"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_rsyfl"]
 length = 0.001
@@ -59,6 +59,21 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_lo21f"]
+resource_name = "reveal_room"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n8ujt"]
 _data = {
 "RESET": SubResource("Animation_rsyfl"),
@@ -75,6 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l5xmw")
 opening_dialogue = ExtResource("2_tsumo")
+clue_interact = Array[ExtResource("3_s4c63")]([SubResource("Resource_36vqn"), SubResource("Resource_63b7p")])
 bgm = "Interrogation Room"
 ambiance = "Interrogation Room"
 
@@ -103,7 +119,6 @@ offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
 dialogue_res = ExtResource("6_idyo4")
-global_variables = Array[String](["lucas_option_4_available", "lucas_diary", "lucas_autopsy"])
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -112,6 +127,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

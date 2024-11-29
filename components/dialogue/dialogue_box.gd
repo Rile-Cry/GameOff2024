@@ -19,8 +19,6 @@ var _ink_player : InkPlayer = InkPlayerFactory.create() # The ink_player to actu
 var _title: String # The name of the dialogue
 var _typing := false # If the dialogue is still typing or not
 
-signal next_line(text : String, tags : String)
-
 #endregion
 
 # Node References
@@ -178,8 +176,6 @@ func _ready() -> void:
 		_ink_player.connect("loaded", Callable(self, "_loaded"))
 		
 		_ink_player.create_story()
-		
-		_ink_player.continued.connect(func(text : String, tags : String): next_line.emit(text, tags))
 		
 		GlobalGameEvents.dialogue_started.emit()
 		

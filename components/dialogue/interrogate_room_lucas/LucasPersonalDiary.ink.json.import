@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bnolbd5820ona"
+path="res://.godot/imported/LucasPersonalDiary.ink.json-2741f7cf405678110593890f72615218.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/LucasPersonalDiary.ink.json"
+dest_files=["res://.godot/imported/LucasPersonalDiary.ink.json-2741f7cf405678110593890f72615218.res"]
+
+[params]
+
+compress=true

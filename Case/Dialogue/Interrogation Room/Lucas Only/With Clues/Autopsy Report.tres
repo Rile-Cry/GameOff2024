@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogueRes" load_steps=2 format=3 uid="uid://bh8fjq1aw6csq"]
+
+[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="1_qf0mu"]
+
+[resource]
+script = ExtResource("1_qf0mu")
+actor_name = "Lucas"
+location_name = "interrogate_room_lucas"
+dialogue = Array[String](["LucasAutopsy"])
+initial_mood = "normal"
+global_variables = Array[String]([])

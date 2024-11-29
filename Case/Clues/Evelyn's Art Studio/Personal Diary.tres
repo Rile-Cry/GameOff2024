@@ -8,7 +8,7 @@
 script = ExtResource("1_kx8wd")
 id = "PERSONAL_DIARY"
 name = "Personal Diary"
-description = "Evelyn’s diary with several pages torn out. Remaining entries hint at her frustration with feeling trapped, particularly mentioning Victor and Marina."
+description = "Evelyn’s diary with several pages torn out. Remaining entries hint at her frustration with feeling trapped, particularly mentioning Lucas."
 location = "Evelyn's Art Studio"
 texture = ExtResource("2_wbyf1")
 texture_icon = ExtResource("3_7l3gi")

@@ -8,3 +8,4 @@ actor_name = "Lucas"
 location_name = "interrogate_room_lucas"
 dialogue = Array[String](["LucasEND"])
 initial_mood = "normal"
+global_variables = Array[String]([])

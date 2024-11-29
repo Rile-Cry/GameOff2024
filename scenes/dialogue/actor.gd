@@ -1,7 +1,6 @@
 class_name Actor extends Control
 
 @export var dialogue_res : DialogueRes
-@export var global_variables : Array[String]
 
 @onready var _texture_rect : TextureRect = $TextureRect
 @onready var _button : Button = $TextureRect/Button
@@ -10,8 +9,6 @@ var was_hovering : bool = false
 
 const hover_sfx : String = "Object Hover"
 const hover_outline_thickness : int = 6
-
-signal next_line(text : String, tags : String)
 
 func update_actor(texture : Texture2D) -> void:
 	_texture_rect.texture = texture
@@ -40,14 +37,13 @@ func _start_dialogue(dialogue_next : String = "") -> void:
 	
 	var variables : Dictionary = {}
 	
-	for global_variable : String in global_variables:
+	for global_variable : String in dialogue_res.global_variables:
 		if GameManager.get_global_variable(global_variable) == null:
 			GameManager.set_global_variable(global_variable, false)
 		
 		variables[global_variable] = GameManager.get_global_variable(global_variable)
 	
 	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, variables)
-	dialogue_scene.next_line.connect(func(text : String, tags : String): next_line.emit(text, tags))
 	get_parent().add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:

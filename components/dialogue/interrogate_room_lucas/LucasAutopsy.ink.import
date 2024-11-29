@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://ce1k8428vwum4"
+path="res://.godot/imported/LucasAutopsy.ink-db1c6cf4f4d59958079b751b561a5371.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_lucas/LucasAutopsy.ink"
+dest_files=["res://.godot/imported/LucasAutopsy.ink-db1c6cf4f4d59958079b751b561a5371.res"]
+
+[params]
+
