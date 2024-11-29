@@ -148,7 +148,7 @@ func resource_popup(res : Resource, type : resource_type):
 		popup_node.obj_icon = res.texture
 		popup_node.title = type
 		UIManager.add_child(popup_node)
-		await popup_node.found_popup_closed
+		await popup_node.popup_closed
 		popup_closed.emit()
 
 func obtain_photo(photo : Photo, popup : bool = true) -> bool:
@@ -217,7 +217,7 @@ func save_game() -> void:
 	save_file.store_line(json_string)
 	
 	if UIManager and save_popup:
-		var popup_node : SavePopup = save_popup.instantiate()
+		var popup_node : PopupNode = save_popup.instantiate()
 		UIManager.add_child(popup_node)
 
 func load_game() -> bool:

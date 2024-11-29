@@ -77,7 +77,7 @@ _data = {
 "open": SubResource("Animation_h500q")
 }
 
-[node name="Tutorial" type="Control" node_paths=PackedStringArray("tab_container", "prev_b", "next_b", "close_b")]
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("tab_container", "prev_b", "next_b", "close_b", "close_b_bottom")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -87,10 +87,11 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(640, 360)
 script = ExtResource("1_4oj3e")
-tab_container = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/Pages")
-prev_b = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Previous")
-next_b = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Next")
-close_b = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Close")
+tab_container = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Pages")
+prev_b = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/HBoxContainer/Previous")
+next_b = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/HBoxContainer/Next")
+close_b = NodePath("MarginContainer/Panel/CloseMargin/CloseButton")
+close_b_bottom = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/HBoxContainer/Close")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -108,7 +109,7 @@ theme_override_constants/margin_bottom = 64
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mpns4")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="ContentMargin" type="MarginContainer" parent="MarginContainer/Panel"]
 layout_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -119,33 +120,33 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin"]
 layout_mode = 2
 
-[node name="Title" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Title" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center][b]Hello Detective!"
 fit_content = true
 
-[node name="Pages" type="TabContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Pages" type="TabContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5ppu5")
 current_tab = 3
 tabs_visible = false
 
-[node name="Welcome" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="Welcome" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -157,12 +158,12 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.996078, 0.976471, 0.952941, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -174,7 +175,7 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome/ColorRect/MarginContainer/ColorRect/MarginContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("2_fn0bc")
@@ -187,7 +188,7 @@ text = "
 The Turnabout Case"
 fit_content = true
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
@@ -195,7 +196,7 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Welcome/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Welcome/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "In this game, you will be solving a case by:
@@ -206,23 +207,23 @@ text = "In this game, you will be solving a case by:
 The goal is to identify the individual who committed the crime."
 fit_content = true
 
-[node name="Office" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="Office" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office"]
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Office"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Shade's Office"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Office"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Office/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,21 +235,21 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office/ColorRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Office/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_kecus")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Office"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Office/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Office/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "Over here is your office space, where you would be able to do the following
@@ -259,23 +260,23 @@ text = "Over here is your office space, where you would be able to do the follow
 [ul]Change settings[/ul]"
 fit_content = true
 
-[node name="Mission Book" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="Mission Book" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book"]
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Mission Book"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Mission Book"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Mission Book"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Mission Book/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -287,21 +288,21 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book/ColorRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Mission Book/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("4_3r4va")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Mission Book"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Mission Book/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Mission Book/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "On the bottom right corner of your screen, you can see a mission book icon. In the mission book, you will be able to:
@@ -311,22 +312,22 @@ text = "On the bottom right corner of your screen, you can see a mission book ic
 [ul]Review dialogue that you highlighted"
 fit_content = true
 
-[node name="Suspect Interaction" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="Suspect Interaction" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 layout_mode = 2
 metadata/_tab_index = 3
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction"]
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Suspect Interaction"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Interact with Suspects"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Suspect Interaction"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Suspect Interaction/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -338,21 +339,21 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction/ColorRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Suspect Interaction/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_kecus")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Suspect Interaction"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Suspect Interaction/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Suspect Interaction/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "When you visit a location, you may meet one of the suspects there. 
@@ -360,23 +361,23 @@ text = "When you visit a location, you may meet one of the suspects there.
 [ul]Certain dialogue can only be unlocked by presenting clues[/ul]"
 fit_content = true
 
-[node name="Photo Jumping" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="Photo Jumping" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping"]
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Photo Jumping"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Photo Jumping"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Photo Jumping"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Photo Jumping/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -388,44 +389,44 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping/ColorRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Photo Jumping/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("5_hbhk4")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Photo Jumping"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Photo Jumping/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Photo Jumping/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "Unlike most detectives, you will be able to interact with the objects in certain photos. You will be using this to help with gathering clues to help discover the perpetrator."
 fit_content = true
 
-[node name="Note Taking" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="Note Taking" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking"]
+[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Note Taking"]
 layout_mode = 2
 bbcode_enabled = true
 text = "[center]Note Taking
 "
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Note Taking"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Note Taking/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -437,21 +438,21 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking/ColorRect/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Note Taking/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_kecus")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Note Taking"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/Note Taking/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/Note Taking/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "Whenever you interact with a suspect, you will be given an option to highlight dialogue if you believe that something they said is suspicious. 
@@ -459,17 +460,17 @@ text = "Whenever you interact with a suspect, you will be given an option to hig
 [i][b]Developer Note[/b]: This does not directly affect gameplay, its more so a way for players to easily remember certain dialogue."
 fit_content = true
 
-[node name="End" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages"]
+[node name="End" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 6
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -481,12 +482,12 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End/ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.996078, 0.976471, 0.952941, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect/MarginContainer/ColorRect"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End/ColorRect/MarginContainer/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -498,7 +499,7 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+[node name="TitleLabel" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End/ColorRect/MarginContainer/ColorRect/MarginContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("2_fn0bc")
@@ -511,7 +512,7 @@ text = "
 :)"
 fit_content = true
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
@@ -519,47 +520,66 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/MarginContainer"]
+[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End/MarginContainer"]
 layout_mode = 2
 bbcode_enabled = true
 text = "That's about all you'll need to know, now go and solve some cases Detective!"
 fit_content = true
 
-[node name="Thanks" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/Pages/End/MarginContainer"]
+[node name="Thanks" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages/End/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 bbcode_enabled = true
 text = "[i][b]Message from DarrylBD99[/b]: I don't know what else to put here, so I would just like to say, thanks for playing! This is probably one of the very few projects that I am proud to be apart of. "
 fit_content = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
 
-[node name="Previous" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Previous" type="Button" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 text = "Previous"
 
-[node name="Next" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Next" type="Button" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 text = "Next"
 
-[node name="Close" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Close" type="Button" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 mouse_default_cursor_shape = 2
 text = "Close"
 
-[node name="TabBar" type="TabBar" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="TabBar" type="TabBar" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
 layout_mode = 2
+
+[node name="CloseMargin" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+
+[node name="CloseButton" type="Button" parent="MarginContainer/Panel/CloseMargin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_fn0bc")
+text = "X"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
