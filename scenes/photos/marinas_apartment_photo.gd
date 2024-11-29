@@ -1,6 +1,7 @@
 extends PhotoScene
 
 @export var popup_container : Control
+@export var popup_close_b : Button
 
 @export_category("desk")
 @export var desk : ObjectButton
@@ -28,6 +29,7 @@ func _ready() -> void:
 	calender.pressed.connect(flip_calender)
 	lock.pressed.connect(lock_popup_show)
 	lock_button.pressed.connect(unlock_drawer)
+	popup_close_b.pressed.connect(close_popup_sfx)
 	
 	for lock_number : LockNumber in lock_numbers:
 		lock_number_sequence.append(lock_number.correct_value)

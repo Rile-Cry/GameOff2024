@@ -1,7 +1,5 @@
 INCLUDE LucasInterrogation.ink
 
-~   speaker = "Officer"
-Lucas, you have a visitor. He's called Shade.
 ~   speaker = "Shade"
 I'm here to help you, Lucas. I want to find the real culprit, but I’ll need your cooperation.
 ~   mood = "panic"

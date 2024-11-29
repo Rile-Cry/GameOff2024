@@ -11,6 +11,8 @@ var was_hovering : bool = false
 const hover_sfx : String = "Object Hover"
 const hover_outline_thickness : int = 6
 
+signal next_line(text : String, tags)
+
 func update_actor(texture : Texture2D) -> void:
 	_texture_rect.texture = texture
 
@@ -21,17 +23,20 @@ func _dialogue_ended() -> void:
 	GameGlobals.wait(1)
 	_button.disabled = false
 
-func _start_dialogue() -> void:
-	var dialogue_next := ""
+func _start_dialogue(dialogue_next : String = "") -> void:
 	_button.release_focus()
-	for title in dialogue_res.dialogue:
-		var title_tweak := dialogue_res.location_name + "/" + title
-		if not GameGlobals.dialogue_choices.has(title_tweak):
-			dialogue_next = title_tweak
-			break
-		elif title.contains("END"):
-			dialogue_next = title_tweak
-			break
+	
+	if dialogue_next.is_empty():
+		for title in dialogue_res.dialogue:
+			var title_tweak := dialogue_res.location_name + "/" + title
+			if not GameGlobals.dialogue_choices.has(title_tweak):
+				dialogue_next = title_tweak
+				break
+			elif title.contains("END"):
+				dialogue_next = title_tweak
+				break
+	else:
+		dialogue_next = dialogue_res.location_name + "/" + dialogue_next
 	
 	var variables : Dictionary = {}
 	
@@ -42,6 +47,7 @@ func _start_dialogue() -> void:
 		variables[global_variable] = GameManager.get_global_variable(global_variable)
 	
 	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, variables)
+	dialogue_scene.next_line.connect(func(text : String, tags): next_line.emit(text, tags))
 	get_parent().add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:
@@ -58,7 +64,6 @@ func _ready() -> void:
 	_texture_rect.texture = texture
 	_texture_rect.material = GameManager.outline_material.duplicate()
 	add_to_group("actors")
-
 
 func outline_enable():
 	if not (was_hovering or _button.disabled):
