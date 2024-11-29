@@ -1,4 +1,5 @@
 extends Control
+class_name TutorialPopup
 
 @export_category("Control Nodes")
 @export var tab_container : TabContainer

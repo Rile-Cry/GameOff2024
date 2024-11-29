@@ -26,9 +26,16 @@ func _ready() -> void:
 			UIManager.enable_disable_mission_book_button()
 
 func _process(delta: float) -> void:
-	if not (LoadScreen and LoadScreen.is_loading):
-		if GameManager:
-			GameManager.game_time += delta
+	if LoadScreen and LoadScreen.is_loading:
+		return
+	
+	if UIManager:
+		for child in UIManager.get_children():
+			if child is TutorialPopup:
+				return
+	
+	if GameManager:
+		GameManager.game_time += delta
 
 func change_level(level : PackedScene) -> void:
 	for child in level_base.get_children():
