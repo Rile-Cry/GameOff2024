@@ -10,8 +10,9 @@ func _ready() -> void:
 	AmbientAudio.play_audio("Shade's Office")
 
 func _process(_delta: float) -> void:
-	if not GameManager.get_global_variable("tutorial_pc") and is_instance_valid(arrow):
-		arrow.queue_free()
+	if arrow.visible and GameManager:
+		var email_loc : Dictionary = GameManager.get_global_variable("email_locations")
+		arrow.visible = not email_loc.is_empty()
 
 func _open_computer() -> void:
 	if UIManager:

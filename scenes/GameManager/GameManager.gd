@@ -8,10 +8,14 @@ var unlocked_locations : Array[Location]
 var enable_input : bool = false
 var photos : Array[Photo]
 var global_variables : Dictionary = {
-	"received" = [],
-	"read_emails" = [],
-	"t_notes" = [],
-	"p_notes" = ""
+	"t_notes" : [],
+	"p_notes" : "",
+	"email_locations" : {
+		"Urgent Update on the Evelyn Blake Case" : [
+			preload("res://Case/Locations/Interrogation Room.tres"),
+			preload("res://Case/Locations/Victor's Office.tres")
+		]
+	}
 }
 var actor_address := {
 	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",
@@ -19,6 +23,7 @@ var actor_address := {
 	"Marina": "res://assets/imports/graphics/characters/Marina Thorne/marina_",
 }
 
+var game_time : float = 0.0
 var outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 var found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 var save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
@@ -205,7 +210,8 @@ func save_game() -> void:
 		"UnlockedLocations" : location_path,
 		"Photos" : photo_path,
 		"Clues" : clue_path,
-		"GlobalVariables" : global_variables
+		"GlobalVariables" : global_variables,
+		"Time" : game_time
 	}
 	var json_string : String = JSON.stringify(save_dict)
 	save_file.store_line(json_string)
@@ -236,6 +242,7 @@ func load_game() -> bool:
 	for clue : String in clue_path: clues.append(load(clue))
 	
 	global_variables = save_data["GlobalVariables"]
+	game_time = save_data["Time"]
 	current_location_index = save_data["CurrentLocation"]
 	return true
 	

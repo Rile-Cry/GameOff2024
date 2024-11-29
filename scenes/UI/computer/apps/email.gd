@@ -48,6 +48,14 @@ func _update_textbox(button: EmailButton) -> void:
 		if mail["title"] == button.text:
 			var i : int = 0
 			
+			if GameManager and GameManager.get_global_variable("email_locations") != null:
+				var email_loc : Dictionary = GameManager.get_global_variable("email_locations")
+				if email_loc.has(mail["title"]):
+					for loc : Location in email_loc["Urgent Update on the Evelyn Blake Case"]:
+						GameManager.unlock_location(loc, false)
+					email_loc.erase(mail["title"])
+					GameManager.set_global_variable("email_locations", email_loc)
+			
 			mail_address.text = mail["user"]
 			mail_subject.text = mail["title"]
 			mail_content.text = mail["message"]

@@ -13,9 +13,6 @@ func _ready() -> void:
 	if GameManager:
 		GameManager.game_base = self
 		if not GameManager.load_game():
-			
-			GameManager.set_global_variable("tutorial_pc", true)
-
 			GameManager.unlock_location(load(start_location_path), false)
 			GameManager.current_location_index = 0
 			await LoadScreen.loading_finish
@@ -27,6 +24,11 @@ func _ready() -> void:
 		UIManager.refresh_mission_book()
 		if not UIManager.get_mission_book_button().visible:
 			UIManager.enable_disable_mission_book_button()
+
+func _process(delta: float) -> void:
+	if not (LoadScreen and LoadScreen.is_loading):
+		if GameManager:
+			GameManager.game_time += delta
 
 func change_level(level : PackedScene) -> void:
 	for child in level_base.get_children():

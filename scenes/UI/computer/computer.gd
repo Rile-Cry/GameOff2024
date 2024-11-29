@@ -25,9 +25,11 @@ func _ready() -> void:
 	exit_button_popup = mysos_menu.get_popup()
 	mysos_menu.connect("pressed", mouse_click_sfx)
 	exit_button_popup.connect("id_pressed", _mysos_pressed)
-	
-	if not GameManager.get_global_variable("tutorial_pc"):
-		$Programs/Email/Notification.queue_free()
+
+func _process(_delta: float) -> void:
+	if $Programs/Email/Notification.visible and GameManager:
+		var email_loc : Dictionary = GameManager.get_global_variable("email_locations")
+		$Programs/Email/Notification.visible = not email_loc.is_empty()
 
 func mouse_click_sfx():
 	SfxAudio.play_audio("Mouse Click")
@@ -51,11 +53,6 @@ func _open_email() -> void:
 	var email = email_scene.instantiate()
 	mouse_click_sfx()
 	add_child(email)
-	
-	if GameManager.get_global_variable("tutorial_pc"):
-		GameManager.set_global_variable("tutorial_pc", false)
-		if $Programs/Email/Notification:
-			$Programs/Email/Notification.queue_free()
 
 func _open_vault() -> void:
 	var vault = vault_scene.instantiate()
