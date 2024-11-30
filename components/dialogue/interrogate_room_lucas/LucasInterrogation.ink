@@ -10,16 +10,16 @@ VAR lucas_autopsy = false
 +   [What's Evelyn Like?]
 	-> option_1
 +   [Called Police]
-	-> option_2
+    -> option_2
 +   [Evelyn's Phone]
-	-> option_3
+    -> option_3
 +   [Their Usual Spot]
-	-> option_4
+    -> option_4
 +   {lucas_victor} [Ask about Victor]
 	-> option_5
 +   [Relationship with Evelyn]
 	-> option_6
-*   I guess that covers it...
+*   {option_1 || option_2 || option_3 || option_4 || option_5 || option_6} I guess that covers it...
 	-> END
 
 === option_1 ===

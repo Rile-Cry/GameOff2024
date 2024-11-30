@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
-[ext_resource type="PackedScene" uid="uid://cwvcth4tpcs35" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
+[ext_resource type="PackedScene" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
 texture = ExtResource("9_x077g")

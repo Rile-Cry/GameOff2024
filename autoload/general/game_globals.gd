@@ -4,7 +4,7 @@ extends Node
 var current_case : Case
 var dialogue_choices := {
 }
-var typing_speed : int = 20
+var typing_speed : int = 30
 #endregion
 
 #region General helpers

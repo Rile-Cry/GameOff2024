@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ph4q1v8rh7fy"]
+[gd_scene load_steps=16 format=3 uid="uid://ph4q1v8rh7fy"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
 [ext_resource type="Script" path="res://scenes/locations/InterrogationRoom.gd" id="1_l5xmw"]
@@ -8,8 +8,9 @@
 [ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_mpays"]
 [ext_resource type="Resource" uid="uid://dqk61o3iackxh" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Personal Diary.tres" id="5_4jmjo"]
 [ext_resource type="Resource" uid="uid://32t12rtt6x21" path="res://Case/Dialogue/Interrogation Room/Lucas Only/Interact.tres" id="6_idyo4"]
-[ext_resource type="Resource" uid="uid://cwfvteaaw8xvv" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
+[ext_resource type="Resource" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
 [ext_resource type="Resource" uid="uid://bh8fjq1aw6csq" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Autopsy Report.tres" id="7_3hs4r"]
+[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="11_nhaod"]
 
 [sub_resource type="Resource" id="Resource_36vqn"]
 script = ExtResource("3_s4c63")
@@ -24,6 +25,22 @@ clue = ExtResource("6_wh1k0")
 dialogue_res = ExtResource("7_3hs4r")
 conditional_variable = true
 variable_name = "lucas_autopsy"
+
+[sub_resource type="Resource" id="Resource_iksaa"]
+script = ExtResource("11_nhaod")
+actor_name = "Marina"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["Turnabout"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_5amg0"]
+script = ExtResource("11_nhaod")
+actor_name = "Victor"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["Turnabout"])
+initial_mood = "normal"
+global_variables = Array[String]([])
 
 [node name="InterrogationRoom" type="Control"]
 layout_mode = 3
@@ -55,3 +72,42 @@ offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
 dialogue_res = ExtResource("6_idyo4")
+
+[node name="FinaleActors" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actor2" parent="FinaleActors" instance=ExtResource("4_h138y")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -235.0
+offset_top = -595.0
+offset_right = 235.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+dialogue_res = SubResource("Resource_iksaa")
+
+[node name="Actor3" parent="FinaleActors" instance=ExtResource("4_h138y")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -595.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+dialogue_res = SubResource("Resource_5amg0")

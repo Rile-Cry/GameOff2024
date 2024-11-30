@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bdbveti5fedv2"
+path="res://.godot/imported/Turnabout.ink.json-dc1e922a864e9cfa5d4f286d8575f43d.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/Turnabout.ink.json"
+dest_files=["res://.godot/imported/Turnabout.ink.json-dc1e922a864e9cfa5d4f286d8575f43d.res"]
+
+[params]
+
+compress=true

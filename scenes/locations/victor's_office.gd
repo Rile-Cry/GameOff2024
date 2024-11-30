@@ -19,6 +19,9 @@ func dialogue_start_action(idx : int):
 			UIManager.anim_player.play("reveal_room")
 			await UIManager.anim_player.animation_finished
 
+func _ready() -> void:
+	pass
+
 func _process(_delta: float) -> void:
 	if not GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
 		for object : ObjectResourceButton in objects:
