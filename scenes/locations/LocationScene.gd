@@ -5,6 +5,7 @@ class_name LocationScene
 @export var clue_interact : Array[LocationClueInteract]
 @export var bgm : String
 @export var ambiance : String
+@export var instant_meet : bool = true
 
 @onready var actor : Actor = $Actor
 @onready var dialogue_interact : DialogueRes = actor.dialogue_res
@@ -23,7 +24,7 @@ func _dialogue_ended() -> void:
 func _get_clue_location(clue : Clue) -> bool:
 	for location_clue : LocationClueInteract in clue_interact:
 		if location_clue.clue == clue:
-			if location_clue.conditional_variable and not GameManager.get_global_variable(location_clue.variable_name):
+			if location_clue.conditional_variable and GameManager.get_global_variable(location_clue.variable_name):
 				return false
 
 			actor._start_dialogue(location_clue.dialogue_res, 0)
@@ -38,8 +39,8 @@ func _ready() -> void:
 	actor.hide()
 	
 	if opening_dialogue:
-		if GameManager and not GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
-			GameManager.set_global_variable("met_" + opening_dialogue.actor_name, true)
+		if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name) == null:
+			GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
 			for idx : int in opening_dialogue.dialogue.size():
 				GameManager.enable_input = false
 				await dialogue_start_action(idx)
