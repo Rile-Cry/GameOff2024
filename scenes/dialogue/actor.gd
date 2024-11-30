@@ -20,12 +20,16 @@ func _dialogue_ended() -> void:
 	GameGlobals.wait(1)
 	_button.disabled = false
 
-func _start_dialogue(dialogue_next : String = "") -> void:
+func _start_dialogue_actor():
+	_start_dialogue(dialogue_res)
+
+func _start_dialogue(dialogue : DialogueRes, idx : int = -1) -> void:
+	var dialogue_next : String = ""
 	_button.release_focus()
 	
-	if dialogue_next.is_empty():
-		for title in dialogue_res.dialogue:
-			var title_tweak := dialogue_res.location_name + "/" + title
+	if idx == -1:
+		for title in dialogue.dialogue:
+			var title_tweak := dialogue.location_name + "/" + title
 			if not GameGlobals.dialogue_choices.has(title_tweak):
 				dialogue_next = title_tweak
 				break
@@ -33,18 +37,18 @@ func _start_dialogue(dialogue_next : String = "") -> void:
 				dialogue_next = title_tweak
 				break
 	else:
-		dialogue_next = dialogue_res.location_name + "/" + dialogue_next
+		dialogue_next = dialogue.location_name + "/" + dialogue.dialogue[idx]
 	
 	var variables : Dictionary = {}
 	
-	for global_variable : String in dialogue_res.global_variables:
+	for global_variable : String in dialogue.global_variables:
 		if GameManager.get_global_variable(global_variable) == null:
 			GameManager.set_global_variable(global_variable, false)
 		
 		variables[global_variable] = GameManager.get_global_variable(global_variable)
 	
 	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, variables)
-	get_parent().add_child(dialogue_scene)
+	UIManager.add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:
 	if _button.is_hovered() and not _button.disabled:
@@ -55,7 +59,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
-	_button.connect("pressed", _start_dialogue)
+	_button.connect("pressed", _start_dialogue_actor)
 	var texture : Texture2D = ResourceLoader.load(GameManager.actor_address[dialogue_res.actor_name] + dialogue_res.initial_mood + ".png", "Texture2D")
 	_texture_rect.texture = texture
 	_texture_rect.material = GameManager.outline_material.duplicate()

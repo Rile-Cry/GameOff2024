@@ -4,7 +4,7 @@ INCLUDE LucasInterrogation.ink
 I'm here to help you, Lucas. I want to find the real culprit, but I’ll need your cooperation.
 ~   mood = "panic"
 ~   speaker = "Lucas"
-Help me? There’s no point, is there? I’m the culprit... I have to be! Just give me the death sentence and end it already...
+Help me? There’s no point, is there? I’m the culprit... I have to be! Just give me the death sentence and end it already... #shake
 ~   speaker = "Shade"
 I don’t believe you did it, Lucas. There’s more to this story. Help me understand—tell me what really happened.
 ~   mood = "tries_to_calm"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://be363l16cbvcw"
+path="res://.godot/imported/Screen Shake.wav-e0475427d5e80d5a775583ed90aaa305.sample"
+
+[deps]
+
+source_file="res://assets/imports/bgm/Screen Shake.wav"
+dest_files=["res://.godot/imported/Screen Shake.wav-e0475427d5e80d5a775583ed90aaa305.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

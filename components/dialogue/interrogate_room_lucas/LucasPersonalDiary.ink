@@ -14,10 +14,10 @@ Wh... why is that?
 ~   speaker = "Shade"
 Because over here in her diary, she mentions you a lot and how she feels trapped.
 ~   speaker = "Lucas"
-What? Let me see that please?
+What? Let me see that please? #shake
 ...
 ~   mood = "panic"
-What... what is this? Is that how she really felt? If that's true, why did she even bother getting back with me?!
+What... what is this? Is that how she really felt? If that's true, why did she even bother getting back with me?! #shake
 ~   speaker = "Shade"
 Maybe she changed her mind, Lucas. People grow, and maybe she saw something in you. You have changed, haven't you?
 ~   mood = "tries_to_calm"

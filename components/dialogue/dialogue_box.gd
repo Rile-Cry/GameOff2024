@@ -37,10 +37,30 @@ func setup(file_name: String, args: Dictionary) -> void:
 	_title = file_name
 	for arg in args:
 		_variables[arg] = args[arg]
+		print(arg)
+		print(_variables[arg])
 	_initialized = true
 #endregion
 
 #region Private Functions
+func _get_tags():
+	var tags : Array = _ink_player.get_current_tags()
+	for idx : int in tags.size():
+		var tag : String = tags[idx - 1]
+		match tag:
+			"shake": GlobalGameEvents.shake.emit(0)
+			"shake_aggressive": GlobalGameEvents.shake.emit(1)
+			"exclaim": GlobalGameEvents.exclaim.emit()
+			"Photo":
+				get_resource(tags[idx], GameManager.resource_type.PHOTO)
+
+func get_resource(path : String, res_type : GameManager.resource_type):
+	if not path.contains("res://"):
+		path = "res://" + path
+	
+	GlobalGameEvents.res_obtain.emit(path, res_type)
+
+
 func _override_story():
 	if _ink_file != null:
 		_ink_player.ink_file = _ink_file
@@ -94,6 +114,7 @@ func _continue_story() -> void:
 	if _ink_player.can_continue:
 		var text : String = _ink_player.continue_story()
 		_change_label(text)
+		_get_tags()
 	elif _ink_player.has_choices:
 		_prompt_choices(_ink_player.current_choices)
 	else:
@@ -124,6 +145,7 @@ func _update_actor(actor_name: String) -> void:
 	_actor_ref[actor_name].update_actor(texture)
 	
 func _type_out_text(text: String) -> void:
+	visible = true
 	var temp_string := ""
 	_typing = true
 	for letter in text:
@@ -168,6 +190,7 @@ func _ended():
 
 #region Node Functions
 func _ready() -> void:
+	visible = false
 	if _initialized:
 		_ink_player.loads_in_background = true
 		add_child(_ink_player)

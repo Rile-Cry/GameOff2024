@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://crb32e1nxey81"]
+[gd_scene load_steps=2 format=3 uid="uid://co615mvfumu6i"]
 
 [ext_resource type="Script" path="res://components/dialogue/dialogue_choice.gd" id="1_tqs5t"]
 

@@ -73,7 +73,7 @@ signal ended()
 ## prevent the UI from freezing if the _story is too big. Note that
 ## on platforms where threads aren't available, the value of this
 ## property is ignored.
-@export var loads_in_background: bool = true
+@export var loads_in_background: bool = false
 
 
 # ############################################################################ #
@@ -330,18 +330,20 @@ func create_story():
 
 	_add_runtime()
 
-	if loads_in_background && _current_platform_supports_threads():
-		_thread = Thread.new()
-		var error = _thread.start(_async_create_story.bind(ink_file.json, _ink_runtime.get_ref()))
-		if error != OK:
-			printerr("[inkgd] [ERROR] Could not start the thread: error code %d", error)
-			call_deferred("emit_signal", "loaded", false)
-			return error
-		else:
-			return OK
-	else:
-		call_deferred("_create_and_finalize_story", ink_file.json, _ink_runtime.get_ref())
-		return OK
+	#if loads_in_background && _current_platform_supports_threads():
+	#	_thread = Thread.new()
+	#	var error = _thread.start(_async_create_story.bind(ink_file.json, _ink_runtime.get_ref()))
+	#	if error != OK:
+	#		printerr("[inkgd] [ERROR] Could not start the thread: error code %d", error)
+	#		call_deferred("emit_signal", "loaded", false)
+	#		return error
+	#	else:
+	#		return OK
+	#else:
+	#	call_deferred("_create_and_finalize_story", ink_file.json, _ink_runtime.get_ref())
+	#	return OK
+	call_deferred("_create_and_finalize_story", ink_file.json, _ink_runtime.get_ref())
+	return OK
 
 
 ## Reset the Story back to its initial state as it was when it was
