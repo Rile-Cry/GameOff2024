@@ -24,12 +24,9 @@ func _dialogue_ended() -> void:
 func _get_clue_location(clue : Clue) -> bool:
 	for location_clue : LocationClueInteract in clue_interact:
 		if location_clue.clue == clue:
-			if location_clue.conditional_variable and GameManager.get_global_variable(location_clue.variable_name):
-				return false
-
-			actor._start_dialogue(location_clue.dialogue_res, 0)
-			return true
-	
+			if not location_clue.conditional_variable or GameManager.get_global_variable(location_clue.variable_name):
+				actor._start_dialogue(location_clue.dialogue_res, 0)
+				return true
 	return false
 
 func _ready() -> void:
