@@ -12,7 +12,7 @@ func _ready() -> void:
 	if opening_dialogue:
 		if GameManager:
 			GameManager.enable_input = false
-			if GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
+			if GameManager.get_global_variable("met_" + opening_dialogue.actor_name) != null:
 				actor.show()
 				play_bgm_ambiance()
 				print(GameManager.get_global_variable("marina_photo"))
@@ -27,12 +27,12 @@ func _ready() -> void:
 						actor._start_dialogue(opening_dialogue_photo, idx)
 						await GlobalGameEvents.dialogue_ended
 			else:
+				GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
 				for idx : int in opening_dialogue.dialogue.size():
 					GameManager.enable_input = false
 					await dialogue_start_action(idx)
 					actor._start_dialogue(opening_dialogue, idx)
 					await GlobalGameEvents.dialogue_ended
-				GameManager.set_global_variable("met_" + opening_dialogue.actor_name, true)
 		await GameManager.add_resource_from_stack()
 		GameManager.enable_input = true
 		GameManager.current_location_index = 0
