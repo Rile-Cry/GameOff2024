@@ -1,5 +1,6 @@
 extends LocationScene
 
+@export var victor_kick_dialogue : DialogueRes
 @export var opening_dialogue_victor : DialogueRes
 @export var objects : Array[Button]
 

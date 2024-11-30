@@ -1,13 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://cxthox4dckmvk"]
+[gd_scene load_steps=30 format=3 uid="uid://cxthox4dckmvk"]
 
 [ext_resource type="Script" path="res://scenes/locations/victor's_office.gd" id="1_36ue3"]
 [ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_i6p0k"]
 [ext_resource type="Texture2D" uid="uid://bibojr5rotm7w" path="res://assets/imports/graphics/backgrounds/with_object/victors_office.png" id="3_5xq0f"]
+[ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="3_dke63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="5_3fhqw"]
 [ext_resource type="Script" path="res://Case/object_resource_button.gd" id="5_psaxd"]
 [ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="6_87dlp"]
 [ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_ca4up"]
 [ext_resource type="Resource" uid="uid://btpndxraxxqt8" path="res://Case/Clues/Victor's Office/Family Picture.tres" id="7_gifq4"]
+
+[sub_resource type="Resource" id="Resource_2wkvw"]
+script = ExtResource("2_i6p0k")
+actor_name = "Victor"
+location_name = "victors_office"
+dialogue = Array[String](["VictorKick"])
+initial_mood = "normal"
+global_variables = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_tv4v7"]
 script = ExtResource("2_i6p0k")
@@ -24,6 +33,36 @@ location_name = "victors_office"
 dialogue = Array[String](["VictorOpening"])
 initial_mood = "normal"
 global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_jbitd"]
+script = ExtResource("2_i6p0k")
+actor_name = "Victor"
+location_name = "victors_office"
+dialogue = Array[String](["VictorFamilyPicture"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_ylrju"]
+script = ExtResource("3_dke63")
+clue = ExtResource("7_gifq4")
+dialogue_res = SubResource("Resource_jbitd")
+conditional_variable = false
+variable_name = ""
+
+[sub_resource type="Resource" id="Resource_gbrxt"]
+script = ExtResource("2_i6p0k")
+actor_name = "Victor"
+location_name = "victors_office"
+dialogue = Array[String](["VictorShreddedPaper"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_xsa06"]
+script = ExtResource("3_dke63")
+clue = ExtResource("6_87dlp")
+dialogue_res = SubResource("Resource_gbrxt")
+conditional_variable = false
+variable_name = ""
 
 [sub_resource type="Resource" id="Resource_i3idt"]
 script = ExtResource("2_i6p0k")
@@ -67,9 +106,11 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_36ue3")
+victor_kick_dialogue = SubResource("Resource_2wkvw")
 opening_dialogue_victor = SubResource("Resource_tv4v7")
 objects = [NodePath("Shredded Paper"), NodePath("Family Photo"), NodePath("Bookshelf")]
 opening_dialogue = SubResource("Resource_cs5i7")
+clue_interact = Array[ExtResource("3_dke63")]([SubResource("Resource_ylrju"), SubResource("Resource_xsa06")])
 bgm = "Victor's Office"
 instant_meet = false
 
