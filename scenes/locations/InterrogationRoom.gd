@@ -1,10 +1,15 @@
 extends LocationScene
 
 func _ready() -> void:
-	if UIManager and GameManager:
-		UIManager.add_child(GameManager.vignette.instantiate())
-		
+	if UIManager:
+		UIManager.show_shader("vignette")
+	
 	super()
+
+func _notification(what):
+	if (what == NOTIFICATION_PREDELETE):
+		if UIManager:
+			UIManager.hide_shader("vignette")
 
 func dialogue_start_action(idx : int):
 	if idx == 0:

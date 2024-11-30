@@ -11,6 +11,7 @@ func _ready() -> void:
 	%Computer.hide()
 	%Credits.hide()
 	%MissionBookButton.hide()
+	%Vignette.hide()
 	
 	%MissionBookButton.pressed.connect(open_close_mission_book)
 	%CreditCloseButton.pressed.connect(open_close_credits)
@@ -52,6 +53,14 @@ func _input(event: InputEvent) -> void:
 
 func enable_disable_mission_book_button():
 	%MissionBookButton.visible = not %MissionBookButton.visible
+
+func show_shader(shader_name : String):
+	match shader_name:
+		"vignette": %Vignette.show()
+
+func hide_shader(shader_name : String):
+	match shader_name:
+		"vignette": %Vignette.hide()
 
 func open_close_options() -> void:
 	%OptionMenu.visible = not %OptionMenu.visible

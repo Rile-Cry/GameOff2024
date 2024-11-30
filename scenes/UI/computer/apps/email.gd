@@ -27,6 +27,7 @@ func read_mails() -> void:
 	var file = FileAccess.open("res://scenes/UI/computer/data/emails.json", FileAccess.READ)
 	var content = file.get_as_text()
 	var result = JSON.parse_string(content)
+	
 	for mail in result["mail"]:
 		mails.append(mail)
 
@@ -89,7 +90,6 @@ func _open_pdf(button: EmailButton) -> void:
 	var pdf := pdf_window.instantiate()
 	pdf.title = button.text
 	pdf.data = mails[current_mail]["attachments"][button.id]
-	print(pdf.data)
 	add_child(pdf)
 	pdf.update()
 
