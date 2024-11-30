@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://c2is1pvwjh0ut"
+path="res://.godot/imported/VictorFamilyPicture.ink-bcdd2c173ebdbf1da71611c89fabf048.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/VictorFamilyPicture.ink"
+dest_files=["res://.godot/imported/VictorFamilyPicture.ink-bcdd2c173ebdbf1da71611c89fabf048.res"]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://c0pm42fobgrgq"
+path="res://.godot/imported/VictorFamilyPicture.ink.json-e4883aecf080f7aed52f32e3d1b2c562.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/VictorFamilyPicture.ink.json"
+dest_files=["res://.godot/imported/VictorFamilyPicture.ink.json-e4883aecf080f7aed52f32e3d1b2c562.res"]
+
+[params]
+
+compress=true
