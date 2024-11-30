@@ -304,6 +304,29 @@ Screen Shake
 Screen Shake Aggressive"
 fit_content = true
 
+[node name="ShaderLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Shaders"
+horizontal_alignment = 1
+
+[node name="ShaderHBox" type="HBoxContainer" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/ShaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[right]Yui Kinomoto
+GDQuest"
+fit_content = true
+
+[node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/ShaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Glitch Effect
+Outline"
+fit_content = true
+
 [node name="AssetLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Other Assets"
