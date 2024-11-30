@@ -1,6 +1,7 @@
 extends LocationScene
 
-var objects : Array[ObjectResourceButton]
+@export var opening_dialogue_victor : DialogueRes
+@export var objects : Array[Button]
 
 func dialogue_start_action(idx : int):
 	if idx == 0:

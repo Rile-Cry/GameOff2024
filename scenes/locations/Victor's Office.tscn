@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxthox4dckmvk"]
+[gd_scene load_steps=24 format=3 uid="uid://cxthox4dckmvk"]
 
 [ext_resource type="Script" path="res://scenes/locations/victor's_office.gd" id="1_36ue3"]
 [ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_i6p0k"]
@@ -7,6 +7,15 @@
 [ext_resource type="Script" path="res://Case/object_resource_button.gd" id="5_psaxd"]
 [ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="6_87dlp"]
 [ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_ca4up"]
+[ext_resource type="Resource" uid="uid://btpndxraxxqt8" path="res://Case/Clues/Victor's Office/Family Picture.tres" id="7_gifq4"]
+
+[sub_resource type="Resource" id="Resource_tv4v7"]
+script = ExtResource("2_i6p0k")
+actor_name = "Victor"
+location_name = "victors_office"
+dialogue = Array[String](["VictorStart", "VictorMeet"])
+initial_mood = "normal"
+global_variables = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_cs5i7"]
 script = ExtResource("2_i6p0k")
@@ -48,7 +57,7 @@ global_variables = Array[String]([])
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlyth"]
 
-[node name="Victor\'s Office" type="Control"]
+[node name="Victor\'s Office" type="Control" node_paths=PackedStringArray("objects")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,6 +67,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_36ue3")
+opening_dialogue_victor = SubResource("Resource_tv4v7")
+objects = [NodePath("Shredded Paper"), NodePath("Family Photo"), NodePath("Bookshelf")]
 opening_dialogue = SubResource("Resource_cs5i7")
 instant_meet = false
 
@@ -111,9 +122,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_s7s41")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_bqwu5")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_h31xs")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tlyth")
-script = ExtResource("7_ca4up")
-hover_sfx = ""
-click_sfx = ""
+script = ExtResource("5_psaxd")
+resource = ExtResource("7_gifq4")
 
 [node name="Bookshelf" type="Button" parent="."]
 layout_mode = 0
