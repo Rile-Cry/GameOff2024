@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsib72ybmygql"]
+
+[ext_resource type="Shader" path="res://shaders/vignette/nightmare_vignette.gdshader" id="1_x0bu0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iusep"]
+shader = ExtResource("1_x0bu0")
+shader_parameter/UPDATE_INTERVAL = 0.163
+shader_parameter/STATIC_GRANULARITY = 0.005
+shader_parameter/EDGE_BLUR = 0.5
+shader_parameter/BORDER_SIZE = 0.3
+
+[node name="Vignette" type="ColorRect"]
+material = SubResource("ShaderMaterial_iusep")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false

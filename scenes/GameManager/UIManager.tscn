@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6hm1h1elh3mm"]
+[gd_scene load_steps=16 format=3 uid="uid://c6hm1h1elh3mm"]
 
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/graphics/icons/Book_Icon_open.png" id="1_e0dwy"]
 [ext_resource type="Script" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
@@ -63,10 +63,66 @@ tracks/1/keys = {
 "values": [Color(1, 0.982, 0.96, 0), Color(1, 0.982, 0.96, 0.741176)]
 }
 
+[sub_resource type="Animation" id="Animation_sektf"]
+resource_name = "hide_room"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7osjq"]
+resource_name = "reveal_room"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dvjtw"]
 _data = {
 "RESET": SubResource("Animation_ljjq7"),
-"close_anim": SubResource("Animation_dgnyb")
+"close_anim": SubResource("Animation_dgnyb"),
+"hide_room": SubResource("Animation_sektf"),
+"reveal_room": SubResource("Animation_7osjq")
 }
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k1yqh"]
@@ -92,6 +148,7 @@ libraries = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,17 +178,21 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 [node name="MissionBook" parent="." instance=ExtResource("3_7udp3")]
 unique_name_in_owner = true
 visible = false
+z_index = 10
 
 [node name="OptionMenu" parent="." instance=ExtResource("4_lbubx")]
 unique_name_in_owner = true
 visible = false
+z_index = 10
 
 [node name="Computer" parent="." instance=ExtResource("5_cf373")]
 unique_name_in_owner = true
 visible = false
+z_index = 10
 
 [node name="Credits" type="Control" parent="."]
 unique_name_in_owner = true
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -277,6 +338,7 @@ text = "Close"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+z_index = 50
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
