@@ -9,6 +9,8 @@ signal popup_closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if GameManager:
+		GameManager.enable_input = false
 	SfxAudio.play_audio("Popup")
 	close_b.pressed.connect(close)
 	close_b_bottom.pressed.connect(close)
@@ -25,5 +27,7 @@ func close():
 	close_b_bottom.disabled = true
 	$AnimationPlayer.play_backwards("open")
 	await $AnimationPlayer.animation_finished
+	if GameManager:
+		GameManager.enable_input = true
 	popup_closed.emit()
 	queue_free()

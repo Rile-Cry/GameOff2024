@@ -23,8 +23,21 @@ func refresh_mission_book():
 	%MissionBook.refresh_locations()
 
 func _process(_delta: float) -> void:
-	if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:
-		SfxAudio.play_audio("Book Hover")
+	if GameManager:
+		%MissionBookButton.visible = GameManager.enable_input
+		if GameManager.enable_input:
+			if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:
+				SfxAudio.play_audio("Book Hover")
+		else:
+			if %MissionBook.visible:
+				open_close_mission_book()
+			if %Credits.visible:
+				open_close_credits()
+			if %Computer.visible:
+				open_close_computer()
+			if %OptionMenu.visible:
+				open_close_options()
+			
 	
 	is_hovering_mission_book = %MissionBookButton.is_hovered()
 
@@ -34,7 +47,7 @@ func _input(event: InputEvent) -> void:
 			open_close_mission_book()
 		elif %Credits.visible:
 			open_close_credits()
-		elif not %Computer.visible and can_open_option:
+		elif can_open_option:
 			open_close_options()
 
 func enable_disable_mission_book_button():
@@ -45,10 +58,12 @@ func open_close_options() -> void:
 	SfxAudio.play_audio("UI Open Close")
 
 func open_close_credits() -> void:
+	can_open_option = %Credits.visible
 	%Credits.visible = not %Credits.visible
 	SfxAudio.play_audio("UI Open Close")
 
 func open_close_computer() -> void:
+	can_open_option = %Computer.visible
 	%Computer.visible = not %Computer.visible
 	if %Computer.visible:
 		%Computer.update_notes()
@@ -58,6 +73,7 @@ func open_close_computer() -> void:
 
 func open_close_mission_book():
 	enable_disable_mission_book_button()
+	can_open_option = %MissionBook.visible
 	%MissionBook.visible = not %MissionBook.visible
 	if %MissionBook.visible:
 		SfxAudio.play_audio("Book Open")
