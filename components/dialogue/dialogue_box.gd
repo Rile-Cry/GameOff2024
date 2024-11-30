@@ -22,8 +22,8 @@ var _typing := false # If the dialogue is still typing or not
 #endregion
 
 # Node References
-@onready var _dialogue := $PanelContainer/MarginContainer/VBoxContainer/Text
-@onready var _name_box := $PanelContainer2/MarginContainer/Name
+@onready var _dialogue := $TextContainer/MarginContainer/ScrollContainer/Text
+@onready var _name_box := $SpeakerContainer/MarginContainer/Name
 
 #region Public Functions
 ## Sets up the dialogue box for the scene, making sure the values are initialized
