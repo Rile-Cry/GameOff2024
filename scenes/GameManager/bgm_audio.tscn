@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://co6kbt8rocnj6"]
+[gd_scene load_steps=27 format=3 uid="uid://co6kbt8rocnj6"]
 
 [ext_resource type="AudioStream" uid="uid://qqf6insqta3g" path="res://assets/imports/bgm/Shade's Office Intro.wav" id="1_vpf2b"]
 [ext_resource type="AudioStream" uid="uid://s7yhrbr58crc" path="res://assets/imports/bgm/Title Screen Intro.wav" id="1_yh87y"]
@@ -13,6 +13,10 @@
 [ext_resource type="AudioStream" uid="uid://c2pfsy2i6klhe" path="res://assets/imports/bgm/Marina's Apartment Loop.wav" id="10_6n87q"]
 [ext_resource type="AudioStream" uid="uid://bddorjs1ak22e" path="res://assets/imports/bgm/Interrogation Room Intro.wav" id="11_1l0er"]
 [ext_resource type="AudioStream" uid="uid://duxe1oedjtkon" path="res://assets/imports/bgm/Interrogation Room Loop.wav" id="12_obm5k"]
+[ext_resource type="AudioStream" uid="uid://cu56ir451ngla" path="res://assets/imports/bgm/Victor's Office Intro.wav" id="13_571ku"]
+[ext_resource type="AudioStream" uid="uid://cj8f0l27lhy35" path="res://assets/imports/bgm/Victor's Office Loop.wav" id="14_8p15c"]
+[ext_resource type="AudioStream" uid="uid://crjuslbhsrh6v" path="res://assets/imports/bgm/Finale Intro.wav" id="15_apck6"]
+[ext_resource type="AudioStream" uid="uid://1i6ask8mw4kc" path="res://assets/imports/bgm/Finale Loop.wav" id="16_45u8l"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_d5k14"]
 clip_count = 2
@@ -128,8 +132,44 @@ Vector2i(-1, 1): {
 }
 }
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_bu2vm"]
+clip_count = 2
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("13_571ku")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Loop"
+clip_1/stream = ExtResource("14_8p15c")
+clip_1/auto_advance = 1
+clip_1/next_clip = 1
+_transitions = {
+Vector2i(-1, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+}
+}
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_roe34"]
+clip_count = 2
+clip_0/name = &"Intro"
+clip_0/stream = ExtResource("15_apck6")
+clip_0/auto_advance = 0
+clip_1/name = &"Loop"
+clip_1/stream = ExtResource("16_45u8l")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(-1, 1): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 3,
+"to_time": 1
+}
+}
+
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_ikhae"]
-clip_count = 6
+clip_count = 8
 clip_0/name = &"Title Screen"
 clip_0/stream = SubResource("AudioStreamInteractive_d5k14")
 clip_0/auto_advance = 0
@@ -148,6 +188,12 @@ clip_4/auto_advance = 0
 clip_5/name = &"Interrogation Room"
 clip_5/stream = SubResource("AudioStreamInteractive_ftjdo")
 clip_5/auto_advance = 0
+clip_6/name = &"Victor\'s Office"
+clip_6/stream = SubResource("AudioStreamInteractive_bu2vm")
+clip_6/auto_advance = 0
+clip_7/name = &"Ending"
+clip_7/stream = SubResource("AudioStreamInteractive_roe34")
+clip_7/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
@@ -186,6 +232,18 @@ Vector2i(4, 4): {
 "to_time": 0
 },
 Vector2i(5, 5): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(6, 6): {
+"fade_beats": 1,
+"fade_mode": 0,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(7, 7): {
 "fade_beats": 1,
 "fade_mode": 0,
 "from_time": 0,
