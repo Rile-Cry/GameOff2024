@@ -39,10 +39,10 @@ text = "EMail"
 
 [node name="Notification" type="TextureRect" parent="Programs/Email"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 17.0
-offset_right = 80.0
-offset_bottom = 29.0
+offset_left = 59.0
+offset_top = 15.0
+offset_right = 71.0
+offset_bottom = 27.0
 texture = ExtResource("3_qujrc")
 stretch_mode = 4
 
@@ -56,19 +56,22 @@ layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "Vault"
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Hotbar" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 12
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -37.0
+grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Hotbar"]
 layout_mode = 2
+offset_right = 1280.0
+offset_bottom = 37.0
 
-[node name="MysOSButton" type="MenuButton" parent="PanelContainer/HBoxContainer"]
+[node name="MysOSButton" type="MenuButton" parent="Hotbar/HBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 text = "MysOS"
@@ -83,6 +86,3 @@ popup/item_3/disabled = true
 popup/item_3/separator = true
 popup/item_4/text = "Exit"
 popup/item_4/id = 4
-
-[node name="Programs" type="HBoxContainer" parent="PanelContainer/HBoxContainer"]
-layout_mode = 2

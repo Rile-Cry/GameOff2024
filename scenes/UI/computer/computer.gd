@@ -7,18 +7,16 @@ var vault_scene := preload("res://scenes/UI/computer/apps/vault.tscn")
 
 var exit_button_popup : PopupMenu
 
-@onready var hotbar := $PanelContainer
 @onready var vault_button := $Programs/Vault
 @onready var email_button := $Programs/Email
 @onready var messenger_button := $Programs/Messenger
-@onready var mysos_menu := $PanelContainer/HBoxContainer/MysOSButton
+@onready var mysos_menu := $Hotbar/HBoxContainer/MysOSButton
 @onready var programs := $Programs
 
 signal close_computer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hotbar.custom_minimum_size = Vector2(get_tree().root.get_size_with_decorations().x, 0)
 	messenger_button.connect("pressed", _open_messenger)
 	email_button.connect("pressed", _open_email)
 	vault_button.connect("pressed", _open_vault)

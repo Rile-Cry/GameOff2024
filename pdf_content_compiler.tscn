@@ -1,0 +1,77 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0djo68lovswd"]
+
+[sub_resource type="GDScript" id="GDScript_21l7x"]
+script/source = "extends RichTextLabel
+
+func _ready() -> void:
+	var dict : Dictionary = {
+		\"content\": text
+	}
+	var file : FileAccess = FileAccess.open(\"user://pdf.json\", FileAccess.WRITE)
+	var json_string : String = JSON.stringify(dict)
+	file.store_line(json_string)
+	
+"
+
+[node name="RichTextLabel" type="RichTextLabel"]
+offset_right = 555.0
+offset_bottom = 238.0
+bbcode_enabled = true
+text = "[center][b]Financial Report of T M Blake[/b][/center]
+
+					CEO: Victor Blake
+
+					Balance Sheet (USD $)
+
+
+					[table=6, center]
+[cell]Year[/cell][cell]2010[/cell][cell]2011[/cell][cell]2012[/cell][cell]2013[/cell][cell]2014[/cell]
+[cell][b]EQUITIES AND LIABILITIES[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+[cell][b]SHAREHOLDER'S FUNDS[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+[cell]Equity Share Capital[/cell][cell]6,353.28[/cell][cell]4,281.16[/cell][cell]1,272.10[/cell][cell]2,738.54[/cell][cell]1,920.10[/cell]
+[cell]Reserves and Surplus[/cell][cell]18,083.53[/cell][cell]17,698.64[/cell][cell]2,225.70[/cell][cell]2,057.97[/cell][cell]1,934.91[/cell]
+[cell][b]Total Shareholders Funds[/b][/cell][cell]24,436.81[/cell][cell]21,979.80[/cell][cell]3,497.80[/cell][cell]4,796.51[/cell][cell]3855.01[/cell]
+
+[cell][b]NON-CURRENT LIABILITIES[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+[cell]Long Term Borrowings[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Deferred Tax Liabilities (Net)[/cell][cell]17.18[/cell][cell]4.08[/cell][cell]0.00	[/cell][cell]0.00[/cell][cell]4.77[/cell]
+[cell]Other Long Term Liabilities[/cell][cell]3.71[/cell][cell]0.10[/cell][cell]0.02[/cell][cell]0.07[/cell][cell]344.84[/cell]
+[cell]Long Term Provisions[/cell][cell]3.71[/cell][cell]0.10[/cell][cell]0.02[/cell][cell]0.07[/cell][cell]344.84[/cell]
+[cell][b]Total Non-Current Liabilities[/b][/cell][cell]33.82[/cell][cell]5.99[/cell][cell]0.02[/cell][cell]0.07[/cell][cell]367.26[/cell]
+
+[cell][b]CURRENT LIABILITIES[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+[cell]Short Term Borrowings[/cell][cell]0.00[/cell][cell]742.77[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]367.26[/cell]
+[cell]Trade Payables[/cell][cell]2.39[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.04[/cell]
+[cell]Other Current Liabilities[/cell][cell]1.18[/cell][cell]0.09[/cell][cell]0.07[/cell][cell]0.17[/cell][cell]58.96[/cell]
+[cell]Short Term Provisions[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell][b]Total Current Liabilities[/b][/cell][cell]3.57[/cell][cell]742.86[/cell][cell]0.07[/cell][cell]0.17[/cell][cell]2,479.25[/cell]
+
+[cell][b]Total Capital and Liabilities[/b][/cell][cell]2,4474.20[/cell][cell]22,728.65[/cell][cell]3,497.89[/cell][cell]4796.75[/cell][cell]6,701.52[/cell]
+
+[cell][b]ASSETS[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+[cell][b]NON-CURRENT ASSETS[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+[cell]Tangible Assets[/cell][cell]29.95[/cell][cell]38.93[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Intangible Assets[/cell][cell]6.58[/cell][cell]9.87[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Capital Work-In-Progress[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Other Assets[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell][b]Fixed Assets[/b][/cell][cell]36.53[/cell][cell]48.80[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+
+[cell]Non-Current Investments[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Deferred Tax Assets (Net)[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]5.31[/cell][cell]3.94[/cell][cell]0.00[/cell]
+[cell]Long Term Loans And Advances[/cell][cell]0.00[/cell][cell]0.10[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Other Non-Current Assets[/cell][cell]29.25[/cell][cell]23.99[/cell][cell]40.39[/cell][cell]47.34[/cell][cell]0.00[/cell]
+[cell][b]Total Non-Current Assets[/b][/cell][cell]65.78[/cell][cell]72.79[/cell][cell]45.70[/cell][cell]51.28[/cell][cell]0.00[/cell]
+
+[cell][b]CURRENT ASSETS[/b][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell][cell][/cell]
+
+[cell]Current Investments[/cell][cell]19,719.97[/cell][cell]21,475.02[/cell][cell]1,450.67[/cell][cell]2,794.01[/cell][cell]2,124.17[/cell]
+[cell]Inventories[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell]
+[cell]Trade Receivables[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]0.00[/cell][cell]7.65[/cell]
+[cell]Cash And Cash Equivalents[/cell][cell]4,590.20[/cell][cell]5,000.17[/cell][cell]0.51[/cell][cell]0.36[/cell][cell]0.49[/cell]
+[cell]Short Term Loans And Advances[/cell][cell]92.00[/cell][cell]0.00[/cell][cell]2,001.00[/cell][cell]1,951.09[/cell][cell]4,400.15[/cell]
+[cell]Other Current Assets[/cell][cell]6.25[/cell][cell]329.57[/cell][cell]0.01[/cell][cell]0.01[/cell][cell]169.06[/cell]
+[cell][b]Total Current Assets[/b][/cell][cell]3.57[/cell][cell]742.86[/cell][cell]0.07[/cell][cell]0.17[/cell][cell]2,479.25[/cell]
+
+[cell][b]Total Assets[/b][/cell][cell]2,4474.20[/cell][cell]22,728.65[/cell][cell]3,497.89[/cell][cell]4796.75[/cell][cell]6,701.52[/cell]
+[/table]"
+script = SubResource("GDScript_21l7x")

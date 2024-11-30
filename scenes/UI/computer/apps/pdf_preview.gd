@@ -9,7 +9,7 @@ var data := {
 	
 }
 
-@onready var text_label := $PanelContainer/TextEdit/MarginContainer/RichTextLabel
+@onready var text_label := $PanelContainer/TextEdit/MarginContainer/ScrollContainer/RichTextLabel
 
 func _ready() -> void:
 	connect("close_requested", _close)

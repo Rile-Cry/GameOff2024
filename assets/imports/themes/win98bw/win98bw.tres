@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=95 format=3 uid="uid://c8omtkve3g12h"]
+[gd_resource type="Theme" load_steps=97 format=3 uid="uid://c8omtkve3g12h"]
 
 [ext_resource type="Texture2D" uid="uid://dvsqav8ix3tx" path="res://assets/imports/themes/win98bw/button_normal.png" id="2_7g3jm"]
 [ext_resource type="Texture2D" uid="uid://csr0gnb5ro0hj" path="res://assets/imports/themes/win98bw/button_focus.png" id="3_4w6jw"]
@@ -14,10 +14,12 @@
 [ext_resource type="Texture2D" uid="uid://b2adkooffk8qn" path="res://assets/imports/themes/win98bw/hscroll_grabber.png" id="13_jd1ii"]
 [ext_resource type="Texture2D" uid="uid://drsbvwjn1w2x0" path="res://assets/imports/themes/win98bw/hscroll_slider.png" id="14_a7jcl"]
 [ext_resource type="Texture2D" uid="uid://hvp4fhtr0wo" path="res://assets/imports/themes/win98bw/hslider_grabber.png" id="16_ywv8w"]
+[ext_resource type="FontFile" uid="uid://dutn7mp5vrurl" path="res://assets/imports/graphics/themes/win98/font/microsoft_sans_serif.woff2" id="17_h55dt"]
 [ext_resource type="Texture2D" uid="uid://da2o37ixbd0un" path="res://assets/imports/themes/win98bw/hslider_tick.png" id="17_oymh2"]
 [ext_resource type="Texture2D" uid="uid://tn6uee3odt41" path="res://assets/imports/themes/win98bw/hslider_slider.png" id="18_wvnan"]
 [ext_resource type="Texture2D" uid="uid://csoexbtvvjy7k" path="res://assets/imports/themes/win98bw/line_edit.png" id="19_cak46"]
 [ext_resource type="Texture2D" uid="uid://cm0sec3s3f1jc" path="res://assets/imports/themes/win98bw/panel_container.png" id="21_ht18r"]
+[ext_resource type="FontFile" uid="uid://dyshroask6mox" path="res://assets/imports/graphics/themes/win98/font/microsoft_sans_serif_bold.woff2" id="22_vhktk"]
 [ext_resource type="Texture2D" uid="uid://2272ikogw7kq" path="res://assets/imports/themes/win98bw/popup_menu_panel.png" id="28_ujcmk"]
 [ext_resource type="Texture2D" uid="uid://bk8kpyqoj0wem" path="res://assets/imports/themes/win98bw/progress_background.png" id="29_lrdyn"]
 [ext_resource type="Texture2D" uid="uid://c5pme5acna1hx" path="res://assets/imports/themes/win98bw/progress_fill.png" id="30_xhp5f"]
@@ -547,7 +549,7 @@ Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/constants/h_separation = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 11
-Button/fonts/font = null
+Button/fonts/font = ExtResource("17_h55dt")
 Button/styles/disabled = SubResource("StyleBoxTexture_6akc0")
 Button/styles/focus = SubResource("StyleBoxTexture_diei6")
 Button/styles/hover = SubResource("StyleBoxTexture_6m8wx")
@@ -633,7 +635,7 @@ Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 11
-Label/fonts/font = null
+Label/fonts/font = ExtResource("17_h55dt")
 Label/styles/normal = null
 LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
@@ -653,6 +655,7 @@ LineEdit/icons/clear = null
 LineEdit/styles/focus = SubResource("StyleBoxTexture_15vrp")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_2j3fx")
 LineEdit/styles/read_only = SubResource("StyleBoxTexture_wvc0o")
+MenuButton/fonts/font = ExtResource("17_h55dt")
 OptionButton/colors/font_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_disabled_color = Color(0, 0, 0, 1)
 OptionButton/colors/font_focus_color = Color(0, 0, 0, 1)
@@ -694,8 +697,8 @@ PopupMenu/constants/separator_outline_size = 0
 PopupMenu/constants/v_separation = 4
 PopupMenu/font_sizes/font_separator_size = 11
 PopupMenu/font_sizes/font_size = 11
-PopupMenu/fonts/font = null
-PopupMenu/fonts/font_separator = null
+PopupMenu/fonts/font = ExtResource("17_h55dt")
+PopupMenu/fonts/font_separator = ExtResource("22_vhktk")
 PopupMenu/icons/checked = null
 PopupMenu/icons/checked_disabled = null
 PopupMenu/icons/radio_checked = null
@@ -721,6 +724,8 @@ ProgressBar/font_sizes/font_size = 11
 ProgressBar/fonts/font = null
 ProgressBar/styles/background = SubResource("StyleBoxTexture_wapvm")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_fusbp")
+RichTextLabel/fonts/bold_font = ExtResource("22_vhktk")
+RichTextLabel/fonts/normal_font = ExtResource("17_h55dt")
 SpinBox/icons/updown = ExtResource("31_53syp")
 TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
 TabContainer/colors/font_disabled_color = Color(0.317647, 0.317647, 0.317647, 1)
