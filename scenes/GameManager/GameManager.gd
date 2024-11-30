@@ -13,7 +13,8 @@ var global_variables : Dictionary = {
 	"email_locations" : {
 		"Urgent Update on the Evelyn Blake Case" : [
 			preload("res://Case/Locations/Interrogation Room.tres"),
-			preload("res://Case/Locations/Victor's Office.tres")
+			preload("res://Case/Locations/Victor's Office.tres"),
+			preload("res://Case/Locations/Marina's Apartment.tres")
 		]
 	}
 }
@@ -30,6 +31,7 @@ const found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
 const save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
 const interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
 const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
+const vignette : PackedScene = preload("res://scenes/shader_canvas/vignette.tscn")
 const invalid_clue_dialogue_path : String = "base/InvalidClue"
 
 var is_inside_photo : bool = false
