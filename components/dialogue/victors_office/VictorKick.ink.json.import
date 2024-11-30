@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://daimp2wo7jmg0"
+path="res://.godot/imported/VictorKick.ink.json-41df44bf8bb953bbd45727c12eb8dc3b.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/VictorKick.ink.json"
+dest_files=["res://.godot/imported/VictorKick.ink.json-41df44bf8bb953bbd45727c12eb8dc3b.res"]
+
+[params]
+
+compress=true
