@@ -12,37 +12,41 @@ class_name LocationScene
 func _dialogue_started() -> void:
 	if GameManager:
 		GameManager.enable_input = false
-	
-	if UIManager and UIManager.get_mission_book_button().visible:
-		UIManager.enable_disable_mission_book_button()
 
 func _dialogue_ended() -> void:
 	if GameManager:
-		GameManager.enable_input = false
-	
-	if UIManager and not UIManager.get_mission_book_button().visible:
-		UIManager.enable_disable_mission_book_button()
+		GameManager.enable_input = true
 	
 	if actor.dialogue_res != dialogue_interact:
 		actor.dialogue_res = dialogue_interact
 
-func _get_clue_location(clue : Clue) -> void:
+func _get_clue_location(clue : Clue) -> bool:
 	for location_clue : LocationClueInteract in clue_interact:
 		if location_clue.clue == clue:
-			actor.dialogue_res = location_clue.dialogue_res
-			actor._start_dialogue()
+			if location_clue.conditional_variable and not GameManager.get_global_variable(location_clue.variable_name):
+				return false
+
+			actor._start_dialogue(location_clue.dialogue_res, 0)
+			return true
+	
+	return false
 
 func _ready() -> void:
 	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
-	UIManager.get_mission_book().connect("clue_selected", _get_clue_location)
+	
+	actor.hide()
+	
 	if opening_dialogue:
 		if GameManager and not GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
 			GameManager.set_global_variable("met_" + opening_dialogue.actor_name, true)
 			for idx : int in opening_dialogue.dialogue.size():
+				GameManager.enable_input = false
 				await dialogue_start_action(idx)
-				actor._start_dialogue(opening_dialogue.dialogue[idx])
+				actor._start_dialogue(opening_dialogue, idx)
 				await GlobalGameEvents.dialogue_ended
+			GameManager.enable_input = true
+	actor.show()
 	if BgmAudio and not bgm.is_empty():
 		BgmAudio.play_audio(bgm)
 	if AmbientAudio and not ambiance.is_empty():
