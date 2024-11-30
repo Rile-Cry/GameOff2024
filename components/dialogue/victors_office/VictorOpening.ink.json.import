@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bb32ffmkve20"
+path="res://.godot/imported/VictorOpening.ink.json-f8ed99ff47fa9af6ba7c6589ce43a624.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/VictorOpening.ink.json"
+dest_files=["res://.godot/imported/VictorOpening.ink.json-f8ed99ff47fa9af6ba7c6589ce43a624.res"]
+
+[params]
+
+compress=true

@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://dj36bdyysewgw"
+path="res://.godot/imported/VictorOpening.ink-814bc8bd504de8eab560d1c86d961cee.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/VictorOpening.ink"
+dest_files=["res://.godot/imported/VictorOpening.ink-814bc8bd504de8eab560d1c86d961cee.res"]
+
+[params]
+
