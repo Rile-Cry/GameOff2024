@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://duqbhklx1y21g"
+path="res://.godot/imported/MarinaPhotoReq.ink-cc874a85b266429f000075f400250480.res"
+
+[deps]
+
+source_file="res://components/dialogue/marinas_apartment/MarinaPhotoReq.ink"
+dest_files=["res://.godot/imported/MarinaPhotoReq.ink-cc874a85b266429f000075f400250480.res"]
+
+[params]
+

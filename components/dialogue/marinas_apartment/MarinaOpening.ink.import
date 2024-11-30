@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://bfngxj3cbpdp2"
+path="res://.godot/imported/MarinaOpening.ink-42d1ce31a554e8f01722b1e00804ad15.res"
+
+[deps]
+
+source_file="res://components/dialogue/marinas_apartment/MarinaOpening.ink"
+dest_files=["res://.godot/imported/MarinaOpening.ink-42d1ce31a554e8f01722b1e00804ad15.res"]
+
+[params]
+

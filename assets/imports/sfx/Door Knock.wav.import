@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dnl88wcls04n3"
+path="res://.godot/imported/Door Knock.wav-4d37e042be7e957504dfa026ba9cc0ed.sample"
+
+[deps]
+
+source_file="res://assets/imports/sfx/Door Knock.wav"
+dest_files=["res://.godot/imported/Door Knock.wav-4d37e042be7e957504dfa026ba9cc0ed.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://c5nr7st0gp0th"
+path="res://.godot/imported/MarinaOpening.ink.json-74c0f0fa1d7c0d48659260ac21916f2a.res"
+
+[deps]
+
+source_file="res://components/dialogue/marinas_apartment/MarinaOpening.ink.json"
+dest_files=["res://.godot/imported/MarinaOpening.ink.json-74c0f0fa1d7c0d48659260ac21916f2a.res"]
+
+[params]
+
+compress=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dej8geyque3s8"
+path="res://.godot/imported/MarinaPhotoReq.ink.json-d521e07fe56a4006f9976de5ec444532.res"
+
+[deps]
+
+source_file="res://components/dialogue/marinas_apartment/MarinaPhotoReq.ink.json"
+dest_files=["res://.godot/imported/MarinaPhotoReq.ink.json-d521e07fe56a4006f9976de5ec444532.res"]
+
+[params]
+
+compress=true
