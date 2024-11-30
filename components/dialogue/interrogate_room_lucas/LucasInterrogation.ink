@@ -3,7 +3,7 @@ VAR speaker = "Shade"
 VAR mood = "normal"
 VAR lucas_victor = false
 VAR lucas_diary = false
-VAR lucas_autopsy = false
+VAR victor_marina = false
 
 === choices ===
 ~   speaker = "Shade"
@@ -17,7 +17,7 @@ VAR lucas_autopsy = false
     -> option_4
 +   {lucas_victor} [Ask about Victor]
 	-> option_5
-+   [Relationship with Evelyn]
++   {victor_marina} [Relationship with Marina]
 	-> option_6
 *   {option_1 || option_2 || option_3 || option_4 || option_5 || option_6} I guess that covers it...
 	-> END
@@ -120,5 +120,4 @@ I did... but not really. She cared about Evelyn's career, sure. But Evelyn? The 
 Do you know where Marina lives?
 ~   speaker = "Lucas"
 No idea. We weren't exactly close after Evelyn and I broke up. And no one knew we got back together either.
-~   lucas_autopsy = true
 -> choices

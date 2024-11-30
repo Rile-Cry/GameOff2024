@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bsjc5gr1geohv"
+path="res://.godot/imported/VictorShreddedPapers.ink.json-c5dc88ecba71e4627641c28abca3a207.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/VictorShreddedPapers.ink.json"
+dest_files=["res://.godot/imported/VictorShreddedPapers.ink.json-c5dc88ecba71e4627641c28abca3a207.res"]
+
+[params]
+
+compress=true

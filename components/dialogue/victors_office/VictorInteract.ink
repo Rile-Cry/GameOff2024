@@ -7,10 +7,6 @@ VAR victor_marina = false
 === choices ===
 { lucas_victor and victor_clues:
     ~   speaker = "Shade"
-    *   [Bring up the Family Picture]
-        -> option_1
-    *   [Ask About the Shredded Documents]
-        -> option_2
     *   [Estate Change]
         -> option_3
     *   {option_3} [Pressure on the Estate Change]
@@ -81,4 +77,5 @@ Marina is a busy woman, Detective. She moves between her office and her apartmen
 I'll need something more concrete, Victor. You've been in frequent contact with her--you must know where she is.
 ~   speaker = "Victor"
 Fine. Her apartment. But I'd advise you not to waster her time. She has a sharp tongue, Detective, and little patience for baseless accusations.
+~ victor_marina = true
 -> END
