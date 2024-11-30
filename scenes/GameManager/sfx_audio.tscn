@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cflt6uuauq6x2"]
+[gd_scene load_steps=22 format=3 uid="uid://cflt6uuauq6x2"]
 
 [ext_resource type="AudioStream" uid="uid://dq2q0hk214cm6" path="res://assets/imports/sfx/Book Open.wav" id="1_bdccc"]
 [ext_resource type="AudioStream" uid="uid://bvqabvdbvdicc" path="res://assets/imports/sfx/Book Close.wav" id="2_yxf05"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="6_n1klc"]
 [ext_resource type="AudioStream" uid="uid://d3p0wjkenk8ld" path="res://assets/imports/bgm/Screen Shake Aggressive.wav" id="6_s0flv"]
 [ext_resource type="AudioStream" uid="uid://cuv44u671c1v0" path="res://assets/imports/sfx/Mouse Click.wav" id="6_vkyde"]
+[ext_resource type="AudioStream" uid="uid://r3bd04ovltbw" path="res://assets/imports/sfx/Exclaim.wav" id="7_yy4v3"]
 [ext_resource type="AudioStream" uid="uid://8go2mhfgmea4" path="res://assets/imports/sfx/Popup.wav" id="8_j3m61"]
 [ext_resource type="AudioStream" uid="uid://crjrbwo8gotu7" path="res://assets/imports/sfx/Object Hover 1.wav" id="9_cwpop"]
 [ext_resource type="AudioStream" uid="uid://bahmn476dpu44" path="res://assets/imports/sfx/Object Hover 2.wav" id="10_kpvnq"]
@@ -27,7 +28,7 @@ stream_2/stream = ExtResource("11_3pfsy")
 stream_3/stream = ExtResource("12_upcs0")
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_8bya0"]
-clip_count = 14
+clip_count = 15
 clip_0/name = &"Book Close"
 clip_0/stream = ExtResource("2_yxf05")
 clip_0/auto_advance = 0
@@ -70,6 +71,9 @@ clip_12/auto_advance = 0
 clip_13/name = &"Screen Shake Aggressive"
 clip_13/stream = ExtResource("6_s0flv")
 clip_13/auto_advance = 0
+clip_14/name = &"Exclaim"
+clip_14/stream = ExtResource("7_yy4v3")
+clip_14/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
