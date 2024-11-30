@@ -1,11 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://cflt6uuauq6x2"]
+[gd_scene load_steps=21 format=3 uid="uid://cflt6uuauq6x2"]
 
 [ext_resource type="AudioStream" uid="uid://dq2q0hk214cm6" path="res://assets/imports/sfx/Book Open.wav" id="1_bdccc"]
 [ext_resource type="AudioStream" uid="uid://bvqabvdbvdicc" path="res://assets/imports/sfx/Book Close.wav" id="2_yxf05"]
+[ext_resource type="AudioStream" uid="uid://dnl88wcls04n3" path="res://assets/imports/sfx/Door Knock.wav" id="3_6f40x"]
 [ext_resource type="AudioStream" uid="uid://cwmsyos26bj73" path="res://assets/imports/sfx/Book Hover.wav" id="3_a8wn2"]
 [ext_resource type="AudioStream" uid="uid://cmolxdf4h0eow" path="res://assets/imports/sfx/Book Turn.wav" id="3_mpcom"]
+[ext_resource type="AudioStream" uid="uid://b8a7rrs048jsu" path="res://assets/imports/sfx/Door Open.wav" id="4_cda74"]
+[ext_resource type="AudioStream" uid="uid://be363l16cbvcw" path="res://assets/imports/bgm/Screen Shake.wav" id="5_f00qk"]
 [ext_resource type="AudioStream" uid="uid://c8f24fy613tx3" path="res://assets/imports/sfx/UI Open Close.wav" id="5_fcnkp"]
 [ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="6_n1klc"]
+[ext_resource type="AudioStream" uid="uid://d3p0wjkenk8ld" path="res://assets/imports/bgm/Screen Shake Aggressive.wav" id="6_s0flv"]
 [ext_resource type="AudioStream" uid="uid://cuv44u671c1v0" path="res://assets/imports/sfx/Mouse Click.wav" id="6_vkyde"]
 [ext_resource type="AudioStream" uid="uid://8go2mhfgmea4" path="res://assets/imports/sfx/Popup.wav" id="8_j3m61"]
 [ext_resource type="AudioStream" uid="uid://crjrbwo8gotu7" path="res://assets/imports/sfx/Object Hover 1.wav" id="9_cwpop"]
@@ -23,7 +27,7 @@ stream_2/stream = ExtResource("11_3pfsy")
 stream_3/stream = ExtResource("12_upcs0")
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_8bya0"]
-clip_count = 10
+clip_count = 14
 clip_0/name = &"Book Close"
 clip_0/stream = ExtResource("2_yxf05")
 clip_0/auto_advance = 0
@@ -54,6 +58,18 @@ clip_8/auto_advance = 0
 clip_9/name = &"Object Select"
 clip_9/stream = ExtResource("12_as16v")
 clip_9/auto_advance = 0
+clip_10/name = &"Door Knock"
+clip_10/stream = ExtResource("3_6f40x")
+clip_10/auto_advance = 0
+clip_11/name = &"Door Open"
+clip_11/stream = ExtResource("4_cda74")
+clip_11/auto_advance = 0
+clip_12/name = &"Screen Shake"
+clip_12/stream = ExtResource("5_f00qk")
+clip_12/auto_advance = 0
+clip_13/name = &"Screen Shake Aggressive"
+clip_13/stream = ExtResource("6_s0flv")
+clip_13/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 1,
