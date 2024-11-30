@@ -3,6 +3,7 @@ VAR mood = "Normal"
 VAR lucas_victor = false
 VAR victor_clues = false
 VAR victor_marina = false
+VAR marina_location = "Case/Locations/Marina's Apartment.tres"
 
 === choices ===
 { lucas_victor and victor_clues:
@@ -76,6 +77,6 @@ Marina is a busy woman, Detective. She moves between her office and her apartmen
 ~   speaker = "Shade"
 I'll need something more concrete, Victor. You've been in frequent contact with her--you must know where she is.
 ~   speaker = "Victor"
-Fine. Her apartment. But I'd advise you not to waster her time. She has a sharp tongue, Detective, and little patience for baseless accusations.
+Fine. Her apartment. But I'd advise you not to waster her time. She has a sharp tongue, Detective, and little patience for baseless accusations.#Location#{marina_location}
 ~ victor_marina = true
 -> END
