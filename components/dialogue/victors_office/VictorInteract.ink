@@ -17,10 +17,10 @@ VAR marina_location = "Case/Locations/Marina's Apartment.tres"
         -> option_6
 - else:
     { lucas_victor:
+        [Maybe I should present something and see if I can get him to open up.]
+    - else:
         [He's right however, I don't exactly have a reason to suspect him.]
         [Speaking of questions, there's something I need to do back in the Interrogation Room ]
-    - else:
-        [Maybe I should present something and see if I can get him to open up.]
     }
     -> END
 }

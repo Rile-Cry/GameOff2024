@@ -3,19 +3,19 @@ extends LocationScene
 @export var finale_opening_dialogue : DialogueRes
 @export var final_verdict_dialogue : DialogueRes
 var finale_initiate : bool = false
+var finale_actors : Control
+
 func _process(_delta: float) -> void:
-	if not $FinaleActors.visible:
-		return
-	
-	if not finale_initiate:
-		for actor_ in $FinaleActors.get_children():
-			if actor_ is ActorFinale:
-				actor_ as ActorFinale
-				if not actor_.pressed:
-					return
-		
-		finale_initiate = true
-		final_verdict_play()
+	if is_instance_valid(finale_actors):
+		if not finale_initiate:
+			for actor_ in finale_actors.get_children():
+				if actor_ is ActorFinale:
+					actor_ as ActorFinale
+					if not actor_.pressed:
+						return
+			
+			finale_initiate = true
+			final_verdict_play()
 
 func final_verdict_play():
 	if GameManager:
@@ -30,7 +30,7 @@ func final_verdict_play():
 		if GameManager and GameManager.has_past_attempt():
 			UIManager.add_child(GameManager.final_guess_popup.instantiate())
 		
-	for actor_ in $FinaleActors.get_children():
+	for actor_ in finale_actors.get_children():
 		if actor_ is ActorFinale:
 			actor_ as ActorFinale
 			actor_._button.disabled = false
@@ -62,8 +62,6 @@ func _select_final_verdict(name : String):
 		UIManager.update_final_verdict_button()
 
 func _ready() -> void:
-	$FinaleActors.hide()
-	
 	if UIManager:
 		UIManager.show_shader("vignette")
 	
@@ -101,9 +99,10 @@ func dialogue_start_action(idx : int):
 					AmbientAudio.stop()
 					
 				UIManager.anim_player.play("hide_room")
+				finale_actors = GameManager.finale_actors.instantiate()
+				add_child(finale_actors)
 				await UIManager.anim_player.animation_finished
 				
-				$FinaleActors.show()
 				if BgmAudio and not bgm.is_empty():
 					BgmAudio.play_audio(bgm)
 				if AmbientAudio and not ambiance.is_empty():

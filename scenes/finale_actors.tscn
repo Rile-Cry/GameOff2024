@@ -1,0 +1,140 @@
+[gd_scene load_steps=18 format=3 uid="uid://cnd1plej2xe7a"]
+
+[ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="1_4c60i"]
+[ext_resource type="Script" path="res://scenes/dialogue/actor_finale.gd" id="2_d4crj"]
+[ext_resource type="Resource" uid="uid://cc2kjkkvf1lab" path="res://Case/Dialogue/Interrogation Room/Final/InvalidClue.tres" id="3_2t7tc"]
+[ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_rdq8n"]
+[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="5_jop74"]
+[ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="6_x7364"]
+[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="7_vq8pt"]
+[ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="8_q44w5"]
+
+[sub_resource type="Resource" id="Resource_hqmmf"]
+script = ExtResource("5_jop74")
+actor_name = "Lucas"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["LucasPressed"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_wrdh6"]
+script = ExtResource("6_x7364")
+clue = ExtResource("4_rdq8n")
+dialogue_res = SubResource("Resource_hqmmf")
+conditional_variable = false
+variable_name = ""
+
+[sub_resource type="Resource" id="Resource_6jkgv"]
+script = ExtResource("5_jop74")
+actor_name = "Lucas"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["LucasInteract"])
+initial_mood = "normal"
+global_variables = Array[String](["is_pressing"])
+
+[sub_resource type="Resource" id="Resource_tpjno"]
+script = ExtResource("5_jop74")
+actor_name = "Victor"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["VictorPressed"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_63o71"]
+script = ExtResource("6_x7364")
+clue = ExtResource("7_vq8pt")
+dialogue_res = SubResource("Resource_tpjno")
+conditional_variable = false
+variable_name = ""
+
+[sub_resource type="Resource" id="Resource_am1g4"]
+script = ExtResource("5_jop74")
+actor_name = "Victor"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["VictorInteract"])
+initial_mood = "normal"
+global_variables = Array[String](["is_pressing"])
+
+[sub_resource type="Resource" id="Resource_3ffuf"]
+script = ExtResource("5_jop74")
+actor_name = "Marina"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["MarinaPressed"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_btarc"]
+script = ExtResource("6_x7364")
+clue = ExtResource("8_q44w5")
+dialogue_res = SubResource("Resource_3ffuf")
+conditional_variable = false
+variable_name = ""
+
+[sub_resource type="Resource" id="Resource_wrlmj"]
+script = ExtResource("5_jop74")
+actor_name = "Marina"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["MarinaInteract"])
+initial_mood = "normal"
+global_variables = Array[String](["is_pressing"])
+
+[node name="FinaleActors" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Actor1" parent="." instance=ExtResource("1_4c60i")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -595.0
+offset_bottom = 0.0
+grow_vertical = 0
+script = ExtResource("2_d4crj")
+clue_invalid_dialogue = ExtResource("3_2t7tc")
+clue_dialogue = SubResource("Resource_wrdh6")
+verdict_reaction = "panic"
+dialogue_res = SubResource("Resource_6jkgv")
+
+[node name="Actor2" parent="." instance=ExtResource("1_4c60i")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -595.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("2_d4crj")
+clue_invalid_dialogue = ExtResource("3_2t7tc")
+clue_dialogue = SubResource("Resource_63o71")
+verdict_reaction = "defensive_3"
+dialogue_res = SubResource("Resource_am1g4")
+
+[node name="Actor3" parent="." instance=ExtResource("1_4c60i")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -235.0
+offset_top = -595.0
+offset_right = 235.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_d4crj")
+clue_invalid_dialogue = ExtResource("3_2t7tc")
+clue_dialogue = SubResource("Resource_btarc")
+verdict_reaction = "defensive_1"
+dialogue_res = SubResource("Resource_wrlmj")

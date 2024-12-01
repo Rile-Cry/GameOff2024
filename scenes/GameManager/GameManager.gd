@@ -48,6 +48,7 @@ const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogu
 const title_scene : PackedScene = preload("res://scenes/UI/main/Title.tscn")
 const invalid_clue_dialogue_path : String = "base/InvalidClue"
 const credits_scene : PackedScene = preload("res://scenes/UI/credits.tscn")
+const finale_actors : PackedScene = preload("res://scenes/finale_actors.tscn")
 
 var is_inside_photo : bool = false
 var current_location_index : int = -1:

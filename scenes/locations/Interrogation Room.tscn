@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ph4q1v8rh7fy"]
+[gd_scene load_steps=16 format=3 uid="uid://ph4q1v8rh7fy"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
 [ext_resource type="Script" path="res://scenes/locations/InterrogationRoom.gd" id="1_l5xmw"]
@@ -10,10 +10,6 @@
 [ext_resource type="Resource" uid="uid://cwfvteaaw8xvv" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
 [ext_resource type="Resource" uid="uid://bh8fjq1aw6csq" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Autopsy Report.tres" id="7_3hs4r"]
 [ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="11_nhaod"]
-[ext_resource type="Script" path="res://scenes/dialogue/actor_finale.gd" id="12_2jtcg"]
-[ext_resource type="Resource" uid="uid://cc2kjkkvf1lab" path="res://Case/Dialogue/Interrogation Room/Final/InvalidClue.tres" id="12_c54yk"]
-[ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="13_dgreu"]
-[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="14_jy3xx"]
 
 [sub_resource type="Resource" id="Resource_6snps"]
 script = ExtResource("11_nhaod")
@@ -51,76 +47,7 @@ actor_name = "Lucas"
 location_name = "interrogate_room_lucas"
 dialogue = Array[String](["LucasEND"])
 initial_mood = "normal"
-global_variables = Array[String](["lucas_pushed"])
-
-[sub_resource type="Resource" id="Resource_hqmmf"]
-script = ExtResource("11_nhaod")
-actor_name = "Lucas"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["LucasPressed"])
-initial_mood = "normal"
-global_variables = Array[String]([])
-
-[sub_resource type="Resource" id="Resource_wrdh6"]
-script = ExtResource("3_s4c63")
-clue = ExtResource("4_mpays")
-dialogue_res = SubResource("Resource_hqmmf")
-conditional_variable = false
-variable_name = ""
-
-[sub_resource type="Resource" id="Resource_6jkgv"]
-script = ExtResource("11_nhaod")
-actor_name = "Lucas"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["LucasInteract"])
-initial_mood = "normal"
-global_variables = Array[String](["is_pressing"])
-
-[sub_resource type="Resource" id="Resource_tpjno"]
-script = ExtResource("11_nhaod")
-actor_name = "Victor"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["VictorPressed"])
-initial_mood = "normal"
-global_variables = Array[String]([])
-
-[sub_resource type="Resource" id="Resource_63o71"]
-script = ExtResource("3_s4c63")
-clue = ExtResource("14_jy3xx")
-dialogue_res = SubResource("Resource_tpjno")
-conditional_variable = false
-variable_name = ""
-
-[sub_resource type="Resource" id="Resource_am1g4"]
-script = ExtResource("11_nhaod")
-actor_name = "Victor"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["VictorInteract"])
-initial_mood = "normal"
-global_variables = Array[String](["is_pressing"])
-
-[sub_resource type="Resource" id="Resource_3ffuf"]
-script = ExtResource("11_nhaod")
-actor_name = "Marina"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["MarinaPressed"])
-initial_mood = "normal"
-global_variables = Array[String]([])
-
-[sub_resource type="Resource" id="Resource_btarc"]
-script = ExtResource("3_s4c63")
-clue = ExtResource("13_dgreu")
-dialogue_res = SubResource("Resource_3ffuf")
-conditional_variable = false
-variable_name = ""
-
-[sub_resource type="Resource" id="Resource_wrlmj"]
-script = ExtResource("11_nhaod")
-actor_name = "Marina"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["MarinaInteract"])
-initial_mood = "normal"
-global_variables = Array[String](["is_pressing"])
+global_variables = Array[String](["lucas_victor", "lucas_diary", "victor_marina"])
 
 [node name="InterrogationRoom" type="Control"]
 layout_mode = 3
@@ -153,64 +80,3 @@ offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
 dialogue_res = SubResource("Resource_0trju")
-
-[node name="FinaleActors" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Actor1" parent="FinaleActors" instance=ExtResource("4_h138y")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -595.0
-offset_bottom = 0.0
-grow_vertical = 0
-script = ExtResource("12_2jtcg")
-clue_invalid_dialogue = ExtResource("12_c54yk")
-clue_dialogue = SubResource("Resource_wrdh6")
-verdict_reaction = "panic"
-dialogue_res = SubResource("Resource_6jkgv")
-
-[node name="Actor2" parent="FinaleActors" instance=ExtResource("4_h138y")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -470.0
-offset_top = -595.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("12_2jtcg")
-clue_invalid_dialogue = ExtResource("12_c54yk")
-clue_dialogue = SubResource("Resource_63o71")
-verdict_reaction = "defensive_3"
-dialogue_res = SubResource("Resource_am1g4")
-
-[node name="Actor3" parent="FinaleActors" instance=ExtResource("4_h138y")]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -235.0
-offset_top = -595.0
-offset_right = 235.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
-script = ExtResource("12_2jtcg")
-clue_invalid_dialogue = ExtResource("12_c54yk")
-clue_dialogue = SubResource("Resource_btarc")
-verdict_reaction = "defensive_1"
-dialogue_res = SubResource("Resource_wrlmj")

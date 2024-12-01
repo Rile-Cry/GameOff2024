@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
 [ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
-[ext_resource type="PackedScene" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
+[ext_resource type="PackedScene" uid="uid://cwvcth4tpcs35" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
 texture = ExtResource("9_x077g")
@@ -46,6 +46,7 @@ offset_left = 331.0
 offset_top = 241.0
 offset_right = 778.0
 offset_bottom = 695.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_styles/focus = SubResource("StyleBoxTexture_jypko")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_jypko")
@@ -64,6 +65,7 @@ offset_top = 194.0
 offset_right = 786.0
 offset_bottom = 270.0
 focus_previous = NodePath("../ExitButton")
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_nulqq")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_nulqq")
@@ -83,6 +85,7 @@ offset_top = 74.0
 offset_right = 830.0
 offset_bottom = 149.0
 focus_previous = NodePath("../PlayButton")
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_7jlq8")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_7jlq8")
@@ -101,6 +104,7 @@ offset_top = 138.0
 offset_right = 914.0
 offset_bottom = 225.0
 focus_previous = NodePath("../PlayButton")
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_tswg3")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tswg3")

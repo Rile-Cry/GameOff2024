@@ -32,6 +32,7 @@ func _get_clue_location(clue : Clue) -> bool:
 	return false
 
 func _process(_delta: float) -> void:
+	print(GameManager.get_global_variable("lucas_victor"))
 	if not GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
 		for object : ObjectResourceButton in objects:
 			if not object.disabled:
