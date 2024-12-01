@@ -31,7 +31,6 @@ Yes, Victor. We’re both trying to keep it together after Evelyn’s death, and
 
 
 === choices ===
-~   speaker = "Shade"
 +   [Relation with Evelyn]
 	-> option_1
 +   [Business Ventures]
@@ -40,7 +39,7 @@ Yes, Victor. We’re both trying to keep it together after Evelyn’s death, and
 	-> option_3
 
 === option_1 ===
-~   mood = "normal"
+~   speaker = "Shade"
 Tell me about your relationship with Evelyn. You two worked closely together, didn’t you?
 ~   speaker = "Marina"
 ~   mood = "sigh"
@@ -48,7 +47,7 @@ We were business partners. She handled the art, I handled the logistics. It was 
 -> choices
 
 === option_2 ===
-~   mood = "normal"
+~   speaker = "Shade"
 What kind of business ventures were you and Evelyn planning?
 ~   mood = "sassy"
 ~   speaker = "Marina"
@@ -56,6 +55,7 @@ Plenty. Evelyn was talented, and I made sure the world saw it. That’s what par
 -> choices
 
 === option_3 ===
+~   speaker = "Shade"
 Your apartment is striking. Mind if I take a quick photo for reference?
 ~   mood = "guarded"
 ~   speaker = "Marina"

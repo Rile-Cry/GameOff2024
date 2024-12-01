@@ -6,7 +6,6 @@ VAR lucas_diary = false
 VAR victor_marina = false
 
 === choices ===
-~   speaker = "Shade"
 +   [What's Evelyn Like?]
 	-> option_1
 +   [Called Police]
@@ -23,7 +22,7 @@ VAR victor_marina = false
 	-> END
 
 === option_1 ===
-~   mood = "normal"
+~   speaker = "Shade"
 This must be hard. Can you tell me what Evelyn was like?
 ~   speaker = "Lucas"
 ~   mood = "ponder"
@@ -36,7 +35,7 @@ Yeah... that's one way to put it. She kept you guessing. Always.
 -> choices
 
 === option_2 ===
-~   mood = "normal"
+~   speaker = "Shade"
 You said you called the police when you found her. How long did it take?
 ~   mood = "defensive_1"
 ~   speaker = "Lucas"
@@ -52,7 +51,7 @@ The love of your life? #exclaim
 -> choices
 
 === option_3 ===
-~   mood = "normal"
+~   speaker = "Shade"
 Did you check her phone or notice anything odd in the studio?
 ~   mood = "calm"
 ~   speaker = "Lucas"
@@ -81,7 +80,7 @@ I didn't... I just... couldn't.
 -> choices
 
 === option_4 ===
-~   mood = "normal"
+~   speaker = "Shade"
 You mentioned meeting at your usual spot. Can you tell me about it?
 ~   mood = "defensive_1"
 ~   speaker = "Lucas"
@@ -94,7 +93,7 @@ I... I brought flowers. But when I got to her studio, something felt... wrong. S
 -> choices
 
 === option_5 ===
-~   mood = "normal"
+~   speaker = "Shade"
 Did you see Victor around the time of Evelyn's death?
 ~   mood = "ponder"
 ~   speaker = "Lucas"
@@ -107,7 +106,7 @@ I don't know... Maybe. He's the type to get what he wants, no matter who he step
 -> choices
 
 === option_6 ===
-~   mood = "normal"
+~   speaker = "Shade"
 How was your relationship with Marina? You mentioned her being at the studio.
 ~   mood = "normal"
 ~   speaker = "Lucas"

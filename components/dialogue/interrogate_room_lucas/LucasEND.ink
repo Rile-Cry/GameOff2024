@@ -1,6 +1,6 @@
 INCLUDE LucasInterrogation.ink
 
 ~   speaker = "Lucas"
-~   mood = "Normal"
+~   mood = "normal"
 Do you still need something?
 -> choices
