@@ -10,6 +10,15 @@ var was_hovering : bool = false
 const hover_sfx : String = "Object Hover"
 const hover_outline_thickness : int = 6
 
+func fade_in_actor():
+	_texture_rect.material = null
+	show()
+	_button.disabled = true
+	$AnimationPlayer.play("actor_fade_in")
+	await $AnimationPlayer.animation_finished
+	_button.disabled = false
+	_texture_rect.material = GameManager.outline_material.duplicate()
+
 func update_actor(texture : Texture2D) -> void:
 	_texture_rect.texture = texture
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnxij6tv64lpl"]
+[gd_scene load_steps=11 format=3 uid="uid://cnxij6tv64lpl"]
 
 [ext_resource type="Script" path="res://scenes/dialogue/actor.gd" id="1_216li"]
 
@@ -13,6 +13,43 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46i4x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aavfc"]
+
+[sub_resource type="Animation" id="Animation_0y0md"]
+resource_name = "actor_fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_scs30"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30yr5"]
+_data = {
+"RESET": SubResource("Animation_scs30"),
+"actor_fade_in": SubResource("Animation_0y0md")
+}
 
 [node name="Actor" type="Control"]
 custom_minimum_size = Vector2(470, 595)
@@ -45,3 +82,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_dvcj3")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_p73ig")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_46i4x")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_aavfc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_30yr5")
+}

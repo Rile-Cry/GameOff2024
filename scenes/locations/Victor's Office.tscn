@@ -53,7 +53,7 @@ variable_name = ""
 script = ExtResource("2_i6p0k")
 actor_name = "Victor"
 location_name = "victors_office"
-dialogue = Array[String](["VictorShreddedPaper"])
+dialogue = Array[String](["VictorShreddedPapers"])
 initial_mood = "normal"
 global_variables = Array[String]([])
 
@@ -63,14 +63,6 @@ clue = ExtResource("6_87dlp")
 dialogue_res = SubResource("Resource_gbrxt")
 conditional_variable = false
 variable_name = ""
-
-[sub_resource type="Resource" id="Resource_i3idt"]
-script = ExtResource("2_i6p0k")
-actor_name = "Marina"
-location_name = "marinas_apartment"
-dialogue = Array[String]([])
-initial_mood = "defensive_2"
-global_variables = Array[String]([])
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6ld1"]
 
@@ -96,6 +88,14 @@ global_variables = Array[String]([])
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlyth"]
 
+[sub_resource type="Resource" id="Resource_inov2"]
+script = ExtResource("2_i6p0k")
+actor_name = "Victor"
+location_name = "victors_office"
+dialogue = Array[String](["VictorEND"])
+initial_mood = "normal"
+global_variables = Array[String](["lucas_victor", "victor_clues", "victor_marina"])
+
 [node name="Victor\'s Office" type="Control" node_paths=PackedStringArray("objects")]
 layout_mode = 3
 anchors_preset = 15
@@ -108,23 +108,13 @@ size_flags_vertical = 3
 script = ExtResource("1_36ue3")
 victor_kick_dialogue = SubResource("Resource_2wkvw")
 opening_dialogue_victor = SubResource("Resource_tv4v7")
-objects = [NodePath("Shredded Paper"), NodePath("Family Photo"), NodePath("Bookshelf")]
+objects = [NodePath("Shredded Paper"), NodePath("Family Photo")]
 opening_dialogue = SubResource("Resource_cs5i7")
 clue_interact = Array[ExtResource("3_dke63")]([SubResource("Resource_ylrju"), SubResource("Resource_xsa06")])
 bgm = "Victor's Office"
 instant_meet = false
 
-[node name="Actor" parent="." instance=ExtResource("5_3fhqw")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -595.0
-offset_bottom = 0.0
-grow_vertical = 0
-dialogue_res = SubResource("Resource_i3idt")
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,3 +172,13 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tlyth")
 script = ExtResource("7_ca4up")
 hover_sfx = ""
 click_sfx = ""
+
+[node name="Actor" parent="." instance=ExtResource("5_3fhqw")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -595.0
+offset_bottom = 0.0
+grow_vertical = 0
+dialogue_res = SubResource("Resource_inov2")
