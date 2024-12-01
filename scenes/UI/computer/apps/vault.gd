@@ -12,9 +12,6 @@ func _ready() -> void:
 
 func _check_code() -> void:
 	match text.text:
-		"unlock_interrogation":
-			var location : Location = ResourceLoader.load("res://Case/Locations/Interrogation Room.tres", "Location")
-			GameManager.unlock_location(location)
 		"secretcode":
 			print("Oh no, you found our secret . . . shame on you -_-")
 		"allclues":
