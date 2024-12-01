@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://bnrs4oaaoi52q"]
 
 [ext_resource type="Script" path="res://Case/Clues/CluesResource.gd" id="1_rirbu"]
-[ext_resource type="Texture2D" uid="uid://d2dqj11lw34vq" path="res://assets/imports/graphics/objects/clues/RECEIPT.png" id="2_a1udx"]
-[ext_resource type="Texture2D" uid="uid://5mxo7brkablu" path="res://assets/imports/graphics/objects/clues/icon/RECEIPT.png" id="3_iw6df"]
+[ext_resource type="Texture2D" uid="uid://didp5mkq5meg7" path="res://assets/imports/graphics/objects/clues/TROPHY.png" id="2_lbi2i"]
+[ext_resource type="Texture2D" uid="uid://xcpefxo4apcc" path="res://assets/imports/graphics/objects/clues/icon/TROPHY.png" id="3_1geem"]
 
 [resource]
 script = ExtResource("1_rirbu")
@@ -10,5 +10,5 @@ id = "TROPHY"
 name = "Trophy"
 description = "A trophy for Victor, dated 26th September\\nSeems to have a distinct sanitized odor to it"
 location = "Marina’s Apartment"
-texture = ExtResource("2_a1udx")
-texture_icon = ExtResource("3_iw6df")
+texture = ExtResource("2_lbi2i")
+texture_icon = ExtResource("3_1geem")
