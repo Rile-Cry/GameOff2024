@@ -34,6 +34,8 @@ func _ready() -> void:
 		await $AudioStreamPlayer.finished
 		UIManager.anim_player.play(\"hide_room\")
 		await UIManager.anim_player.animation_finished
+		UIManager.anim_player.play_backwards(\"black_bar\")
+		await UIManager.anim_player.animation_finished
 		if GameManager.get_verdict():
 			get_tree().change_scene_to_packed(GameManager.good_ending_scene)
 		else:

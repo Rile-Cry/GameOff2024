@@ -26,6 +26,7 @@ func _ready() -> void:
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
 
 func _confirm_final_verdict():
+	%FinalVerdict.hide()
 	confirm_final_verdict.emit()
 
 func mission_book_clue_lock():
@@ -44,10 +45,22 @@ func _process(_delta: float) -> void:
 			$DisableInputRect.show()
 			bad_ending = true
 			GameManager.enable_input = false
+			await get_tree().create_timer(2).timeout
 			anim_player.play("black_bar", -1, 0.5)
 			await anim_player.animation_finished
 			anim_player.play("Glitch Screen")
+			await anim_player.animation_finished
+			if AmbientAudio:
+				AmbientAudio.stop()
+			anim_player.play("hide_room")
+			await anim_player.animation_finished
+			anim_player.play_backwards("black_bar")
+			await anim_player.animation_finished
 			$DisableInputRect.hide()
+			%Glitch.hide()
+			$ColorRect.hide()
+			%Vignette.hide()
+			open_close_mission_book()
 			%MissionBook.unglitch_mission_book()
 			GameManager.record_attempt(false)
 	if bad_ending:

@@ -28,6 +28,7 @@ func _ready() -> void:
 	time.text.replace(\"{verdict}\", suspect_text)
 	time.text.replace(\"{seconds}\", str(GameManager.game_time))
 	time.text.replace(\"{minutes}\", str(game_time_min))
+	super()
 
 func close():
 	GameManager.game_time = 0.0
