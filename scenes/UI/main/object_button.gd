@@ -49,12 +49,13 @@ func disable():
 		remove_child(child)
 
 func outline_disable():
-	if was_hovering:
-		was_hovering = false
-	
-		if GameManager and GameManager.enable_input and material:
-			material.set_shader_parameter("outline_width", 0)
+	was_hovering = false
+
+	if GameManager and GameManager.enable_input and material:
+		material.set_shader_parameter("outline_width", 0)
 
 func _pressed() -> void:
+	release_focus()
+	outline_enable()
 	if not click_sfx.is_empty():
 		SfxAudio.play_audio(click_sfx)
