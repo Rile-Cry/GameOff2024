@@ -22,7 +22,9 @@ extends PhotoScene
 var lock_number_sequence : Array[int] = []
 
 func _ready() -> void:
-	super()
+	for child in drawer_opened_popup.get_children():
+		if child is ObjectResourceButton:
+			objects.append(child)
 	
 	desk.pressed.connect(desk_popup_show)
 	drawer.pressed.connect(drawer_popup_show)
