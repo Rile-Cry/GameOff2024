@@ -9,6 +9,13 @@ script/source = "extends TextureRect
 @onready var actor_container : HBoxContainer = $HBoxContainer
 
 func _ready() -> void:
+	if not GameManager.get_verdict():
+		if BgmAudio and BgmAudio.playing:
+			BgmAudio.stop()
+		if AmbientAudio and AmbientAudio.playing:
+			AmbientAudio.stop()
+	
+	
 	for child in actor_container.get_children():
 		child.queue_free()
 	
@@ -34,11 +41,11 @@ func _ready() -> void:
 		
 "
 
-[sub_resource type="Animation" id="Animation_jkrgv"]
-resource_name = "auto_start"
-
 [sub_resource type="Animation" id="Animation_386er"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_jkrgv"]
+resource_name = "auto_start"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l7ltb"]
 _data = {

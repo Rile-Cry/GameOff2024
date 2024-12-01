@@ -41,7 +41,15 @@ func final_verdict_play():
 
 func confirm_final_verdict():
 	if GameManager:
-		GameManager.switch_to_ending()
+		if GameManager.get_verdict():
+			if BgmAudio:
+				BgmAudio.play_audio("Ending")
+			if AmbientAudio:
+				AmbientAudio.stop()
+			GameManager.enable_input = false
+			actor._start_dialogue(final_verdict_dialogue, 1)
+			await GlobalGameEvents.dialogue_ended
+		GameManager.get_ending()
 
 func _select_final_verdict(name : String):
 	if GameManager:

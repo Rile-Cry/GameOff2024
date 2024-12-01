@@ -8,6 +8,7 @@ script/source = "extends PopupNode
 class_name TimePopup
 
 @export var title : RichTextLabel
+@export var time : RichTextLabel
 var succeed : bool = false
 
 func _ready() -> void:
@@ -15,6 +16,24 @@ func _ready() -> void:
 		title.text = \"[center][b]Congrats Detective, you've completed the game!\"
 	else:
 		title.text = \"[center][b]You Failed\"
+	
+	var suspect_text : String = \"\"
+	for idx : int in GameManager.final_verdict.size():
+		suspect_text += GameManager.final_verdict[idx]
+		if (idx + 1) == (GameManager.final_verdict.size() - 1):
+			suspect_text += \" and \"
+		elif (idx + 1) < (GameManager.final_verdict.size() - 1):
+			suspect_text += \", \"
+	var game_time_min : int = GameManager.game_time / 60.0
+	time.text.replace(\"{verdict}\", suspect_text)
+	time.text.replace(\"{seconds}\", str(GameManager.game_time))
+	time.text.replace(\"{minutes}\", str(game_time_min))
+
+func close():
+	GameManager.game_time = 0.0
+	GameManager.final_verdict.clear()
+	GameManager.delete_save()
+	super()
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpns4"]
@@ -86,7 +105,7 @@ _data = {
 "open": SubResource("Animation_h500q")
 }
 
-[node name="Time" type="Control" node_paths=PackedStringArray("close_b", "close_b_bottom")]
+[node name="Time" type="Control" node_paths=PackedStringArray("title", "time", "close_b", "close_b_bottom")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -96,6 +115,8 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(640, 360)
 script = SubResource("GDScript_mr8w7")
+title = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Title")
+time = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Time")
 close_b = NodePath("MarginContainer/Panel/CloseMargin/CloseButton")
 close_b_bottom = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/CloseButton Bottom")
 
@@ -136,11 +157,13 @@ bbcode_enabled = true
 text = "[center][b]Congrats Detective, you've completed the game!"
 fit_content = true
 
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
+[node name="Time" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "Blamed Suspects: {blame}
-Time: {blame}"
+text = "Blamed Suspects: {verdict}
+Time:
+{seconds} second(s)
+{minutes} minute(s)"
 fit_content = true
 
 [node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]

@@ -37,6 +37,11 @@ func _ready() -> void:
 func tweening_complete():
 	tweening = false
 
+func _notification(what):
+	if (what == NOTIFICATION_PREDELETE):
+		if UIManager:
+			UIManager.hide_shader("vignette")
+
 func _process(_delta: float) -> void:
 	if AmbientAudio and tweening:
 		AmbientAudio.play_audio("Shade's Office", volume_db)

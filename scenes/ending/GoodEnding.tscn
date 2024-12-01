@@ -1,26 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkjukg3pilsqj"]
+[gd_scene load_steps=7 format=3 uid="uid://bkjukg3pilsqj"]
 
-[ext_resource type="Script" path="res://scenes/ending/bad_ending.gd" id="1_tejus"]
-[ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_pnv8d"]
+[ext_resource type="Script" path="res://scenes/ending/good_ending.gd" id="1_1jlo2"]
+[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_35fa1"]
+[ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="3_hoyvp"]
+[ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="4_eynwl"]
 
-[node name="BadEnding" type="Control"]
+[sub_resource type="Resource" id="Resource_e8drv"]
+script = ExtResource("2_35fa1")
+actor_name = "Lucas"
+location_name = "interrogate_room_finale"
+dialogue = Array[String](["LucasFinal", "LucasToL"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[sub_resource type="Resource" id="Resource_xpair"]
+script = ExtResource("2_35fa1")
+actor_name = "Lucas"
+location_name = "interrogate_room_finale"
+dialogue = Array[String]([])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
+[node name="GoodEnding" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tejus")
+script = ExtResource("1_1jlo2")
+opening_dialogue = SubResource("Resource_e8drv")
+bgm = "Ending"
 
-[node name="Office" type="TextureRect" parent="."]
+[node name="BG" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pnv8d")
+texture = ExtResource("3_hoyvp")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Actor" parent="." instance=ExtResource("4_eynwl")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -595.0
+offset_bottom = 0.0
+grow_vertical = 0
+dialogue_res = SubResource("Resource_xpair")

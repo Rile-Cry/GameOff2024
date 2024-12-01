@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://ct7iowwqdg5u7"
+path="res://.godot/imported/FinalVerdictCont.ink-3ee160ae6cc754487a1660048fe4f824.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/FinalVerdictCont.ink"
+dest_files=["res://.godot/imported/FinalVerdictCont.ink-3ee160ae6cc754487a1660048fe4f824.res"]
+
+[params]
+
