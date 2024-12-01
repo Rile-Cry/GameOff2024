@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c6hm1h1elh3mm"]
+[gd_scene load_steps=30 format=3 uid="uid://c6hm1h1elh3mm"]
 
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/graphics/icons/Book_Icon_open.png" id="1_e0dwy"]
 [ext_resource type="Script" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
@@ -365,6 +365,34 @@ tracks/1/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ol186"]
+resource_name = "white_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dvjtw"]
 _data = {
 "Exclaim": SubResource("Animation_jno3j"),
@@ -374,7 +402,8 @@ _data = {
 "close_anim": SubResource("Animation_dgnyb"),
 "fail": SubResource("Animation_db5vn"),
 "hide_room": SubResource("Animation_sektf"),
-"reveal_room": SubResource("Animation_7osjq")
+"reveal_room": SubResource("Animation_7osjq"),
+"white_out": SubResource("Animation_ol186")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iusep"]
