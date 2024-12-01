@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cl7my861xr8ln"
+path="res://.godot/imported/FinaleOngoing.ink.json-9831de2b1cffbecfb7c30ccfcd33a2d0.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/FinaleOngoing.ink.json"
+dest_files=["res://.godot/imported/FinaleOngoing.ink.json-9831de2b1cffbecfb7c30ccfcd33a2d0.res"]
+
+[params]
+
+compress=true
