@@ -25,6 +25,7 @@ func _ready() -> void:
 						GameManager.enable_input = false
 						actor._start_dialogue(opening_dialogue_photo, idx)
 						await GlobalGameEvents.dialogue_ended
+					await dialogue_ended
 			else:
 				GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
 				for idx : int in opening_dialogue.dialogue.size():
@@ -32,7 +33,7 @@ func _ready() -> void:
 					await dialogue_start_action(idx)
 					actor._start_dialogue(opening_dialogue, idx)
 					await GlobalGameEvents.dialogue_ended
-		await dialogue_ended
+				await dialogue_ended
 		GameManager.enable_input = true
 		GameManager.current_location_index = 0
 

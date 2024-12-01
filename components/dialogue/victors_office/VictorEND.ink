@@ -3,7 +3,7 @@ INCLUDE VictorInteract.ink
 ~   mood = "defensive_2"
 I would choose my words wisely, Detective.
 ~   speaker = "Shade"
-{ lucas_victor && victor_clues:
+{ not (lucas_victor and victor_clues):
     Hey! That's my line!#exclaim
 }
 -> choices

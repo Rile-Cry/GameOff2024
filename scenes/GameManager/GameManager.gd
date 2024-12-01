@@ -107,6 +107,7 @@ func stack_resources(res : Resource, type : resource_type):
 	set_global_variable("stacked_resource", stack_res, -2)
 
 func is_all_true(case : String) -> void:
+	print("is_all_true: ", case)
 	for var_name : String in final_variable_name[case]:
 		if not get_global_variable(var_name):
 			return
@@ -233,16 +234,20 @@ func save_game() -> void:
 	var save_file : FileAccess = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	
 	var location_path : Array[String]
+	var location_lock : Array[bool]
 	var photo_path : Array[String]
 	var clue_path : Array[String]
 	
-	for location : Location in unlocked_locations: location_path.append(location.resource_path)
+	for location : Location in unlocked_locations:
+		location_path.append(location.resource_path)
+		location_lock.append(location.disabled)
 	for photo : Photo in photos: photo_path.append(photo.resource_path)
 	for clue : Clue in clues: clue_path.append(clue.resource_path)
 	
 	var save_dict : Dictionary = {
 		"CurrentLocation" : current_location_index,
 		"UnlockedLocations" : location_path,
+		"LocationLock" : location_lock,
 		"Photos" : photo_path,
 		"Clues" : clue_path,
 		"GlobalVariables" : global_variables,
@@ -268,10 +273,15 @@ func load_game() -> bool:
 	var save_data : Dictionary = json.data
 	
 	var location_path : Array = save_data["UnlockedLocations"]
+	var location_lock : Array = save_data["LocationLock"]
 	var photo_path : Array = save_data["Photos"]
 	var clue_path : Array = save_data["Clues"]
 	
-	for location : String in location_path: unlocked_locations.append(load(location))
+	for idx : int in location_path.size():
+		var loc_res : Location = load(location_path[idx])
+		loc_res.disabled = location_lock[idx]
+		unlocked_locations.append(loc_res)
+	
 	for photo : String in photo_path: photos.append(load(photo))
 	for clue : String in clue_path: clues.append(load(clue))
 	

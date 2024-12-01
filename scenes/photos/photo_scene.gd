@@ -9,7 +9,7 @@ func _ready() -> void:
 	if AmbientAudio:
 		AmbientAudio.play_audio("Photo Jump")
 		
-	for child in get_children():
+	for child in get_children(true):
 		if child is ObjectResourceButton:
 			objects.append(child)
 

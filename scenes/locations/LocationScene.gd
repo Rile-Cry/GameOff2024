@@ -21,7 +21,7 @@ func _dialogue_ended() -> void:
 	if GameManager:
 		GameManager.enable_input = true
 		await GameManager.add_resource_from_stack()
-	
+	print("true")
 	if actor.dialogue_res != dialogue_interact:
 		actor.dialogue_res = dialogue_interact
 	dialogue_ended.emit()
