@@ -22,7 +22,7 @@ global_variables = Array[String]([])
 [sub_resource type="Resource" id="Resource_0l76c"]
 script = ExtResource("11_nhaod")
 actor_name = "Shade"
-location_name = "interrogate_room_lucas"
+location_name = "interrogate_room_finale"
 dialogue = Array[String](["FinalVerdict", "FinalVerdictCont"])
 initial_mood = "normal"
 global_variables = Array[String]([])
