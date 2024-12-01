@@ -22,12 +22,16 @@ func _ready() -> void:
 	close_b.disabled = false
 	close_b_bottom.disabled = false
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
+		close()
+
 func close():
+	popup_closed.emit()
 	close_b.disabled = true
 	close_b_bottom.disabled = true
 	$AnimationPlayer.play_backwards("open")
 	await $AnimationPlayer.animation_finished
 	if GameManager:
 		GameManager.enable_input = true
-	popup_closed.emit()
 	queue_free()
