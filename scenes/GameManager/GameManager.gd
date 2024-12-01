@@ -40,11 +40,14 @@ const found_popup : PackedScene = preload("res://scenes/UI/popup/found_popup.tsc
 const delete_save_popup : PackedScene = preload("res://scenes/UI/popup/delete_save_popup.tscn")
 const save_popup : PackedScene = preload("res://scenes/UI/popup/save_popup.tscn")
 const clue_popup : PackedScene = preload("res://scenes/UI/popup/clue_popup.tscn")
+const time_popup : PackedScene = preload("res://scenes/UI/popup/time_popup.tscn")
 const all_clues_popup : PackedScene = preload("res://scenes/UI/popup/all_clues_popup.tscn")
 const final_guess_popup : PackedScene = preload("res://scenes/UI/popup/final_guess_popup.tscn")
 const interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
 const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
+const title_scene : PackedScene = preload("res://scenes/UI/main/Title.tscn")
 const invalid_clue_dialogue_path : String = "base/InvalidClue"
+const credits_scene : PackedScene = preload("res://scenes/UI/credits.tscn")
 
 var is_inside_photo : bool = false
 var current_location_index : int = -1:
@@ -103,10 +106,7 @@ func stack_resources(res : Resource, type : resource_type):
 	set_global_variable("stacked_resource", stack_res, -2)
 
 func is_all_true(case : String) -> void:
-	var case_variables : Array = get_global_variable(case)
-	if not case_variables:
-		return
-	for var_name : String in case_variables:
+	for var_name : String in final_variable_name[case]:
 		if not get_global_variable(var_name):
 			return
 	
@@ -306,7 +306,13 @@ func has_past_attempt() -> bool:
 	var dir : DirAccess = DirAccess.open("user://attempts")
 	return true
 
-func record_attempt(success : bool):
+func record_attempt(succeed : bool):
+	var time_popup_scene : PopupNode = time_popup.instantiate()
+	time_popup_scene.succeed = succeed
+	await get_tree().change_scene_to_packed(title_scene)
+	if UIManager:
+		UIManager.add_child(time_popup_scene)
+	
 	if not DirAccess.dir_exists_absolute("user://attempts"):
 		DirAccess.make_dir_absolute("user://attempts")
 	var dir : DirAccess = DirAccess.open("user://attempts")
