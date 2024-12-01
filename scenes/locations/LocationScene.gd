@@ -37,7 +37,18 @@ func _get_clue_location(clue : Clue) -> bool:
 	for location_clue : LocationClueInteract in clue_interact:
 		if location_clue.clue == clue:
 			if not location_clue.conditional_variable or GameManager.get_global_variable(location_clue.variable_name):
+				var clue_popup : CluePopup
+				if GameManager:
+					clue_popup = GameManager.clue_popup.instantiate()
+					clue_popup.clue = clue
+					if UIManager:
+						UIManager.add_child(clue_popup)
+						await clue_popup.popup_opened
 				actor._start_dialogue(location_clue.dialogue_res, 0)
+				await dialogue_ended
+				if is_instance_valid(clue_popup):
+					clue_popup.close()
+					await clue_popup.popup_closed
 				
 				if not clue_interacted.has(clue):
 					clue_interacted.append(clue)

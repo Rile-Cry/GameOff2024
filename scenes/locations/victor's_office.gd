@@ -26,8 +26,7 @@ func dialogue_start_action(idx : int):
 
 func _get_clue_location(clue : Clue) -> bool:
 	if GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
-		if super(clue):
-			await dialogue_ended
+		if await super(clue):
 			GameManager.set_global_variable("victor_clues", _check_if_all_clues_interacted())
 			return true
 	return false

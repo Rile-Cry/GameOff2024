@@ -6,5 +6,8 @@ func _ready() -> void:
 		BgmAudio.play_audio("Evelyn Photo")
 
 func clues_cleared():
-	print("Cleared")
-	super()
+	if not cleared:
+		if GameManager:
+			GameManager.set_global_variable("EvelynArtStudio_all_clues", true)
+			GameManager.is_all_true("The Turnabout Case")
+			super()

@@ -57,8 +57,11 @@ func flip_calender():
 		stylebox.region_rect.position.x = 0
 
 func clues_cleared():
-	print("Cleared")
-	super()
+	if not cleared:
+		if GameManager:
+			GameManager.set_global_variable("MarinaApartment_all_clues", true)
+			GameManager.is_all_true("The Turnabout Case")
+			super()
 
 func lock_popup_show():
 	close_popup()

@@ -26,8 +26,9 @@ var actor_address := {
 var game_time : float = 0.0
 
 const outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
-const found_popup : PackedScene = preload("res://scenes/UI/found_popup.tscn")
-const save_popup : PackedScene = preload("res://scenes/UI/save_popup.tscn")
+const found_popup : PackedScene = preload("res://scenes/UI/popup/found_popup.tscn")
+const save_popup : PackedScene = preload("res://scenes/UI/popup/save_popup.tscn")
+const clue_popup : PackedScene = preload("res://scenes/UI/popup/clue_popup.tscn")
 const interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
 const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
 const invalid_clue_dialogue_path : String = "base/InvalidClue"
@@ -58,6 +59,14 @@ enum resource_type {
 	LOCATION
 }
 
+const final_variable_name : Dictionary = {
+	"The Turnabout Case" : [
+		"EvelynArtStudio_all_clues",
+		"LucasInterrogationFinish",
+		"MarinaApartment_all_clues"
+	]
+}
+
 signal popup_closed
 
 func _ready():
@@ -77,6 +86,13 @@ func stack_resources(res : Resource, type : resource_type):
 		"type": type
 	}
 	set_global_variable("stacked_resource", stack_res, -2)
+
+func is_all_true(case : String) -> void:
+	for var_name : String in final_variable_name:
+		if not get_global_variable(var_name):
+			return
+	
+	set_global_variable("all_clues", true)
 
 func get_global_variable(key : String, idx : int = -1):
 	if global_variables.has(key):

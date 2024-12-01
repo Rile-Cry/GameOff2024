@@ -2,7 +2,7 @@ extends Node
 class_name GameBase
 
 @onready var level_base : Node = $LevelBase
-const tutorial_popup_path : String = "res://scenes/UI/tutorial_popup.tscn"
+const tutorial_popup_path : String = "res://scenes/UI/popup/tutorial_popup.tscn"
 const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
 var shake_power : float = 0.0
 var node : Control

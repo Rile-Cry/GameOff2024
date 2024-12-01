@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://l4t25mjewvwv"]
 
-[ext_resource type="Script" path="res://scenes/UI/tutorial_popup.gd" id="1_4oj3e"]
+[ext_resource type="Script" path="res://scenes/UI/popup/tutorial_popup.gd" id="1_4oj3e"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_fn0bc"]
 [ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_kecus"]
 [ext_resource type="Texture2D" uid="uid://cty6hjaiaeunt" path="res://assets/imports/graphics/screenshots/Mission Book.png" id="4_3r4va"]

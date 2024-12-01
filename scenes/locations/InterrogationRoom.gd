@@ -6,6 +6,13 @@ func _ready() -> void:
 	
 	super()
 
+func _get_clue_location(clue : Clue) -> bool:
+	if await super(clue):
+		GameManager.set_global_variable("LucasInterrogationFinish", _check_if_all_clues_interacted())
+		GameManager.is_all_true("The Turnabout Case")
+		return true
+	return false
+
 func _notification(what):
 	if (what == NOTIFICATION_PREDELETE):
 		if UIManager:

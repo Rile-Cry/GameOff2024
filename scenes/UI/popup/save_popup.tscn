@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxpr2fndg40kv"]
+[gd_scene load_steps=7 format=3 uid="uid://b7me675mnkrs4"]
 
-[ext_resource type="Script" path="res://scenes/UI/found_popup.gd" id="1_3mho3"]
-[ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_twn8e"]
+[ext_resource type="Script" path="res://scenes/UI/popup/popup.gd" id="1_0hp3j"]
+[ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_fy6pm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpns4"]
 bg_color = Color(0.996078, 0.976471, 0.952941, 1)
@@ -72,7 +72,7 @@ _data = {
 "open": SubResource("Animation_h500q")
 }
 
-[node name="Found" type="Control" node_paths=PackedStringArray("title_label", "icon_texture", "name_label", "description_label", "close_b", "close_b_bottom")]
+[node name="Save" type="Control" node_paths=PackedStringArray("close_b", "close_b_bottom")]
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -81,11 +81,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(640, 360)
-script = ExtResource("1_3mho3")
-title_label = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Title")
-icon_texture = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Icon")
-name_label = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Name")
-description_label = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/Description")
+script = ExtResource("1_0hp3j")
 close_b = NodePath("MarginContainer/Panel/CloseMargin/CloseButton")
 close_b_bottom = NodePath("MarginContainer/Panel/ContentMargin/VBoxContainer/CloseButton Bottom")
 
@@ -97,9 +93,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 384
-theme_override_constants/margin_top = 128
+theme_override_constants/margin_top = 256
 theme_override_constants/margin_right = 384
-theme_override_constants/margin_bottom = 128
+theme_override_constants/margin_bottom = 256
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
@@ -119,30 +115,13 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin"]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 12
 
 [node name="Title" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center][b]Title"
-fit_content = true
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-expand_mode = 2
-stretch_mode = 5
-
-[node name="Name" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
-layout_mode = 2
-bbcode_enabled = true
-text = "[center]Object Name"
-fit_content = true
-
-[node name="Description" type="RichTextLabel" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-bbcode_enabled = true
-text = "Object Description"
+text = "[center][b]Save Successful"
 fit_content = true
 
 [node name="CloseButton Bottom" type="Button" parent="MarginContainer/Panel/ContentMargin/VBoxContainer"]
@@ -167,7 +146,7 @@ theme_override_constants/margin_right = 6
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_twn8e")
+theme_override_fonts/font = ExtResource("2_fy6pm")
 text = "X"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
