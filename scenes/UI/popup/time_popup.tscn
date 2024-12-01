@@ -25,9 +25,10 @@ func _ready() -> void:
 		elif (idx + 1) < (GameManager.final_verdict.size() - 1):
 			suspect_text += \", \"
 	var game_time_min : int = GameManager.game_time / 60.0
-	time.text.replace(\"{verdict}\", suspect_text)
-	time.text.replace(\"{seconds}\", str(GameManager.game_time))
-	time.text.replace(\"{minutes}\", str(game_time_min))
+	
+	time.text = time.text.replace(\"{verdict}\", suspect_text)
+	time.text = time.text.replace(\"{seconds}\", str(GameManager.game_time))
+	time.text = time.text.replace(\"{minutes}\", str(game_time_min))
 	super()
 
 func close():

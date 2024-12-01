@@ -31,7 +31,7 @@ func _confirm_final_verdict():
 
 func mission_book_clue_lock():
 	%MissionBook.clue_locked = not %MissionBook.clue_locked
-	if not %MissionBook.visible:
+	if %MissionBook.clue_locked and not %MissionBook.visible:
 		open_close_mission_book()
 
 func refresh_mission_book():

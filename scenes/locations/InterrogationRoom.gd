@@ -41,6 +41,8 @@ func final_verdict_play():
 
 func confirm_final_verdict():
 	if GameManager:
+		if UIManager:
+			UIManager.mission_book_clue_lock()
 		if GameManager.get_verdict():
 			if BgmAudio:
 				BgmAudio.play_audio("Ending")

@@ -45,3 +45,8 @@ func play():
 func open_credits():
 	if UIManager and not UIManager.get_credits().visible:
 		UIManager.open_close_credits()
+
+func _process(_delta: float) -> void:
+	if UIManager:
+		if UIManager.get_mission_book_button().visible:
+			UIManager.enable_disable_mission_book_button()
