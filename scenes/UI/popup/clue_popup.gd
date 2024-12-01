@@ -8,6 +8,8 @@ var clue : Clue
 func _ready() -> void:
 	if clue:
 		texture.texture = clue.texture_icon
+		if SfxAudio:
+			SfxAudio.play_audio("Popup")
 		$AnimationPlayer.play("open")
 		await $AnimationPlayer.animation_finished
 		popup_opened.emit()
