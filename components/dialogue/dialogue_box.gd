@@ -53,6 +53,8 @@ func _get_tags():
 			"exclaim": GlobalGameEvents.exclaim.emit()
 			"Photo":
 				get_resource(tags[idx], GameManager.resource_type.PHOTO)
+			"Location":
+				get_resource(tags[idx], GameManager.resource_type.LOCATION)
 
 func get_resource(path : String, res_type : GameManager.resource_type):
 	if not path.contains("res://"):
