@@ -22,7 +22,7 @@ func _check_code() -> void:
 	match text.text:
 		"secretcode":
 			print("Oh no, you found our secret . . . shame on you -_-")
-		"allclues":
+		"1109":
 			for resource : String in all_resources:
 				match all_resources[resource]:
 					"Clue": await GameManager.obtain_clue(load(resource), false)
