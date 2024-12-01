@@ -17,4 +17,5 @@ I’m here to interrogate you on the murder of your sister, Evelyn Blake.
 Detective, I’ve already spoken to the police. If you’re here to waste my time, I suggest you think twice.#exclaim
 ~   speaker = "Shade"
 You... aren't the talkative type, huh...
+
 -> choices
