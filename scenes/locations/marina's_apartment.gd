@@ -15,7 +15,6 @@ func _ready() -> void:
 			if GameManager.get_global_variable("met_" + opening_dialogue.actor_name) != null:
 				actor.show()
 				play_bgm_ambiance()
-				print(GameManager.get_global_variable("marina_photo"))
 				if GameManager.get_global_variable("marina_photo"):
 					for idx : int in opening_dialogue_end.dialogue.size():
 						GameManager.enable_input = false

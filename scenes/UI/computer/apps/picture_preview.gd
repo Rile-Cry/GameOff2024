@@ -20,7 +20,6 @@ func update() -> void:
 	var texture_value : Texture2D
 	res = ResourceLoader.load("res://Case/" + data["address"], "Photo")
 	texture_value = res.texture
-	print("not valid")
 	
 	if texture != null:
 		texture.texture = texture_value

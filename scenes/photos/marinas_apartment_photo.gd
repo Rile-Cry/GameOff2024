@@ -81,7 +81,6 @@ func desk_popup_show():
 	desk_popup.show()
 	if UIManager:
 		UIManager.can_open_option = false
-		print(desk_popup.visible)
 
 func drawer_popup_show():
 	await close_popup()

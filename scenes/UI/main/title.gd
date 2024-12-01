@@ -18,7 +18,6 @@ func _input(event: InputEvent) -> void:
 			$PlayButton.grab_focus()
 		elif event.is_action_pressed("ui_focus_prev"):
 			$OptionsButton.grab_focus()
-			print("option focus")
 
 func play():
 	$MainMargin/Credits.disabled = true
