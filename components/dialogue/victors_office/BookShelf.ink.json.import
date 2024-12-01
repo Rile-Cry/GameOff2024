@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dgeiphe6ils1c"
+path="res://.godot/imported/BookShelf.ink.json-d8255911f79664bfcbd6fec96f7a31cd.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/BookShelf.ink.json"
+dest_files=["res://.godot/imported/BookShelf.ink.json-d8255911f79664bfcbd6fec96f7a31cd.res"]
+
+[params]
+
+compress=true

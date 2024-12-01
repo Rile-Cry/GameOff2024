@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://4gkggl2sdwiq"
+path="res://.godot/imported/StickyNote.ink-bd671b1b1dc57faf2f62b6b639e764c7.res"
+
+[deps]
+
+source_file="res://components/dialogue/marinas_apartment/StickyNote.ink"
+dest_files=["res://.godot/imported/StickyNote.ink-bd671b1b1dc57faf2f62b6b639e764c7.res"]
+
+[params]
+

@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://beuxn7ig103yh"
+path="res://.godot/imported/StickyNote.ink.json-2cab65703dcc72b4153bff5b2cc829dc.res"
+
+[deps]
+
+source_file="res://components/dialogue/marinas_apartment/StickyNote.ink.json"
+dest_files=["res://.godot/imported/StickyNote.ink.json-2cab65703dcc72b4153bff5b2cc829dc.res"]
+
+[params]
+
+compress=true

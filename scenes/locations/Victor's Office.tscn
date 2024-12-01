@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ckdmur2tmh157"]
+[gd_scene load_steps=31 format=3 uid="uid://ckdmur2tmh157"]
 
 [ext_resource type="Script" path="res://scenes/locations/victor's_office.gd" id="1_36ue3"]
 [ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_i6p0k"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="3_dke63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="5_3fhqw"]
 [ext_resource type="Script" path="res://Case/object_resource_button.gd" id="5_psaxd"]
-[ext_resource type="Resource" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="6_87dlp"]
+[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="6_87dlp"]
 [ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_ca4up"]
 [ext_resource type="Resource" uid="uid://btpndxraxxqt8" path="res://Case/Clues/Victor's Office/Family Picture.tres" id="7_gifq4"]
 
@@ -88,6 +88,14 @@ variable_name = ""
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlyth"]
 
+[sub_resource type="Resource" id="Resource_3mjml"]
+script = ExtResource("2_i6p0k")
+actor_name = "Shade"
+location_name = "victors_office"
+dialogue = Array[String](["BookShelf"])
+initial_mood = "normal"
+global_variables = Array[String]([])
+
 [sub_resource type="Resource" id="Resource_inov2"]
 script = ExtResource("2_i6p0k")
 actor_name = "Victor"
@@ -160,9 +168,9 @@ resource = ExtResource("7_gifq4")
 [node name="Bookshelf" type="Button" parent="."]
 layout_mode = 0
 offset_left = 305.0
-offset_top = 58.0
-offset_right = 477.0
-offset_bottom = 512.0
+offset_top = 69.0
+offset_right = 481.0
+offset_bottom = 454.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_a50il")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_m2r7i")
 theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_s7s41")
@@ -170,6 +178,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_bqwu5")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_h31xs")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tlyth")
 script = ExtResource("7_ca4up")
+dialogue = SubResource("Resource_3mjml")
 hover_sfx = ""
 click_sfx = ""
 

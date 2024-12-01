@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dwubh61lkc4rb"]
+[gd_scene load_steps=53 format=3 uid="uid://dwubh61lkc4rb"]
 
 [ext_resource type="Script" path="res://scenes/photos/marinas_apartment_photo.gd" id="1_66fnc"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://di8tm7b1687va" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_closed.png" id="6_3o41n"]
 [ext_resource type="Texture2D" uid="uid://b4pjh253ffy0u" path="res://assets/imports/graphics/popups/marinas_apartment/Sticky Notes.png" id="6_8ldu5"]
 [ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="6_rcnxu"]
+[ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_nfsbp"]
 [ext_resource type="Texture2D" uid="uid://cgulxn77kjrag" path="res://assets/imports/graphics/popups/marinas_apartment/lock.png" id="7_qg8ks"]
 [ext_resource type="Texture2D" uid="uid://by5jeo48d2jf3" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_open.png" id="8_kr6kn"]
+[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="8_tgi78"]
 [ext_resource type="Script" path="res://Case/object_resource_button.gd" id="9_50fti"]
 [ext_resource type="Texture2D" uid="uid://m6j781gkdukg" path="res://assets/imports/graphics/popups/marinas_apartment/evelyns_phone.png" id="9_dx0km"]
 [ext_resource type="Resource" uid="uid://bdnbii0c61gqx" path="res://Case/Clues/Marina’s Apartment/Evelyns phone.tres" id="10_qfx0v"]
@@ -46,6 +48,14 @@ texture = ExtResource("6_8ldu5")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3ncy"]
 texture = ExtResource("6_8ldu5")
+
+[sub_resource type="Resource" id="Resource_aub3w"]
+script = ExtResource("8_tgi78")
+actor_name = "Shade"
+location_name = "marinas_apartment"
+dialogue = Array[String](["StickyNote"])
+initial_mood = "normal"
+global_variables = Array[String]([])
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ly5se"]
 texture = ExtResource("7_qg8ks")
@@ -164,7 +174,6 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="Desk" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/ContentMargin"]
-visible = false
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
@@ -208,7 +217,8 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_cdtfh")
 theme_override_styles/hover = SubResource("StyleBoxTexture_b6lau")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_r5x1n")
 theme_override_styles/normal = SubResource("StyleBoxTexture_s3ncy")
-script = ExtResource("2_oxx8a")
+script = ExtResource("7_nfsbp")
+dialogue = SubResource("Resource_aub3w")
 click_sfx = "UI Open Close"
 is_hidden = false
 
@@ -246,6 +256,7 @@ script = ExtResource("2_oxx8a")
 is_hidden = false
 
 [node name="DrawerOpened" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/ContentMargin"]
+visible = false
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")

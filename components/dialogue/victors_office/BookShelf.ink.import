@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://chhb7ge7qilee"
+path="res://.godot/imported/BookShelf.ink-2ed53cf9a06b9e8fc657f0a04418899d.res"
+
+[deps]
+
+source_file="res://components/dialogue/victors_office/BookShelf.ink"
+dest_files=["res://.godot/imported/BookShelf.ink-2ed53cf9a06b9e8fc657f0a04418899d.res"]
+
+[params]
+
