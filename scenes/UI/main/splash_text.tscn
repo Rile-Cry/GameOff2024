@@ -99,21 +99,21 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Made by"
+text = "Presented by"
 horizontal_alignment = 1
 
 [node name="TeamLeadLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "Nehal"
+text = "Nehal, DarrylBD99"
 horizontal_alignment = 1
 
 [node name="TeamNameLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "DarrylBD99, Lunel, Jules, Eduardo Arantes,
+text = "Lunel, Jules, Eduardo Arantes,
 Nullify All, Ménure, K916EKHO"
 horizontal_alignment = 1
 
