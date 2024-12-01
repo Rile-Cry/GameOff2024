@@ -12,16 +12,15 @@ var global_variables : Dictionary = {
 	"p_notes" : "",
 	"email_locations" : {
 		"Urgent Update on the Evelyn Blake Case" : [
-			preload("res://Case/Locations/Interrogation Room.tres"),
-			preload("res://Case/Locations/Victor's Office.tres"),
-			preload("res://Case/Locations/Marina's Apartment.tres")
+			"res://Case/Locations/Interrogation Room.tres",
+			"res://Case/Locations/Victor's Office.tres"
 		]
 	}
 }
 var actor_address := {
 	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",
 	"Victor": "res://assets/imports/graphics/characters/Victor Thorne/victor_",
-	"Marina": "res://assets/imports/graphics/characters/Marina Thorne/marina_",
+	"Marina": "res://assets/imports/graphics/characters/Marina Thorne/marina_"
 }
 
 var game_time : float = 0.0
@@ -138,9 +137,7 @@ func add_resource_from_stack():
 				obtained = await obtain_photo(load(res["path"]))
 			resource_type.LOCATION:
 				obtained = await unlock_location(load(res["path"]))
-		if not obtained:
-			await popup_closed
-
+			
 	global_variables["stacked_resource"].clear()
 
 func resource_popup(res : Resource, type : resource_type):
@@ -218,7 +215,6 @@ func save_game() -> void:
 	}
 	var json_string : String = JSON.stringify(save_dict)
 	save_file.store_line(json_string)
-	
 	if UIManager and save_popup:
 		var popup_node : PopupNode = save_popup.instantiate()
 		UIManager.add_child(popup_node)
