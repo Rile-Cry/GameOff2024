@@ -37,8 +37,6 @@ func setup(file_name: String, args: Dictionary) -> void:
 	_title = file_name
 	for arg in args:
 		_variables[arg] = args[arg]
-		print(arg)
-		print(_variables[arg])
 	_initialized = true
 #endregion
 
