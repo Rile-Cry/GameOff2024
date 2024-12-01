@@ -32,7 +32,7 @@ func clue_selected(clue : Clue):
 		if child is LocationScene:
 			child = child as LocationScene
 			
-			if child._get_clue_location(clue):
+			if await child._get_clue_location(clue):
 				return
 	
 	var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.invalid_clue_dialogue_path)

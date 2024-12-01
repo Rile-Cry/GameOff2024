@@ -33,7 +33,7 @@ func _ready() -> void:
 					await dialogue_start_action(idx)
 					actor._start_dialogue(opening_dialogue, idx)
 					await GlobalGameEvents.dialogue_ended
-		await GameManager.add_resource_from_stack()
+		await dialogue_ended
 		GameManager.enable_input = true
 		GameManager.current_location_index = 0
 

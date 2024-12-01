@@ -10,6 +10,9 @@ class_name LocationScene
 @onready var actor : Actor = $Actor
 @onready var dialogue_interact : DialogueRes = actor.dialogue_res
 
+var clue_interacted : Array[Clue] = []
+signal dialogue_ended
+
 func _dialogue_started() -> void:
 	if GameManager:
 		GameManager.enable_input = false
@@ -17,15 +20,27 @@ func _dialogue_started() -> void:
 func _dialogue_ended() -> void:
 	if GameManager:
 		GameManager.enable_input = true
+		await GameManager.add_resource_from_stack()
 	
 	if actor.dialogue_res != dialogue_interact:
 		actor.dialogue_res = dialogue_interact
+	dialogue_ended.emit()
+
+
+func _check_if_all_clues_interacted():
+	for clue_dialogue : LocationClueInteract in clue_interact:
+		if not clue_interacted.has(clue_dialogue.clue):
+			return false
+	return true
 
 func _get_clue_location(clue : Clue) -> bool:
 	for location_clue : LocationClueInteract in clue_interact:
 		if location_clue.clue == clue:
 			if not location_clue.conditional_variable or GameManager.get_global_variable(location_clue.variable_name):
 				actor._start_dialogue(location_clue.dialogue_res, 0)
+				
+				if not clue_interacted.has(clue):
+					clue_interacted.append(clue)
 				return true
 	return false
 
@@ -44,7 +59,9 @@ func _ready() -> void:
 				actor._start_dialogue(opening_dialogue, idx)
 				await GlobalGameEvents.dialogue_ended
 			GameManager.enable_input = true
-	actor.show()
+	if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
+		actor.show()
+	
 	if BgmAudio and not bgm.is_empty():
 		BgmAudio.play_audio(bgm)
 	if AmbientAudio and not ambiance.is_empty():
