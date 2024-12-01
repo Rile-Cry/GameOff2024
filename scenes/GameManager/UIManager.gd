@@ -75,7 +75,7 @@ func open_close_computer() -> void:
 	can_open_option = %Computer.visible
 	%Computer.visible = not %Computer.visible
 	if %Computer.visible:
-		%Computer.update_notes()
+		#%Computer.update_notes()
 		AmbientAudio.play_audio("OS Boot")
 	else:
 		AmbientAudio.play_audio(GameManager.current_location.name)

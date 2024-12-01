@@ -57,12 +57,12 @@ func _open_vault() -> void:
 	mouse_click_sfx()
 	add_child(vault)
 
-func update_notes() -> void:
-	for note in GameGlobals.dialogue_choices.keys():
-		var button := EmailButton.new()
-		programs.add_child(button)
-		button.text = note
-		button.connect("mail_selected", _open_note)
+#func update_notes() -> void:
+#	for note in GameGlobals.dialogue_choices.keys():
+#		var button := EmailButton.new()
+#		programs.add_child(button)
+#		button.text = note
+#		button.connect("mail_selected", _open_note)
 
 func _open_note(button: EmailButton) -> void:
 	var note : NoteWindow = note_scene.instantiate()

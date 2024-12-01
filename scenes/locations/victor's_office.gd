@@ -50,13 +50,13 @@ func _process(_delta: float) -> void:
 			GameManager.current_location.disabled = true
 			
 			if UIManager: UIManager.refresh_mission_book()
+			GameManager.set_global_variable("tossed_out", true)
 			GameManager.current_location_index = 0
 			GameManager.enable_input = true
 
 func disable_all_buttons():
 	for child in get_children():
 		if child is Button:
-			child as Button
 			child.disabled = true
 
 func clues_cleared():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cxthox4dckmvk"]
+[gd_scene load_steps=30 format=3 uid="uid://ckdmur2tmh157"]
 
 [ext_resource type="Script" path="res://scenes/locations/victor's_office.gd" id="1_36ue3"]
 [ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_i6p0k"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="3_dke63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="5_3fhqw"]
 [ext_resource type="Script" path="res://Case/object_resource_button.gd" id="5_psaxd"]
-[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="6_87dlp"]
+[ext_resource type="Resource" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="6_87dlp"]
 [ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_ca4up"]
 [ext_resource type="Resource" uid="uid://btpndxraxxqt8" path="res://Case/Clues/Victor's Office/Family Picture.tres" id="7_gifq4"]
 

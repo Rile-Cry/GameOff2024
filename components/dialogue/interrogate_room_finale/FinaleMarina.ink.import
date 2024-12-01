@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://crym7by76j5nt"
+path="res://.godot/imported/FinaleMarina.ink-cb61e4744c495bf955ee066f5460c1d0.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/FinaleMarina.ink"
+dest_files=["res://.godot/imported/FinaleMarina.ink-cb61e4744c495bf955ee066f5460c1d0.res"]
+
+[params]
+

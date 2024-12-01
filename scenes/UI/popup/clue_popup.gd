@@ -15,3 +15,6 @@ func _ready() -> void:
 		popup_opened.emit()
 		popup_closed.emit()
 		queue_free()
+
+func _input(event: InputEvent) -> void:
+	pass

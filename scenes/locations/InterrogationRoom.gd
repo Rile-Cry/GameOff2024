@@ -4,6 +4,7 @@ func _ready() -> void:
 	if UIManager:
 		UIManager.show_shader("vignette")
 	
+	GlobalGameEvents.connect("scene_loaded", _scene_loaded)
 	super()
 
 func _get_clue_location(clue : Clue) -> bool:
@@ -38,3 +39,7 @@ func dialogue_start_action(idx : int):
 		if UIManager:
 			UIManager.anim_player.play("reveal_room")
 			await UIManager.anim_player.animation_finished
+
+func _scene_loaded() -> void:
+	if GameManager.global_variables["all_clues"]:
+		$FinaleActors.show()

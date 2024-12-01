@@ -24,8 +24,10 @@ func update(_successfully: bool) -> void:
 			var text = ink_player.continue_story()
 			_add_button(text)
 		elif ink_player.has_choices:
-			#var choice = GameGlobals.dialogue_choices[title][i]
-			ink_player.choose_choice_index([0, 1, 3][i])
+			print(GameGlobals.dialogue_choices)
+			print(title)
+			var choice = GameGlobals.dialogue_choices[title][i]
+			ink_player.choose_choice_index(choice)
 			i += 1
 		else:
 			running = false

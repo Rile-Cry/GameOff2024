@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_mpays"]
 [ext_resource type="Resource" uid="uid://dqk61o3iackxh" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Personal Diary.tres" id="5_4jmjo"]
 [ext_resource type="Resource" uid="uid://32t12rtt6x21" path="res://Case/Dialogue/Interrogation Room/Lucas Only/Interact.tres" id="6_idyo4"]
-[ext_resource type="Resource" uid="uid://cwfvteaaw8xvv" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
+[ext_resource type="Resource" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
 [ext_resource type="Resource" uid="uid://bh8fjq1aw6csq" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Autopsy Report.tres" id="7_3hs4r"]
 [ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="11_nhaod"]
 
@@ -30,7 +30,7 @@ variable_name = ""
 script = ExtResource("11_nhaod")
 actor_name = "Marina"
 location_name = "interrogate_room_finale"
-dialogue = Array[String](["Turnabout"])
+dialogue = Array[String](["FinaleOpening"])
 initial_mood = "normal"
 global_variables = Array[String]([])
 
@@ -38,7 +38,7 @@ global_variables = Array[String]([])
 script = ExtResource("11_nhaod")
 actor_name = "Victor"
 location_name = "interrogate_room_finale"
-dialogue = Array[String](["Turnabout"])
+dialogue = Array[String](["FinaleOpening"])
 initial_mood = "normal"
 global_variables = Array[String]([])
 

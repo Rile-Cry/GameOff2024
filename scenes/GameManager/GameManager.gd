@@ -15,7 +15,10 @@ var global_variables : Dictionary = {
 			"res://Case/Locations/Interrogation Room.tres",
 			"res://Case/Locations/Victor's Office.tres"
 		]
-	}
+	},
+	"all_clues": false,
+	"tossed_out": false,
+	"lucas_victor": false,
 }
 var actor_address := {
 	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",
@@ -74,6 +77,7 @@ func _ready():
 
 func change_scene(scene : PackedScene):
 	if game_base: game_base.change_level(scene)
+	GlobalGameEvents.scene_loaded.emit()
 
 func create_dialogue(file_name: String, mood : String = "", args: Dictionary = {}) -> DialogueBox:
 	var dialogue_box : DialogueBox = _dialogue_scene.instantiate() as DialogueBox
@@ -101,7 +105,7 @@ func get_global_variable(key : String, idx : int = -1):
 		elif global_variables[key] is Array:
 			var length : int = global_variables[key].size()
 			if idx == -2:
-				global_variables[key][length - 1]
+				return global_variables[key][length - 1]
 			elif idx < length:
 				return global_variables[key][idx]
 			else:

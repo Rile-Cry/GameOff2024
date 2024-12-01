@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="CrimesAndMysteries"
+config/name="Detective Shade"
 config/description="Game Off 2024 game"
 config/version="0.1.0"
 run/main_scene="res://scenes/UI/main/splash_text.tscn"

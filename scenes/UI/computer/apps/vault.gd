@@ -17,6 +17,8 @@ func _check_code() -> void:
 			GameManager.unlock_location(location)
 		"secretcode":
 			print("Oh no, you found our secret . . . shame on you -_-")
+		"allclues":
+			GameManager.global_variables["all_clues"] = true
 		_:
 			print("That's not a correct code, now is it.")
 

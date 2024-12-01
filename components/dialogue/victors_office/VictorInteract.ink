@@ -6,7 +6,7 @@ VAR victor_marina = false
 VAR marina_location = "Case/Locations/Marina's Apartment.tres"
 
 === choices ===
-{ lucas_victor and victor_clues:
+{ lucas_victor && victor_clues:
     *   [Estate Change]
         -> option_3
     *   {option_3} [Pressure on the Estate Change]
@@ -18,6 +18,7 @@ VAR marina_location = "Case/Locations/Marina's Apartment.tres"
 - else:
     -> END
 }
+
 === option_1 ===
 ~   speaker = "Shade"
 I noticed Evelyn isn't in your family photo. Oversight or intentional?

@@ -1,5 +1,7 @@
 extends Control
 
+var game_base : PackedScene = preload("res://scenes/UI/main/GameBase.tscn")
+
 func _ready():
 	BgmAudio.play_audio("Title Screen")
 	$PlayButton.pressed.connect(play)
@@ -27,7 +29,6 @@ func play():
 	$AnimationPlayer.play("play_game")
 	
 	await $AnimationPlayer.animation_finished
-	var game_base : PackedScene = load("res://scenes/UI/main/GameBase.tscn")
 	get_tree().change_scene_to_packed(game_base)
 
 func open_credits():

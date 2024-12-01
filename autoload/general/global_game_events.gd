@@ -3,8 +3,9 @@ extends Node
 #region Narrative
 signal dialogue_started
 signal dialogue_ended
-signal shake(type : int)
 signal exclaim
+signal shake(type : int)
+signal scene_loaded
 signal res_obtain(res_path: String, type : GameManager.resource_type)
 #endregion
 

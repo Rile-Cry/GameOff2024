@@ -72,6 +72,7 @@ func _loaded(successfully: bool):
 		return
 	
 	# Set variables
+	print(_variables)
 	for key in _variables:
 		_ink_player.set_variable(key, _variables[key])
 	
@@ -147,7 +148,12 @@ func _grab_speaker(text: String) -> String:
 	return text
 
 func _update_actor(actor_name: String) -> void:
-	var texture : Texture2D = ResourceLoader.load(GameManager.actor_address[actor_name] + _externals["mood"] + ".png", "Texture2D")
+	var tex_address : String = GameManager.actor_address[actor_name] + _externals["mood"] + ".png"
+	var texture : Texture2D
+	if ResourceLoader.exists(tex_address):
+		texture = ResourceLoader.load(tex_address, "Texture2D")
+	else:
+		texture = ResourceLoader.load(GameManager.actor_address[actor_name] + "normal.png", "Texture2D")
 	_actor_ref[actor_name].update_actor(texture)
 	
 func _type_out_text(text: String) -> void:

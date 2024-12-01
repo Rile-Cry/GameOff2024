@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://g0hwyl1ejysu"
+path="res://.godot/imported/FinaleOpening.ink-7ec42efdb9fd789f710516d076885fa5.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/FinaleOpening.ink"
+dest_files=["res://.godot/imported/FinaleOpening.ink-7ec42efdb9fd789f710516d076885fa5.res"]
+
+[params]
+
