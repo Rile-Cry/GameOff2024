@@ -37,6 +37,7 @@ const bad_ending_scene : PackedScene =  preload("res://scenes/ending/BadEnding.t
 const glitch_obj_material : ShaderMaterial = preload("res://scenes/UI/main/GlitchObjtres.tres")
 const outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 const found_popup : PackedScene = preload("res://scenes/UI/popup/found_popup.tscn")
+const delete_save_popup : PackedScene = preload("res://scenes/UI/popup/delete_save_popup.tscn")
 const save_popup : PackedScene = preload("res://scenes/UI/popup/save_popup.tscn")
 const clue_popup : PackedScene = preload("res://scenes/UI/popup/clue_popup.tscn")
 const all_clues_popup : PackedScene = preload("res://scenes/UI/popup/all_clues_popup.tscn")
@@ -293,10 +294,30 @@ func get_ending():
 		UIManager.anim_player.play_backwards("black_bar")
 	get_tree().change_scene_to_packed(behind_bars_scene)
 
+func get_save():
+	return FileAccess.file_exists("user://savegame.save")
+
+func delete_save():
+	DirAccess.remove_absolute("user://savegame.save")
+
 func has_past_attempt() -> bool:
-	var dir = DirAccess.open("user://attempts")
-	return false
+	if not DirAccess.dir_exists_absolute("user://attempts"):
+		DirAccess.make_dir_absolute("user://attempts")
+	var dir : DirAccess = DirAccess.open("user://attempts")
+	return true
 
 func record_attempt(success : bool):
-	var dir = DirAccess.open("user://attempts")
+	if not DirAccess.dir_exists_absolute("user://attempts"):
+		DirAccess.make_dir_absolute("user://attempts")
+	var dir : DirAccess = DirAccess.open("user://attempts")
+
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if dir.current_is_dir():
+			print("Found directory: " + file_name)
+		else:
+			print("Found file: " + file_name)
+		file_name = dir.get_next()
+	
 	if not FileAccess.file_exists("user://attempts/savegame.save"): return false

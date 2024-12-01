@@ -288,7 +288,20 @@ text = "[center][b]Detective Shade[/b]
 The Turnabout Case"
 fit_content = true
 
-[node name="Credits" type="Button" parent="MainMargin"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMargin"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="Delete Save" type="Button" parent="MainMargin/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Delete Save"
+
+[node name="Credits" type="Button" parent="MainMargin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8

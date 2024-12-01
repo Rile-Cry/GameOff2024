@@ -5,14 +5,25 @@ var game_base : PackedScene = preload("res://scenes/UI/main/GameBase.tscn")
 func _ready():
 	BgmAudio.play_audio("Title Screen")
 	$PlayButton.pressed.connect(play)
-	$MainMargin/Credits.pressed.connect(open_credits)
-	$MainMargin/Credits.disabled = true
+	$MainMargin/HBoxContainer/Credits.pressed.connect(open_credits)
+	$MainMargin/HBoxContainer/Credits.disabled = true
+	$"MainMargin/HBoxContainer/Delete Save".visible = GameManager.get_save()
+	$"MainMargin/HBoxContainer/Delete Save".disabled = true
+	$"MainMargin/HBoxContainer/Delete Save".pressed.connect(delete_save)
+
+func delete_save():
+	if UIManager and GameManager:
+		var popup : PopupNode = GameManager.delete_save_popup.instantiate()
+		UIManager.add_child(popup)
+		await popup.popup_closed
+		$"MainMargin/HBoxContainer/Delete Save".visible = GameManager.get_save()
 
 func enable_input():
 	if GameManager:
 		GameManager.enable_input = true
 	
-	$MainMargin/Credits.disabled = false
+	$MainMargin/HBoxContainer/Credits.disabled = false
+	$"MainMargin/HBoxContainer/Delete Save".disabled = false
 
 func _input(event: InputEvent) -> void:
 	if GameManager.enable_input:
@@ -22,7 +33,7 @@ func _input(event: InputEvent) -> void:
 			$OptionsButton.grab_focus()
 
 func play():
-	$MainMargin/Credits.disabled = true
+	$MainMargin/HBoxContainer/Credits.disabled = true
 	if GameManager:
 		GameManager.enable_input = false
 	
