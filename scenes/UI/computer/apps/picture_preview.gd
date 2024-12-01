@@ -16,9 +16,9 @@ func _ready() -> void:
 
 func update() -> void:
 	title = data["name"]
-	var res
+	var res : Resource
 	var texture_value : Texture2D
-	res = ResourceLoader.load("res://Case/" + data["address"], "Photo")
+	res = load("res://Case/" + data["address"])
 	texture_value = res.texture
 	
 	if texture != null:
