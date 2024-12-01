@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dwubh61lkc4rb"]
+[gd_scene load_steps=50 format=3 uid="uid://dwubh61lkc4rb"]
 
 [ext_resource type="Script" path="res://scenes/photos/marinas_apartment_photo.gd" id="1_66fnc"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="12_kpacf"]
 [ext_resource type="Texture2D" uid="uid://litf3eslvfuw" path="res://assets/imports/graphics/popups/marinas_apartment/Receipt.png" id="12_lxtey"]
 [ext_resource type="Texture2D" uid="uid://cprht4ykras4e" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_BG.png" id="15_awvdr"]
+[ext_resource type="Texture2D" uid="uid://dpncdhbc6n58c" path="res://assets/imports/graphics/popups/marinas_apartment/trophy.png" id="15_fis4h"]
+[ext_resource type="Resource" uid="uid://bnrs4oaaoi52q" path="res://Case/Clues/Marina’s Apartment/Trophy.tres" id="16_2vks8"]
 [ext_resource type="Texture2D" uid="uid://cw6vi5wdnr5vn" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Button.png" id="16_pnhhx"]
 [ext_resource type="Texture2D" uid="uid://cjwsq6ti2cjfy" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Number.png" id="17_0q54h"]
 [ext_resource type="Script" path="res://scenes/photos/LockNumber.gd" id="18_7b8v4"]
@@ -71,6 +73,9 @@ texture = ExtResource("12_lxtey")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thqyu"]
 texture = ExtResource("12_lxtey")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvigm"]
+texture = ExtResource("15_fis4h")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwl1g"]
 texture = ExtResource("16_pnhhx")
@@ -287,6 +292,22 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_thqyu")
 theme_override_styles/normal = SubResource("StyleBoxTexture_muf57")
 script = ExtResource("9_50fti")
 resource = ExtResource("12_kpacf")
+is_hidden = false
+
+[node name="Trophy" type="Button" parent="UIPopupBG/UIPopupMargin/UIPanel/ContentMargin/DrawerOpened"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 343.0
+offset_right = 798.0
+offset_bottom = 446.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/hover = SubResource("StyleBoxTexture_muf57")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_thqyu")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dvigm")
+script = ExtResource("9_50fti")
+resource = ExtResource("16_2vks8")
 is_hidden = false
 
 [node name="Lock" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/ContentMargin"]

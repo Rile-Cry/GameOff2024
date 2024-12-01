@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c6hm1h1elh3mm"]
+[gd_scene load_steps=29 format=3 uid="uid://c6hm1h1elh3mm"]
 
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/graphics/icons/Book_Icon_open.png" id="1_e0dwy"]
 [ext_resource type="Script" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cs1auqp2g4yn4" path="res://scenes/UI/options_menu.tscn" id="4_lbubx"]
 [ext_resource type="PackedScene" uid="uid://duqwgodvr8nt" path="res://scenes/UI/computer/computer.tscn" id="5_cf373"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="7_5vq04"]
+[ext_resource type="FontFile" uid="uid://dyshroask6mox" path="res://assets/imports/graphics/themes/win98/font/microsoft_sans_serif_bold.woff2" id="11_b311u"]
+[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="12_x5xja"]
 
 [sub_resource type="Animation" id="Animation_jno3j"]
 resource_name = "Exclaim"
@@ -165,6 +167,105 @@ tracks/5/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BlackBarTop:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BlackBarBottom:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BlackBarTop:custom_minimum_size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 50)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BlackBarBottom:custom_minimum_size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 50)]
+}
+
+[sub_resource type="Animation" id="Animation_ypqod"]
+resource_name = "black_bar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackBarTop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackBarBottom:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BlackBarTop:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 50)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BlackBarBottom:custom_minimum_size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 50)]
+}
 
 [sub_resource type="Animation" id="Animation_dgnyb"]
 resource_name = "close_anim"
@@ -269,6 +370,7 @@ _data = {
 "Exclaim": SubResource("Animation_jno3j"),
 "Glitch Screen": SubResource("Animation_u0pls"),
 "RESET": SubResource("Animation_ljjq7"),
+"black_bar": SubResource("Animation_ypqod"),
 "close_anim": SubResource("Animation_dgnyb"),
 "fail": SubResource("Animation_db5vn"),
 "hide_room": SubResource("Animation_sektf"),
@@ -311,6 +413,8 @@ shader_parameter/shake_rate = 1.0
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 30.0
 shader_parameter/shake_color_rate = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qt61g"]
 
 [node name="UIManager" type="CanvasLayer"]
 script = ExtResource("1_ijh3a")
@@ -364,6 +468,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_kwx7i")
 unique_name_in_owner = true
 visible = false
 z_index = 10
+location_locked = false
+photo_locked = false
 
 [node name="OptionMenu" parent="." instance=ExtResource("4_lbubx")]
 unique_name_in_owner = true
@@ -535,6 +641,16 @@ grow_vertical = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 
+[node name="DisableInputRect" type="ColorRect" parent="."]
+visible = false
+z_index = 50
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.490196)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 z_index = 50
@@ -546,3 +662,43 @@ grow_vertical = 2
 mouse_filter = 1
 mouse_force_pass_scroll_events = false
 color = Color(1, 0.982, 0.96, 0)
+
+[node name="BlackBarTop" type="ColorRect" parent="."]
+visible = false
+z_index = 50
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
+
+[node name="BlackBarBottom" type="ColorRect" parent="."]
+visible = false
+z_index = 50
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 1)
+
+[node name="FinalVerdict" type="Button" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_qt61g")
+offset_left = 20.0
+offset_top = 57.0
+offset_right = 192.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("11_b311u")
+text = "Final Verdict!"
+script = ExtResource("12_x5xja")
+is_hidden = false
+hover_outline_thickness = 0

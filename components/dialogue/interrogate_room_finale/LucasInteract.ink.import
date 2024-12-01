@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://daxi4xaicaiey"
+path="res://.godot/imported/LucasInteract.ink-8727faf6de1433494b3c4fff1b835efd.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/LucasInteract.ink"
+dest_files=["res://.godot/imported/LucasInteract.ink-8727faf6de1433494b3c4fff1b835efd.res"]
+
+[params]
+

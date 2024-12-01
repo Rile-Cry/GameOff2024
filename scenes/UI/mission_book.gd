@@ -17,6 +17,7 @@ class_name MissionBook
 		location_unlock_container.visible = not location_locked
 
 @export var location_lock_container : MarginContainer
+@export var location_clue_lock_container : MarginContainer
 @export var location_unlock_container : MarginContainer
 
 @export var location_container : VBoxContainer
@@ -39,6 +40,7 @@ var hovered_location : Location
 		photo_unlock_container.visible = not photo_locked
 
 @export var photo_lock_container : MarginContainer
+@export var photo_clue_lock_container : MarginContainer
 @export var photo_unlock_container : MarginContainer
 
 @export var photo_container : GridContainer
@@ -66,6 +68,20 @@ Found in <clue_location>
 <clue_desc>"
 
 signal clue_selected(clue : Clue)
+var clue_locked : bool = false:
+	set(val):
+		clue_locked = val
+		photo_locked = val
+		location_locked = val
+		
+		location_clue_lock_container.visible = photo_locked
+		photo_clue_lock_container.visible = photo_locked
+		
+		location_lock_container.visible = not photo_locked
+		photo_lock_container.visible = not photo_locked
+		tab_container.current_tab = 2
+
+var glitched : bool = false
 
 @onready var p_note_box := $TabContainer/Notes/MarginContainer/HBoxContainer/PersonalNotes/TextEdit
 @onready var t_note_box := $TabContainer/Notes/MarginContainer/HBoxContainer/TranscriptNotes/ScrollContainer/VBoxContainer
@@ -83,7 +99,7 @@ func _ready():
 	
 	location_locked_button.pressed.connect(exit_photo)
 	photo_locked_button.pressed.connect(exit_photo)
-	
+	clue_selected.connect(_clue_selected)
 	if LoadScreen:
 		LoadScreen.loading_finish.connect(close)
 	
@@ -165,6 +181,13 @@ func refresh_photo_info(photo : Photo):
 		photo_texture.texture = null
 		current_photo = null
 
+func _clue_selected(clue : Clue):
+	if clue_locked:
+		clue_locked = false
+	
+	if UIManager and visible:
+		UIManager.open_close_mission_book()
+
 func refresh_clues():
 	for node in clue_container.get_children():
 		node.queue_free()
@@ -230,3 +253,15 @@ func close():
 	if UIManager and visible:
 		UIManager.open_close_mission_book()
 		GameManager.global_variables["p_notes"] = p_note_box.text
+
+func glitch_mission_book():
+	glitched = true
+	if GameManager:
+		for child in photo_container.get_children():
+			child.material = GameManager.glitch_obj_material
+
+func unglitch_mission_book():
+	glitched = false
+	if GameManager:
+		for child in photo_container.get_children():
+			child.material = null

@@ -30,7 +30,8 @@ func _dialogue_ended() -> void:
 	_button.disabled = false
 
 func _start_dialogue_actor():
-	_start_dialogue(dialogue_res)
+	if dialogue_res:
+		_start_dialogue(dialogue_res)
 
 func _start_dialogue(dialogue : DialogueRes, idx : int = -1) -> void:
 	var dialogue_next : String = ""
@@ -60,7 +61,7 @@ func _start_dialogue(dialogue : DialogueRes, idx : int = -1) -> void:
 	UIManager.add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:
-	if _button.is_hovered() and not _button.disabled:
+	if _button.is_hovered() and not _button.disabled and GameManager.enable_input:
 		outline_enable()
 	else:
 		outline_disable()

@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://cga5u5761imdt"
+path="res://.godot/imported/VictorPressed.ink-7281763318ca5facd39a4965522c57f5.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/VictorPressed.ink"
+dest_files=["res://.godot/imported/VictorPressed.ink-7281763318ca5facd39a4965522c57f5.res"]
+
+[params]
+

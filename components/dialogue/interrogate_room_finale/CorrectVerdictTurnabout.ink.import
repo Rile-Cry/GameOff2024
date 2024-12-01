@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://erul0vwrb1m0"
+path="res://.godot/imported/CorrectVerdictTurnabout.ink-6c361a30ea3da98d7078f9c01474de44.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/CorrectVerdictTurnabout.ink"
+dest_files=["res://.godot/imported/CorrectVerdictTurnabout.ink-6c361a30ea3da98d7078f9c01474de44.res"]
+
+[params]
+

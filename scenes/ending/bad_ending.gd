@@ -7,6 +7,8 @@ var tweening : bool = false
 func _ready() -> void:
 	if UIManager:
 		UIManager.get_mission_book().tab_container.current_tab = 1
+		UIManager.get_mission_book().glitch_mission_book()
+		
 	if SfxAudio and SfxAudio.playing:
 		SfxAudio.stop()
 	if BgmAudio and BgmAudio.playing:
@@ -29,6 +31,7 @@ func _ready() -> void:
 		await UIManager.anim_player.animation_finished
 		UIManager.anim_player.play("reveal_room")
 		await UIManager.anim_player.animation_finished
+		UIManager.can_open_mission_book = true
 	GameManager.enable_input = true
 
 func tweening_complete():

@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cm3gmqwlix63h"
+path="res://.godot/imported/LucasInteract.ink.json-e31973d4c1c38cab1036f37bc62b002e.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/LucasInteract.ink.json"
+dest_files=["res://.godot/imported/LucasInteract.ink.json-e31973d4c1c38cab1036f37bc62b002e.res"]
+
+[params]
+
+compress=true

@@ -47,7 +47,7 @@ TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_fes2o")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m7osp"]
 
-[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "location_lock_container", "location_unlock_container", "location_container", "location_texture", "location_label", "location_locked_button", "photo_lock_container", "photo_unlock_container", "photo_container", "photo_texture", "photo_label", "photo_locked_button", "clue_container", "clue_texture", "clue_label")]
+[node name="MissionBook" type="Control" node_paths=PackedStringArray("tab_container", "close_b", "location_lock_container", "location_clue_lock_container", "location_unlock_container", "location_container", "location_texture", "location_label", "location_locked_button", "photo_lock_container", "photo_clue_lock_container", "photo_unlock_container", "photo_container", "photo_texture", "photo_label", "photo_locked_button", "clue_container", "clue_texture", "clue_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,13 +59,17 @@ mouse_force_pass_scroll_events = false
 script = ExtResource("1_1d7qm")
 tab_container = NodePath("TabContainer")
 close_b = NodePath("Close")
+location_locked = null
 location_lock_container = NodePath("TabContainer/Locations/LockedMargin")
+location_clue_lock_container = NodePath("TabContainer/Locations/ClueLockMargin")
 location_unlock_container = NodePath("TabContainer/Locations/UnLockedMargin")
 location_container = NodePath("TabContainer/Locations/UnLockedMargin/LocationUnlockedHBox/Locations/ScrollContainer/MarginContainer/LocationVBox")
 location_texture = NodePath("TabContainer/Locations/UnLockedMargin/LocationUnlockedHBox/Info/InfoVBox/InfoTexture")
 location_label = NodePath("TabContainer/Locations/UnLockedMargin/LocationUnlockedHBox/Info/InfoVBox/InfoLabel")
 location_locked_button = NodePath("TabContainer/Locations/LockedMargin/LocationLockedHBox/Right/LockedButton")
+photo_locked = null
 photo_lock_container = NodePath("TabContainer/Photos/LockedMargin")
+photo_clue_lock_container = NodePath("TabContainer/Photos/ClueLockMargin")
 photo_unlock_container = NodePath("TabContainer/Photos/UnLockedMargin")
 photo_container = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Photos/ScrollContainer/MarginContainer/PhotoContainer")
 photo_texture = NodePath("TabContainer/Photos/UnLockedMargin/PhotoUnlockedHBox/Info/InfoVBox/InfoTexture")
@@ -84,7 +88,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_uk0r2")
 tab_alignment = 2
-current_tab = 3
+current_tab = 1
 
 [node name="Locations" type="TabBar" parent="TabContainer"]
 visible = false
@@ -130,6 +134,37 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 48
 text = "Exit Photo"
+
+[node name="ClueLockMargin" type="MarginContainer" parent="TabContainer/Locations"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
+
+[node name="LocationLockedHBox" type="HBoxContainer" parent="TabContainer/Locations/ClueLockMargin"]
+layout_mode = 2
+
+[node name="Left" type="MarginContainer" parent="TabContainer/Locations/ClueLockMargin/LocationLockedHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 128
+
+[node name="LeftText" type="RichTextLabel" parent="TabContainer/Locations/ClueLockMargin/LocationLockedHBox/Left"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]You are not allowed to change locations in this state."
+
+[node name="Right" type="MarginContainer" parent="TabContainer/Locations/ClueLockMargin/LocationLockedHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="UnLockedMargin" type="MarginContainer" parent="TabContainer/Locations"]
 layout_mode = 1
@@ -187,7 +222,6 @@ size_flags_vertical = 3
 bbcode_enabled = true
 
 [node name="Photos" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -225,6 +259,44 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="LockedButton" type="Button" parent="TabContainer/Photos/LockedMargin/PhotoLockedHBox/Right"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 48
+text = "Exit Photo"
+
+[node name="ClueLockMargin" type="MarginContainer" parent="TabContainer/Photos"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 48
+
+[node name="PhotoLockedHBox" type="HBoxContainer" parent="TabContainer/Photos/ClueLockMargin"]
+layout_mode = 2
+
+[node name="Left" type="MarginContainer" parent="TabContainer/Photos/ClueLockMargin/PhotoLockedHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 128
+
+[node name="LeftText" type="RichTextLabel" parent="TabContainer/Photos/ClueLockMargin/PhotoLockedHBox/Left"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]You are not allowed to photo jump in this state."
+
+[node name="Right" type="MarginContainer" parent="TabContainer/Photos/ClueLockMargin/PhotoLockedHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LockedButton" type="Button" parent="TabContainer/Photos/ClueLockMargin/PhotoLockedHBox/Right"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -361,6 +433,7 @@ size_flags_vertical = 3
 bbcode_enabled = true
 
 [node name="Notes" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 

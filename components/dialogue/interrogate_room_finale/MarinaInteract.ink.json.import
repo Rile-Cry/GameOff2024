@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dfg4l3edxw638"
+path="res://.godot/imported/MarinaInteract.ink.json-ed49e1a7009945696f645aa4f4f7606d.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/MarinaInteract.ink.json"
+dest_files=["res://.godot/imported/MarinaInteract.ink.json-ed49e1a7009945696f645aa4f4f7606d.res"]
+
+[params]
+
+compress=true

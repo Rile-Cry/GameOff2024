@@ -35,9 +35,6 @@ func mouse_click_sfx():
 func _mysos_pressed(num: int) -> void:
 	mouse_click_sfx()
 	if num == 4 and UIManager:
-		for child in self.get_children():
-			if child is Window:
-				child.queue_free()
 		UIManager.open_close_computer()
 		close_computer.emit()
 		GameManager.add_resource_from_stack()

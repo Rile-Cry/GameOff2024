@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://cta44l2w7jmng"
+path="res://.godot/imported/InvalidClue.ink-412a419e4dd004cee2241e21265f2642.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/InvalidClue.ink"
+dest_files=["res://.godot/imported/InvalidClue.ink-412a419e4dd004cee2241e21265f2642.res"]
+
+[params]
+

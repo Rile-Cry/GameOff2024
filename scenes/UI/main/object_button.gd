@@ -23,7 +23,7 @@ func _ready():
 	else:
 		focus_entered.connect(outline_enable)
 		focus_exited.connect(outline_disable)
-		if GameManager:
+		if GameManager and not material:
 			material = GameManager.outline_material.duplicate()
 
 func _process(_delta: float) -> void:

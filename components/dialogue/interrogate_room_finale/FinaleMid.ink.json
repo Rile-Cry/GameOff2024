@@ -1,0 +1,1 @@
+{"inkVersion":21,"root":[["^Alright, I think I've just about heard enough.","\n","^I believe I've figured out who the culprit is.","\n","end",["done",{"#f":5,"#n":"g-0"}],null],"done",{"global decl":["ev","str","^Shade","/str",{"VAR=":"speaker"},"str","^normal","/str",{"VAR=":"mood"},"/ev","end",null],"#f":1}],"listDefs":{}}

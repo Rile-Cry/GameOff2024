@@ -212,11 +212,10 @@ fit_content = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_5ppu5")
-current_tab = 5
+current_tab = 0
 tabs_visible = false
 
 [node name="Welcome" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -438,7 +437,9 @@ layout_mode = 2
 bbcode_enabled = true
 text = "When you visit a location, you may meet one of the suspects there. 
 [ul]You can innitiate dialogue and will be given the option to ask specific questions[/ul]
-[ul]Certain dialogue can only be unlocked by presenting clues[/ul]"
+[ul]Certain dialogue can only be unlocked by presenting clues[/ul]
+
+But do note that not all clues would be used for that purpose, and some is only there to assist the player to understand the events."
 fit_content = true
 
 [node name="Photo Jumping" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
@@ -490,6 +491,7 @@ text = "Unlike most detectives, you will be able to interact with the objects in
 fit_content = true
 
 [node name="Note Taking" type="VBoxContainer" parent="MarginContainer/Panel/ContentMargin/VBoxContainer/Pages"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 5
 

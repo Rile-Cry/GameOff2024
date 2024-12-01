@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://dr67fhha2kxgj"
+path="res://.godot/imported/PressingChoice.ink-851460feb7623c4aeefae2920cd80c4d.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/PressingChoice.ink"
+dest_files=["res://.godot/imported/PressingChoice.ink-851460feb7623c4aeefae2920cd80c4d.res"]
+
+[params]
+

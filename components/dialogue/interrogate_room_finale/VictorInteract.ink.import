@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://bspi7hs2854eh"
+path="res://.godot/imported/VictorInteract.ink-a38ddda2ad90ca6439a224919b0da0bf.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/VictorInteract.ink"
+dest_files=["res://.godot/imported/VictorInteract.ink-a38ddda2ad90ca6439a224919b0da0bf.res"]
+
+[params]
+

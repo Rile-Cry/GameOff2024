@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl8e2n7ebcdp5"]
+
+[ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_na5lg"]
+[ext_resource type="AudioStream" uid="uid://vh8c64n1fe6f" path="res://assets/imports/sfx/Arrest.wav" id="2_2obxh"]
+
+[sub_resource type="GDScript" id="GDScript_a3wr6"]
+script/source = "extends TextureRect
+
+@onready var actor_container : HBoxContainer = $HBoxContainer
+
+func _ready() -> void:
+	for child in actor_container.get_children():
+		child.queue_free()
+	
+	for suspect in GameManager.final_verdict:
+		var rect : TextureRect = TextureRect.new()
+		rect.texture = load(GameManager.actor_address[suspect] + \"arrest.png\")
+		rect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT
+		actor_container.add_child(rect)
+	
+	if UIManager:
+		UIManager.show_shader(\"vignette\")
+		UIManager.anim_player.play(\"hide_room\")
+		await UIManager.anim_player.animation_finished
+		UIManager.anim_player.play(\"reveal_room\")
+		await $AudioStreamPlayer.finished
+		UIManager.anim_player.play(\"hide_room\")
+		await UIManager.anim_player.animation_finished
+		if GameManager.get_verdict():
+			get_tree().change_scene_to_packed(GameManager.good_ending_scene)
+		else:
+			get_tree().change_scene_to_packed(GameManager.bad_ending_scene)
+		
+"
+
+[sub_resource type="Animation" id="Animation_jkrgv"]
+resource_name = "auto_start"
+
+[sub_resource type="Animation" id="Animation_386er"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7ltb"]
+_data = {
+"RESET": SubResource("Animation_386er"),
+"auto_start": SubResource("Animation_jkrgv")
+}
+
+[node name="FinalVerdictSelect" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_na5lg")
+expand_mode = 2
+stretch_mode = 5
+script = SubResource("GDScript_a3wr6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l7ltb")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2obxh")
+autoplay = true

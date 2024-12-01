@@ -2,6 +2,8 @@ extends Node
 
 var mission_book : MissionBook
 var game_base : GameBase
+var final_verdict : Array[String] = []
+const real_suspects : Array[String] = ["Victor", "Marina"]
 
 var clues : Array[Clue]
 var unlocked_locations : Array[Location]
@@ -28,10 +30,17 @@ var actor_address := {
 
 var game_time : float = 0.0
 
+const behind_bars_scene : PackedScene = preload("res://scenes/ending/BehindBarsScene.tscn")
+const good_ending_scene : PackedScene =  preload("res://scenes/ending/GoodEnding.tscn")
+const bad_ending_scene : PackedScene =  preload("res://scenes/ending/BadEnding.tscn")
+
+const glitch_obj_material : ShaderMaterial = preload("res://scenes/UI/main/GlitchObjtres.tres")
 const outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
 const found_popup : PackedScene = preload("res://scenes/UI/popup/found_popup.tscn")
 const save_popup : PackedScene = preload("res://scenes/UI/popup/save_popup.tscn")
 const clue_popup : PackedScene = preload("res://scenes/UI/popup/clue_popup.tscn")
+const all_clues_popup : PackedScene = preload("res://scenes/UI/popup/all_clues_popup.tscn")
+const final_guess_popup : PackedScene = preload("res://scenes/UI/popup/final_guess_popup.tscn")
 const interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
 const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
 const invalid_clue_dialogue_path : String = "base/InvalidClue"
@@ -71,6 +80,7 @@ const final_variable_name : Dictionary = {
 }
 
 signal popup_closed
+signal turnabout
 
 func _ready():
 	LoadScreen.scene_loading_finish.connect(change_scene)
@@ -92,7 +102,10 @@ func stack_resources(res : Resource, type : resource_type):
 	set_global_variable("stacked_resource", stack_res, -2)
 
 func is_all_true(case : String) -> void:
-	for var_name : String in final_variable_name:
+	var case_variables : Array = get_global_variable(case)
+	if not case_variables:
+		return
+	for var_name : String in case_variables:
 		if not get_global_variable(var_name):
 			return
 	
@@ -264,4 +277,26 @@ func load_game() -> bool:
 	game_time = save_data["Time"]
 	current_location_index = save_data["CurrentLocation"]
 	return true
+
+func get_verdict() -> bool:
+	for real_suspect : String in GameManager.real_suspects:
+		if not GameManager.final_verdict.has(real_suspect):
+			return false
 	
+	for suspect : String in GameManager.final_verdict:
+		if not GameManager.real_suspects.has(suspect):
+			return false
+	return true
+
+func get_ending():
+	if UIManager:
+		UIManager.anim_player.play_backwards("black_bar")
+	get_tree().change_scene_to_packed(behind_bars_scene)
+
+func has_past_attempt() -> bool:
+	var dir = DirAccess.open("user://attempts")
+	return false
+
+func record_attempt(success : bool):
+	var dir = DirAccess.open("user://attempts")
+	if not FileAccess.file_exists("user://attempts/savegame.save"): return false

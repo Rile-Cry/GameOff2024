@@ -1,0 +1,14 @@
+[remap]
+
+importer="inkgd.ink"
+type="Resource"
+uid="uid://dpk8hmr3a40nx"
+path="res://.godot/imported/MarinaInteract.ink-3bbe1ece9387dffeac445f8237eb2ac9.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/MarinaInteract.ink"
+dest_files=["res://.godot/imported/MarinaInteract.ink-3bbe1ece9387dffeac445f8237eb2ac9.res"]
+
+[params]
+

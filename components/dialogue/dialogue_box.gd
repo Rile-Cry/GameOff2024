@@ -196,9 +196,12 @@ func _choice_selected(index):
 	_continue_story()
 
 func _ended():
-	GlobalGameEvents.dialogue_ended.emit()
 	queue_free()
 #endregion
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		GlobalGameEvents.dialogue_ended_.emit()
 
 #region Node Functions
 func _ready() -> void:
@@ -215,7 +218,8 @@ func _ready() -> void:
 		GlobalGameEvents.dialogue_started.emit()
 		
 		for actor in get_tree().get_nodes_in_group("actors"):
-			_actor_ref[actor.dialogue_res.actor_name] = actor
+			if actor.visible:
+				_actor_ref[actor.dialogue_res.actor_name] = actor
 	else:
 		print("deferring call...")
 		call_deferred("_ready")

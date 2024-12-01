@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://cl7my861xr8ln"
+path="res://.godot/imported/FinalVerdict.ink.json-a2cffd695ee7257c7fc58f2ee08bd357.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/FinalVerdict.ink.json"
+dest_files=["res://.godot/imported/FinalVerdict.ink.json-a2cffd695ee7257c7fc58f2ee08bd357.res"]
+
+[params]
+
+compress=true

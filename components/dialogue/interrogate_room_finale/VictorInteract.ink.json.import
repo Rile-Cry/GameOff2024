@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://bvimmctfx15pv"
+path="res://.godot/imported/VictorInteract.ink.json-950dc1544da09770b1d76261feed33a6.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/VictorInteract.ink.json"
+dest_files=["res://.godot/imported/VictorInteract.ink.json-950dc1544da09770b1d76261feed33a6.res"]
+
+[params]
+
+compress=true

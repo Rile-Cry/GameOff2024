@@ -6,6 +6,7 @@ const tutorial_popup_path : String = "res://scenes/UI/popup/tutorial_popup.tscn"
 const start_location_path : String = "res://Case/Locations/Shade's Office.tres"
 var shake_power : float = 0.0
 var node : Control
+var all_clues : bool = false
 
 func _ready() -> void:
 	if LoadScreen:
@@ -17,7 +18,7 @@ func _ready() -> void:
 			GameManager.unlock_location(load(start_location_path), false)
 			GameManager.current_location_index = 0
 			await LoadScreen.loading_finish
-			if UIManager:
+			if UIManager and GameManager.has_past_attempt():
 				var tutorial_popup : PackedScene = load(tutorial_popup_path)
 				UIManager.add_child(tutorial_popup.instantiate())
 	
@@ -29,33 +30,39 @@ func _ready() -> void:
 	GlobalGameEvents.shake.connect(screen_shake)
 
 func clue_selected(clue : Clue):
-	for child in level_base.get_children():
-		if child is LocationScene:
-			child = child as LocationScene
-			
-			if await child._get_clue_location(clue):
-				return
+	if UIManager and not UIManager.get_mission_book().clue_locked:
+		for child in level_base.get_children():
+			if child is LocationScene:
+				child = child as LocationScene
+				
+				if await child._get_clue_location(clue):
+					return
 	
-	var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.invalid_clue_dialogue_path)
-	UIManager.add_child(dialogue_scene)
+		var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.invalid_clue_dialogue_path)
+		UIManager.add_child(dialogue_scene)
 
 func _process(delta: float) -> void:
-	if LoadScreen and LoadScreen.is_loading:
-		return
-	
-	if UIManager:
-		for child in UIManager.get_children():
-			if child is TutorialPopup:
-				return
-	
 	if shake_power > 0 and is_instance_valid(node):
 		shake_power = lerpf(shake_power, 0, 4 * delta)
 		node.position = random_offset(Vector2.ZERO)
 	else:
 		shake_power = 0
 	
+	if LoadScreen and LoadScreen.is_loading:
+		return
+	
+	if UIManager:
+		for child in UIManager.get_children():
+			if child is TutorialPopup or child.name == "FinalGuessPopup" or child.name == "AllCluesPopup":
+				return
+	
 	if GameManager:
+		if not all_clues and GameManager.get_global_variable("all_clues"):
+			UIManager.add_child(GameManager.all_clues_popup.instantiate())
+			all_clues = true
+			
 		GameManager.game_time += delta
+		
 
 func change_level(level : PackedScene) -> void:
 	for child in level_base.get_children():

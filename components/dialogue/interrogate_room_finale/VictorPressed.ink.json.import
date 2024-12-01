@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://8bq3wp7edloy"
+path="res://.godot/imported/VictorPressed.ink.json-e7f62b2cb18c2123798fc74c13023758.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/VictorPressed.ink.json"
+dest_files=["res://.godot/imported/VictorPressed.ink.json-e7f62b2cb18c2123798fc74c13023758.res"]
+
+[params]
+
+compress=true

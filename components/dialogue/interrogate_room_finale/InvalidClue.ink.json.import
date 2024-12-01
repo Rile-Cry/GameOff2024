@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://dtht7bw18sh8x"
+path="res://.godot/imported/InvalidClue.ink.json-991a6d52060980996d2508e827f3d866.res"
+
+[deps]
+
+source_file="res://components/dialogue/interrogate_room_finale/InvalidClue.ink.json"
+dest_files=["res://.godot/imported/InvalidClue.ink.json-991a6d52060980996d2508e827f3d866.res"]
+
+[params]
+
+compress=true
