@@ -1,6 +1,7 @@
 extends CanvasLayer
 var is_hovering_mission_book : bool = false
 var can_open_option : bool = true
+var can_open_mission_book : bool = false
 
 @onready var anim_player : AnimationPlayer = $AnimationPlayer
 
@@ -25,8 +26,14 @@ func refresh_mission_book():
 
 func _process(_delta: float) -> void:
 	if GameManager:
-		%MissionBookButton.visible = GameManager.enable_input
+		var mission_book_bool : bool = can_open_mission_book and GameManager.enable_input
+		
+		%MissionBookButton.visible = mission_book_bool
+		
 		if GameManager.enable_input:
+			if %MissionBook.visible and not can_open_mission_book:
+				open_close_mission_book()
+			
 			if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:
 				SfxAudio.play_audio("Book Hover")
 		else:
