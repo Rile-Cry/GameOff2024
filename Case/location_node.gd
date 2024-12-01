@@ -15,5 +15,5 @@ func _process(_delta: float) -> void:
 	if GameManager:
 		if GameManager.current_location_index == index and not disabled:
 			disabled = true
-		if GameManager.current_location_index != index and disabled:
-			disabled = false
+		if GameManager.current_location_index != index and disabled != resource.disabled:
+			disabled = resource.disabled

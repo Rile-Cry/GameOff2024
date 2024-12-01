@@ -4,6 +4,7 @@ class_name Location
 @export var name : String
 @export var characters : Array[String]
 @export var description : String
+@export var disabled : bool = false
 
 @export var texture : Texture2D
 @export var texture_icon : Texture2D
