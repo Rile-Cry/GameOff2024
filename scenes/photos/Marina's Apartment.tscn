@@ -246,7 +246,6 @@ script = ExtResource("2_oxx8a")
 is_hidden = false
 
 [node name="DrawerOpened" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/ContentMargin"]
-visible = false
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
@@ -300,17 +299,18 @@ offset_left = 433.0
 offset_top = 343.0
 offset_right = 798.0
 offset_bottom = 446.0
-theme_override_styles/focus = SubResource("StyleBoxTexture_muf57")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_muf57")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_muf57")
-theme_override_styles/hover = SubResource("StyleBoxTexture_muf57")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_thqyu")
+theme_override_styles/focus = SubResource("StyleBoxTexture_dvigm")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_dvigm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_dvigm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dvigm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dvigm")
 theme_override_styles/normal = SubResource("StyleBoxTexture_dvigm")
 script = ExtResource("9_50fti")
 resource = ExtResource("16_2vks8")
 is_hidden = false
 
 [node name="Lock" type="Panel" parent="UIPopupBG/UIPopupMargin/UIPanel/ContentMargin"]
+visible = false
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_3hlq0")
