@@ -22,6 +22,7 @@ func _ready() -> void:
 				UIManager.add_child(tutorial_popup.instantiate())
 	
 	if UIManager:
+		UIManager.can_open_mission_book = true
 		UIManager.refresh_mission_book()
 		UIManager.get_mission_book().clue_selected.connect(clue_selected)
 	
