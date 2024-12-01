@@ -289,7 +289,8 @@ deleted_user_228014
 ddohler
 Valerie-Vivegnis
 Raclure
-squareal"
+squareal
+bruno.auzet"
 fit_content = true
 
 [node name="Role" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/AmbianceHBox"]
@@ -301,7 +302,8 @@ Interrogation Room
 Door Knock
 Door Open
 Screen Shake
-Screen Shake Aggressive"
+Screen Shake Aggressive
+Arrest"
 fit_content = true
 
 [node name="ShaderLabel" type="Label" parent="ScrollContainer/VBoxContainer"]
