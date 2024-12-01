@@ -30,7 +30,7 @@ var _typing := false # If the dialogue is still typing or not
 ## before actually declaring _ready.
 ## @param file_name: The name of the Dialogue found in components/dialogue/..
 ## @param args: Any additional arguments found within a specific Dialogue file.
-func setup(file_name: String, args: Dictionary) -> void:
+func setup(file_name: String, mood: String, args: Dictionary) -> void:
 	_ink_file = ResourceLoader.load(
 		"res://components/dialogue/" + file_name + ".ink.json",
 		"InkResource")
@@ -38,6 +38,7 @@ func setup(file_name: String, args: Dictionary) -> void:
 	for arg in args:
 		_variables[arg] = args[arg]
 	_initialized = true
+	_externals["mood"] = mood
 #endregion
 
 #region Private Functions
@@ -104,7 +105,6 @@ func _observe_variables(variable_name, new_value) -> void:
 	if _externals.has(variable_name):
 		_externals[variable_name] = new_value
 	elif _variables.has(variable_name):
-		print(variable_name)
 		_variables[variable_name] = new_value
 		if GameManager.get_global_variable(variable_name) != null:
 			GameManager.set_global_variable(variable_name, new_value)
@@ -123,21 +123,27 @@ func _continue_story() -> void:
 ## Both sends the text to be seperated from speaker and then changes the text
 ## in the actual text box.
 func _change_label(text):
-	_name_box.text = _externals["speaker"]
-	if _actors.has(_name_box.text):
-		_update_actor(_name_box.text)
-	#text = _grab_speaker(text)
+	#_name_box.text = _externals["speaker"]
+	#if _actors.has(_name_box.text):
+	#	_update_actor(_name_box.text)
+	text = _grab_speaker(text)
 	
 	_type_out_text(text)
 
 func _grab_speaker(text: String) -> String:
-	if text.contains(":"):
-		var actor_name := text.get_slice(":", 0)
-		_name_box.text = actor_name
-		if _actors.has(actor_name):
-			_update_actor(actor_name)
+	_name_box.text = _externals["speaker"]
+	
+	if _actors.has(_name_box.text):
+		_update_actor(_name_box.text)
 		
-		return text.get_slice(":", 1)
+	#if text.contains(":"):
+	#	var actor_name := text.get_slice(":", 0)
+	#	_name_box.text = actor_name
+	#	if _actors.has(actor_name):
+	#		_update_actor(actor_name)
+	#	
+	#	return text.get_slice(":", 1)
+	
 	return text
 
 func _update_actor(actor_name: String) -> void:

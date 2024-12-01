@@ -1,5 +1,5 @@
 VAR speaker = "Office Worker"
-VAR mood = "Normal"
+VAR mood = "normal"
 
 Mr. Shade, Victor Blake will be seeing you soon.
 ~ speaker = "Shade"

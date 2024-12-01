@@ -15,7 +15,7 @@ script = ExtResource("2_i6p0k")
 actor_name = "Victor"
 location_name = "victors_office"
 dialogue = Array[String](["VictorKick"])
-initial_mood = "normal"
+initial_mood = "lean"
 global_variables = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_tv4v7"]

@@ -66,9 +66,9 @@ func _ready():
 func change_scene(scene : PackedScene):
 	if game_base: game_base.change_level(scene)
 
-func create_dialogue(file_name: String, args: Dictionary = {}) -> DialogueBox:
+func create_dialogue(file_name: String, mood : String = "", args: Dictionary = {}) -> DialogueBox:
 	var dialogue_box : DialogueBox = _dialogue_scene.instantiate() as DialogueBox
-	dialogue_box.setup(file_name, args)
+	dialogue_box.setup(file_name, mood, args)
 	return dialogue_box
 
 func stack_resources(res : Resource, type : resource_type):

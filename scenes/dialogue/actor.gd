@@ -56,7 +56,7 @@ func _start_dialogue(dialogue : DialogueRes, idx : int = -1) -> void:
 		
 		variables[global_variable] = GameManager.get_global_variable(global_variable)
 	
-	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, variables)
+	var dialogue_scene : DialogueBox = GameManager.create_dialogue(dialogue_next, dialogue.initial_mood, variables)
 	UIManager.add_child(dialogue_scene)
 
 func _process(_delta: float) -> void:
