@@ -1,52 +1,25 @@
-[gd_scene load_steps=15 format=3 uid="uid://ph4q1v8rh7fy"]
+[gd_scene load_steps=9 format=3 uid="uid://ph4q1v8rh7fy"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
 [ext_resource type="Script" path="res://scenes/locations/InterrogationRoom.gd" id="1_l5xmw"]
 [ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="3_s4c63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="4_h138y"]
 [ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_mpays"]
-[ext_resource type="Resource" uid="uid://dqk61o3iackxh" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Personal Diary.tres" id="5_4jmjo"]
 [ext_resource type="Resource" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
-[ext_resource type="Resource" uid="uid://bh8fjq1aw6csq" path="res://Case/Dialogue/Interrogation Room/Lucas Only/With Clues/Autopsy Report.tres" id="7_3hs4r"]
-[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="11_nhaod"]
-
-[sub_resource type="Resource" id="Resource_6snps"]
-script = ExtResource("11_nhaod")
-actor_name = "Marina"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["FinaleOpening"])
-initial_mood = "normal"
-global_variables = Array[String]([])
-
-[sub_resource type="Resource" id="Resource_0l76c"]
-script = ExtResource("11_nhaod")
-actor_name = "Shade"
-location_name = "interrogate_room_finale"
-dialogue = Array[String](["FinalVerdict", "FinalVerdictCont"])
-initial_mood = "normal"
-global_variables = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_36vqn"]
 script = ExtResource("3_s4c63")
 clue = ExtResource("4_mpays")
-dialogue_res = ExtResource("5_4jmjo")
+dialogue_res = ""
 conditional_variable = true
 variable_name = "lucas_diary"
 
 [sub_resource type="Resource" id="Resource_63b7p"]
 script = ExtResource("3_s4c63")
 clue = ExtResource("6_wh1k0")
-dialogue_res = ExtResource("7_3hs4r")
+dialogue_res = ""
 conditional_variable = false
 variable_name = ""
-
-[sub_resource type="Resource" id="Resource_0trju"]
-script = ExtResource("11_nhaod")
-actor_name = "Lucas"
-location_name = "interrogate_room_lucas"
-dialogue = Array[String](["LucasEND"])
-initial_mood = "normal"
-global_variables = Array[String](["lucas_victor", "lucas_diary", "victor_marina"])
 
 [node name="InterrogationRoom" type="Control"]
 layout_mode = 3
@@ -56,8 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l5xmw")
-finale_opening_dialogue = SubResource("Resource_6snps")
-final_verdict_dialogue = SubResource("Resource_0l76c")
+opening_dialogue = "lucas_interrogation"
 clue_interact = Array[ExtResource("3_s4c63")]([SubResource("Resource_36vqn"), SubResource("Resource_63b7p")])
 bgm = "Interrogation Room"
 ambiance = "Interrogation Room"
@@ -78,4 +50,4 @@ anchor_bottom = 1.0
 offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
-dialogue_res = SubResource("Resource_0trju")
+actor_name = "Lucas"

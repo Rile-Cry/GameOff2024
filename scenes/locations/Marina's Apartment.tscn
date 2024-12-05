@@ -1,34 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnlpdqmemgycf"]
+[gd_scene load_steps=8 format=3 uid="uid://bnlpdqmemgycf"]
 
 [ext_resource type="Script" path="res://scenes/locations/marina's_apartment.gd" id="1_k3lwv"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_vkt8m"]
-[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_3bo5l"]
-[ext_resource type="Resource" uid="uid://dc4kblcxjifpe" path="res://Case/Dialogue/Marina's Apartment/Opening.tres" id="2_px3fl"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="3_j8h52"]
-
-[sub_resource type="Resource" id="Resource_cqgpe"]
-script = ExtResource("2_3bo5l")
-actor_name = "Marina"
-location_name = "marinas_apartment"
-dialogue = Array[String](["MarinaPhotoReq"])
-initial_mood = "defensive_2"
-global_variables = Array[String](["marina_photo"])
-
-[sub_resource type="Resource" id="Resource_fxqsf"]
-script = ExtResource("2_3bo5l")
-actor_name = "Marina"
-location_name = "marinas_apartment"
-dialogue = Array[String](["MarinaEND"])
-initial_mood = "defensive_2"
-global_variables = Array[String]([])
-
-[sub_resource type="Resource" id="Resource_i3idt"]
-script = ExtResource("2_3bo5l")
-actor_name = "Marina"
-location_name = "marinas_apartment"
-dialogue = Array[String]([])
-initial_mood = "defensive_2"
-global_variables = Array[String]([])
 
 [sub_resource type="Animation" id="Animation_pg8oh"]
 length = 0.001
@@ -105,9 +79,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k3lwv")
-opening_dialogue_photo = SubResource("Resource_cqgpe")
-opening_dialogue_end = SubResource("Resource_fxqsf")
-opening_dialogue = ExtResource("2_px3fl")
 bgm = "Marina's Apartment"
 
 [node name="Background" type="TextureRect" parent="."]
@@ -125,7 +96,7 @@ anchor_bottom = 1.0
 offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
-dialogue_res = SubResource("Resource_i3idt")
+actor_name = "Marina"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

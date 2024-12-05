@@ -1,39 +1,39 @@
 extends LocationScene
 
-@export var opening_dialogue_photo : DialogueRes
-@export var opening_dialogue_end : DialogueRes
+@export var opening_dialogue_photo : String
+@export var opening_dialogue_end : String
 
 func _ready() -> void:
-	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
 	
 	actor.hide()
 	
 	if opening_dialogue:
 		if GameManager:
-			GameManager.enable_input = false
-			if GameManager.get_global_variable("met_" + opening_dialogue.actor_name) != null:
-				actor.show()
-				play_bgm_ambiance()
-				if GameManager.get_global_variable("marina_photo"):
-					for idx : int in opening_dialogue_end.dialogue.size():
-						GameManager.enable_input = false
-						actor._start_dialogue(opening_dialogue_end, idx)
-						await GlobalGameEvents.dialogue_ended
-				else:
-					for idx : int in opening_dialogue_photo.dialogue.size():
-						GameManager.enable_input = false
-						actor._start_dialogue(opening_dialogue_photo, idx)
-						await GlobalGameEvents.dialogue_ended
-					await dialogue_ended
-			else:
-				GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
-				for idx : int in opening_dialogue.dialogue.size():
-					GameManager.enable_input = false
-					await dialogue_start_action(idx)
-					actor._start_dialogue(opening_dialogue, idx)
-					await GlobalGameEvents.dialogue_ended
-				await dialogue_ended
+			#GameManager.enable_input = false
+			Dialogic.start(opening_dialogue)
+			#if GameManager.get_global_variable("met_" + opening_dialogue.actor_name) != null:
+			#	actor.show()
+			#	play_bgm_ambiance()
+			#	if GameManager.get_global_variable("marina_photo"):
+			#		for idx : int in opening_dialogue_end.dialogue.size():
+			#			GameManager.enable_input = false
+			#			actor._start_dialogue(opening_dialogue_end, idx)
+			#			await GlobalGameEvents.dialogue_ended
+			#	else:
+			#		for idx : int in opening_dialogue_photo.dialogue.size():
+			#			GameManager.enable_input = false
+			#			actor._start_dialogue(opening_dialogue_photo, idx)
+			#			await GlobalGameEvents.dialogue_ended
+			#		await dialogue_ended
+			#else:
+			#	GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
+			#	for idx : int in opening_dialogue.dialogue.size():
+			#		GameManager.enable_input = false
+			#		await dialogue_start_action(idx)
+			#		actor._start_dialogue(opening_dialogue, idx)
+			#		await GlobalGameEvents.dialogue_ended
+			#	await dialogue_ended
 		GameManager.enable_input = true
 		GameManager.current_location_index = 0
 

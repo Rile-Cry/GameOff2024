@@ -1,0 +1,15 @@
+shade: Lucas, you mentioned how Evelyn was the love of your life?
+join lucas (weak_smile_2) center
+lucas: Um . . . yeah, exactly. And I honestly don't know where to go from here.
+shade: Well, you might want to sit down for this one.
+lucas (tries_to_calm): Wh . . . why is that?
+shade: Because over here in her diary, she mentions you a lot and how she feels trapped.
+[signal arg="effect_shake_0"]
+lucas: What? Let me see that please?
+lucas: . . .
+[signal arg="effect_shake_0"]
+lucas (panic): What . . . what is this? Is that how she really felt? If that's true, why did she even bother getting back with me?!
+shade: Maybe she changed her mind, Lucas. People grow, and maybe she saw something in you. You have changed, haven't you?
+update lucas (tries_to_calm)
+shade: Because over her in her diary, she mentions you a lot and how she feels trapped.
+lucas: Yeah . . . yeah, maybe. We were starting fresh. What we had . . . it was real. I swear it was real.

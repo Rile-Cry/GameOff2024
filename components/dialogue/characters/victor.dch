@@ -8,25 +8,25 @@
 "sound_moods": {},
 "style": "shade_style"
 },
-"default_portrait": "normal",
+"default_portrait": "arrest",
 "description": "",
-"display_name": "Lucas",
+"display_name": "Victor",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
 "arrest": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_arrest.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_arrest.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"calm": {
+"blame_marina": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_calm.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_blame_marina.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +35,7 @@
 },
 "defensive_1": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_defensive_1.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_defensive_1.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -44,7 +44,52 @@
 },
 "defensive_2": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_defensive_2.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_defensive_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"defensive_3": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_defensive_3.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"defensive_4": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_defensive_4.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"lean": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_lean.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"lean_frustrated": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_lean_frustrated.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"lean_smirk": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_lean_smirk.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -53,61 +98,25 @@
 },
 "normal": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_normal.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_normal.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"panic": {
+"sad": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_panic.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"ponder": {
+"security": {
 "export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_ponder.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"tries_to_calm": {
-"export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_tries_to_calm.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"tweaking": {
-"export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_tweaking.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"weak_smile_1": {
-"export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_weak_smile_1.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"weak_smile_2": {
-"export_overrides": {
-"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_weak_smile_2.png\""
+"image": "\"res://assets/imports/graphics/characters/Victor Thorne/victor_security.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

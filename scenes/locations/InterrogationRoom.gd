@@ -1,7 +1,7 @@
 extends LocationScene
 
-@export var finale_opening_dialogue : DialogueRes
-@export var final_verdict_dialogue : DialogueRes
+@export var finale_opening_dialogue : String
+@export var final_verdict_dialogue : String
 var finale_initiate : bool = false
 var finale_actors : Control
 
@@ -68,14 +68,14 @@ func _ready() -> void:
 		UIManager.show_shader("vignette")
 	
 	GlobalGameEvents.connect("scene_loaded", _scene_loaded)
-	Dialogic.start("lucas_interrogation")
 	if GameManager.global_variables["all_clues"]:
-		for idx : int in finale_opening_dialogue.dialogue.size():
-			GameManager.enable_input = false
-			await dialogue_start_action(idx)
-			actor._start_dialogue(finale_opening_dialogue, idx)
-			await GlobalGameEvents.dialogue_ended
-		GameManager.enable_input = true
+		Dialogic.start(finale_opening_dialogue)
+		#for idx : int in finale_opening_dialogue.dialogue.size():
+		#	GameManager.enable_input = false
+		#	await dialogue_start_action(idx)
+		#	actor._start_dialogue(finale_opening_dialogue, idx)
+		#	await GlobalGameEvents.dialogue_ended
+		#GameManager.enable_input = true
 		UIManager.can_open_mission_book = false
 	else:
 		super()

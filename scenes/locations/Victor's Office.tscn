@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://ckdmur2tmh157"]
+[gd_scene load_steps=28 format=3 uid="uid://ckdmur2tmh157"]
 
 [ext_resource type="Script" path="res://scenes/locations/victor's_office.gd" id="1_36ue3"]
-[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="2_i6p0k"]
 [ext_resource type="Texture2D" uid="uid://bibojr5rotm7w" path="res://assets/imports/graphics/backgrounds/with_object/victors_office.png" id="3_5xq0f"]
 [ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="3_dke63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="5_3fhqw"]
@@ -10,8 +9,19 @@
 [ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_ca4up"]
 [ext_resource type="Resource" uid="uid://btpndxraxxqt8" path="res://Case/Clues/Victor's Office/Family Picture.tres" id="7_gifq4"]
 
+[sub_resource type="GDScript" id="GDScript_ypjjx"]
+script/source = "extends Resource
+class_name DialogueRes
+
+@export var actor_name : String
+@export var location_name : String
+@export var dialogue : Array[String]
+@export var initial_mood : String = \"normal\"
+@export var global_variables : Array[String]
+"
+
 [sub_resource type="Resource" id="Resource_2wkvw"]
-script = ExtResource("2_i6p0k")
+script = SubResource("GDScript_ypjjx")
 actor_name = "Victor"
 location_name = "victors_office"
 dialogue = Array[String](["VictorKick"])
@@ -19,7 +29,7 @@ initial_mood = "lean"
 global_variables = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_tv4v7"]
-script = ExtResource("2_i6p0k")
+script = SubResource("GDScript_ypjjx")
 actor_name = "Victor"
 location_name = "victors_office"
 dialogue = Array[String](["VictorStart", "VictorMeet"])
@@ -27,40 +37,24 @@ initial_mood = "normal"
 global_variables = Array[String](["lucas_victor", "victor_clues", "victor_marina"])
 
 [sub_resource type="Resource" id="Resource_cs5i7"]
-script = ExtResource("2_i6p0k")
+script = SubResource("GDScript_ypjjx")
 actor_name = "Victor"
 location_name = "victors_office"
 dialogue = Array[String](["VictorOpening"])
 initial_mood = "normal"
 global_variables = Array[String]([])
 
-[sub_resource type="Resource" id="Resource_jbitd"]
-script = ExtResource("2_i6p0k")
-actor_name = "Victor"
-location_name = "victors_office"
-dialogue = Array[String](["VictorFamilyPicture"])
-initial_mood = "normal"
-global_variables = Array[String]([])
-
 [sub_resource type="Resource" id="Resource_ylrju"]
 script = ExtResource("3_dke63")
 clue = ExtResource("7_gifq4")
-dialogue_res = SubResource("Resource_jbitd")
+dialogue_res = ""
 conditional_variable = false
 variable_name = ""
-
-[sub_resource type="Resource" id="Resource_gbrxt"]
-script = ExtResource("2_i6p0k")
-actor_name = "Victor"
-location_name = "victors_office"
-dialogue = Array[String](["VictorShreddedPapers"])
-initial_mood = "normal"
-global_variables = Array[String]([])
 
 [sub_resource type="Resource" id="Resource_xsa06"]
 script = ExtResource("3_dke63")
 clue = ExtResource("6_87dlp")
-dialogue_res = SubResource("Resource_gbrxt")
+dialogue_res = ""
 conditional_variable = false
 variable_name = ""
 
@@ -89,22 +83,14 @@ variable_name = ""
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tlyth"]
 
 [sub_resource type="Resource" id="Resource_3mjml"]
-script = ExtResource("2_i6p0k")
+script = SubResource("GDScript_ypjjx")
 actor_name = "Shade"
 location_name = "victors_office"
 dialogue = Array[String](["BookShelf"])
 initial_mood = "normal"
 global_variables = Array[String]([])
 
-[sub_resource type="Resource" id="Resource_inov2"]
-script = ExtResource("2_i6p0k")
-actor_name = "Victor"
-location_name = "victors_office"
-dialogue = Array[String](["VictorEND"])
-initial_mood = "normal"
-global_variables = Array[String](["lucas_victor", "victor_clues", "victor_marina"])
-
-[node name="Victor\'s Office" type="Control" node_paths=PackedStringArray("objects")]
+[node name="Victor\'s Office" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,10 +102,10 @@ size_flags_vertical = 3
 script = ExtResource("1_36ue3")
 victor_kick_dialogue = SubResource("Resource_2wkvw")
 opening_dialogue_victor = SubResource("Resource_tv4v7")
-objects = [NodePath("Shredded Paper"), NodePath("Family Photo")]
 opening_dialogue = SubResource("Resource_cs5i7")
 clue_interact = Array[ExtResource("3_dke63")]([SubResource("Resource_ylrju"), SubResource("Resource_xsa06")])
 bgm = "Victor's Office"
+ambiance = null
 instant_meet = false
 
 [node name="Background" type="TextureRect" parent="."]
@@ -193,4 +179,3 @@ anchor_bottom = 1.0
 offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
-dialogue_res = SubResource("Resource_inov2")

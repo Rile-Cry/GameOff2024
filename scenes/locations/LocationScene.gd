@@ -1,21 +1,17 @@
 extends Control
 class_name LocationScene
 
-@export var opening_dialogue : DialogueRes
+@export var opening_dialogue : String
 @export var clue_interact : Array[LocationClueInteract]
 @export var bgm : String
 @export var ambiance : String
 @export var instant_meet : bool = true
 
 @onready var actor : Actor = $Actor
-@onready var dialogue_interact : DialogueRes = actor.dialogue_res
+@onready var dialogue_interact : String = actor.dialogue_res
 
 var clue_interacted : Array[Clue] = []
 signal dialogue_ended
-
-func _dialogue_started() -> void:
-	if GameManager:
-		GameManager.enable_input = false
 
 func _dialogue_ended() -> void:
 	if GameManager:
@@ -44,7 +40,7 @@ func _get_clue_location(clue : Clue) -> bool:
 					if UIManager:
 						UIManager.add_child(clue_popup)
 						await clue_popup.popup_opened
-				actor._start_dialogue(location_clue.dialogue_res, 0)
+				#actor._start_dialogue(location_clue.dialogue_res, 0)
 				await dialogue_ended
 				if is_instance_valid(clue_popup):
 					clue_popup.close()
@@ -56,20 +52,20 @@ func _get_clue_location(clue : Clue) -> bool:
 	return false
 
 func _ready() -> void:
-	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
 	
 	actor.hide()
 	
-	if opening_dialogue:
-		if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name) == null:
-			GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
-			for idx : int in opening_dialogue.dialogue.size():
-				GameManager.enable_input = false
-				await dialogue_start_action(idx)
-				actor._start_dialogue(opening_dialogue, idx)
-				await GlobalGameEvents.dialogue_ended
-			GameManager.enable_input = true
+	if opening_dialogue != "":
+		Dialogic.start(opening_dialogue)
+		#if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name) == null:
+		#	GameManager.set_global_variable("met_" + opening_dialogue.actor_name, instant_meet)
+		#	for idx : int in opening_dialogue.dialogue.size():
+		#		GameManager.enable_input = false
+		#		await dialogue_start_action(idx)
+		#		actor._start_dialogue(opening_dialogue, idx)
+		#		await GlobalGameEvents.dialogue_ended
+		#	GameManager.enable_input = true
 	#if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
 	#	actor.show()
 	

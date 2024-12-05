@@ -1,7 +1,7 @@
 extends Actor
 class_name ActorFinale
 
-@export var clue_invalid_dialogue : DialogueRes
+@export var clue_invalid_dialogue : String
 @export var clue_dialogue : LocationClueInteract
 @export var verdict_reaction : String
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 	super()
 	_button.pressed.connect(select_actor)
 	UIManager.get_mission_book().clue_selected.connect(_clue_selected)
-	verdict_reaction_texture = ResourceLoader.load(GameManager.actor_address[dialogue_res.actor_name] + verdict_reaction + ".png")
+	#verdict_reaction_texture = ResourceLoader.load(GameManager.actor_address[dialogue_res.actor_name] + verdict_reaction + ".png")
 	GameManager.turnabout.connect(react_to_verdict)
 
 func react_to_verdict():
@@ -26,9 +26,9 @@ func react_to_verdict():
 func select_actor():
 	if pressed:
 		selected = not selected
-		verdict_selected.emit(dialogue_res.actor_name)
+		#verdict_selected.emit(dialogue_res.actor_name)
 
-func _start_dialogue(dialogue : DialogueRes, idx : int = 0) -> void:
+func _start_dialogue(dialogue : String, idx : int = 0) -> void:
 	super(dialogue, idx)
 	await GlobalGameEvents.dialogue_ended
 	if GameManager:

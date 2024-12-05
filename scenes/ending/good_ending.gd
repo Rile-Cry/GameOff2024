@@ -10,19 +10,19 @@ func _ready() -> void:
 	if UIManager:
 		UIManager.show_shader("vignette")
 	
-	unfinished_painting = load("res://Case/Clues/Evelyn's Art Studio/Unfinished Painting.tres")
-	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
+	unfinished_painting = load(unfinished_painting_path)
 	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
 	
 	actor.hide()
 	
-	if opening_dialogue:
-		for idx : int in opening_dialogue.dialogue.size():
-			GameManager.enable_input = false
-			await dialogue_start_action(idx)
-			actor._start_dialogue(opening_dialogue, idx)
-			await GlobalGameEvents.dialogue_ended
-		GameManager.enable_input = true
+	if opening_dialogue != "":
+		Dialogic.start(opening_dialogue)
+		#for idx : int in opening_dialogue.dialogue.size():
+		#	GameManager.enable_input = false
+		#	await dialogue_start_action(idx)
+		#	actor._start_dialogue(opening_dialogue, idx)
+		#	await GlobalGameEvents.dialogue_ended
+		#GameManager.enable_input = true
 		
 	if UIManager:
 		UIManager.anim_player.play("white_out")

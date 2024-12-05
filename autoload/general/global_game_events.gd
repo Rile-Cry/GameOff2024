@@ -17,6 +17,7 @@ func _ready() -> void:
 	exclaim.connect(_exclaim)
 	dialogue_ended_.connect(dialogue_ended_check)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
 
 func dialogue_ended_check():
 	dialogue_ended_check_bool = true
@@ -51,3 +52,6 @@ func _res_obtain(res_path: String, type : GameManager.resource_type):
 	var res : Resource = load(res_path)
 	if res and GameManager:
 		GameManager.stack_resources(res, type)
+
+func _on_timeline_ended() -> void:
+	dialogue_ended.emit()
