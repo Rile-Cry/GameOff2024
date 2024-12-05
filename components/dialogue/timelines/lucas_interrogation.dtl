@@ -1,0 +1,57 @@
+Lucas, you have a visitor. He's called Shade.
+shade: I'm here to help you, Lucas. I want to find the real culprit, but I'll your cooperation.
+join lucas (panic) center
+lucas: Help me? There's no point, is there? I'm the culprit . . . I have to be! Just give me the death sentence and end it already . . .
+[signal arg="effect_shake_0"]
+shade: I don't believe you did it, Lucas. There's more to this story. Help me understand-tell me what really happened.
+lucas (tries_to_calm): Fine. You want the truth? I . . . I wanted to see her that night. But as I got to the door, she texted me-said Marina was coming over and to meet her at our usual spot tomorrow. So, I left. The next day, I came back with flowers . . . and that's when I found her.
+lucas (defensive_1): I called the cops . . . and they just threw me in here.
+label choices
+- What's Evelyn Like?
+	shade: This must be had. Can you tell me what Evelyn was like?
+	lucas (ponder): Evelyn . . . she was . . . different, y'know? Like, kinda cryptic? Everything she did had this . . . meaning, or a puzzle behind it. She was so into those. Her lock screen? Password hidden in some riddle. Every gift? Like, you'd need a treasure map to find it.
+	shade: Sounds like she loved puzzles.
+	lucas (weak_smile_1): Yeah . . . that's one way to put it. She kept you guessing. Always.
+	jump choices
+- Called Police
+	shade: You said you called the police when you found her. How long did it take?
+	lucas (defensive_1): Uh . . . maybe like, ten minutes? Or so?
+	[signal arg="effect_exclaim"]
+	shade: Ten minutes? Why the delay?
+	lucas (defensive_2): I . . . I was a wreck, man! The love of my life . . . just lying there, cold and lifeless. You think I could just . . . dial the cops liek that? It took everything in me to even move.
+	[signal arg="effect_exclaim"]
+	shade: The love of your life?
+	jump choices
+- Evelyn's Phone
+	shade: Did you check her phone or notice anything odd in the studio?
+	lucas (calm): No, man . . . I couldn't. I was just . . . frozen, y'know? The whole place looked . . . normal. Too normal, even. Like she'd just been working late, waiting for Marina to show up.
+	shade: Nothing at all seemed out of place?
+	lucas (ponder): Well . . . okay, there was one thing. Victor.
+	[signal arg="effect_exlaim"]
+	shade: Victor? Her brother?
+	lucas (calm): Yeah. He was around a lot recently. He and Evelyn were always arguing about something-- her art, the company, or the damn will. I know they'd fought a couple of days before. She was stressed out, and Victor didn't care. He just kept pushing her.
+	shade: What do you think he wanted?
+	lucas (ponder): Control, maybe? That's his thing, y'know? Getting what he wants, no matter who gets hurt. But I didn't see him there when I found her. It's just . . . somehting doesn't sit right.
+	shade: What about her phone?
+	lucas (defensive_1): I didn't . . . I just . . . couldn't.
+	set {lucas_victor} = true
+	jump choices
+- Their Usual Spot
+	shade: You mentioned meeting at your usual spot. Can you tell me about it?
+	lucas (defensive_1): Yeah . . . it's this little café we'd go to. Kinda like . . . our place. First dates, tough days, everything. That's where we'd always go.
+	shade: What happened when you showed up?
+	lucas (defensive_2): I . . . I brought flowers. But when I got to her studio, something felt . . . wrong. She wasn't there. And then . . . I found her.
+	jump choices
+- Ask about Victor | [if {lucas_victor} == true] [else="hide"]
+	shade: Did you see Victor around the time of Evelyn's death?
+	lucas (ponder): No. But he was around a lot lately. Always in her ear about the company. She didn't like it--he pushed her too much. They fought a couple days before . . . about her art. And her will.
+	shade: Do you think Victor was involved?
+	lucas (calm): I don't know . . . Maybe. He's the type to get what he wants, no matter who he steps on. But . . . I don't know for sure.
+- Relationship with Marina | [if {victor_marina} == true] [else="hide"]
+	shade: How was your relationship with Marina? You mentioned her being at the studio.
+	lucas (normal): Marina . . . she was . . . complicated. Always pushing Evelyn. 'Do more! Make Money!' Like, she cared more about the business than Evelyn's happiness.
+	shade: So, you don't trust her?
+	lucas: I did . . . but not really. She cared about Evelyn's career, sure. But Evelyn? The person? Not so much.
+	shade: Do you know where Marina lives?
+	lucas: No idea. We weren't exactly close after Evelyn and I broke up. And no one knew we got back together either.
+- I guess that covers it . . .

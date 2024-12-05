@@ -16,9 +16,19 @@ func _ready() -> void:
 	res_obtain.connect(_res_obtain)
 	exclaim.connect(_exclaim)
 	dialogue_ended_.connect(dialogue_ended_check)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 
 func dialogue_ended_check():
 	dialogue_ended_check_bool = true
+
+func _on_dialogic_signal(argument: String) -> void:
+	var type = argument.split("_")
+	match type[0]:
+		"effect":
+			if type[1] == "shake":
+				shake.emit(type[2].to_int())
+			elif type[1] == "exclaim":
+				exclaim.emit()
 
 func _process(_delta: float) -> void:
 	if dialogue_ended_check_bool:

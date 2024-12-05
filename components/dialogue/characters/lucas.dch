@@ -1,0 +1,119 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "normal",
+"description": "",
+"display_name": "Lucas",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"arrest": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_arrest.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"calm": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_calm.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"defensive_1": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_defensive_1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"defensive_2": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_defensive_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"normal": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_normal.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"panic": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_panic.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ponder": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_ponder.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tries_to_calm": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_tries_to_calm.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"tweaking": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_tweaking.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"weak_smile_1": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_weak_smile_1.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"weak_smile_2": {
+"export_overrides": {
+"image": "\"res://assets/imports/graphics/characters/Lucas Rivers/lucas_weak_smile_2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

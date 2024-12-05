@@ -70,8 +70,8 @@ func _ready() -> void:
 				actor._start_dialogue(opening_dialogue, idx)
 				await GlobalGameEvents.dialogue_ended
 			GameManager.enable_input = true
-	if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
-		actor.show()
+	#if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
+	#	actor.show()
 	
 	if BgmAudio and not bgm.is_empty():
 		BgmAudio.play_audio(bgm)

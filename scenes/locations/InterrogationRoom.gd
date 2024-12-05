@@ -68,6 +68,7 @@ func _ready() -> void:
 		UIManager.show_shader("vignette")
 	
 	GlobalGameEvents.connect("scene_loaded", _scene_loaded)
+	Dialogic.start("lucas_interrogation")
 	if GameManager.global_variables["all_clues"]:
 		for idx : int in finale_opening_dialogue.dialogue.size():
 			GameManager.enable_input = false
