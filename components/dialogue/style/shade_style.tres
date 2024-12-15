@@ -40,7 +40,7 @@ overrides = {
 "box_panel": "\"res://components/dialogue/style/shade_panel.tres\"",
 "box_size": "Vector2(800, 150)",
 "name_label_box_modulate": "Color(1, 1, 1, 1)",
-"name_label_box_offset": "Vector2(0, -10)",
+"name_label_box_offset": "Vector2(0, 20)",
 "name_label_box_panel": "\"res://components/dialogue/style/shade_speaker_panel.tres\"",
 "name_label_box_use_global_color": "false",
 "name_label_use_global_color": "false",
