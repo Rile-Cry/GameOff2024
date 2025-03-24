@@ -1,10 +1,7 @@
 extends Node
 
 #region Tracked variables
-var current_case : Case
-var dialogue_choices := {
-}
-var typing_speed : int = 30
+var current_case : Genum.CurrentCase = Genum.CurrentCase.NONE
 #endregion
 
 #region General helpers

@@ -255,7 +255,7 @@ func glitch_mission_book():
 	glitched = true
 	if GameManager:
 		for child in photo_container.get_children():
-			child.material = GameManager.glitch_obj_material
+			child.material = GameManager.preloader.glitch_obj_material
 
 func unglitch_mission_book():
 	glitched = false

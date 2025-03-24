@@ -13,7 +13,7 @@ func _ready():
 
 func delete_save():
 	if UIManager and GameManager:
-		var popup : PopupNode = GameManager.delete_save_popup.instantiate()
+		var popup : PopupNode = GameManager.preloader.delete_save_popup.instantiate()
 		UIManager.add_child(popup)
 		await popup.popup_closed
 		$"MainMargin/HBoxContainer/Delete Save".visible = GameManager.get_save()

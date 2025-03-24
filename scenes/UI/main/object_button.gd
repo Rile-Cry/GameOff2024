@@ -13,7 +13,7 @@ func _ready():
 	
 	if is_hidden:
 		if GameManager:
-			var particles : GPUParticles2D = GameManager.interactable_indicator_popup.instantiate()
+			var particles : GPUParticles2D = GameManager.preloader.interactable_indicator_popup.instantiate()
 			var process_material : ParticleProcessMaterial = particles.process_material
 			var box_size_vec3 : Vector3 = Vector3(size.x, size.y, 1)
 			process_material.set_emission_box_extents(box_size_vec3)
@@ -24,7 +24,7 @@ func _ready():
 		focus_entered.connect(outline_enable)
 		focus_exited.connect(outline_disable)
 		if GameManager and not material:
-			material = GameManager.outline_material.duplicate()
+			material = GameManager.preloader.outline_material.duplicate()
 
 func _process(_delta: float) -> void:
 	if not is_hidden:

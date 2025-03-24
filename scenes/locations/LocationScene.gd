@@ -35,7 +35,7 @@ func _get_clue_location(clue : Clue) -> bool:
 			if not location_clue.conditional_variable or GameManager.get_global_variable(location_clue.variable_name):
 				var clue_popup : CluePopup
 				if GameManager:
-					clue_popup = GameManager.clue_popup.instantiate()
+					clue_popup = GameManager.preloader.clue_popup.instantiate()
 					clue_popup.clue = clue
 					if UIManager:
 						UIManager.add_child(clue_popup)

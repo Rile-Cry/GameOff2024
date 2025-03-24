@@ -28,7 +28,7 @@ func final_verdict_play():
 		actor._start_dialogue(final_verdict_dialogue, 0)
 		await GlobalGameEvents.dialogue_ended
 		if GameManager and GameManager.has_past_attempt():
-			UIManager.add_child(GameManager.final_guess_popup.instantiate())
+			UIManager.add_child(GameManager.preloader.final_guess_popup.instantiate())
 		
 	for actor_ in finale_actors.get_children():
 		if actor_ is ActorFinale:
@@ -102,7 +102,7 @@ func dialogue_start_action(idx : int):
 					AmbientAudio.stop()
 					
 				UIManager.anim_player.play("hide_room")
-				finale_actors = GameManager.finale_actors.instantiate()
+				finale_actors = GameManager.preloader.finale_actors.instantiate()
 				add_child(finale_actors)
 				await UIManager.anim_player.animation_finished
 				

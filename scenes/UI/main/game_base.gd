@@ -36,7 +36,7 @@ func clue_selected(clue : Clue):
 				if await child._get_clue_location(clue):
 					return
 	
-		var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.invalid_clue_dialogue_path)
+		var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.preloader.invalid_clue_dialogue_path)
 		UIManager.add_child(dialogue_scene)
 
 func _process(delta: float) -> void:
@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 	
 	if GameManager:
 		if not all_clues and GameManager.get_global_variable("all_clues"):
-			UIManager.add_child(GameManager.all_clues_popup.instantiate())
+			UIManager.add_child(GameManager.preloader.all_clues_popup.instantiate())
 			all_clues = true
 			
 		GameManager.game_time += delta

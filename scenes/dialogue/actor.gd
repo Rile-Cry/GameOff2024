@@ -18,7 +18,7 @@ func fade_in_actor():
 	$AnimationPlayer.play("actor_fade_in")
 	await $AnimationPlayer.animation_finished
 	_button.disabled = false
-	_texture_rect.material = GameManager.outline_material.duplicate()
+	_texture_rect.material = GameManager.preloader.outline_material.duplicate()
 
 func update_actor(texture : Texture2D) -> void:
 	_texture_rect.texture = texture
@@ -54,7 +54,7 @@ func _ready() -> void:
 	_button.connect("pressed", _start_dialogue_actor)
 	var texture : Texture2D = ResourceLoader.load(GameManager.actor_address[actor_name] + "normal.png", "Texture2D")
 	_texture_rect.texture = texture
-	_texture_rect.material = GameManager.outline_material.duplicate()
+	_texture_rect.material = GameManager.preloader.outline_material.duplicate()
 	add_to_group("actors")
 
 func outline_enable():

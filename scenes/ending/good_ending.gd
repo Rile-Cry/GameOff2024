@@ -33,7 +33,7 @@ func _ready() -> void:
 		tween.set_trans(Tween.TRANS_LINEAR)
 		tween.play()
 		await tween.finished
-		get_tree().change_scene_to_packed(GameManager.credits_scene)
+		get_tree().change_scene_to_packed(GameManager.preloader.credits_scene)
 
 func _process(delta: float) -> void:
 	if BgmAudio and not bgm.is_empty():
@@ -57,7 +57,7 @@ func dialogue_start_action(idx : int):
 			await UIManager.anim_player.animation_finished
 	elif idx == 1:
 		if UIManager:
-			clue_popup = GameManager.clue_popup.instantiate()
+			clue_popup = GameManager.preloader.clue_popup.instantiate()
 			clue_popup.clue = unfinished_painting
 			UIManager.add_child(clue_popup)
 			await clue_popup.popup_opened

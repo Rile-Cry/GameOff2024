@@ -29,26 +29,7 @@ var actor_address := {
 }
 
 var game_time : float = 0.0
-
-const behind_bars_scene : PackedScene = preload("res://scenes/ending/BehindBarsScene.tscn")
-const good_ending_scene : PackedScene =  preload("res://scenes/ending/GoodEnding.tscn")
-const bad_ending_scene : PackedScene =  preload("res://scenes/ending/BadEnding.tscn")
-
-const glitch_obj_material : ShaderMaterial = preload("res://scenes/UI/main/GlitchObjtres.tres")
-const outline_material : ShaderMaterial = preload("res://scenes/UI/main/Outline.tres")
-const found_popup : PackedScene = preload("res://scenes/UI/popup/found_popup.tscn")
-const delete_save_popup : PackedScene = preload("res://scenes/UI/popup/delete_save_popup.tscn")
-const save_popup : PackedScene = preload("res://scenes/UI/popup/save_popup.tscn")
-const clue_popup : PackedScene = preload("res://scenes/UI/popup/clue_popup.tscn")
-const time_popup : PackedScene = preload("res://scenes/UI/popup/time_popup.tscn")
-const all_clues_popup : PackedScene = preload("res://scenes/UI/popup/all_clues_popup.tscn")
-const final_guess_popup : PackedScene = preload("res://scenes/UI/popup/final_guess_popup.tscn")
-const interactable_indicator_popup : PackedScene = preload("res://scenes/interactable_indicator.tscn")
-const _dialogue_scene : PackedScene = preload("res://components/dialogue/dialogue_box.tscn")
-const title_scene : PackedScene = preload("res://scenes/UI/main/Title.tscn")
-const invalid_clue_dialogue_path : String = "base/InvalidClue"
-const credits_scene : PackedScene = preload("res://scenes/UI/credits.tscn")
-const finale_actors : PackedScene = preload("res://scenes/finale_actors.tscn")
+var preloader : Preloader = Preloader.new()
 
 var is_inside_photo : bool = false
 var current_location_index : int = -1:
@@ -95,7 +76,7 @@ func change_scene(scene : PackedScene):
 	GlobalGameEvents.scene_loaded.emit()
 
 func create_dialogue(file_name: String, mood : String = "", args: Dictionary = {}) -> DialogueBox:
-	var dialogue_box : DialogueBox = _dialogue_scene.instantiate() as DialogueBox
+	var dialogue_box : DialogueBox = preloader._dialogue_scene.instantiate() as DialogueBox
 	dialogue_box.setup(file_name, mood, args)
 	return dialogue_box
 
@@ -178,7 +159,7 @@ func add_resource_from_stack():
 
 func resource_popup(res : Resource, type : resource_type):
 	if UIManager:
-		var popup_node : FoundPopup = found_popup.instantiate()
+		var popup_node : FoundPopup = preloader.found_popup.instantiate()
 		popup_node.obj_name = res.name
 		popup_node.obj_desc = res.description
 		popup_node.obj_icon = res.texture
@@ -189,7 +170,7 @@ func resource_popup(res : Resource, type : resource_type):
 
 func obtain_photo(photo : Photo, popup : bool = true) -> bool:
 	if not photos.has(photo):
-		if popup and found_popup:
+		if popup and preloader.found_popup:
 			resource_popup(photo, resource_type.PHOTO)
 			await popup_closed
 		
@@ -203,7 +184,7 @@ func obtain_photo(photo : Photo, popup : bool = true) -> bool:
 
 func obtain_clue(clue : Clue, popup : bool = true) -> bool:
 	if not clues.has(clue):
-		if popup and found_popup:
+		if popup and preloader.found_popup:
 			resource_popup(clue, resource_type.CLUE)
 			await popup_closed
 		
@@ -218,7 +199,7 @@ func obtain_clue(clue : Clue, popup : bool = true) -> bool:
 func unlock_location(location : Location, popup : bool = true):
 	if not unlocked_locations.has(location):
 		
-		if popup and found_popup:
+		if popup and preloader.found_popup:
 			resource_popup(location, resource_type.LOCATION)
 			await popup_closed
 		
@@ -255,8 +236,8 @@ func save_game() -> void:
 	}
 	var json_string : String = JSON.stringify(save_dict)
 	save_file.store_line(json_string)
-	if UIManager and save_popup:
-		var popup_node : PopupNode = save_popup.instantiate()
+	if UIManager and preloader.save_popup:
+		var popup_node : PopupNode = preloader.save_popup.instantiate()
 		UIManager.add_child(popup_node)
 
 func load_game() -> bool:
@@ -303,7 +284,7 @@ func get_verdict() -> bool:
 func get_ending():
 	if UIManager:
 		UIManager.anim_player.play_backwards("black_bar")
-	get_tree().change_scene_to_packed(behind_bars_scene)
+	get_tree().change_scene_to_packed(preloader.behind_bars_scene)
 
 func get_save():
 	return FileAccess.file_exists("user://savegame.save")
@@ -318,9 +299,9 @@ func has_past_attempt() -> bool:
 	return true
 
 func record_attempt(succeed : bool):
-	var time_popup_scene : PopupNode = time_popup.instantiate()
+	var time_popup_scene : PopupNode = preloader.time_popup.instantiate()
 	time_popup_scene.succeed = succeed
-	await get_tree().change_scene_to_packed(title_scene)
+	await get_tree().change_scene_to_packed(preloader.title_scene)
 	if UIManager:
 		UIManager.add_child(time_popup_scene)
 	
