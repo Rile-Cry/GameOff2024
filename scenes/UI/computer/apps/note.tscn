@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tji8l8isxw5j"]
 
 [ext_resource type="Theme" uid="uid://c8omtkve3g12h" path="res://assets/imports/themes/win98bw/win98bw.tres" id="1_4i174"]
-[ext_resource type="Script" path="res://scenes/UI/computer/apps/note.gd" id="2_w2so7"]
+[ext_resource type="Script" uid="uid://cfx8eko154x6c" path="res://scenes/UI/computer/apps/note.gd" id="2_w2so7"]
 
 [node name="Note" type="Window"]
 initial_position = 2

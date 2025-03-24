@@ -1,18 +1,17 @@
-[gd_scene load_steps=53 format=3 uid="uid://dwubh61lkc4rb"]
+[gd_scene load_steps=52 format=3 uid="uid://dwubh61lkc4rb"]
 
-[ext_resource type="Script" path="res://scenes/photos/marinas_apartment_photo.gd" id="1_66fnc"]
+[ext_resource type="Script" uid="uid://bg0mtc3uqr4is" path="res://scenes/photos/marinas_apartment_photo.gd" id="1_66fnc"]
 [ext_resource type="Texture2D" uid="uid://b57yx04jtj3t6" path="res://assets/imports/graphics/backgrounds/with_object/marinas_apartment.png" id="1_ks872"]
-[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
+[ext_resource type="Script" uid="uid://beagyoclsm8wm" path="res://scenes/UI/main/object_button.gd" id="2_oxx8a"]
 [ext_resource type="Texture2D" uid="uid://bwnojgvly6816" path="res://assets/imports/graphics/popups/marinas_apartment/Desk.png" id="4_8boxa"]
 [ext_resource type="Texture2D" uid="uid://dp26d3g5qdyo8" path="res://assets/imports/graphics/popups/marinas_apartment/Calender.png" id="5_aqwfo"]
 [ext_resource type="Texture2D" uid="uid://di8tm7b1687va" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_closed.png" id="6_3o41n"]
 [ext_resource type="Texture2D" uid="uid://b4pjh253ffy0u" path="res://assets/imports/graphics/popups/marinas_apartment/Sticky Notes.png" id="6_8ldu5"]
-[ext_resource type="Shader" path="res://shaders/vhs/vhs_soft.gdshader" id="6_rcnxu"]
-[ext_resource type="Script" path="res://scenes/UI/main/dialogue_button.gd" id="7_nfsbp"]
+[ext_resource type="Shader" uid="uid://c455u8piv5w0d" path="res://shaders/vhs/vhs_soft.gdshader" id="6_rcnxu"]
+[ext_resource type="Script" uid="uid://b7pmt2d05aj1w" path="res://scenes/UI/main/dialogue_button.gd" id="7_nfsbp"]
 [ext_resource type="Texture2D" uid="uid://cgulxn77kjrag" path="res://assets/imports/graphics/popups/marinas_apartment/lock.png" id="7_qg8ks"]
 [ext_resource type="Texture2D" uid="uid://by5jeo48d2jf3" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_open.png" id="8_kr6kn"]
-[ext_resource type="Script" path="res://Case/Dialogue/DialogueResource.gd" id="8_tgi78"]
-[ext_resource type="Script" path="res://Case/object_resource_button.gd" id="9_50fti"]
+[ext_resource type="Script" uid="uid://6kkqpcjckrks" path="res://Case/object_resource_button.gd" id="9_50fti"]
 [ext_resource type="Texture2D" uid="uid://m6j781gkdukg" path="res://assets/imports/graphics/popups/marinas_apartment/evelyns_phone.png" id="9_dx0km"]
 [ext_resource type="Resource" uid="uid://bdnbii0c61gqx" path="res://Case/Clues/Marina’s Apartment/Evelyns phone.tres" id="10_qfx0v"]
 [ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="12_kpacf"]
@@ -22,7 +21,7 @@
 [ext_resource type="Resource" uid="uid://bnrs4oaaoi52q" path="res://Case/Clues/Marina’s Apartment/Trophy.tres" id="16_2vks8"]
 [ext_resource type="Texture2D" uid="uid://cw6vi5wdnr5vn" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Button.png" id="16_pnhhx"]
 [ext_resource type="Texture2D" uid="uid://cjwsq6ti2cjfy" path="res://assets/imports/graphics/popups/marinas_apartment/Lock_Number.png" id="17_0q54h"]
-[ext_resource type="Script" path="res://scenes/photos/LockNumber.gd" id="18_7b8v4"]
+[ext_resource type="Script" uid="uid://bfhwh3a3qurfn" path="res://scenes/photos/LockNumber.gd" id="18_7b8v4"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="19_tjavc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3hlq0"]
@@ -50,12 +49,6 @@ texture = ExtResource("6_8ldu5")
 texture = ExtResource("6_8ldu5")
 
 [sub_resource type="Resource" id="Resource_aub3w"]
-script = ExtResource("8_tgi78")
-actor_name = "Shade"
-location_name = "marinas_apartment"
-dialogue = Array[String](["StickyNote"])
-initial_mood = "normal"
-global_variables = Array[String]([])
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ly5se"]
 texture = ExtResource("7_qg8ks")

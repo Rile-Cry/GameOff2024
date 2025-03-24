@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://baaul4sqbfcm4" path="res://assets/imports/ambiance/Shade's Office.wav" id="3_ivycw"]
 [ext_resource type="AudioStream" uid="uid://dpjeuommx1ay3" path="res://assets/imports/ambiance/Interrogation Room.wav" id="4_crpqv"]
 [ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/ambiance/OS Boot.wav" id="7_q555b"]
-[ext_resource type="Script" path="res://scenes/GameManager/audio.gd" id="14_nm7qv"]
+[ext_resource type="Script" uid="uid://c24ia4e2de18f" path="res://scenes/GameManager/audio.gd" id="14_nm7qv"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_evwqa"]
 clip_count = 4
@@ -25,25 +25,25 @@ clip_3/auto_advance = 1
 clip_3/next_clip = 3
 _transitions = {
 Vector2i(-1, -1): {
-"fade_beats": 1,
+"fade_beats": 1.0,
 "fade_mode": 0,
 "from_time": 0,
 "to_time": 1
 },
 Vector2i(1, 1): {
-"fade_beats": 1,
+"fade_beats": 1.0,
 "fade_mode": 0,
 "from_time": 3,
 "to_time": 1
 },
 Vector2i(2, 2): {
-"fade_beats": 1,
+"fade_beats": 1.0,
 "fade_mode": 0,
 "from_time": 3,
 "to_time": 1
 },
 Vector2i(3, 3): {
-"fade_beats": 1,
+"fade_beats": 1.0,
 "fade_mode": 0,
 "from_time": 3,
 "to_time": 1

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://cnd1plej2xe7a"]
 
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="1_4c60i"]
-[ext_resource type="Script" path="res://scenes/dialogue/actor_finale.gd" id="2_d4crj"]
+[ext_resource type="Script" uid="uid://cvmk7aiddatxl" path="res://scenes/dialogue/actor_finale.gd" id="2_d4crj"]
 [ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_rdq8n"]
-[ext_resource type="Script" path="res://scenes/locations/LocationClueInteract.gd" id="6_x7364"]
-[ext_resource type="Resource" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="7_vq8pt"]
+[ext_resource type="Script" uid="uid://bqi36jpbedevw" path="res://scenes/locations/LocationClueInteract.gd" id="6_x7364"]
+[ext_resource type="Resource" uid="uid://bysj8l5ek0d15" path="res://Case/Clues/Victor's Office/Shredded Paper.tres" id="7_vq8pt"]
 [ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="8_q44w5"]
 
 [sub_resource type="Resource" id="Resource_wrdh6"]

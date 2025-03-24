@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Photo" load_steps=2 format=3 uid="uid://bqgsv7qt3x7ml"]
 
-[ext_resource type="Script" path="res://Case/Photos/PhotoResource.gd" id="1_8ts6n"]
+[ext_resource type="Script" uid="uid://c05wsju2t54dj" path="res://Case/Photos/PhotoResource.gd" id="1_8ts6n"]
 
 [resource]
 script = ExtResource("1_8ts6n")
 name = "Evelyn’s Final Self-Portrait"
 time = ""
+description = ""
 glitched = true
 is_location = false
+scene_path = ""

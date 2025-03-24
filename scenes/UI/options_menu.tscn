@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cs1auqp2g4yn4"]
 
-[ext_resource type="Script" path="res://ui/menus/components/slider/audio_slider.gd" id="1_hou6f"]
-[ext_resource type="Script" path="res://scenes/UI/options_menu.gd" id="1_oc6ia"]
-[ext_resource type="Script" path="res://ui/menus/components/option_button/screen_mode_option_button.gd" id="2_42cln"]
-[ext_resource type="Script" path="res://ui/menus/components/checkbox/screen_borderless_checkbox.gd" id="3_ifc12"]
-[ext_resource type="Script" path="res://ui/menus/components/option_button/screen_resolutions_option_button.gd" id="4_ar00i"]
-[ext_resource type="Script" path="res://ui/menus/components/slider/screen_brightness_slider.gd" id="7_a7lu3"]
-[ext_resource type="Script" path="res://ui/menus/components/checkbox/screenshake_checkbox.gd" id="9_1f2cg"]
-[ext_resource type="Script" path="res://ui/menus/components/checkbox/photosensitive_checkbox.gd" id="10_l8sjo"]
+[ext_resource type="Script" uid="uid://dp41aurpqicsn" path="res://ui/menus/components/slider/audio_slider.gd" id="1_hou6f"]
+[ext_resource type="Script" uid="uid://wou61vy5hcvd" path="res://scenes/UI/options_menu.gd" id="1_oc6ia"]
+[ext_resource type="Script" uid="uid://2asdve88blsj" path="res://ui/menus/components/option_button/screen_mode_option_button.gd" id="2_42cln"]
+[ext_resource type="Script" uid="uid://cdf8fdijep6e7" path="res://ui/menus/components/checkbox/screen_borderless_checkbox.gd" id="3_ifc12"]
+[ext_resource type="Script" uid="uid://cd27ffqqt0isn" path="res://ui/menus/components/option_button/screen_resolutions_option_button.gd" id="4_ar00i"]
+[ext_resource type="Script" uid="uid://cbdpsnqmu0rry" path="res://ui/menus/components/slider/screen_brightness_slider.gd" id="7_a7lu3"]
+[ext_resource type="Script" uid="uid://dm7cdsh5gf5j3" path="res://ui/menus/components/checkbox/screenshake_checkbox.gd" id="9_1f2cg"]
+[ext_resource type="Script" uid="uid://dedsioh77yn32" path="res://ui/menus/components/checkbox/photosensitive_checkbox.gd" id="10_l8sjo"]
 
 [sub_resource type="Theme" id="Theme_hpix6"]
 RichTextLabel/font_sizes/bold_font_size = 24

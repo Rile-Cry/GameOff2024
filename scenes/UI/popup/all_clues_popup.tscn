@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cdvnjxfpp5358"]
 
-[ext_resource type="Script" path="res://scenes/UI/popup/popup.gd" id="1_k0hu7"]
+[ext_resource type="Script" uid="uid://cp7634r8ougb3" path="res://scenes/UI/popup/popup.gd" id="1_k0hu7"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_mn1ta"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpns4"]
@@ -68,8 +68,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wvdx2"]
 _data = {
-"RESET": SubResource("Animation_jeuj5"),
-"open": SubResource("Animation_h500q")
+&"RESET": SubResource("Animation_jeuj5"),
+&"open": SubResource("Animation_h500q")
 }
 
 [node name="AllCluesPopup" type="Control" node_paths=PackedStringArray("close_b", "close_b_bottom")]

@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_atboe"]
 _data = {
-"RESET": SubResource("Animation_fm2if"),
-"arrow": SubResource("Animation_ie3lf")
+&"RESET": SubResource("Animation_fm2if"),
+&"arrow": SubResource("Animation_ie3lf")
 }
 
 [node name="Arrow" type="TextureRect"]

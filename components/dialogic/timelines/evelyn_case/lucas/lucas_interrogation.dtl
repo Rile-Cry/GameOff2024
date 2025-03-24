@@ -1,0 +1,7 @@
+officer: Lucas, you have a visitor. He's called Shade.
+join lucas_rivers center [animation="Slide In Left"]
+shade: I'm here to help you, Lucas. I want to find the real culprit, but I'll need your cooperation.
+lucas_rivers (panic): Help me? [pause=0.5]There's no point, is there? I'm the culprit... [pause=1]I have to be! Just give me the death sentence and end it already...
+do GlobalEffects.screen_shake(1)
+shade: I don't believe you did it, Lucas. There's more to this story. Help me understand-tell me what really happened.
+lucas_rivers (tries_to_calm): Fine. You want the truth? I... [pause=0.25]I wanted to see her that night. But as I got to the door, she texted me-said Marina was coming over and to meet her at our usual spot tomorrow. So, I left. The next day, I cam back with flowers... [pause=0.25][speed=2]and that's when I found her.

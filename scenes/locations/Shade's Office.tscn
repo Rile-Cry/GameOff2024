@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://dj1s12fwy32rr"]
 
-[ext_resource type="Script" path="res://scenes/locations/Shade's Office.gd" id="1_4t6ht"]
+[ext_resource type="Script" uid="uid://c0v8a1coloc5t" path="res://scenes/locations/Shade's Office.gd" id="1_4t6ht"]
 [ext_resource type="Texture2D" uid="uid://bo7hcs3q5hnh8" path="res://assets/imports/graphics/backgrounds/without_object/shades_office.png" id="2_8igll"]
 [ext_resource type="Texture2D" uid="uid://dedtg84awrc8d" path="res://assets/imports/graphics/objects/sticky_notes/options.png" id="3_j2hj0"]
-[ext_resource type="Script" path="res://scenes/UI/sticky_notes/options_button.gd" id="4_xkdys"]
+[ext_resource type="Script" uid="uid://cqwfsi8nb6atv" path="res://scenes/UI/sticky_notes/options_button.gd" id="4_xkdys"]
 [ext_resource type="Texture2D" uid="uid://cd4o35ipvoeqs" path="res://assets/imports/graphics/objects/sticky_notes/exit.png" id="5_s314g"]
-[ext_resource type="Script" path="res://scenes/UI/sticky_notes/exit_button.gd" id="6_e7ndo"]
+[ext_resource type="Script" uid="uid://gdb1gku81mmv" path="res://scenes/UI/sticky_notes/exit_button.gd" id="6_e7ndo"]
 [ext_resource type="Texture2D" uid="uid://cd170li0engef" path="res://assets/imports/graphics/objects/sticky_notes/save.png" id="7_letej"]
-[ext_resource type="Script" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
+[ext_resource type="Script" uid="uid://beagyoclsm8wm" path="res://scenes/UI/main/object_button.gd" id="8_gsv3f"]
 [ext_resource type="Texture2D" uid="uid://c760tmktstqg3" path="res://assets/imports/graphics/objects/office/computer.png" id="9_x077g"]
-[ext_resource type="PackedScene" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
+[ext_resource type="PackedScene" uid="uid://cwvcth4tpcs35" path="res://scenes/UI/Arrow.tscn" id="10_i75gh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jypko"]
 texture = ExtResource("9_x077g")

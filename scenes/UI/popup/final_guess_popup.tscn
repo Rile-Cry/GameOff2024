@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://db8ja1dew5i5j"]
 
-[ext_resource type="Script" path="res://scenes/UI/popup/popup.gd" id="1_0qhnx"]
+[ext_resource type="Script" uid="uid://cp7634r8ougb3" path="res://scenes/UI/popup/popup.gd" id="1_0qhnx"]
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="2_4ieky"]
-[ext_resource type="Shader" path="res://scenes/UI/main/GlitchObject.gdshader" id="2_mbgdt"]
+[ext_resource type="Shader" uid="uid://cb1sc7bxthhnr" path="res://scenes/UI/main/GlitchObject.gdshader" id="2_mbgdt"]
 [ext_resource type="Texture2D" uid="uid://b18864mofkalp" path="res://assets/imports/graphics/screenshots/final.png" id="3_8f3tb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpns4"]
@@ -79,8 +79,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wvdx2"]
 _data = {
-"RESET": SubResource("Animation_jeuj5"),
-"open": SubResource("Animation_h500q")
+&"RESET": SubResource("Animation_jeuj5"),
+&"open": SubResource("Animation_h500q")
 }
 
 [node name="FinalGuessPopup" type="Control" node_paths=PackedStringArray("close_b", "close_b_bottom")]

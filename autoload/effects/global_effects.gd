@@ -1,5 +1,7 @@
 extends Control
 
+signal shake(type : int)
+
 signal frame_freezed_started
 signal frame_freezed_finished
 signal fade_started
@@ -16,15 +18,25 @@ signal flash_finished(flash_screen: ColorRect)
 @export var default_scale_audio: bool = true
 
 @onready var fade_background: ColorRect = $FadeBackground
+@onready var level_base : Node
+var node : Control
 
 var is_frame_freezing: bool = false
 var is_fading: bool = false
 var is_flashing: bool = false
 
+func _random_offset(origin : Vector2, shake_power) -> Vector2:
+	return origin + Vector2(randf_range(-shake_power, shake_power), randf_range(-shake_power, shake_power))
+
+func _shake(shake_power: float) -> void:
+	if shake_power > 0 and is_instance_valid(node):
+		shake_power = lerpf(shake_power, 0, 4 * 0.02)
+		node.position = _random_offset(Vector2.ZERO, shake_power)
+		_shake(shake_power)
+
 
 func _ready() -> void:
 	mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
-	
 	
 	fade_background.color = default_fade_color
 	fade_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -34,10 +46,45 @@ func _ready() -> void:
 	fade_started.connect(on_fade_started)
 	fade_finished.connect(on_fade_finished)
 	
-	
 	frame_freezed_started.connect(on_frame_freeze_started)
 	frame_freezed_finished.connect(on_frame_freeze_finished)
 	
+	GlobalGameEvents.game_loaded.connect(_get_level_base)
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	
+
+func _on_dialogic_signal(argument: String) -> void:
+	shake.get_connections()
+	var type = argument.split("_")
+	match type[0]:
+		"effect":
+			if type[1] == "shake":
+				shake.emit(type[2].to_int())
+
+func _get_level_base(passed_node: Node) -> void:
+	level_base = passed_node
+
+func exclaim():
+	if SfxAudio:
+		SfxAudio.play_audio("Exclaim")
+	
+	if UIManager:
+		UIManager.anim_player.play("Exclaim")
+
+func screen_shake(type : int) -> void:
+	node = level_base.get_child(0, false)
+	var shake_sfx : String = "Screen Shake"
+	var shake_power := 0.0
+	match type:
+		1: 
+			shake_sfx = "Screen Shake Aggressive"
+			shake_power = 20.0
+		_:
+			shake_power = 10.0
+	if SfxAudio:
+		SfxAudio.play_audio(shake_sfx)
+	
+	_shake(shake_power)
 
 #region Fade effects
 func fade_in(duration: float = default_fade_duration, color: Color = default_fade_color) -> void:

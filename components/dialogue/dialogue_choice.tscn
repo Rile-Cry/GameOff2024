@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://co615mvfumu6i"]
 
-[ext_resource type="Script" path="res://components/dialogue/dialogue_choice.gd" id="1_tqs5t"]
+[ext_resource type="Script" uid="uid://c12j2lxa8w4m0" path="res://components/dialogue/dialogue_choice.gd" id="1_tqs5t"]
 
 [node name="DialogueChoice" type="Button"]
 offset_right = 300.0

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Location" load_steps=3 format=3 uid="uid://6erl27br8x00"]
 
-[ext_resource type="Script" path="res://Case/Locations/LocationResource.gd" id="1_njkdp"]
+[ext_resource type="Script" uid="uid://t3aip346qgau" path="res://Case/Locations/LocationResource.gd" id="1_njkdp"]
 [ext_resource type="Texture2D" uid="uid://bibojr5rotm7w" path="res://assets/imports/graphics/backgrounds/with_object/victors_office.png" id="2_0rean"]
 
 [resource]
@@ -8,6 +8,7 @@ script = ExtResource("1_njkdp")
 name = "Victor's Office"
 characters = Array[String](["Victor Blake"])
 description = "The office of Victor Blake, the CEO of T M Blake and the victim's brother."
+disabled = false
 texture = ExtResource("2_0rean")
 texture_icon = ExtResource("2_0rean")
 scene_path = "res://scenes/locations/Victor's Office.tscn"

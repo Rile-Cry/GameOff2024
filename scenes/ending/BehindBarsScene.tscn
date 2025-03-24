@@ -51,8 +51,8 @@ resource_name = "auto_start"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l7ltb"]
 _data = {
-"RESET": SubResource("Animation_386er"),
-"auto_start": SubResource("Animation_jkrgv")
+&"RESET": SubResource("Animation_386er"),
+&"auto_start": SubResource("Animation_jkrgv")
 }
 
 [node name="FinalVerdictSelect" type="TextureRect"]

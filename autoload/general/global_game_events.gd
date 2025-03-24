@@ -1,11 +1,11 @@
 extends Node
 
+signal game_loaded(node)
+
 #region Narrative
 signal dialogue_started
 signal dialogue_ended
 signal dialogue_ended_
-signal exclaim
-signal shake(type : int)
 signal scene_loaded
 signal res_obtain(res_path: String, type : GameManager.resource_type)
 #endregion
@@ -14,22 +14,11 @@ var dialogue_ended_check_bool : bool = false
 
 func _ready() -> void:
 	res_obtain.connect(_res_obtain)
-	exclaim.connect(_exclaim)
 	dialogue_ended_.connect(dialogue_ended_check)
-	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 
 func dialogue_ended_check():
 	dialogue_ended_check_bool = true
-
-func _on_dialogic_signal(argument: String) -> void:
-	var type = argument.split("_")
-	match type[0]:
-		"effect":
-			if type[1] == "shake":
-				shake.emit(type[2].to_int())
-			elif type[1] == "exclaim":
-				exclaim.emit()
 
 func _process(_delta: float) -> void:
 	if dialogue_ended_check_bool:
@@ -40,13 +29,6 @@ func _process(_delta: float) -> void:
 		
 		dialogue_ended_check_bool = false
 		dialogue_ended.emit()
-
-func _exclaim():
-	if SfxAudio:
-		SfxAudio.play_audio("Exclaim")
-	
-	if UIManager:
-		UIManager.anim_player.play("Exclaim")
 
 func _res_obtain(res_path: String, type : GameManager.resource_type):
 	var res : Resource = load(res_path)

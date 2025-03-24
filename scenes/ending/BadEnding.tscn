@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dagx1hxt7wlsj"]
 
-[ext_resource type="Script" path="res://scenes/ending/bad_ending.gd" id="1_mkdhw"]
+[ext_resource type="Script" uid="uid://brfkjr20whhvo" path="res://scenes/ending/bad_ending.gd" id="1_mkdhw"]
 [ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_teyej"]
 
 [node name="BadEnding" type="Control"]
