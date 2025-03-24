@@ -56,6 +56,14 @@ variables={
 "EVELYNCASE": {
 "LUCAS": {
 "Diary": false,
+"INT": {
+"ChoiceFive": false,
+"ChoiceFour": false,
+"ChoiceOne": false,
+"ChoiceSix": false,
+"ChoiceThree": false,
+"ChoiceTwo": false
+},
 "Victor": false
 },
 "VICTOR": {

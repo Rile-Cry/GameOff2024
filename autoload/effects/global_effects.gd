@@ -34,7 +34,6 @@ func _shake(shake_power: float) -> void:
 		node.position = _random_offset(Vector2.ZERO, shake_power)
 		_shake(shake_power)
 
-
 func _ready() -> void:
 	mouse_filter = MouseFilter.MOUSE_FILTER_IGNORE
 	
