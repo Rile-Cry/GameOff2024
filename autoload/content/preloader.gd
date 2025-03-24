@@ -4,7 +4,7 @@ class_name Preloader
 const bad_ending_scene : PackedScene = preload("res://scenes/ending/BadEnding.tscn")
 const behind_bars_scene : PackedScene = preload("res://scenes/ending/BehindBarsScene.tscn")
 const credits_scene : PackedScene = preload("res://scenes/UI/credits.tscn")
-const finale_actors : PackedScene = preload("res://scenes/finale_actors.tscn")
+#const finale_actors : PackedScene = preload("res://scenes/finale_actors.tscn")
 const good_ending_scene : PackedScene = preload("res://scenes/ending/GoodEnding.tscn")
 const title_scene : PackedScene = preload("res://scenes/UI/main/Title.tscn")
 

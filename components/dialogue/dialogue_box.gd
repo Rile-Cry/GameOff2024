@@ -14,8 +14,6 @@ var _externals: Dictionary = { # The variables within the dialogue files
 }
 var _variables: Dictionary = {}
 var _initialized := false # Determines if the scene is initialized or not
-var _ink_file : InkResource # The dialogue file to read from
-var _ink_player : InkPlayer = InkPlayerFactory.create() # The ink_player to actually run dialogue
 var _title: String # The name of the dialogue
 var _typing := false # If the dialogue is still typing or not
 
@@ -31,9 +29,6 @@ var _typing := false # If the dialogue is still typing or not
 ## @param file_name: The name of the Dialogue found in components/dialogue/..
 ## @param args: Any additional arguments found within a specific Dialogue file.
 func setup(file_name: String, mood: String, args: Dictionary) -> void:
-	_ink_file = ResourceLoader.load(
-		"res://components/dialogue/" + file_name + ".ink.json",
-		"InkResource")
 	_title = file_name
 	for arg in args:
 		_variables[arg] = args[arg]
@@ -43,28 +38,20 @@ func setup(file_name: String, mood: String, args: Dictionary) -> void:
 
 #region Private Functions
 func _get_tags():
-	var tags : Array = _ink_player.get_current_tags()
-	for idx : int in tags.size():
-		var tag : String = tags[idx - 1]
-		match tag:
-			"shake": GlobalGameEvents.shake.emit(0)
-			"shake_aggressive": GlobalGameEvents.shake.emit(1)
-			"exclaim": GlobalGameEvents.exclaim.emit()
-			"Photo":
-				get_resource(tags[idx], GameManager.resource_type.PHOTO)
-			"Location":
-				get_resource(tags[idx], GameManager.resource_type.LOCATION)
+	match 1:
+		"shake": GlobalGameEvents.shake.emit(0)
+		"shake_aggressive": GlobalGameEvents.shake.emit(1)
+		"exclaim": GlobalGameEvents.exclaim.emit()
+		"Photo":
+			get_resource("tags[idx]1", Genum.ResourceType.PHOTO)
+		"Location":
+			get_resource("tags[idx]", Genum.ResourceType.LOCATION)
 
-func get_resource(path : String, res_type : GameManager.resource_type):
+func get_resource(path : String, res_type : Genum.ResourceType):
 	if not path.contains("res://"):
 		path = "res://" + path
 	
 	GlobalGameEvents.res_obtain.emit(path, res_type)
-
-
-func _override_story():
-	if _ink_file != null:
-		_ink_player.ink_file = _ink_file
 
 ## Called when the ink_player has loaded in successfully
 func _loaded(successfully: bool):
@@ -73,12 +60,9 @@ func _loaded(successfully: bool):
 	
 	# Set variables
 	print(_variables)
-	for key in _variables:
-		_ink_player.set_variable(key, _variables[key])
 	
 	_bind_externals()
 	_bind_variables()
-	_continue_story()
 
 func _bind_externals():
 	## This is where external variables that are within the ink_story should be
@@ -88,8 +72,6 @@ func _bind_externals():
 		externals.append(variable)
 	if externals.is_empty():
 		return
-	
-	_ink_player.observe_variables(externals, self, "_observe_variables")
 
 func _bind_variables():
 	## This is where external variables that are within the ink_story should be
@@ -99,8 +81,6 @@ func _bind_variables():
 		variables.append(variable)
 	if variables.is_empty():
 		return
-	
-	_ink_player.observe_variables(variables, self, "_observe_variables")
 
 func _observe_variables(variable_name, new_value) -> void:
 	if _externals.has(variable_name):
@@ -109,17 +89,6 @@ func _observe_variables(variable_name, new_value) -> void:
 		_variables[variable_name] = new_value
 		if GameManager.get_global_variable(variable_name) != null:
 			GameManager.set_global_variable(variable_name, new_value)
-
-## Continues the [member _ink_player] so that it moves to the next line of dialogue
-func _continue_story() -> void:
-	if _ink_player.can_continue:
-		var text : String = _ink_player.continue_story()
-		_change_label(text)
-		_get_tags()
-	elif _ink_player.has_choices:
-		_prompt_choices(_ink_player.current_choices)
-	else:
-		_ended()
 
 ## Both sends the text to be seperated from speaker and then changes the text
 ## in the actual text box.
@@ -188,12 +157,10 @@ func _choice_selected(index):
 	_choice_container.queue_free()
 	_choice_container = null
 	
-	_ink_player.choose_choice_index(index)
 	if GameGlobals.dialogue_choices.has(_title):
 		GameGlobals.dialogue_choices[_title].append(index)
 	else:
 		GameGlobals.dialogue_choices[_title] = [index]
-	_continue_story()
 
 func _ended():
 	queue_free()
@@ -207,13 +174,6 @@ func _notification(what: int) -> void:
 func _ready() -> void:
 	visible = false
 	if _initialized:
-		_ink_player.loads_in_background = true
-		add_child(_ink_player)
-		
-		_override_story()
-		_ink_player.connect("loaded", Callable(self, "_loaded"))
-		
-		_ink_player.create_story()
 		
 		GlobalGameEvents.dialogue_started.emit()
 		
@@ -223,13 +183,4 @@ func _ready() -> void:
 	else:
 		print("deferring call...")
 		call_deferred("_ready")
-
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
-		if _typing:
-			_typing = false
-		else:
-			if _choice_container == null:
-				_continue_story()
 #endregion

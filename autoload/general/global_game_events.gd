@@ -7,7 +7,7 @@ signal dialogue_started
 signal dialogue_ended
 signal dialogue_ended_
 signal scene_loaded
-signal res_obtain(res_path: String, type : GameManager.resource_type)
+signal res_obtain(res_path: String, type : Genum.ResourceType)
 #endregion
 
 var dialogue_ended_check_bool : bool = false
@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 		dialogue_ended_check_bool = false
 		dialogue_ended.emit()
 
-func _res_obtain(res_path: String, type : GameManager.resource_type):
+func _res_obtain(res_path: String, type : Genum.ResourceType):
 	var res : Resource = load(res_path)
 	if res and GameManager:
 		GameManager.stack_resources(res, type)

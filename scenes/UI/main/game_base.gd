@@ -36,8 +36,7 @@ func clue_selected(clue : Clue):
 				if await child._get_clue_location(clue):
 					return
 	
-		var dialogue_scene : DialogueBox = GameManager.create_dialogue(GameManager.preloader.invalid_clue_dialogue_path)
-		UIManager.add_child(dialogue_scene)
+		Dialogic.start("invalid_clue")
 
 func _process(delta: float) -> void:
 	if LoadScreen and LoadScreen.is_loading:

@@ -51,7 +51,6 @@ static var DefaultSettings: Dictionary = {
 	GameSettings.WindowResolutionSetting: DisplayServer.window_get_size(),
 	GameSettings.WindowDisplayBorderlessSetting: DisplayServer.window_get_flag(DisplayServer.WINDOW_FLAG_BORDERLESS),
 	GameSettings.VsyncSetting:  DisplayServer.window_get_vsync_mode(),
-	GameSettings.QualityPresetSetting: HardwareDetector.auto_discover_graphics_quality(),
 	GameSettings.MouseSensivitySetting: 3.0,
 	GameSettings.ReversedMouseSetting: false,
 	GameSettings.ControllerVibrationSetting: true,

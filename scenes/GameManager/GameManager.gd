@@ -51,12 +51,6 @@ var current_location : Location:
 	get():
 		return unlocked_locations[current_location_index]
 
-enum resource_type {
-	CLUE,
-	PHOTO,
-	LOCATION
-}
-
 const final_variable_name : Dictionary = {
 	"The Turnabout Case" : [
 		"EvelynArtStudio_all_clues",
@@ -80,7 +74,7 @@ func create_dialogue(file_name: String, mood : String = "", args: Dictionary = {
 	dialogue_box.setup(file_name, mood, args)
 	return dialogue_box
 
-func stack_resources(res : Resource, type : resource_type):
+func stack_resources(res : Resource, type : Genum.ResourceType):
 	var stack_res : Dictionary = {
 		"path": res.resource_path,
 		"type": type
@@ -148,16 +142,16 @@ func add_resource_from_stack():
 	
 	for res : Dictionary in stacked_resource:
 		match res["type"]:
-			resource_type.CLUE:
+			Genum.ResourceType.CLUE:
 				obtained = await obtain_clue(load(res["path"]))
-			resource_type.PHOTO:
+			Genum.ResourceType.PHOTO:
 				obtained = await obtain_photo(load(res["path"]))
-			resource_type.LOCATION:
+			Genum.ResourceType.LOCATION:
 				obtained = await unlock_location(load(res["path"]))
 			
 	global_variables["stacked_resource"].clear()
 
-func resource_popup(res : Resource, type : resource_type):
+func resource_popup(res : Resource, type : Genum.ResourceType):
 	if UIManager:
 		var popup_node : FoundPopup = preloader.found_popup.instantiate()
 		popup_node.obj_name = res.name
@@ -171,7 +165,7 @@ func resource_popup(res : Resource, type : resource_type):
 func obtain_photo(photo : Photo, popup : bool = true) -> bool:
 	if not photos.has(photo):
 		if popup and preloader.found_popup:
-			resource_popup(photo, resource_type.PHOTO)
+			resource_popup(photo, Genum.ResourceType.PHOTO)
 			await popup_closed
 		
 		photos.append(photo)
@@ -185,7 +179,7 @@ func obtain_photo(photo : Photo, popup : bool = true) -> bool:
 func obtain_clue(clue : Clue, popup : bool = true) -> bool:
 	if not clues.has(clue):
 		if popup and preloader.found_popup:
-			resource_popup(clue, resource_type.CLUE)
+			resource_popup(clue, Genum.ResourceType.CLUE)
 			await popup_closed
 		
 		clues.append(clue)
@@ -200,7 +194,7 @@ func unlock_location(location : Location, popup : bool = true):
 	if not unlocked_locations.has(location):
 		
 		if popup and preloader.found_popup:
-			resource_popup(location, resource_type.LOCATION)
+			resource_popup(location, Genum.ResourceType.LOCATION)
 			await popup_closed
 		
 		unlocked_locations.append(location)

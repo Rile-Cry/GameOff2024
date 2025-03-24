@@ -40,16 +40,3 @@ static var DaltonismKeys: Dictionary = {
 	WindowManager.DaltonismTypes.Tritanopia: TritanopiaTranslationKey,
 	WindowManager.DaltonismTypes.Achromatopsia: AchromatopsiaTranslationKey,
 }
-
-
-static var GraphicsQualityTranslationKey := "GRAPHICS_QUALITY"
-static var QualityLowTranslationKey := "QUALITY_LOW"
-static var QualityMediumTranslationKey := "QUALITY_MEDIUM"
-static var QualityHighTranslationKey := "QUALITY_HIGH"
-static var QualityUltraTranslationKey := "QUALITY_ULTRA"
-static var QualityPresetKeys: Dictionary = {
-	HardwareDetector.QualityPreset.Low: QualityLowTranslationKey,
-	HardwareDetector.QualityPreset.Medium: QualityMediumTranslationKey,
-	HardwareDetector.QualityPreset.High: QualityHighTranslationKey,
-	HardwareDetector.QualityPreset.Ultra: QualityUltraTranslationKey,
-}

@@ -8,7 +8,7 @@ class_name FoundPopup
 @export var description_label : RichTextLabel
 
 @export_category("Object Variables")
-@export var title : GameManager.resource_type
+@export var title : Genum.ResourceType
 @export var obj_name : String = "name"
 @export var obj_desc : String = "description"
 @export var obj_icon : Texture2D

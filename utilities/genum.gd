@@ -12,3 +12,9 @@ enum CurrentCase {
 	NONE,
 	EVELYN
 }
+
+enum ResourceType {
+	CLUE,
+	PHOTO,
+	LOCATION
+}

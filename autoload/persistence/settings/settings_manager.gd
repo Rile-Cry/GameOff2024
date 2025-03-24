@@ -146,8 +146,8 @@ func create_keybinding_events_for_action(action: StringName) -> Array[String]:
 	GameSettings.DefaultSettings[GameSettings.DefaultInputMapActionsSetting][action] = all_inputs_for_action
 	
 	for input_event: InputEvent in all_inputs_for_action:
-		if input_event is InputEventKey:
-			keybinding_events.append("InputEventKey:%s" %  StringHelper.remove_whitespaces(InputHelper.readable_key(input_event)))
+		#if input_event is InputEventKey:
+			#keybinding_events.append("InputEventKey:%s" %  StringHelper.remove_whitespaces(InputHelper.readable_key(input_event)))
 			
 		if input_event is InputEventMouseButton:
 			var mouse_button_text: String = ""
@@ -350,10 +350,10 @@ func _add_keybinding_event(action: String, keybinding_type: Array[String] = []):
 	match keybinding_type[0]:
 		"InputEventKey":
 			var input_event_key = InputEventKey.new()
-			input_event_key.keycode = OS.find_keycode_from_string(StringHelper.str_replace(keybinding_type[1].strip_edges(), keybinding_modifiers_regex, func(_text: String): return ""))
-			input_event_key.alt_pressed = not StringHelper.case_insensitive_comparison(keybinding_type[1], "alt") and keybinding_type[1].containsn("alt")
-			input_event_key.ctrl_pressed = not StringHelper.case_insensitive_comparison(keybinding_type[1], "ctrl") and keybinding_type[1].containsn("ctrl")
-			input_event_key.shift_pressed = not StringHelper.case_insensitive_comparison(keybinding_type[1], "shift") and keybinding_type[1].containsn("shift")
+			#input_event_key.keycode = OS.find_keycode_from_string(StringHelper.str_replace(keybinding_type[1].strip_edges(), keybinding_modifiers_regex, func(_text: String): return ""))
+			#input_event_key.alt_pressed = not StringHelper.case_insensitive_comparison(keybinding_type[1], "alt") and keybinding_type[1].containsn("alt")
+			#input_event_key.ctrl_pressed = not StringHelper.case_insensitive_comparison(keybinding_type[1], "ctrl") and keybinding_type[1].containsn("ctrl")
+			#input_event_key.shift_pressed = not StringHelper.case_insensitive_comparison(keybinding_type[1], "shift") and keybinding_type[1].containsn("shift")
 			input_event_key.meta_pressed =  keybinding_type[1].containsn("meta")
 			
 			InputMap.action_add_event(action, input_event_key)
@@ -373,87 +373,6 @@ func _add_keybinding_event(action: String, keybinding_type: Array[String] = []):
 			input_event_joypad_button.button_index = int(keybinding_type[1])
 			
 			InputMap.action_add_event(action, input_event_joypad_button)
-	
-#region Environment
-func apply_graphics_on_directional_light(directional_light: DirectionalLight3D, quality_preset: HardwareDetector.QualityPreset = HardwareDetector.QualityPreset.Medium) -> void:
-	var preset: HardwareDetector.GraphicQualityPreset = HardwareDetector.graphics_quality_presets[quality_preset]
-	
-	for quality: HardwareDetector.GraphicQualityDisplay in preset.quality:
-		match quality.project_setting:
-			"shadow_atlas":
-				match quality_preset:
-					HardwareDetector.QualityPreset.Low:
-						directional_light.shadow_bias = 0.03
-					HardwareDetector.QualityPreset.Medium:
-						directional_light.shadow_bias = 0.02
-					HardwareDetector.QualityPreset.High:
-						directional_light.shadow_bias = 0.01
-					HardwareDetector.QualityPreset.Ultra:
-						directional_light.shadow_bias = 0.005
-
-
-@warning_ignore("int_as_enum_without_cast")
-func apply_graphics_on_environment(world_environment: WorldEnvironment, quality_preset: HardwareDetector.QualityPreset = HardwareDetector.QualityPreset.Medium) -> void:
-	var viewport: Viewport = world_environment.get_viewport()
-	var preset: HardwareDetector.GraphicQualityPreset = HardwareDetector.graphics_quality_presets[quality_preset]
-	
-	for quality: HardwareDetector.GraphicQualityDisplay in preset.quality:
-		match quality.project_setting:
-			"environment/glow_enabled":
-				world_environment.environment.glow_enabled = bool(quality.enabled)
-			"environment/ssao_enabled":
-				world_environment.environment.ssao_enabled = bool(quality.enabled)
-				
-				if world_environment.environment.ssao_enabled:
-					match quality_preset:
-						HardwareDetector.QualityPreset.Low:
-							RenderingServer.environment_set_ssao_quality(RenderingServer.ENV_SSAO_QUALITY_VERY_LOW, true, 0.5, 2, 50, 300)
-						HardwareDetector.QualityPreset.Medium:
-							RenderingServer.environment_set_ssao_quality(RenderingServer.ENV_SSAO_QUALITY_LOW, true, 0.5, 2, 50, 300)
-						HardwareDetector.QualityPreset.High:
-							RenderingServer.environment_set_ssao_quality(RenderingServer.ENV_SSAO_QUALITY_MEDIUM, true, 0.5, 2, 50, 300)
-						HardwareDetector.QualityPreset.Ultra:
-							RenderingServer.environment_set_ssao_quality(RenderingServer.ENV_SSAO_QUALITY_HIGH, true, 0.5, 2, 50, 300)
-			"environment/ss_reflections_enabled":
-				world_environment.environment.ssr_enabled = bool(quality.enabled)
-				
-				if world_environment.environment.ssr_enabled:
-					match quality_preset:
-						HardwareDetector.QualityPreset.Low:
-							world_environment.environment.ssr_max_steps = 8
-						HardwareDetector.QualityPreset.Medium:
-							world_environment.environment.ssr_max_steps = 32
-						HardwareDetector.QualityPreset.High:
-							world_environment.environment.ssr_max_steps = 56
-						HardwareDetector.QualityPreset.Ultra:
-							world_environment.environment.ssr_max_steps = 56
-			"environment/sdfgi_enabled":
-				world_environment.environment.sdfgi_enabled = bool(quality.enabled)
-				
-				if world_environment.environment.sdfgi_enabled:
-					match quality_preset:
-						HardwareDetector.QualityPreset.Low:
-							RenderingServer.gi_set_use_half_resolution(true)
-						HardwareDetector.QualityPreset.Medium:
-							RenderingServer.gi_set_use_half_resolution(true)
-						HardwareDetector.QualityPreset.High:
-							RenderingServer.gi_set_use_half_resolution(false)
-						HardwareDetector.QualityPreset.Ultra:
-							RenderingServer.gi_set_use_half_resolution(false)
-			"environment/ssil_enabled":
-				world_environment.environment.ssil_enabled = bool(quality.enabled)
-			"rendering/anti_aliasing/quality/msaa_3d":
-				viewport.msaa_3d = quality.enabled
-			"shadow_atlas":
-				RenderingServer.directional_shadow_atlas_set_size(quality.enabled, true)
-				viewport.positional_shadow_atlas_size = quality.enabled
-			"shadow_filter":
-				RenderingServer.directional_soft_shadow_filter_set_quality(quality.enabled)
-				RenderingServer.positional_soft_shadow_filter_set_quality(quality.enabled)
-			"mesh_level_of_detail":
-				viewport.mesh_lod_threshold = quality.enabled
-#endregion
-	
 
 func _get_input_map_actions() -> Array[StringName]:
 	return InputMap.get_actions() if include_ui_keybindings else InputMap.get_actions().filter(func(action): return !action.contains("ui_"))

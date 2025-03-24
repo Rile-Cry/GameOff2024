@@ -33,12 +33,7 @@ func _fill_available_resolutions() -> void:
 			
 
 func resolutions_based_on_hardware() -> void:
-	if (HardwareDetector.is_steam_deck()):
-		display16_10 = true
-		display16_9 = false
-		display21_9 = false
-		display4_3 = false
-	elif HardwareDetector.is_mobile():
+	if HardwareDetector.is_mobile():
 		display16_10 = false
 		display16_9 = false
 		display21_9 = false

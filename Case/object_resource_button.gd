@@ -2,7 +2,7 @@ extends ObjectButton
 class_name ObjectResourceButton
 
 @export var resource : Resource
-@export var type : GameManager.resource_type
+@export var type : Genum.ResourceType
 
 func _process(delta: float) -> void:
 	super(delta)
@@ -10,18 +10,18 @@ func _process(delta: float) -> void:
 	if not disabled:
 		if GameManager:
 			match type:
-				GameManager.resource_type.CLUE:
+				Genum.ResourceType.CLUE:
 					if GameManager.clues.has(resource):
 						disable()
-				GameManager.resource_type.LOCATION:
+				Genum.ResourceType.LOCATION:
 					if GameManager.unlocked_locations.has(resource):
 						disable()
 
 func _pressed() -> void:
 	match type:
-		GameManager.resource_type.CLUE:
+		Genum.ResourceType.CLUE:
 			GameManager.obtain_clue(resource)
-		GameManager.resource_type.PHOTO:
+		Genum.ResourceType.PHOTO:
 			GameManager.obtain_photo(resource)
-		GameManager.resource_type.LOCATION:
+		Genum.ResourceType.LOCATION:
 			GameManager.unlock_location(resource)

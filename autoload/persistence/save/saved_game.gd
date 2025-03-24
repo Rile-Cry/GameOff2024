@@ -27,7 +27,7 @@ func write_savegame(new_filename: String = filename) -> Error:
 			return ERR_CANT_CREATE
 		
 		display_name = new_filename
-		filename = StringHelper.clean(new_filename.get_basename().to_lower().strip_edges())
+		#filename = StringHelper.clean(new_filename.get_basename().to_lower().strip_edges())
 		
 	update_last_datetime()
 	

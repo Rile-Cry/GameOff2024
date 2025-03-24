@@ -68,8 +68,8 @@ func _update_textbox(button: EmailButton) -> void:
 			for attachment in attachments:
 				var res : Resource = load("res://Case/" + attachment["address"])
 				match attachment["type"]:
-					"clue": GameManager.stack_resources(res, GameManager.resource_type.CLUE)
-					"photo": GameManager.stack_resources(res, GameManager.resource_type.PHOTO)
+					"clue": GameManager.stack_resources(res, Genum.ResourceType.CLUE)
+					"photo": GameManager.stack_resources(res, Genum.ResourceType.PHOTO)
 				
 				var attach_button = EmailButton.new()
 				attach_button.text = attachment["name"]

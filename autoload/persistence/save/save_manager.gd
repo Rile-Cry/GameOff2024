@@ -100,6 +100,6 @@ func save_filename_exists(filename: String) -> bool:
 	if list_of_saved_games.is_empty():
 		return false
 		
-	var name_to_check: String = StringHelper.clean(filename.get_basename().to_lower().strip_edges())
+	#var name_to_check: String = StringHelper.clean(filename.get_basename().to_lower().strip_edges())
 	
-	return list_of_saved_games.keys().has(name_to_check)
+	return true#list_of_saved_games.keys().has(name_to_check)
