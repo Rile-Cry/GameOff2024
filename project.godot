@@ -50,17 +50,18 @@ directories/dch_directory={
 "shade": "res://components/dialogic/characters/shade.dch"
 }
 directories/dtl_directory={
+"invalid_clue": "res://components/dialogic/timelines/common/invalid_clue.dtl",
 "lucas_interrogation": "res://components/dialogic/timelines/evelyn_case/lucas/lucas_interrogation.dtl"
 }
 variables={
 "EVELYNCASE": {
 "LUCAS": {
-"Diary": "",
-"Victor": ""
+"Diary": false,
+"Victor": false
 },
 "VICTOR": {
-"Marina": "",
-"Met": ""
+"Marina": false,
+"Met": false
 }
 }
 }

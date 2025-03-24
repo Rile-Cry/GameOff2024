@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://ftn2ua5jokkg"]
+
+[ext_resource type="Texture2D" uid="uid://b4j6etjpvvo0y" path="res://assets/imports/graphics/objects/clues/GALLERY_INVITATION.png" id="1_dsg31"]
+[ext_resource type="Texture2D" uid="uid://b3uyi1g2yx8m5" path="res://assets/imports/graphics/objects/clues/icon/GALLERY_INVITATION.png" id="2_rogph"]
+[ext_resource type="Script" uid="uid://27td4dc6wg8g" path="res://components/case/clues/clue_resource.gd" id="3_lpsw3"]
+
+[resource]
+script = ExtResource("3_lpsw3")
+clue_id = "GALLERY_INVITATION"
+clue_name = "Gallery Invitation"
+clue_description = "An invitation to Marina’s upcoming art showcase, to showcase her art."
+clue_location = "Evelyn's Art Studio"
+clue_texture = ExtResource("1_dsg31")
+clue_texture_icon = ExtResource("2_rogph")
+metadata/_custom_type_script = "uid://27td4dc6wg8g"

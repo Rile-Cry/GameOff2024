@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://dnpc6kxdmwdi2"]
+
+[ext_resource type="Texture2D" uid="uid://rmyisqfo63ng" path="res://assets/imports/graphics/objects/clues/PERSONAL_DIARY.png" id="1_1awix"]
+[ext_resource type="Script" uid="uid://27td4dc6wg8g" path="res://components/case/clues/clue_resource.gd" id="1_gppip"]
+[ext_resource type="Texture2D" uid="uid://bqne5skjls22o" path="res://assets/imports/graphics/objects/clues/icon/PERSONAL_DIARY.png" id="2_iwu1i"]
+
+[resource]
+script = ExtResource("1_gppip")
+clue_id = "PERSONAL_DIARY"
+clue_name = "Personal Diary"
+clue_description = "Evelyn’s diary with several pages torn out. Remaining entries hint at her frustration with feeling trapped, particularly mentioning Lucas."
+clue_location = "Evelyn's Art Studio"
+clue_texture = ExtResource("1_1awix")
+clue_texture_icon = ExtResource("2_iwu1i")
+metadata/_custom_type_script = "uid://27td4dc6wg8g"

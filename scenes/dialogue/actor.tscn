@@ -85,5 +85,5 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_aavfc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_30yr5")
+&"": SubResource("AnimationLibrary_30yr5")
 }
