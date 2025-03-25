@@ -20,6 +20,11 @@ enum CurrentCase {
 	EVELYN
 }
 
+enum Vars {
+	ALL_CLUES,
+	
+}
+
 enum ResourceType {
 	CLUE,
 	PHOTO,

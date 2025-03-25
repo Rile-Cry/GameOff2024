@@ -5,7 +5,6 @@ var game_base : GameBase
 var final_verdict : Array[String] = []
 const real_suspects : Array[String] = ["Victor", "Marina"]
 
-var clues : Array[Clue]
 var unlocked_locations : Array[Location]
 var enable_input : bool = false
 var photos : Array[Photo]
@@ -21,11 +20,6 @@ var global_variables : Dictionary = {
 	"all_clues": false,
 	"tossed_out": false,
 	"lucas_victor": false,
-}
-var actor_address : Dictionary[Genum.Actors, String]= {
-	Genum.Actors.LUCAS: "res://assets/imports/graphics/characters/Lucas Rivers/lucas_normal.png",
-	Genum.Actors.VICTOR: "res://assets/imports/graphics/characters/Victor Thorne/victor_normal.png",
-	Genum.Actors.MARINA: "res://assets/imports/graphics/characters/Marina Thorne/marina_normal.png"
 }
 
 var game_time : float = 0.0
@@ -173,12 +167,12 @@ func obtain_photo(photo : Photo, popup : bool = true) -> bool:
 	return false
 
 func obtain_clue(clue : Clue, popup : bool = true) -> bool:
-	if not clues.has(clue):
+	if not CaseHandler.clues.has(clue):
 		if popup and preloader.found_popup:
 			resource_popup(clue, Genum.ResourceType.CLUE)
 			await popup_closed
 		
-		clues.append(clue)
+		CaseHandler.clues.append(clue)
 		if UIManager: UIManager.refresh_mission_book()
 		
 		return true
@@ -213,7 +207,7 @@ func save_game() -> void:
 		location_path.append(location.resource_path)
 		location_lock.append(location.disabled)
 	for photo : Photo in photos: photo_path.append(photo.resource_path)
-	for clue : Clue in clues: clue_path.append(clue.resource_path)
+	for clue : Clue in CaseHandler.clues: clue_path.append(clue.resource_path)
 	
 	var save_dict : Dictionary = {
 		"CurrentLocation" : current_location_index,
@@ -254,7 +248,7 @@ func load_game() -> bool:
 		unlocked_locations.append(loc_res)
 	
 	for photo : String in photo_path: photos.append(load(photo))
-	for clue : String in clue_path: clues.append(load(clue))
+	for clue : String in clue_path: CaseHandler.clues.append(load(clue))
 	
 	global_variables = save_data["GlobalVariables"]
 	game_time = save_data["Time"]

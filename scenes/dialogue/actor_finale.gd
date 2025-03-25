@@ -15,7 +15,7 @@ signal verdict_selected(name : String)
 
 func _ready() -> void:
 	super()
-	_button.pressed.connect(select_actor)
+	button.pressed.connect(select_actor)
 	UIManager.get_mission_book().clue_selected.connect(_clue_selected)
 	#verdict_reaction_texture = ResourceLoader.load(GameManager.actor_address[dialogue_res.actor_name] + verdict_reaction + ".png")
 	GameManager.turnabout.connect(react_to_verdict)
@@ -59,15 +59,10 @@ func _process(delta: float) -> void:
 	if selected:
 		outline_enable()
 		return
-	super(delta)
 
 func _start_dialogue_actor():
 	if not pressed:
 		super()
-
-func _dialogue_ended():
-	super()
-	_button.disabled = pressed
 
 func _clue_selected(_clue : Clue):
 	clue = _clue

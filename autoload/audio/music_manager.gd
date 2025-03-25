@@ -23,11 +23,13 @@ func play_music(stream_name: String):
 			found = true
 			if in_intro:
 				if song.contains("Loop"):
-					audio_stream_player.play(music_bank.get(song))
+					audio_stream_player.stream = music_bank.get(song)
+					audio_stream_player.play()
 					in_intro = false
 			else:
 				if song.contains("Intro"):
-					audio_stream_player.play(music_bank.get(song))
+					audio_stream_player.stream = music_bank.get(song)
+					audio_stream_player.play()
 					in_intro = true
 	
 	if not found:

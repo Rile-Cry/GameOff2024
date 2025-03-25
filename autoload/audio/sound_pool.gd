@@ -6,14 +6,12 @@ var sfx_dir: String = "res://assets/audio/sfx/"
 var sfx_pool: Dictionary[String, AudioStream] = {}
 var ambient_dir: String = "res://assets/audio/ambient/"
 var ambient_pool: Dictionary[String, AudioStream] = {}
-var pool_players_number: int = 4:
-	set(value):
-		pool_players_number = max(2, value)
-		setup_pool()
 
 func _ready():
 	sfx_pool = _load_sounds(sfx_dir)
 	ambient_pool = _load_sounds(ambient_dir)
+	
+	setup_pool()
 
 func setup_pool():
 	var sfx_player = AudioStreamPlayer.new()
@@ -53,8 +51,9 @@ func play(stream_name: String, bus: String = "SFX", volume: float = 1.0) -> void
 			"Ambient":
 				audio_player = stream_players_pool.get(1)
 		
-		audio_player.stream = stream
-		audio_player.play()
+		if stream:
+			audio_player.stream = stream
+			audio_player.play()
 
 func play_random_stream(streams: Array[AudioStream] = [], bus: String = "SFX", volume: float = 1.0):
 	if streams.is_empty() or not _bus_is_valid(bus):

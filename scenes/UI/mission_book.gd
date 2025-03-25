@@ -2,11 +2,9 @@ extends Control
 class_name MissionBook
 
 @export_category("Base")
-
 @export var tab_container : TabContainer
 
 @export_category("Buttons")
-
 @export var close_b : Button
 
 @export_category("Locations")
@@ -16,9 +14,9 @@ class_name MissionBook
 		location_lock_container.visible = location_locked
 		location_unlock_container.visible = not location_locked
 
-@export var location_lock_container : MarginContainer
-@export var location_clue_lock_container : MarginContainer
-@export var location_unlock_container : MarginContainer
+@export var location_lock_container : Control
+@export var location_clue_lock_container : Control
+@export var location_unlock_container : Control
 
 @export var location_container : VBoxContainer
 @export var location_texture : TextureRect
@@ -39,9 +37,9 @@ var hovered_location : Location
 		photo_lock_container.visible = photo_locked
 		photo_unlock_container.visible = not photo_locked
 
-@export var photo_lock_container : MarginContainer
-@export var photo_clue_lock_container : MarginContainer
-@export var photo_unlock_container : MarginContainer
+@export var photo_lock_container : Control
+@export var photo_clue_lock_container : Control
+@export var photo_unlock_container : Control
 
 @export var photo_container : GridContainer
 @export var photo_texture : TextureRect
@@ -189,8 +187,8 @@ func refresh_clues():
 	for node in clue_container.get_children():
 		node.queue_free()
 	
-	if GameManager and GameManager.clues:
-		for clue in GameManager.clues:
+	if GameManager and CaseHandler.clues:
+		for clue in CaseHandler.clues:
 			var clue_node : MissionBookNode = MissionBookNode.new()
 			clue_node.is_hovering.connect(update_clue_info)
 			clue_node.is_not_hovering.connect(refresh_clue_info)
@@ -249,7 +247,7 @@ func update_notes() -> void:
 func close():
 	if UIManager and visible:
 		UIManager.open_close_mission_book()
-		GameManager.global_variables["p_notes"] = p_note_box.text
+		GameManager.global_variables["p_notes"] = p_note_box.text # TODO: Fix starting from here
 
 func glitch_mission_book():
 	glitched = true

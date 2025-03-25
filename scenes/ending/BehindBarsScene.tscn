@@ -10,11 +10,8 @@ script/source = "extends TextureRect
 
 func _ready() -> void:
 	if not GameManager.get_verdict():
-		if BgmAudio and BgmAudio.playing:
-			BgmAudio.stop()
-		if AmbientAudio and AmbientAudio.playing:
-			AmbientAudio.stop()
-	
+		MusicManager.stop_music()
+		SoundPool.stop_streams_from_bus(\"Ambient\")
 	
 	for child in actor_container.get_children():
 		child.queue_free()
@@ -76,7 +73,7 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_l7ltb")
+&"": SubResource("AnimationLibrary_l7ltb")
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

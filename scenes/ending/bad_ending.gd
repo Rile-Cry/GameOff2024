@@ -10,7 +10,7 @@ func _ready() -> void:
 		UIManager.get_mission_book().glitch_mission_book()
 		
 	SoundPool.stop_streams_from_buses(["SFX", "Ambient"])
-	MusicManager.
+	MusicManager.stop_music()
 	
 	GameManager.enable_input = false
 	tween.finished.connect(tweening_complete)

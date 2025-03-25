@@ -22,8 +22,8 @@ func _ready() -> void:
 	%MissionBookButton.pressed.connect(open_close_mission_book)
 	%CreditCloseButton.pressed.connect(open_close_credits)
 	%FinalVerdict.pressed.connect(_confirm_final_verdict)
-	GlobalGameEvents.connect("dialogue_started", _dialogue_started)
-	GlobalGameEvents.connect("dialogue_ended", _dialogue_ended)
+	Dialogic.timeline_started.connect(_dialogue_started)
+	Dialogic.timeline_ended.connect(_dialogue_ended)
 
 func _confirm_final_verdict():
 	%FinalVerdict.hide()

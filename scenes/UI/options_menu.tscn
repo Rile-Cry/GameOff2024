@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://cs1auqp2g4yn4"]
+[gd_scene load_steps=9 format=3 uid="uid://cs1auqp2g4yn4"]
 
-[ext_resource type="Script" uid="uid://dp41aurpqicsn" path="res://ui/menus/components/slider/audio_slider.gd" id="1_hou6f"]
 [ext_resource type="Script" uid="uid://wou61vy5hcvd" path="res://scenes/UI/options_menu.gd" id="1_oc6ia"]
 [ext_resource type="Script" uid="uid://2asdve88blsj" path="res://ui/menus/components/option_button/screen_mode_option_button.gd" id="2_42cln"]
 [ext_resource type="Script" uid="uid://cdf8fdijep6e7" path="res://ui/menus/components/checkbox/screen_borderless_checkbox.gd" id="3_ifc12"]
@@ -32,9 +31,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 100
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_bottom = 50
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
@@ -192,6 +191,7 @@ text = "BUS_AMBIENT"
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
+alignment = 2
 
 [node name="MasterAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
 custom_minimum_size = Vector2(150, 19)
@@ -199,8 +199,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-script = ExtResource("1_hou6f")
-target_bus = "Master"
 
 [node name="MusicAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
 custom_minimum_size = Vector2(150, 19)
@@ -208,7 +206,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-script = ExtResource("1_hou6f")
 
 [node name="SFXAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
 custom_minimum_size = Vector2(150, 19)
@@ -216,8 +213,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-script = ExtResource("1_hou6f")
-target_bus = "SFX"
 
 [node name="AmbientAudioSlider" type="HSlider" parent="MarginContainer/Panel/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/HBoxContainer/AudioSliderVBox"]
 custom_minimum_size = Vector2(150, 19)
@@ -225,8 +220,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
-script = ExtResource("1_hou6f")
-target_bus = "Ambient"
 
 [node name="BackButtonMarginContainer" type="MarginContainer" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2

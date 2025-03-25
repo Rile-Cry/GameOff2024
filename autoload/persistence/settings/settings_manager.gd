@@ -77,7 +77,6 @@ func remove_settings_file(path: String = settings_file_path) -> void:
 
 #region Creation
 func create_settings(path: String = settings_file_path) -> void:
-	create_audio_section()
 	create_graphics_section()
 	create_accessibility_section()
 	create_localization_section()
@@ -87,20 +86,6 @@ func create_settings(path: String = settings_file_path) -> void:
 	save_settings(path)
 	
 	created_settings.emit()
-
-
-func create_audio_section() -> void:
-	for bus: String in AudioManager.available_buses:
-		update_audio_section(bus, AudioManager.get_default_volume_for_bus(bus))
-	
-	var buses_are_muted: bool = GameSettings.DefaultSettings[GameSettings.MutedAudioSetting]
-	update_audio_section(GameSettings.MutedAudioSetting, buses_are_muted)
-	
-	if(buses_are_muted):
-		AudioManager.mute_all_buses()
-	else:
-		AudioManager.unmute_all_buses()
-		
 
 func create_graphics_section() -> void:
 	update_graphics_section(GameSettings.FpsCounterSetting, GameSettings.DefaultSettings[GameSettings.FpsCounterSetting])
@@ -212,12 +197,6 @@ func create_keybinding_events_for_action(action: StringName) -> Array[String]:
 #region Load
 func load_audio() -> void:
 	var muted_buses: bool = get_audio_section(GameSettings.MutedAudioSetting)
-	
-	for bus in config_file_api.get_section_keys(GameSettings.AudioSection):
-		if(bus in AudioManager.available_buses):
-			AudioManager.change_volume(bus, get_audio_section(bus))
-			AudioManager.mute_bus(bus, muted_buses)
-		
 
 func load_graphics() -> void:
 	for section_key: String in config_file_api.get_section_keys(GameSettings.GraphicsSection):

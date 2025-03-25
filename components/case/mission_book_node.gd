@@ -1,5 +1,4 @@
-extends Button
-class_name MissionBookNode
+class_name MissionBookNode extends Button
 
 signal is_hovering(res : Resource)
 signal is_not_hovering(res : Resource)
@@ -30,7 +29,6 @@ func _ready() -> void:
 	mouse_exited.connect(_on_un_hovered)
 
 func _on_hovered() -> void:
-	MouseOver = true
 	is_hovering.emit(resource)
 	var volume_db := 0.0
 	if disabled:
@@ -38,5 +36,4 @@ func _on_hovered() -> void:
 	SoundPool.play("Object Hover", "SFX", volume_db)
 
 func _on_un_hovered() -> void:
-	MouseOver = false
 	is_not_hovering.emit(resource)

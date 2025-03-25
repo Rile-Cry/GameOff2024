@@ -5,7 +5,6 @@ extends Control
 func _ready() -> void:
 	animation_player.animation_finished.connect(anim_finished)
 	MusicManager.play_music("Title Screen")
-	
 	SoundPool.stop_streams_from_buses(["SFX", "Ambient"])
 	if UIManager:
 		UIManager.anim_player.play_backwards("white_out")

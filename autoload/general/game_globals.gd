@@ -1,6 +1,11 @@
 extends Node
 
 #region Tracked variables
+var actor_address : Dictionary[Genum.Actors, String]= {
+	Genum.Actors.LUCAS: "res://assets/imports/graphics/characters/Lucas Rivers/lucas_normal.png",
+	Genum.Actors.VICTOR: "res://assets/imports/graphics/characters/Victor Thorne/victor_normal.png",
+	Genum.Actors.MARINA: "res://assets/imports/graphics/characters/Marina Thorne/marina_normal.png"
+}
 var current_case : Genum.CurrentCase = Genum.CurrentCase.NONE
 #endregion
 
