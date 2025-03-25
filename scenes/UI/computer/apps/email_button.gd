@@ -11,5 +11,5 @@ func _ready() -> void:
 
 
 func _pressed() -> void:
-	SfxAudio.play_audio("Mouse Click")
+	SoundPool.play("Mouse Click")
 	mail_selected.emit(self)

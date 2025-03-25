@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cvb5goxp4endi"
-path="res://.godot/imported/Sticky Note Hover.wav-79d3f4c6b347127d77f2de487089315e.sample"
+path="res://.godot/imported/Sticky Note Hover.wav-d3b7c04b9d0f3e7f7c89bea8f2d8d6e6.sample"
 
 [deps]
 
-source_file="res://assets/imports/sfx/Sticky Note Hover.wav"
-dest_files=["res://.godot/imported/Sticky Note Hover.wav-79d3f4c6b347127d77f2de487089315e.sample"]
+source_file="res://assets/audio/sfx/Sticky Note Hover.wav"
+dest_files=["res://.godot/imported/Sticky Note Hover.wav-d3b7c04b9d0f3e7f7c89bea8f2d8d6e6.sample"]
 
 [params]
 

@@ -10,8 +10,7 @@ func _ready() -> void:
 	if AmbientAudio:
 		AmbientAudio.stop()
 	
-	if SfxAudio:
-		SfxAudio.stop()
+	SoundPool.stop_streams_from_bus()
 	if UIManager:
 		UIManager.anim_player.play_backwards("white_out")
 		await UIManager.anim_player.animation_finished

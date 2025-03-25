@@ -104,7 +104,7 @@ func _ready():
 		GameManager.mission_book = self
 	
 func page_change(_tab : int):
-	SfxAudio.play_audio("Book Turn")
+	SoundPool.play("Book Turn")
 
 func refresh_locations():
 	for node in location_container.get_children():

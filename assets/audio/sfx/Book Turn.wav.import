@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cmolxdf4h0eow"
-path="res://.godot/imported/Book Turn.wav-f37ad93cac7a1914cb7b5b14f4b0d442.sample"
+path="res://.godot/imported/Book Turn.wav-ed2f41232d63735a6ed2004801e47932.sample"
 
 [deps]
 
-source_file="res://assets/imports/sfx/Book Turn.wav"
-dest_files=["res://.godot/imported/Book Turn.wav-f37ad93cac7a1914cb7b5b14f4b0d442.sample"]
+source_file="res://assets/audio/sfx/Book Turn.wav"
+dest_files=["res://.godot/imported/Book Turn.wav-ed2f41232d63735a6ed2004801e47932.sample"]
 
 [params]
 

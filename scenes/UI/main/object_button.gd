@@ -36,7 +36,7 @@ func _process(_delta: float) -> void:
 func outline_enable():
 	if not (was_hovering or disabled):
 		if not hover_sfx.is_empty():
-			SfxAudio.play_audio(hover_sfx)
+			SoundPool.play(hover_sfx)
 		was_hovering = true
 	
 		if GameManager and GameManager.enable_input and material:
@@ -58,4 +58,4 @@ func _pressed() -> void:
 	release_focus()
 	outline_enable()
 	if not click_sfx.is_empty():
-		SfxAudio.play_audio(click_sfx)
+		SoundPool.play(click_sfx)

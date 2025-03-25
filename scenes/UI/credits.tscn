@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bo1r4vcj13hxt" path="res://ui/fonts/XTypewriter-Bold.woff2" id="1_d1p63"]
 [ext_resource type="Script" uid="uid://pl3ashmbcopu" path="res://scenes/UI/credit_scene.gd" id="2_a7u31"]
 [ext_resource type="Texture2D" uid="uid://bahl1uk6e4qub" path="res://assets/imports/graphics/backgrounds/with_object/shades_office.png" id="2_fubbr"]
-[ext_resource type="Texture2D" uid="uid://igd44d5b2jai" path="res://assets/imports/graphics/UI/splash_screen/lunar_eclipse_logo.png" id="4_2oqew"]
+[ext_resource type="Texture2D" uid="uid://igd44d5b2jai" path="res://assets/imports/graphics/ui/splash_screen/lunar_eclipse_logo.png" id="4_2oqew"]
 
 [sub_resource type="Theme" id="Theme_je2rl"]
 HBoxContainer/constants/separation = 12

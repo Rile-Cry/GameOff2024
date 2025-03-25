@@ -12,8 +12,8 @@ signal popup_closed
 func _ready() -> void:
 	if GameManager:
 		GameManager.enable_input = false
-	if SfxAudio:
-		SfxAudio.play_audio("Popup")
+	
+	SoundPool.play("Popup")
 	
 	if close_b:
 		close_b.pressed.connect(close)

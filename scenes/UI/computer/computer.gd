@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 		$Programs/Email/Notification.visible = not email_loc.is_empty()
 
 func mouse_click_sfx():
-	SfxAudio.play_audio("Mouse Click")
+	SoundPool.play("Mouse Click")
 
 func _mysos_pressed(num: int) -> void:
 	mouse_click_sfx()

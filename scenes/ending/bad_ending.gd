@@ -9,8 +9,7 @@ func _ready() -> void:
 		UIManager.get_mission_book().tab_container.current_tab = 1
 		UIManager.get_mission_book().glitch_mission_book()
 		
-	if SfxAudio and SfxAudio.playing:
-		SfxAudio.stop()
+	SoundPool.stop_streams_from_bus()
 	if BgmAudio and BgmAudio.playing:
 		BgmAudio.stop()
 	if AmbientAudio and AmbientAudio.playing:

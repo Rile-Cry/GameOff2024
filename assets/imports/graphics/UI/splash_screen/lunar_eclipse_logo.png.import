@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://igd44d5b2jai"
-path="res://.godot/imported/lunar_eclipse_logo.png-b70510b0375393a2d8649aa624f6a16d.ctex"
+path="res://.godot/imported/lunar_eclipse_logo.png-038ce6addf6dd7e316bc0db608e04831.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/imports/graphics/UI/splash_screen/lunar_eclipse_logo.png"
-dest_files=["res://.godot/imported/lunar_eclipse_logo.png-b70510b0375393a2d8649aa624f6a16d.ctex"]
+source_file="res://assets/imports/graphics/ui/splash_screen/lunar_eclipse_logo.png"
+dest_files=["res://.godot/imported/lunar_eclipse_logo.png-038ce6addf6dd7e316bc0db608e04831.ctex"]
 
 [params]
 

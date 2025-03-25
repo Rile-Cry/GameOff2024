@@ -8,9 +8,6 @@ static var default_audio_volumes := {
 	"master": 0.9,
 	"music": 0.8,
 	"sfx": 0.9,
-	"echosfx": 0.9,
-	"voice": 0.8,
-	"ui": 0.7,
 	"ambient": 0.9
 }
 

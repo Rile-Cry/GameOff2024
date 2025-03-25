@@ -1,0 +1,14 @@
+join lucas_rivers center [animation="Fade In" length="0.2"]
+shade: Lucas, you mentioned how Evelyn was the love of your life?
+lucas_rivers (weak_smile_2): Um. . .[pause=0.2] yeah, exactly. And I honestly don't know where to go from here.
+shade: WEll, you might want to sit down for this one.
+lucas_rivers (tries_to_calm): [speed=2]Wh. . . why is that?
+shade: Because over here in her diary, she mentions you a lot and how she feels trapped.
+do GlobalEffects.screen_shake(0)
+lucas_rivers (panic): What. . .[pause=0.3] what is this? Is that how she really felt? If that's true, why did she even bother getting back with me?!
+do GlobalEffects.screen_shake(0)
+shade: Maybe she changed her mind, Lucas. People grow, and maybe she saw something in you. You have changed, haven't you?
+update lucas_rivers (tries_to_calm)
+shade: Because over here in her diary, she mentions you a lot and how she feels trapped.
+lucas_rivers: Yeah. . .[pause=0.2] yeah, maybe. We were starting fresh. What we had. . .[pause=0.2] it was real. I swear it was real.
+[end_timeline]

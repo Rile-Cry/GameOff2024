@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 func outline_enable():
 	if not (was_hovering or _button.disabled):
 		if not hover_sfx.is_empty():
-			SfxAudio.play_audio(hover_sfx)
+			SoundPool.play(hover_sfx)
 		was_hovering = true
 	
 		if _texture_rect.material:

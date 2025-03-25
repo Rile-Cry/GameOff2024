@@ -76,7 +76,7 @@ func _process(_delta: float) -> void:
 				open_close_mission_book()
 			
 			if %MissionBookButton.is_hovered() and %MissionBookButton.is_hovered() != is_hovering_mission_book:
-				SfxAudio.play_audio("Book Hover")
+				SoundPool.play("Book Hover")
 		else:
 			if %MissionBook.visible:
 				open_close_mission_book()
@@ -117,12 +117,12 @@ func hide_shader(shader_name : String):
 
 func open_close_options() -> void:
 	%OptionMenu.visible = not %OptionMenu.visible
-	SfxAudio.play_audio("UI Open Close")
+	SoundPool.play("UI Open Close")
 
 func open_close_credits() -> void:
 	can_open_option = %Credits.visible
 	%Credits.visible = not %Credits.visible
-	SfxAudio.play_audio("UI Open Close")
+	SoundPool.play("UI Open Close")
 
 func open_close_computer() -> void:
 	for child in %Computer.get_children():
@@ -141,10 +141,10 @@ func open_close_mission_book():
 	can_open_option = %MissionBook.visible
 	%MissionBook.visible = not %MissionBook.visible
 	if %MissionBook.visible:
-		SfxAudio.play_audio("Book Open")
+		SoundPool.play("Book Open")
 		%MissionBook.update_notes()
 	else:
-		SfxAudio.play_audio("Book Close")
+		SoundPool.play("Book Close")
 
 func update_final_verdict_button():
 	if GameManager:

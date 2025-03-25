@@ -53,12 +53,10 @@ func dialogue_start_action(idx : int):
 		$AnimationPlayer.play("hide_room")
 		await $AnimationPlayer.animation_finished
 		
-		if SfxAudio:
-			SfxAudio.play_audio("Door Knock")
-			await get_tree().create_timer(2.1).timeout
+		SoundPool.play("Door Knock")
+		await get_tree().create_timer(2.1).timeout
 	elif idx == 1:
-		if SfxAudio:
-			SfxAudio.play_audio("Door Open")
+		SoundPool.play("Door Open")
 		$AnimationPlayer.play("open_door")
 		await $AnimationPlayer.animation_finished
 	elif idx == 2:

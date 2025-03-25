@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://r3bd04ovltbw"
-path="res://.godot/imported/Exclaim.wav-aa4b93c6f56b92c538980f02c9fcb538.sample"
+uid="uid://8go2mhfgmea4"
+path="res://.godot/imported/Popup.wav-48899cdacbde0a82278c7cb788f6ddb7.sample"
 
 [deps]
 
-source_file="res://assets/imports/sfx/Exclaim.wav"
-dest_files=["res://.godot/imported/Exclaim.wav-aa4b93c6f56b92c538980f02c9fcb538.sample"]
+source_file="res://assets/audio/sfx/Popup.wav"
+dest_files=["res://.godot/imported/Popup.wav-48899cdacbde0a82278c7cb788f6ddb7.sample"]
 
 [params]
 

@@ -17,7 +17,7 @@ run/main_scene="uid://bgygd7yooef5e"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.996078, 0.976471, 0.952941, 1)
 boot_splash/show_image=false
-config/icon="res://assets/imports/graphics/UI/icon.png"
+config/icon="res://assets/imports/graphics/ui/icon.png"
 
 [autoload]
 
@@ -35,7 +35,6 @@ SaveManager="*res://autoload/persistence/save/save_manager.gd"
 SettingsManager="*res://autoload/persistence/settings/settings_manager.gd"
 GameManager="*res://scenes/GameManager/game_manager.gd"
 UIManager="*res://scenes/GameManager/ui_manager.tscn"
-SfxAudio="*res://scenes/GameManager/sfx_audio.tscn"
 BgmAudio="*res://scenes/GameManager/bgm_audio.tscn"
 LoadScreen="*res://scenes/UI/LoadScreen.tscn"
 AmbientAudio="*res://scenes/GameManager/ambient_audio.tscn"
@@ -50,6 +49,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "invalid_clue": "res://components/dialogic/timelines/common/invalid_clue.dtl",
+"lucas_diary": "res://components/dialogic/timelines/evelyn_case/lucas/lucas_diary.dtl",
 "lucas_interrogation": "res://components/dialogic/timelines/evelyn_case/lucas/lucas_interrogation.dtl"
 }
 variables={

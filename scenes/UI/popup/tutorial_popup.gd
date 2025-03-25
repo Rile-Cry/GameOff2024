@@ -8,7 +8,7 @@ class_name TutorialPopup
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tab_container.tab_changed.connect(tab_change)
-	SfxAudio.play_audio("Popup")
+	SoundPool.play("Popup")
 	
 	prev_b.pressed.connect(previous)
 	next_b.pressed.connect(next)
@@ -46,10 +46,8 @@ func tab_change(current_tab : int) -> void:
 
 func previous():
 	tab_container.current_tab -= 1
-	if SfxAudio:
-		SfxAudio.play_audio("Object Select")
+	SoundPool.play("Object Select")
 
 func next():
 	tab_container.current_tab += 1
-	if SfxAudio:
-		SfxAudio.play_audio("Object Select")
+	SoundPool.play("Object Select")

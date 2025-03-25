@@ -1,13 +1,14 @@
 extends Button
 class_name MissionBookNode
 
+signal is_hovering(res : Resource)
+signal is_not_hovering(res : Resource)
+
 @export var resource : Resource
 
 var MouseOver : bool = false
 var style_texture : StyleBoxTexture
 var style_texture_hover : StyleBoxTexture
-signal is_hovering(res : Resource)
-signal is_not_hovering(res : Resource)
 
 func _ready() -> void:
 	focus_mode = FOCUS_NONE
@@ -25,17 +26,17 @@ func _ready() -> void:
 	size_flags_horizontal = SizeFlags.SIZE_EXPAND_FILL
 	custom_minimum_size.y = 76
 	
-	mouse_entered.connect(hover)
-	mouse_exited.connect(un_hover)
+	mouse_entered.connect(_on_hovered)
+	mouse_exited.connect(_on_un_hovered)
 
-func hover() -> void:
+func _on_hovered() -> void:
 	MouseOver = true
 	is_hovering.emit(resource)
 	var volume_db := 0.0
 	if disabled:
 		volume_db = -10.0
-	SfxAudio.play_audio("Object Hover", volume_db)
+	SoundPool.play("Object Hover", "SFX", volume_db)
 
-func un_hover() -> void:
+func _on_un_hovered() -> void:
 	MouseOver = false
 	is_not_hovering.emit(resource)

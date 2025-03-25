@@ -99,8 +99,7 @@ func drawer_popup_show():
 		UIManager.can_open_option = false
 
 func close_popup_sfx():
-	if SfxAudio:
-		SfxAudio.play_audio("UI Open Close")
+	SoundPool.play("UI Open Close")
 	
 	close_popup()
 

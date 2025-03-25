@@ -38,7 +38,7 @@ func _check_code() -> void:
 			UIManager.open_close_computer()
 			GameManager.set_global_variable("all_clues", true)
 		_:
-			print("That's not a correct code, now is it.")
+			print("Shade . . . you know that's not correct.")
 
 
 func _close() -> void:

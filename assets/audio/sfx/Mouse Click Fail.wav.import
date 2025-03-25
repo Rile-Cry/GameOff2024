@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://chljaaunxpe1h"
-path="res://.godot/imported/Mouse Click Fail.wav-d46d94c266fb386120789f66493988de.sample"
+path="res://.godot/imported/Mouse Click Fail.wav-c856b3074effd68fdb669e43ae8bd143.sample"
 
 [deps]
 
-source_file="res://assets/imports/sfx/Mouse Click Fail.wav"
-dest_files=["res://.godot/imported/Mouse Click Fail.wav-d46d94c266fb386120789f66493988de.sample"]
+source_file="res://assets/audio/sfx/Mouse Click Fail.wav"
+dest_files=["res://.godot/imported/Mouse Click Fail.wav-c856b3074effd68fdb669e43ae8bd143.sample"]
 
 [params]
 

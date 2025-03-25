@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cl8e2n7ebcdp5"]
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_na5lg"]
-[ext_resource type="AudioStream" uid="uid://vh8c64n1fe6f" path="res://assets/imports/sfx/Arrest.wav" id="2_2obxh"]
+[ext_resource type="AudioStream" uid="uid://vh8c64n1fe6f" path="res://assets/audio/sfx/Arrest.wav" id="2_2obxh"]
 
 [sub_resource type="GDScript" id="GDScript_a3wr6"]
 script/source = "extends TextureRect

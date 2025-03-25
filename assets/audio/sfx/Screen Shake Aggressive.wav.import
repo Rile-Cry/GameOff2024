@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3p0wjkenk8ld"
-path="res://.godot/imported/Screen Shake Aggressive.wav-f0289f1250a98830316a610a6ba43990.sample"
+path="res://.godot/imported/Screen Shake Aggressive.wav-a73072bcbceee052ad2611da87724c53.sample"
 
 [deps]
 
-source_file="res://assets/imports/sfx/Screen Shake Aggressive.wav"
-dest_files=["res://.godot/imported/Screen Shake Aggressive.wav-f0289f1250a98830316a610a6ba43990.sample"]
+source_file="res://assets/audio/sfx/Screen Shake Aggressive.wav"
+dest_files=["res://.godot/imported/Screen Shake Aggressive.wav-a73072bcbceee052ad2611da87724c53.sample"]
 
 [params]
 

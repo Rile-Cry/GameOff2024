@@ -64,8 +64,7 @@ func _get_level_base(passed_node: Node) -> void:
 	level_base = passed_node
 
 func exclaim():
-	if SfxAudio:
-		SfxAudio.play_audio("Exclaim")
+	SoundPool.play("Exclaim")
 	
 	if UIManager:
 		UIManager.anim_player.play("Exclaim")
@@ -80,8 +79,8 @@ func screen_shake(type : int) -> void:
 			shake_power = 20.0
 		_:
 			shake_power = 10.0
-	if SfxAudio:
-		SfxAudio.play_audio(shake_sfx)
+	
+	SoundPool.play(shake_sfx)
 	
 	_shake(shake_power)
 

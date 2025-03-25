@@ -17,8 +17,7 @@ func dialogue_start_action(idx : int):
 			UIManager.anim_player.play("hide_room")
 			await UIManager.anim_player.animation_finished
 			
-			if SfxAudio:
-				SfxAudio.play_audio("Door Open")
+			SoundPool.play("Door Open")
 			UIManager.anim_player.play("reveal_room")
 			await UIManager.anim_player.animation_finished
 	elif idx == 2:
