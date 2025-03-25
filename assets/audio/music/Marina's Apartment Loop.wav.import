@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c2pfsy2i6klhe"
-path="res://.godot/imported/Marina's Apartment Loop.wav-c3d983f9853248469ecf661a64eb2b80.sample"
+path="res://.godot/imported/Marina's Apartment Loop.wav-4877edda245e9cbefc6fb543c245b28d.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Marina's Apartment Loop.wav"
-dest_files=["res://.godot/imported/Marina's Apartment Loop.wav-c3d983f9853248469ecf661a64eb2b80.sample"]
+source_file="res://assets/audio/music/Marina's Apartment Loop.wav"
+dest_files=["res://.godot/imported/Marina's Apartment Loop.wav-4877edda245e9cbefc6fb543c245b28d.sample"]
 
 [params]
 

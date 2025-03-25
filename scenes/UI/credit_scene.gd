@@ -7,10 +7,7 @@ func _ready() -> void:
 	if BgmAudio:
 		BgmAudio.play_audio("Title Screen")
 	
-	if AmbientAudio:
-		AmbientAudio.stop()
-	
-	SoundPool.stop_streams_from_bus()
+	SoundPool.stop_streams_from_buses(["SFX", "Ambient"])
 	if UIManager:
 		UIManager.anim_player.play_backwards("white_out")
 		await UIManager.anim_player.animation_finished

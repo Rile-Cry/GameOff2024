@@ -50,8 +50,7 @@ func _process(_delta: float) -> void:
 			await anim_player.animation_finished
 			anim_player.play("Glitch Screen")
 			await anim_player.animation_finished
-			if AmbientAudio:
-				AmbientAudio.stop()
+			SoundPool.stop_streams_from_bus("Ambient")
 			anim_player.play("hide_room")
 			await anim_player.animation_finished
 			anim_player.play_backwards("black_bar")
@@ -132,9 +131,9 @@ func open_close_computer() -> void:
 	%Computer.visible = not %Computer.visible
 	if %Computer.visible:
 		#%Computer.update_notes()
-		AmbientAudio.play_audio("OS Boot")
+		SoundPool.play("OS Boot", "Ambient")
 	else:
-		AmbientAudio.play_audio(GameManager.current_location.name)
+		SoundPool.play("Shade's Office", "Ambient")
 
 func open_close_mission_book():
 	enable_disable_mission_book_button()

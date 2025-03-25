@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bddorjs1ak22e"
-path="res://.godot/imported/Interrogation Room Intro.wav-3aabf4308d91ad95860ea026e65ad40c.sample"
+path="res://.godot/imported/Interrogation Room Intro.wav-7956268cc3dee087934a81dceaf7462e.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Interrogation Room Intro.wav"
-dest_files=["res://.godot/imported/Interrogation Room Intro.wav-3aabf4308d91ad95860ea026e65ad40c.sample"]
+source_file="res://assets/audio/music/Interrogation Room Intro.wav"
+dest_files=["res://.godot/imported/Interrogation Room Intro.wav-7956268cc3dee087934a81dceaf7462e.sample"]
 
 [params]
 

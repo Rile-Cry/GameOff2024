@@ -1,7 +1,7 @@
 extends LocationScene
 
-@export var finale_opening_dialogue : String
-@export var final_verdict_dialogue : String
+@export var finale_opening_dialogue : DialogicTimeline
+@export var final_verdict_dialogue : DialogicTimeline
 var finale_initiate : bool = false
 var finale_actors : Control
 
@@ -25,7 +25,7 @@ func final_verdict_play():
 		UIManager.confirm_final_verdict.connect(confirm_final_verdict)
 		UIManager.anim_player.play("black_bar")
 		await UIManager.anim_player.animation_finished
-		actor._start_dialogue(final_verdict_dialogue, 0)
+		actor._start_dialogue(final_verdict_dialogue)
 		await GlobalGameEvents.dialogue_ended
 		if GameManager and GameManager.has_past_attempt():
 			UIManager.add_child(GameManager.preloader.final_guess_popup.instantiate())
@@ -46,10 +46,9 @@ func confirm_final_verdict():
 		if GameManager.get_verdict():
 			if BgmAudio:
 				BgmAudio.play_audio("Ending")
-			if AmbientAudio:
-				AmbientAudio.stop()
+			SoundPool.stop_streams_from_bus("Ambient")
 			GameManager.enable_input = false
-			actor._start_dialogue(final_verdict_dialogue, 1)
+			actor._start_dialogue(final_verdict_dialogue)
 			await GlobalGameEvents.dialogue_ended
 		GameManager.get_ending()
 
@@ -98,8 +97,7 @@ func dialogue_start_action(idx : int):
 			if UIManager:
 				if BgmAudio and BgmAudio.playing:
 					BgmAudio.stop()
-				if AmbientAudio and AmbientAudio.playing:
-					AmbientAudio.stop()
+				SoundPool.stop_streams_from_bus("Ambient")
 					
 				UIManager.anim_player.play("hide_room")
 				finale_actors = GameManager.preloader.finale_actors.instantiate()
@@ -108,8 +106,8 @@ func dialogue_start_action(idx : int):
 				
 				if BgmAudio and not bgm.is_empty():
 					BgmAudio.play_audio(bgm)
-				if AmbientAudio and not ambiance.is_empty():
-					AmbientAudio.play_audio(ambiance)
+				if not ambiance.is_empty():
+					SoundPool.play(ambiance, "Ambient")
 				
 				UIManager.anim_player.play("reveal_room")
 				await UIManager.anim_player.animation_finished
@@ -117,9 +115,8 @@ func dialogue_start_action(idx : int):
 		if idx == 0:
 			if BgmAudio and BgmAudio.playing:
 				BgmAudio.stop()
-			if AmbientAudio and AmbientAudio.playing:
-				AmbientAudio.stop()
 			
+			SoundPool.stop_streams_from_bus("Ambient")
 			if UIManager:
 				UIManager.anim_player.play("hide_room")
 				await UIManager.anim_player.animation_finished
@@ -127,8 +124,8 @@ func dialogue_start_action(idx : int):
 		elif idx == 1:
 			if BgmAudio and not bgm.is_empty():
 				BgmAudio.play_audio(bgm)
-			if AmbientAudio and not ambiance.is_empty():
-				AmbientAudio.play_audio(ambiance)
+			if not ambiance.is_empty():
+				SoundPool.play_audio(ambiance, "Ambient")
 			
 			if UIManager:
 				UIManager.anim_player.play("reveal_room")

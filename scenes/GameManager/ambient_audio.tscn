@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cul1uodi8om8o"]
 
-[ext_resource type="AudioStream" uid="uid://bf4qo5qbddhvq" path="res://assets/imports/ambiance/Photo Jump.wav" id="2_m48tk"]
-[ext_resource type="AudioStream" uid="uid://baaul4sqbfcm4" path="res://assets/imports/ambiance/Shade's Office.wav" id="3_ivycw"]
-[ext_resource type="AudioStream" uid="uid://dpjeuommx1ay3" path="res://assets/imports/ambiance/Interrogation Room.wav" id="4_crpqv"]
-[ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/imports/ambiance/OS Boot.wav" id="7_q555b"]
+[ext_resource type="AudioStream" uid="uid://bf4qo5qbddhvq" path="res://assets/audio/ambient/Photo Jump.wav" id="2_m48tk"]
+[ext_resource type="AudioStream" uid="uid://baaul4sqbfcm4" path="res://assets/audio/ambient/Shade's Office.wav" id="3_ivycw"]
+[ext_resource type="AudioStream" uid="uid://dpjeuommx1ay3" path="res://assets/audio/ambient/Interrogation Room.wav" id="4_crpqv"]
+[ext_resource type="AudioStream" uid="uid://yfk4e0fvlolg" path="res://assets/audio/ambient/OS Boot.wav" id="7_q555b"]
 [ext_resource type="Script" uid="uid://c24ia4e2de18f" path="res://scenes/GameManager/audio.gd" id="14_nm7qv"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_evwqa"]

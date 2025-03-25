@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://yfk4e0fvlolg"
-path="res://.godot/imported/OS Boot.wav-b10c7fa5d509dcce975fdb8e0a3244ee.sample"
+path="res://.godot/imported/OS Boot.wav-410122bdc093fd4d7dadc28ff10414e9.sample"
 
 [deps]
 
-source_file="res://assets/imports/ambiance/OS Boot.wav"
-dest_files=["res://.godot/imported/OS Boot.wav-b10c7fa5d509dcce975fdb8e0a3244ee.sample"]
+source_file="res://assets/audio/ambient/OS Boot.wav"
+dest_files=["res://.godot/imported/OS Boot.wav-410122bdc093fd4d7dadc28ff10414e9.sample"]
 
 [params]
 

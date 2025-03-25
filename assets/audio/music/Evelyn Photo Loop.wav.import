@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjgrprk7jm2ji"
-path="res://.godot/imported/Evelyn Photo Loop.wav-6a98897e7992078b38425329e5947aea.sample"
+path="res://.godot/imported/Evelyn Photo Loop.wav-8b9aee3379ec048b70cd6ab715d8a3b5.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Evelyn Photo Loop.wav"
-dest_files=["res://.godot/imported/Evelyn Photo Loop.wav-6a98897e7992078b38425329e5947aea.sample"]
+source_file="res://assets/audio/music/Evelyn Photo Loop.wav"
+dest_files=["res://.godot/imported/Evelyn Photo Loop.wav-8b9aee3379ec048b70cd6ab715d8a3b5.sample"]
 
 [params]
 

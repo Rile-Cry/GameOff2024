@@ -10,8 +10,7 @@ func dialogue_start_action(idx : int):
 	if idx == 0:
 		if BgmAudio and BgmAudio.playing:
 			BgmAudio.stop()
-		if AmbientAudio and AmbientAudio.playing:
-			AmbientAudio.stop()
+		SoundPool.stop_streams_from_bus("Ambient")
 		
 		if UIManager:
 			UIManager.anim_player.play("hide_room")

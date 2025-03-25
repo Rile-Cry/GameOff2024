@@ -9,11 +9,9 @@ func _ready() -> void:
 		UIManager.get_mission_book().tab_container.current_tab = 1
 		UIManager.get_mission_book().glitch_mission_book()
 		
-	SoundPool.stop_streams_from_bus()
+	SoundPool.stop_streams_from_buses(["SFX", "Ambient"])
 	if BgmAudio and BgmAudio.playing:
 		BgmAudio.stop()
-	if AmbientAudio and AmbientAudio.playing:
-		AmbientAudio.stop()
 	
 	GameManager.enable_input = false
 	tween.finished.connect(tweening_complete)
@@ -42,6 +40,5 @@ func _notification(what):
 			UIManager.hide_shader("vignette")
 
 func _process(_delta: float) -> void:
-	if AmbientAudio and tweening:
-		AmbientAudio.play_audio("Shade's Office", volume_db)
-		
+	if tweening:
+		SoundPool.play("Shade's Office", "Ambient", volume_db)

@@ -40,15 +40,14 @@ func _ready() -> void:
 func play_bgm_ambiance():
 	if BgmAudio and not bgm.is_empty():
 		BgmAudio.play_audio(bgm)
-	if AmbientAudio and not ambiance.is_empty():
-		AmbientAudio.play_audio(ambiance)
+	if not ambiance.is_empty():
+		SoundPool.play(ambiance, "Ambient")
 
 func dialogue_start_action(idx : int):
 	if idx == 0:
 		if BgmAudio and BgmAudio.playing:
 			BgmAudio.stop()
-		if AmbientAudio and AmbientAudio.playing:
-			AmbientAudio.stop()
+		SoundPool.stop_streams_from_bus("Ambient")
 		
 		$AnimationPlayer.play("hide_room")
 		await $AnimationPlayer.animation_finished

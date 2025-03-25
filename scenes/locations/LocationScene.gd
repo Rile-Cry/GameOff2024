@@ -71,8 +71,8 @@ func _ready() -> void:
 	
 	if BgmAudio and not bgm.is_empty():
 		BgmAudio.play_audio(bgm)
-	if AmbientAudio and not ambiance.is_empty():
-		AmbientAudio.play_audio(ambiance)
+	if not ambiance.is_empty():
+		SoundPool.play(ambiance, "Ambient")
 
 func dialogue_start_action(_idx : int):
 	return

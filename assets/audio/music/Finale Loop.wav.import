@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1i6ask8mw4kc"
-path="res://.godot/imported/Finale Loop.wav-01f51293eb232676067034e0bee04252.sample"
+path="res://.godot/imported/Finale Loop.wav-e4a935fb6c06d5ed28298170a34515da.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Finale Loop.wav"
-dest_files=["res://.godot/imported/Finale Loop.wav-01f51293eb232676067034e0bee04252.sample"]
+source_file="res://assets/audio/music/Finale Loop.wav"
+dest_files=["res://.godot/imported/Finale Loop.wav-e4a935fb6c06d5ed28298170a34515da.sample"]
 
 [params]
 

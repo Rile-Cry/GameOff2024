@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://8srmedg54ngc"
-path="res://.godot/imported/Shade's Office Loop.wav-8732f83dea43acedfb661a632d65b4fe.sample"
+path="res://.godot/imported/Shade's Office Loop.wav-0bd1cd891f097258f55d24f58c96f355.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Shade's Office Loop.wav"
-dest_files=["res://.godot/imported/Shade's Office Loop.wav-8732f83dea43acedfb661a632d65b4fe.sample"]
+source_file="res://assets/audio/music/Shade's Office Loop.wav"
+dest_files=["res://.godot/imported/Shade's Office Loop.wav-0bd1cd891f097258f55d24f58c96f355.sample"]
 
 [params]
 

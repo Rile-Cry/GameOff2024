@@ -5,9 +5,7 @@ var objects : Array[ObjectResourceButton]
 var cleared : bool = false
 
 func _ready() -> void:
-	
-	if AmbientAudio:
-		AmbientAudio.play_audio("Photo Jump")
+	SoundPool.play("Photo Jump", "Ambient")
 		
 	for child in get_children(true):
 		if child is ObjectResourceButton:

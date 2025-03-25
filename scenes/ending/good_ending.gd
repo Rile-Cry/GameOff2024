@@ -38,8 +38,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if BgmAudio and not bgm.is_empty():
 		BgmAudio.play_audio(bgm, music_volume_db)
-	if AmbientAudio and not ambiance.is_empty():
-		AmbientAudio.play_audio(ambiance, music_volume_db)
+	if not ambiance.is_empty():
+		SoundPool.play(ambiance, "Ambient")
 
 func _notification(what):
 	if (what == NOTIFICATION_PREDELETE):

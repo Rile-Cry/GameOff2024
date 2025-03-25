@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bf4qo5qbddhvq"
-path="res://.godot/imported/Photo Jump.wav-7c4f65fc4276cfb637d7cfa7ab143c03.sample"
+path="res://.godot/imported/Photo Jump.wav-33bfb1966e9aef0568ffbad08e90f742.sample"
 
 [deps]
 
-source_file="res://assets/imports/ambiance/Photo Jump.wav"
-dest_files=["res://.godot/imported/Photo Jump.wav-7c4f65fc4276cfb637d7cfa7ab143c03.sample"]
+source_file="res://assets/audio/ambient/Photo Jump.wav"
+dest_files=["res://.godot/imported/Photo Jump.wav-33bfb1966e9aef0568ffbad08e90f742.sample"]
 
 [params]
 

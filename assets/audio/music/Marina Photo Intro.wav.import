@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dqlnyp72tpsme"
-path="res://.godot/imported/Marina Photo Intro.wav-c90c198881cb7c86e494838a64732fc4.sample"
+path="res://.godot/imported/Marina Photo Intro.wav-ad87ebd775532bff97e6452c8cad248b.sample"
 
 [deps]
 
-source_file="res://assets/imports/bgm/Marina Photo Intro.wav"
-dest_files=["res://.godot/imported/Marina Photo Intro.wav-c90c198881cb7c86e494838a64732fc4.sample"]
+source_file="res://assets/audio/music/Marina Photo Intro.wav"
+dest_files=["res://.godot/imported/Marina Photo Intro.wav-ad87ebd775532bff97e6452c8cad248b.sample"]
 
 [params]
 
