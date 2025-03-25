@@ -69,8 +69,8 @@ func _ready() -> void:
 	#if GameManager and GameManager.get_global_variable("met_" + opening_dialogue.actor_name):
 	#	actor.show()
 	
-	if BgmAudio and not bgm.is_empty():
-		BgmAudio.play_audio(bgm)
+	if not bgm.is_empty():
+		MusicManager.play_music(bgm)
 	if not ambiance.is_empty():
 		SoundPool.play(ambiance, "Ambient")
 

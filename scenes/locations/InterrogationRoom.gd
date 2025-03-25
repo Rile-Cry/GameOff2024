@@ -44,8 +44,7 @@ func confirm_final_verdict():
 		if UIManager:
 			UIManager.mission_book_clue_lock()
 		if GameManager.get_verdict():
-			if BgmAudio:
-				BgmAudio.play_audio("Ending")
+			MusicManager.play_music("Finale")
 			SoundPool.stop_streams_from_bus("Ambient")
 			GameManager.enable_input = false
 			actor._start_dialogue(final_verdict_dialogue)
@@ -95,8 +94,7 @@ func dialogue_start_action(idx : int):
 	if GameManager.global_variables["all_clues"]:
 		if idx == 0:
 			if UIManager:
-				if BgmAudio and BgmAudio.playing:
-					BgmAudio.stop()
+				MusicManager.stop_music()
 				SoundPool.stop_streams_from_bus("Ambient")
 					
 				UIManager.anim_player.play("hide_room")
@@ -104,8 +102,8 @@ func dialogue_start_action(idx : int):
 				add_child(finale_actors)
 				await UIManager.anim_player.animation_finished
 				
-				if BgmAudio and not bgm.is_empty():
-					BgmAudio.play_audio(bgm)
+				if not bgm.is_empty():
+					MusicManager.play_music(bgm)
 				if not ambiance.is_empty():
 					SoundPool.play(ambiance, "Ambient")
 				
@@ -113,17 +111,15 @@ func dialogue_start_action(idx : int):
 				await UIManager.anim_player.animation_finished
 	else:
 		if idx == 0:
-			if BgmAudio and BgmAudio.playing:
-				BgmAudio.stop()
-			
+			MusicManager.stop_music()
 			SoundPool.stop_streams_from_bus("Ambient")
 			if UIManager:
 				UIManager.anim_player.play("hide_room")
 				await UIManager.anim_player.animation_finished
 			actor.show()
 		elif idx == 1:
-			if BgmAudio and not bgm.is_empty():
-				BgmAudio.play_audio(bgm)
+			if not bgm.is_empty():
+				MusicManager.play_music(bgm)
 			if not ambiance.is_empty():
 				SoundPool.play_audio(ambiance, "Ambient")
 			

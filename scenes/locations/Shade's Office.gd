@@ -6,7 +6,7 @@ extends Control
 func _ready() -> void:
 	$ComputerButton.connect("pressed", _open_computer)
 	$SaveButton.connect("pressed", _save_game)
-	BgmAudio.play_audio("Shade's Office")
+	MusicManager.play_music("Shade's Office")
 	SoundPool.play("Shade's Office", "Ambient")
 
 func _process(_delta: float) -> void:

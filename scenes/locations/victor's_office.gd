@@ -8,8 +8,7 @@ var kicking : bool = false
 
 func dialogue_start_action(idx : int):
 	if idx == 0:
-		if BgmAudio and BgmAudio.playing:
-			BgmAudio.stop()
+		MusicManager.stop_music()
 		SoundPool.stop_streams_from_bus("Ambient")
 		
 		if UIManager:

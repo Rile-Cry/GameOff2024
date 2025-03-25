@@ -4,8 +4,7 @@ extends PhotoScene
 
 func _ready() -> void:
 	super()
-	if BgmAudio:
-		BgmAudio.play_audio("Evelyn Photo")
+	MusicManager.play_music("Evelyn Photo")
 	GlobalGameEvents.connect("scene_loaded", _scene_loaded)
 
 func clues_cleared():

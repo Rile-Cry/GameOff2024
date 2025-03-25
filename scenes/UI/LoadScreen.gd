@@ -10,9 +10,6 @@ func _ready() -> void:
 	hide()
 
 func _process(_delta: float) -> void:
-	if visible and AmbientAudio.playing:
-		AmbientAudio.stop()
-	
 	if is_loading:
 		show()
 		var progress : Array = []
@@ -34,3 +31,7 @@ func load_scene(path_: String):
 	is_loading = true
 	if GameManager:
 		GameManager.enable_input = false
+
+func _on_visibility_changed() -> void:
+	if visible:
+		SoundPool.stop_streams_from_bus("Ambient")

@@ -6,7 +6,7 @@ extends Control
 var game_base : PackedScene = preload("res://scenes/UI/main/GameBase.tscn")
 
 func _ready():
-	BgmAudio.play_audio("Title Screen")
+	MusicManager.play_music("Title Screen")
 	$PlayButton.pressed.connect(play)
 	credits_button.disabled = true
 	delete_save_button.visible = GameManager.get_save()

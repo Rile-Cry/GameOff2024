@@ -6,105 +6,65 @@ signal changed_stream(from: AudioStream, to: AudioStream)
 signal started_stream(audio_stream_player: AudioStreamPlayer, new_stream: AudioStream)
 signal finished_stream(audio_stream_player: AudioStreamPlayer, old_stream: AudioStream)
 
-const VolumeDBInaudible: float = -80.0
-
 ## Dictionary<string, AudioStream>
-var music_bank: Dictionary = {}
-var main_audio_stream_player: AudioStreamPlayer
-var secondary_audio_stream_player: AudioStreamPlayer
-var current_audio_stream_player: AudioStreamPlayer
-
-var crossfade_time: float = 2.0
-var crossfade_tween: Tween
-
+var music_dir : String = "res://assets/audio/music/"
+var music_bank : Dictionary[String, AudioStream] = {}
+var audio_stream_player : AudioStreamPlayer
+var in_intro := false
 
 func _ready():
-	_create_audio_stream_players()
-	
+	_create_audio_stream_player()
+	_load_all_streams()
 
-func play_music(stream_name: String, crossfade: bool = true, crossfading_time: float = crossfade_time):
-	if music_bank.has(stream_name) and not _crossfade_tween_is_running():
-		var stream: AudioStream = music_bank[stream_name] as AudioStream
-		
-		if current_audio_stream_player.is_playing():
-			if current_audio_stream_player.stream == stream:
-				return
-				
-			if crossfade:
-				var next_audio_stream_player := secondary_audio_stream_player if current_audio_stream_player.name == "MainAudioStreamPlayer" else main_audio_stream_player
-				next_audio_stream_player.volume_db = VolumeDBInaudible
-				play_stream(next_audio_stream_player, stream)
-				
-				var volume: float = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(next_audio_stream_player.bus))
-				
-				crossfade_tween = create_tween()
-				crossfade_tween.set_parallel(true)
-				crossfade_tween.tween_property(current_audio_stream_player, "volume_db", VolumeDBInaudible, crossfading_time).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_LINEAR)
-				crossfade_tween.tween_property(next_audio_stream_player, "volume_db", volume, crossfading_time).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_LINEAR)
-				crossfade_tween.chain().tween_callback(func(): current_audio_stream_player = next_audio_stream_player)
-
-				return
-				
-		changed_stream.emit(current_audio_stream_player.stream, stream)
-		play_stream(current_audio_stream_player, stream)
-		
-		return
+func play_music(stream_name: String):
+	var found := false
+	for song in music_bank.keys():
+		if song.contains(stream_name):
+			found = true
+			if in_intro:
+				if song.contains("Loop"):
+					audio_stream_player.play(music_bank.get(song))
+					in_intro = false
+			else:
+				if song.contains("Intro"):
+					audio_stream_player.play(music_bank.get(song))
+					in_intro = true
 	
-	push_warning("MusicManager: Expected music name %s to exists in the MusicBank but no stream was found" % stream_name)
-		
-	
-func play_stream(player: AudioStreamPlayer, stream: AudioStream):
-	player.stop()
-	player.stream = stream
-	player.play()
-	
-	started_stream.emit(player, stream)
-	
-	
-func add_streams_to_music_bank(stream_names: Array[String], stream: AudioStream):
-	for stream_name: String in stream_names:
-		add_stream_to_music_bank(stream_name, stream)
-
+	if not found:
+		push_error("There was no song " + stream_name + " in the Music Bank.")
 
 func add_stream_to_music_bank(stream_name: String, stream: AudioStream):
 	music_bank[stream_name] = stream
 	added_music_to_bank.emit(stream_name, stream)
-	
 
 func remove_stream_from_music_bank(stream_name: String):
 	if music_bank.has(stream_name):
 		music_bank.erase(stream_name)
 		removed_music_from_bank.emit(stream_name)
 
+func stop_music() -> void:
+	audio_stream_player.stop()
+	in_intro = false
 
-func remove_streams_from_music_bank(stream_names: Array[String]):
-	for stream_name: String in stream_names:
-		remove_stream_from_music_bank(stream_name)
-
-
-func _create_audio_stream_players():
-	main_audio_stream_player = AudioStreamPlayer.new()
-	main_audio_stream_player.name = "MainAudioStreamPlayer"
-	main_audio_stream_player.bus = "Music"
-	main_audio_stream_player.autoplay = false
+func _create_audio_stream_player():
+	audio_stream_player = AudioStreamPlayer.new()
+	audio_stream_player.name = "MainAudioStreamPlayer"
+	audio_stream_player.bus = "Music"
+	audio_stream_player.autoplay = false
 	
-	secondary_audio_stream_player = AudioStreamPlayer.new()
-	secondary_audio_stream_player.name = "SecondaryAudioStreamPlayer"
-	secondary_audio_stream_player.bus = "Music"
-	secondary_audio_stream_player.autoplay = false
+	add_child(audio_stream_player)
 	
-	current_audio_stream_player = main_audio_stream_player
-	
-	add_child(main_audio_stream_player)
-	add_child(secondary_audio_stream_player)
-	
-	main_audio_stream_player.finished.connect(on_finished_audio_stream_player.bind(main_audio_stream_player))
-	secondary_audio_stream_player.finished.connect(on_finished_audio_stream_player.bind(secondary_audio_stream_player))
-
-
-func _crossfade_tween_is_running() -> bool:
-	return crossfade_tween == null or (crossfade_tween and crossfade_tween.is_running())
-
+	audio_stream_player.finished.connect(on_finished_audio_stream_player.bind(audio_stream_player))
 
 func on_finished_audio_stream_player(audio_stream_player: AudioStreamPlayer):
 	finished_stream.emit(audio_stream_player, audio_stream_player.stream)
+	if in_intro:
+		var song : String = audio_stream_player.stream.resource_name
+		song = song.split(".")[0]
+		play_music(song)
+
+func _load_all_streams() -> void:
+	var song_list = ResourceLoader.list_directory(music_dir)
+	for song in song_list:
+		var song_stream = ResourceLoader.load(music_dir + song, "AudioStream")
+		add_stream_to_music_bank(song.split(".")[0], song_stream)

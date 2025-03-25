@@ -36,8 +36,8 @@ func _ready() -> void:
 		get_tree().change_scene_to_packed(GameManager.preloader.credits_scene)
 
 func _process(delta: float) -> void:
-	if BgmAudio and not bgm.is_empty():
-		BgmAudio.play_audio(bgm, music_volume_db)
+	if not bgm.is_empty():
+		MusicManager.play_music(bgm)
 	if not ambiance.is_empty():
 		SoundPool.play(ambiance, "Ambient")
 

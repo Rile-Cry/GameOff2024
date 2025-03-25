@@ -38,15 +38,14 @@ func _ready() -> void:
 		GameManager.current_location_index = 0
 
 func play_bgm_ambiance():
-	if BgmAudio and not bgm.is_empty():
-		BgmAudio.play_audio(bgm)
+	if not bgm.is_empty():
+		MusicManager.play_music(bgm)
 	if not ambiance.is_empty():
 		SoundPool.play(ambiance, "Ambient")
 
 func dialogue_start_action(idx : int):
 	if idx == 0:
-		if BgmAudio and BgmAudio.playing:
-			BgmAudio.stop()
+		MusicManager.stop_music()
 		SoundPool.stop_streams_from_bus("Ambient")
 		
 		$AnimationPlayer.play("hide_room")

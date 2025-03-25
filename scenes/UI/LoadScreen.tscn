@@ -27,3 +27,5 @@ theme_override_constants/margin_right = 256
 [node name="ProgressBar" type="ProgressBar" parent="ColorRect/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

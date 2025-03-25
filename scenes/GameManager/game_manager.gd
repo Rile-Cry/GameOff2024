@@ -65,14 +65,10 @@ signal turnabout
 func _ready():
 	LoadScreen.scene_loading_finish.connect(change_scene)
 
+# TODO: Continue working on LoadScreen BS
 func change_scene(scene : PackedScene):
 	if game_base: game_base.change_level(scene)
 	GlobalGameEvents.scene_loaded.emit()
-
-func create_dialogue(file_name: String, mood : String = "", args: Dictionary = {}) -> DialogueBox:
-	var dialogue_box : DialogueBox = preloader._dialogue_scene.instantiate() as DialogueBox
-	dialogue_box.setup(file_name, mood, args)
-	return dialogue_box
 
 func stack_resources(res : Resource, type : Genum.ResourceType):
 	var stack_res : Dictionary = {

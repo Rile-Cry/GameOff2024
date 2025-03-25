@@ -38,8 +38,7 @@ func _ready() -> void:
 	
 	close_popup()
 	
-	if BgmAudio:
-		BgmAudio.play_audio("Marina Photo")
+	MusicManager.play_music("Marina Photo")
 
 func _process(delta: float) -> void:
 	desk.visible = not popup_container.visible

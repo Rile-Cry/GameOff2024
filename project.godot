@@ -25,7 +25,6 @@ GamepadControllerManager="*res://autoload/gamepad/gamepad_controller_manager.gd"
 WindowManager="*res://autoload/viewport/window_manager.gd"
 GameGlobals="*res://autoload/general/game_globals.gd"
 GlobalGameEvents="*res://autoload/general/global_game_events.gd"
-AudioManager="*res://autoload/audio/audio_manager.gd"
 MusicManager="*res://autoload/audio/music_manager.gd"
 SoundPool="*res://autoload/audio/sound_pool.gd"
 CursorManager="*res://autoload/screen/cursor_manager.gd"
@@ -37,7 +36,6 @@ GameManager="*res://scenes/GameManager/game_manager.gd"
 UIManager="*res://scenes/GameManager/ui_manager.tscn"
 BgmAudio="*res://scenes/GameManager/bgm_audio.tscn"
 LoadScreen="*res://scenes/UI/LoadScreen.tscn"
-AmbientAudio="*res://scenes/GameManager/ambient_audio.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -118,7 +116,7 @@ movie_writer/movie_file="C:/Users/darry/OneDrive/Desktop/HDD TEMP/Projects/GameO
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [file_customization]
 
