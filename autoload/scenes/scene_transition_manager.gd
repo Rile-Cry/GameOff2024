@@ -14,7 +14,9 @@ const voronoi_material = preload("res://autoload/scenes/transitions/voronoi_mate
 enum Transitions {
 	NoTransition,
 	FadeToBlack,
+	FadeTo,
 	FadeFromBlack,
+	FadeFrom,
 	VoronoiInLeftToRight,
 	VoronoiInRightToLeft,
 	VoronoiOutLeftToRight,
@@ -40,8 +42,8 @@ func reload_current_scene() -> void:
 func transition_to_scene(
 	scene, 
 	loading_screen: bool = false,
-	out_transition: Transitions = Transitions.FadeToBlack,
-	in_transition: Transitions =  Transitions.FadeFromBlack, 
+	out_transition: Transitions = Transitions.FadeTo,
+	in_transition: Transitions =  Transitions.FadeFrom, 
 ):
 	if not loading_screen:
 		previous_animations.clear()
@@ -130,8 +132,12 @@ func _enum_transition_to_animation_name(transition: Transitions) -> String:
 	match transition:
 		Transitions.FadeToBlack:
 			transition_name = "fade_to_black"
+		Transitions.FadeTo:
+			transition_name = "fade_to"
 		Transitions.FadeFromBlack:
 			transition_name = "fade_from_black"
+		Transitions.FadeFrom:
+			transition_name = "fade_from"
 		Transitions.VoronoiInLeftToRight:
 			transition_name = "voronoi_in_left"
 		Transitions.VoronoiInRightToLeft:

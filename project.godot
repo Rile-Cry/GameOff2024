@@ -13,7 +13,7 @@ config_version=5
 config/name="Detective Shade"
 config/description="Game Off 2024 game"
 config/version="0.1.0"
-run/main_scene="res://scenes/UI/main/splash_text.tscn"
+run/main_scene="uid://bgygd7yooef5e"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.996078, 0.976471, 0.952941, 1)
 boot_splash/show_image=false
@@ -57,12 +57,13 @@ variables={
 "LUCAS": {
 "Diary": false,
 "INT": {
-"ChoiceFive": false,
-"ChoiceFour": false,
-"ChoiceOne": false,
-"ChoiceSix": false,
-"ChoiceThree": false,
-"ChoiceTwo": false
+"ChoiceFive": 0,
+"ChoiceFour": 0,
+"ChoiceOne": 0,
+"ChoiceSix": 0,
+"ChoiceThree": 0,
+"ChoiceTwo": 0,
+"CurrentChoice": 1
 },
 "Victor": false
 },

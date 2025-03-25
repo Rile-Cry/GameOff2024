@@ -7,7 +7,8 @@
 
 [node name="GameEntryPoint" type="Node"]
 script = ExtResource("1_8s3f3")
-next_scene = "res://scenes/UI/main/splash_text.tscn"
+next_scene = "uid://b3c8ve7mx8fgm"
 
 [node name="ContentWarnings" parent="." instance=ExtResource("2_747re")]
+input_actions_that_skip_warning = Array[String]([])
 content_warnings_to_display = Array[ExtResource("3_bn3e4")]([ExtResource("4_oftts")])

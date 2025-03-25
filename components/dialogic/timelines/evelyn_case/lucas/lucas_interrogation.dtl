@@ -1,5 +1,5 @@
 officer: Lucas, you have a visitor. He's called Shade.
-join lucas_rivers center [animation="Slide In Left"]
+join lucas_rivers center [animation="Fade In" length="0.2"]
 shade: I'm here to help you, Lucas. I want to find the real culprit, but I'll need your cooperation.
 lucas_rivers (panic): Help me? [pause=0.5]There's no point, is there? I'm the culprit... [pause=1]I have to be! Just give me the death sentence and end it already...
 do GlobalEffects.screen_shake(0)
@@ -7,14 +7,15 @@ shade: I don't believe you did it, Lucas. There's more to this story. Help me un
 lucas_rivers (tries_to_calm): Fine. You want the truth? I... [pause=0.25]I wanted to see her that night. But as I got to the door, she texted me-said Marina was coming over and to meet her at our usual spot tomorrow. So, I left. The next day, I cam back with flowers... [pause=0.25][speed=2]and that's when I found her.
 lucas_rivers (defensive_1): I called the cops... [pause=0.5]and they just threw me in here.
 label Interrogation
-- What's Evelyn Like? | [if {EVELYNCASE.LUCAS.INT.ChoiceOne} == false] [else="hide"]
+- What's Evelyn Like? | [if {EVELYNCASE.LUCAS.INT.ChoiceOne} == 0.0] [else="hide"]
 	shade: This must be hard. Can you tell me what Evelyn was like?
 	lucas_rivers (ponder): Evelyn. . .[pause=0.5] she was. . .[pause=0.25] different, y'know? Like, kinda cryptic? Everything she did had this. . .[pause=0.25] meaning, or a puzzle behind it. She was so into those. Her lock screen? Password hidden in some riddle. Every gift? Like, you'd need a treasure map to find it.
 	shade: Sounds like she loved puzzles.
 	lucas_rivers (weak_smile_1): Yeah. . .[pause=0.3] that's one way to put it. She kept you guessing. Always.
-	set {EVELYNCASE.LUCAS.INT.ChoiceOne} = true
+	set {EVELYNCASE.LUCAS.INT.ChoiceOne} = {EVELYNCASE.LUCAS.INT.CurrentChoice}
+	set {EVELYNCASE.LUCAS.INT.CurrentChoice} += 1.0
 	jump Interrogation
-- Called Police | [if {EVELYNCASE.LUCAS.INT.ChoiceTwo} == false] [else="hide"]
+- Called Police | [if {EVELYNCASE.LUCAS.INT.ChoiceTwo} == 0.0] [else="hide"]
 	shade: You said you called the police when you found her. How long did it take?
 	lucas_rivers (defensive_1): Uh. . .[pause=0.3] maybe like, ten minutes? Or so?
 	do GlobalEffects.screen_shake(1)
@@ -23,9 +24,10 @@ label Interrogation
 	do GlobalEffects.exclaim()
 	shade: The love of your life?
 	set {EVELYNCASE.LUCAS.Diary} = true
-	set {EVELYNCASE.LUCAS.INT.ChoiceTwo} = true
+	set {EVELYNCASE.LUCAS.INT.ChoiceTwo} = {EVELYNCASE.LUCAS.INT.CurrentChoice}
+	set {EVELYNCASE.LUCAS.INT.CurrentChoice} += 1.0
 	jump Interrogation
-- Evelyn's Phone | [if {EVELYNCASE.LUCAS.INT.ChoiceThree} == false] [else="hide"]
+- Evelyn's Phone | [if {EVELYNCASE.LUCAS.INT.ChoiceThree} == 0.0] [else="hide"]
 	shade: Did you check her phone or notice anything odd in the studio?
 	lucas_rivers (calm): No, man. . .[pause=0.2] I was just. . . [pause=0.15] frozen, y'know? The holw place looked. . .[pause=0.1] normal. Too normal, even. Like she'd just been working late, waiting for Marina to show up.
 	shade: Nothing at all seemed out of place?
@@ -33,6 +35,39 @@ label Interrogation
 	do GlobalEffects.exclaim()
 	shade: Victor? Her brother?
 	lucas_rivers (calm): Yeah. He was around a lot recently. He and Evelyn were always arguing about something--[pause=0.3][lspeed=0.5]her art, the company, or the damn will. I know they'd fought a couple of days before. She was stressed out, and Victor didn't care. He just kept pushing her.
-- Their Usual Spot
-- Ask About Victor | [if {EVELYNCASE.LUCAS.Victor} == true] [else="hide"]
-- Relationship with Marina | [if {EVELYNCASE.VICTOR.Marina} == true] [else="hide"]
+	shade: What do you think he wanted?
+	lucas_rivers (ponder): Control, maybe? That's his thing, y'know? Getting what he wants, no matter who gets hurt. But I didn't see him there when I found her. It's just. . . [pause=0.3] something doesn't sit right.
+	shade: What about her phone?
+	lucas_rivers: I didn't. . . [pause=0.3] I just. . .[pause=0.2] couldn't.
+	set {EVELYNCASE.LUCAS.Victor} = true
+	set {EVELYNCASE.LUCAS.INT.ChoiceThree} = {EVELYNCASE.LUCAS.INT.CurrentChoice}
+	jump Interrogation
+- Their Usual Spot | [if {EVELYNCASE.LUCAS.INT.ChoiceFour} == 0.0] [else="hide"]
+	shade: You mentioned meeting at your usual spot. Can you tell me about it?
+	lucas_rivers (defensive_1): Yeah. . .[pause=0.2] it's this little café we'd go to. Kinda like. . .[pause=0.2] our place. First dates, tough days, everything. That's were we'd always go.
+	shade: What happened when you showed up?
+	lucas_rivers (defensive_2): I. . .[pause=0.2] I brought flowers. But when I got to her studio, something felt. . .[pause=0.3] wrong. She wasn't there. And then. . .[pause=0.2] I found her.
+	set {EVELYNCASE.LUCAS.INT.ChoiceFour} = {EVELYNCASE.LUCAS.INT.CurrentChoice}
+	set {EVELYNCASE.LUCAS.INT.CurrentChoice} = 1.0
+	jump Interrogation
+- Ask About Victor | [if {EVELYNCASE.LUCAS.Victor} == true and {EVELYNCASE.LUCAS.INT.ChoiceFive} == 0.0] [else="hide"]
+	shade: Did you see Victor around the time of Evelyn's death?
+	lucas_rivers (ponder): No. But he was around a lot lately. Always in her ear about the company. She didn't like it--he pushed her too much. They fought a couple days before. . .[pause=0.3] about her art.[pause=0.3] And her will.
+	shade: Do you think Victor was involved?
+	lucas_rivers (calm): I don't know. . .[pause=0.2] Maybe. He's the type to get what he wants, no matter who he steps on. But. . .[pause=0.2] I don't know for sure.
+	set {EVELYNCASE.LUCAS.INT.ChoiceFive} = {EVELYNCASE.LUCAS.INT.CurrentChoice}
+	set {EVELYNCASE.LUCAS.INT.CurrentChoice} += 1.0
+	jump Interrogation
+- Relationship with Marina | [if {EVELYNCASE.VICTOR.Marina}  ==  true and {EVELYNCASE.LUCAS.INT.ChoiceSix} == 0.0] [else="hide"]
+	shade: How was your relationship with Marina? You mentioned her being at the studio.
+	lucas_rivers (normal): Marina. . .[pause=0.3] she was. . .[pause=0.2] complicated. Always pushing Evelyn. 'Do more! Make money!' Like, she cared more about the business than Evelyn's happiness.
+	set {EVELYNCASE.LUCAS.INT.CurrentChoice} += 1.0
+	shade: So, you didn't trust her?
+	lucas_rivers: I did. . .[pause=0.2] but not really. She cared about Evelyn's career, sure. But Evelyn? The person? Not so much.
+	shade: Do you know where Marina lives?
+	lucas_rivers: No idea. We weren't exactly close after Evelyn and I broke up. And no one knew we got back together.
+	set {EVELYNCASE.LUCAS.INT.ChoiceSix} = {EVELYNCASE.LUCAS.INT.CurrentChoice}
+	set {EVELYNCASE.LUCAS.INT.CurrentChoice} += 1.0
+	jump Interrogation
+- I guess that covers it. . . | [if {EVELYNCASE.LUCAS.INT.CurrentChoice} > 0.0] [else="hide"]
+	[end_timeline]

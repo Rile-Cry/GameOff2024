@@ -71,7 +71,7 @@ func exclaim():
 		UIManager.anim_player.play("Exclaim")
 
 func screen_shake(type : int) -> void:
-	node = level_base.get_child(0, false)
+	#node = get_tree().get_child(0, false)
 	var shake_sfx : String = "Screen Shake"
 	var shake_power := 0.0
 	match type:

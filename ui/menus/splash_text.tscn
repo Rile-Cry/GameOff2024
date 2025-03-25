@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3c8ve7mx8fgm"]
 
-[ext_resource type="Script" uid="uid://bw4rq73xum6ks" path="res://scenes/UI/main/splash_text.gd" id="1_1c2eq"]
+[ext_resource type="Script" uid="uid://bw4rq73xum6ks" path="res://ui/menus/scripts/splash_text.gd" id="1_1c2eq"]
 [ext_resource type="Texture2D" uid="uid://b1lwbbuevdy4b" path="res://assets/imports/graphics/UI/splash_screen/LE_anim.tres" id="2_ervgq"]
 
 [sub_resource type="Animation" id="Animation_e5205"]
@@ -65,18 +65,9 @@ script = ExtResource("1_1c2eq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_y2jfk")
+&"": SubResource("AnimationLibrary_y2jfk")
 }
 autoplay = "splash"
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.996078, 0.976471, 0.952941, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
