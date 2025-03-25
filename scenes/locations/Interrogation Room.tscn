@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bhqpkof1r037q" path="res://assets/imports/graphics/backgrounds/with_object/interrogation_room.png" id="1_bqaup"]
 [ext_resource type="Script" uid="uid://diyor0ho2urvh" path="res://scenes/locations/InterrogationRoom.gd" id="1_l5xmw"]
-[ext_resource type="Script" uid="uid://bqi36jpbedevw" path="res://scenes/locations/LocationClueInteract.gd" id="3_s4c63"]
+[ext_resource type="Script" uid="uid://bqi36jpbedevw" path="res://scenes/locations/location_clue_interact.gd" id="3_s4c63"]
 [ext_resource type="PackedScene" uid="uid://cnxij6tv64lpl" path="res://scenes/dialogue/actor.tscn" id="4_h138y"]
 [ext_resource type="Resource" uid="uid://h07mes3y7353" path="res://Case/Clues/Evelyn's Art Studio/Personal Diary.tres" id="4_mpays"]
 [ext_resource type="Resource" uid="uid://cwfvteaaw8xvv" path="res://Case/Clues/Shade's Office/Autopsy Report.tres" id="6_wh1k0"]
@@ -50,4 +50,3 @@ anchor_bottom = 1.0
 offset_top = -595.0
 offset_bottom = 0.0
 grow_vertical = 0
-actor_name = "Lucas"

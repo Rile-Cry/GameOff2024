@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://b7pmt2d05aj1w" path="res://scenes/UI/main/dialogue_button.gd" id="7_nfsbp"]
 [ext_resource type="Texture2D" uid="uid://cgulxn77kjrag" path="res://assets/imports/graphics/popups/marinas_apartment/lock.png" id="7_qg8ks"]
 [ext_resource type="Texture2D" uid="uid://by5jeo48d2jf3" path="res://assets/imports/graphics/popups/marinas_apartment/drawer_open.png" id="8_kr6kn"]
-[ext_resource type="Script" uid="uid://6kkqpcjckrks" path="res://Case/object_resource_button.gd" id="9_50fti"]
+[ext_resource type="Script" uid="uid://6kkqpcjckrks" path="res://ui/components/object_resource_button.gd" id="9_50fti"]
 [ext_resource type="Texture2D" uid="uid://m6j781gkdukg" path="res://assets/imports/graphics/popups/marinas_apartment/evelyns_phone.png" id="9_dx0km"]
 [ext_resource type="Resource" uid="uid://bdnbii0c61gqx" path="res://Case/Clues/Marina’s Apartment/Evelyns phone.tres" id="10_qfx0v"]
 [ext_resource type="Resource" uid="uid://dxabnidnnovy5" path="res://Case/Clues/Marina’s Apartment/Receipt.tres" id="12_kpacf"]

@@ -1,7 +1,7 @@
 extends LocationScene
 
-@export var victor_kick_dialogue : String
-@export var opening_dialogue_victor : String
+@export var victor_kick_dialogue : DialogicTimeline
+@export var opening_dialogue_victor : DialogicTimeline
 @export var objects : Array[Button]
 
 var kicking : bool = false
@@ -42,13 +42,10 @@ func _process(_delta: float) -> void:
 	#	clues_cleared()
 	
 	if not kicking:
-		if GameManager.get_global_variable("victor_marina"):
+		if Dialogic.VAR.EVELYNCASE.VICTOR.Marina:
 			kicking = true
-			await dialogue_ended
-			for idx : int in victor_kick_dialogue.dialogue.size():
-				GameManager.enable_input = false
-				actor._start_dialogue(victor_kick_dialogue, idx)
-				await GlobalGameEvents.dialogue_ended
+			await Dialogic.timeline_ended
+			Dialogic.start_timeline(victor_kick_dialogue)
 			GameManager.current_location.disabled = true
 			
 			if UIManager: UIManager.refresh_mission_book()

@@ -1,5 +1,12 @@
 class_name Genum
 
+enum Actors {
+	NONE,
+	LUCAS,
+	VICTOR,
+	MARINA
+}
+
 enum CaseState {
 	UNSTARTED,
 	STARTED,

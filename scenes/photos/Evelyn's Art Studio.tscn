@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cnscn1460f8e1" path="res://scenes/photos/evelyn's_art_studio_photo.gd" id="1_0fnci"]
 [ext_resource type="Texture2D" uid="uid://cgmw3r3sfc2nj" path="res://assets/imports/graphics/backgrounds/with_object/evelyn_art_studio.png" id="1_drrgl"]
-[ext_resource type="Script" uid="uid://6kkqpcjckrks" path="res://Case/object_resource_button.gd" id="2_ng73i"]
+[ext_resource type="Script" uid="uid://6kkqpcjckrks" path="res://ui/components/object_resource_button.gd" id="2_ng73i"]
 [ext_resource type="Resource" uid="uid://dnpc6kxdmwdi2" path="res://components/case/clues/evelyn_case/personal_diary.tres" id="5_3yrt2"]
-[ext_resource type="Resource" uid="uid://lg4n6lrddfow" path="res://Case/Clues/Evelyn's Art Studio/Scattered Papers.tres" id="5_v1bru"]
 [ext_resource type="Resource" uid="uid://ftn2ua5jokkg" path="res://components/case/clues/evelyn_case/gallery_invitation.tres" id="6_3yrt2"]
-[ext_resource type="Resource" uid="uid://bg4synv4bwejh" path="res://Case/Clues/Evelyn's Art Studio/Unfinished Painting.tres" id="6_nct72"]
+[ext_resource type="Resource" uid="uid://bsu6bjc3w4wtw" path="res://components/case/clues/evelyn_case/scattered_papers.tres" id="7_3yrt2"]
+[ext_resource type="Resource" uid="uid://bihhkrwq33iq6" path="res://components/case/clues/evelyn_case/unfinished_painting.tres" id="8_punko"]
 [ext_resource type="Shader" uid="uid://c455u8piv5w0d" path="res://shaders/vhs/vhs_soft.gdshader" id="8_v28e6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ov4gu"]
@@ -101,7 +101,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_257ir")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ppnct")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_flla2")
 script = ExtResource("2_ng73i")
-resource = ExtResource("5_v1bru")
+resource = ExtResource("7_3yrt2")
 
 [node name="Unfinished Painting" type="Button" parent="."]
 layout_mode = 0
@@ -117,4 +117,4 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_257ir")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ppnct")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_flla2")
 script = ExtResource("2_ng73i")
-resource = ExtResource("6_nct72")
+resource = ExtResource("8_punko")

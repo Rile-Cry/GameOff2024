@@ -230,7 +230,7 @@ texture = ExtResource("5_rghg2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnckd"]
 texture = ExtResource("4_jhgew")
 
-[node name="Title" type="Control"]
+[node name="Title" type="Control" node_paths=PackedStringArray("credits_button", "delete_save_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -238,21 +238,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7xg8j")
+credits_button = NodePath("MainMargin/HBoxContainer/Credits")
+delete_save_button = NodePath("MainMargin/HBoxContainer/Delete Save")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_g3g31")
+&"": SubResource("AnimationLibrary_g3g31")
 }
 autoplay = "auto_start"
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.996078, 0.976471, 0.952941, 1)
 
 [node name="Shadow" type="TextureRect" parent="."]
 layout_mode = 1
@@ -331,9 +324,9 @@ is_hidden = false
 custom_minimum_size = Vector2(86, 75)
 layout_mode = 0
 offset_left = 600.0
-offset_top = 496.999
+offset_top = 497.0
 offset_right = 686.0
-offset_bottom = 571.999
+offset_bottom = 572.0
 focus_next = NodePath("../OptionsButton")
 focus_previous = NodePath("../PlayButton")
 theme_override_styles/focus = SubResource("StyleBoxTexture_lofhy")
@@ -364,3 +357,6 @@ script = ExtResource("5_ejvs5")
 hover_sfx = "Sticky Note Hover"
 click_sfx = ""
 is_hidden = false
+
+[connection signal="pressed" from="MainMargin/HBoxContainer/Delete Save" to="." method="delete_save"]
+[connection signal="pressed" from="MainMargin/HBoxContainer/Credits" to="." method="open_credits"]

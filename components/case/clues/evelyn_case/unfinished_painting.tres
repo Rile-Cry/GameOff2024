@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://bihhkrwq33iq6"]
+
+[ext_resource type="Texture2D" uid="uid://yuhv81t5d32c" path="res://assets/imports/graphics/objects/clues/UNFINISHED_PAINTING.png" id="1_gx4f8"]
+[ext_resource type="Script" uid="uid://27td4dc6wg8g" path="res://components/case/clues/clue_resource.gd" id="1_jjxro"]
+[ext_resource type="Texture2D" uid="uid://bs8x5hupc8if4" path="res://assets/imports/graphics/objects/clues/icon/UNFINISHED_PAINTING.png" id="2_ac1j7"]
+
+[resource]
+script = ExtResource("1_jjxro")
+clue_id = "UNFINISHED_PAINTING"
+clue_name = "Unfinished Painting"
+clue_description = "A partially completed painting with a note on the back, \\\"To L,\\\" hinting at Evely'ns relationship with Lucas."
+clue_location = "Evelyn's Art Studio"
+clue_texture = ExtResource("1_gx4f8")
+clue_texture_icon = ExtResource("2_ac1j7")
+metadata/_custom_type_script = "uid://27td4dc6wg8g"

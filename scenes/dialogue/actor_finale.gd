@@ -1,7 +1,7 @@
 extends Actor
 class_name ActorFinale
 
-@export var clue_invalid_dialogue : String
+@export var clue_invalid_dialogue : DialogicTimeline
 @export var clue_dialogue : LocationClueInteract
 @export var verdict_reaction : String
 
@@ -28,8 +28,8 @@ func select_actor():
 		selected = not selected
 		#verdict_selected.emit(dialogue_res.actor_name)
 
-func _start_dialogue(dialogue : String, idx : int = 0) -> void:
-	super(dialogue, idx)
+func _start_dialogue(timeline: DialogicTimeline) -> void:
+	super(timeline)
 	await GlobalGameEvents.dialogue_ended
 	if GameManager:
 		GameManager.enable_input = true
@@ -48,11 +48,11 @@ func _start_dialogue(dialogue : String, idx : int = 0) -> void:
 		UIManager.can_open_mission_book = false
 	
 	if clue_dialogue.clue == clue:
-		super(clue_dialogue.dialogue_res, 0)
+		super(clue_dialogue.dialogue_res)
 		await GlobalGameEvents.dialogue_ended
 		pressed = true
 	else:
-		super(clue_invalid_dialogue, 0)
+		super(clue_invalid_dialogue)
 	GameManager.enable_input = true
 
 func _process(delta: float) -> void:

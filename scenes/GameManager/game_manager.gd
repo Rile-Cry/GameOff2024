@@ -22,10 +22,10 @@ var global_variables : Dictionary = {
 	"tossed_out": false,
 	"lucas_victor": false,
 }
-var actor_address := {
-	"Lucas": "res://assets/imports/graphics/characters/Lucas Rivers/lucas_",
-	"Victor": "res://assets/imports/graphics/characters/Victor Thorne/victor_",
-	"Marina": "res://assets/imports/graphics/characters/Marina Thorne/marina_"
+var actor_address : Dictionary[Genum.Actors, String]= {
+	Genum.Actors.LUCAS: "res://assets/imports/graphics/characters/Lucas Rivers/lucas_normal.png",
+	Genum.Actors.VICTOR: "res://assets/imports/graphics/characters/Victor Thorne/victor_normal.png",
+	Genum.Actors.MARINA: "res://assets/imports/graphics/characters/Marina Thorne/marina_normal.png"
 }
 
 var game_time : float = 0.0

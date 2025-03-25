@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Clue" load_steps=4 format=3 uid="uid://bsu6bjc3w4wtw"]
+
+[ext_resource type="Script" uid="uid://27td4dc6wg8g" path="res://components/case/clues/clue_resource.gd" id="1_ecn6g"]
+[ext_resource type="Texture2D" uid="uid://drrsq44qriwc4" path="res://assets/imports/graphics/objects/clues/SCATTERED_PAPERS.png" id="1_tb0td"]
+[ext_resource type="Texture2D" uid="uid://bopl7ayim8jms" path="res://assets/imports/graphics/objects/clues/icon/SCATTERED_PAPERS.png" id="2_r6pej"]
+
+[resource]
+script = ExtResource("1_ecn6g")
+clue_id = "SCATTERED_PAPERS"
+clue_name = "Scattered Papers"
+clue_description = "Torn documents discussing Evelyn's initial decision to leave her estate to charity"
+clue_location = "Evelyn's Art Studio"
+clue_texture = ExtResource("1_tb0td")
+clue_texture_icon = ExtResource("2_r6pej")
+metadata/_custom_type_script = "uid://27td4dc6wg8g"

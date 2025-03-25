@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=3 uid="uid://c6hm1h1elh3mm"]
 
 [ext_resource type="Texture2D" uid="uid://cac8xcyxbggv5" path="res://assets/imports/graphics/icons/Book_Icon_open.png" id="1_e0dwy"]
-[ext_resource type="Script" uid="uid://baam2lpn57r80" path="res://scenes/GameManager/UIManager.gd" id="1_ijh3a"]
+[ext_resource type="Script" uid="uid://baam2lpn57r80" path="res://scenes/GameManager/ui_manager.gd" id="1_ijh3a"]
 [ext_resource type="Shader" uid="uid://cercj3t3lr34p" path="res://shaders/vignette/nightmare_vignette.gdshader" id="2_5ylhm"]
 [ext_resource type="Texture2D" uid="uid://bd6gjs43h61ra" path="res://assets/imports/graphics/icons/Book_Icon.png" id="2_o5jjq"]
 [ext_resource type="Shader" uid="uid://sk0ddpmsg8us" path="res://scenes/UI/main/Glitch.gdshader" id="2_r0o0u"]
@@ -450,7 +450,7 @@ script = ExtResource("1_ijh3a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_dvjtw")
+&"": SubResource("AnimationLibrary_dvjtw")
 }
 
 [node name="Vignette" type="ColorRect" parent="."]
